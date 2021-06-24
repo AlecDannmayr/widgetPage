@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Widgets </title>
+   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+   <meta http-equiv="Pragma" content="no-cache" />
+   <meta http-equiv="Expires" content="0" />
+   <style>
+      @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+      body,
+      html {
+         height: 100%;
+         padding: 0;
+         margin: 0;
+         font-family: "Roboto", sans-serif;
+         width: 100%;
+         background-color: #fff;
+         color: #162738
+      }
+
+      a {
+         text-decoration: none;
+      }
+
+      #body-wrapper {
+         display: none;
+         height: 150%;
+         width: 100%;
+         overflow-y: hidden;
+      }
+
+      #loading-screen {
+         background-color: #162738;
+         height: 100%;
+         display: flex;
+         justify-content: center;
+      }
+
+      html {
+         --scrollbarBG: #200429;
+         --thumbBG: #fbe44a;
+      }
+
+      body::-webkit-scrollbar {
+         width: 11px;
+      }
+
+      body {
+         scrollbar-width: thin;
+         scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+      }
+
+      body::-webkit-scrollbar-track {
+         background: var(--scrollbarBG);
+      }
+
+      body::-webkit-scrollbar-thumb {
+         background-color: var(--thumbBG);
+         border: 3px solid var(--scrollbarBG);
+      }
+
+      main {
+         z-index: 2;
+         position: relative;
+         height: 200%;
+         -webkit-transition: transform 0.7s ease-in-out;
+         -moz-transition: transform 0.7s ease-in-out;
+         -ms-transition: transform 0.7s ease-in-out;
+         -o-transition: transform 0.7s ease-in-out;
+         transition: transform 0.7s ease-in-out;
+      }
+
+      .sidebar {
+         height: 100%;
+         width: 270px;
+         position: fixed;
+         top: 0;
+         z-index: 4;
+         right: 0;
+         background-color: #12232E;
+         border-left: 2px solid #FF9933;
+         transition: 0.5s;
+      }
+
+      .bar {
+         display: block;
+         height: 5px;
+         width: 50px;
+         background-color: #fbe44a;
+         margin: 10px auto;
+      }
+
+      .button {
+         cursor: pointer;
+         display: inline-block;
+         width: auto;
+         margin: 0 auto;
+         -webkit-transition: all 0.7s ease;
+         -moz-transition: all 0.7s ease;
+         -ms-transition: all 0.7s ease;
+         -o-transition: all 0.7s ease;
+         transition: all 0.7s ease;
+      }
+
+      .nav-right {
+         position: fixed;
+         right: 40px;
+         top: 0px;
+      }
+
+      .nav-right.visible-xs {
+         z-index: 3;
+      }
+
+      .hidden-xs {
+         display: none;
+      }
+
+      .middle {
+         margin: 0 auto;
+      }
+
+      .bar {
+         -webkit-transition: all 0.7s ease;
+         -moz-transition: all 0.7s ease;
+         -ms-transition: all 0.7s ease;
+         -o-transition: all 0.7s ease;
+         transition: all 0.7s ease;
+      }
+
+      .nav-right.visible-xs .active .bar {
+         background-color: #FF9933;
+         -webkit-transition: all 0.7s ease;
+         -moz-transition: all 0.7s ease;
+         -ms-transition: all 0.7s ease;
+         -o-transition: all 0.7s ease;
+         transition: all 0.7s ease;
+      }
+
+      .button.active .top {
+         -webkit-transform: translateY(15px) rotateZ(45deg);
+         -moz-transform: translateY(15px) rotateZ(45deg);
+         -ms-transform: translateY(15px) rotateZ(45deg);
+         -o-transform: translateY(15px) rotateZ(45deg);
+         transform: translateY(15px) rotateZ(45deg);
+      }
+
+      .button.active .bottom {
+         -webkit-transform: translateY(-15px) rotateZ(-45deg);
+         -moz-transform: translateY(-15px) rotateZ(-45deg);
+         -ms-transform: translateY(-15px) rotateZ(-45deg);
+         -o-transform: translateY(-15px) rotateZ(-45deg);
+         transform: translateY(-15px) rotateZ(-45deg);
+      }
+
+      .button.active .middle {
+         width: 0;
+      }
+
+      .move-to-left {
+         -webkit-transform: translateX(-400px);
+         -moz-transform: translateX(-400px);
+         -ms-transform: translateX(-400px);
+         -o-transform: translateX(-400px);
+         transform: translateX(-400px);
+      }
+
+      nav {
+         padding-top: 30px;
+      }
+
+      .sidebar-list {
+         padding: 0;
+         margin: 0;
+         list-style: none;
+         position: relative;
+         margin-top: 0px;
+         text-align: left;
+      }
+
+      .sidebar-list {
+         text-align: left;
+      }
+
+      .sidebar-item {
+         margin: 30px 0;
+         -webkit-transform: translateY(-20px);
+         -moz-transform: translateY(-20px);
+         -ms-transform: translateY(-20px);
+         -o-transform: translateY(-20px);
+         transform: translateY(-20px);
+         font-size: 12px;
+      }
+
+      .sidebar-anchor:hover {
+         color: #FF9933;
+      }
+
+      .sidebar-anchor {
+         cursor: not-allowed;
+      }
+
+      .sidebar-anchor-active {
+         cursor: pointer;
+      }
+
+      .sidebar-item-widgets {
+         background-color: #fbe44a;
+      }
+
+      .sidebar-item-widgets h3 {
+         color: #132638
+      }
+
+      .sidebar-item-widgets h3 {
+         padding-left: 10px;
+         padding-bottom: 6px;
+      }
+
+      .sidebar-item-widgets {
+         padding: 10px 0px 0px 0px;
+      }
+
+      .sidebar-item {
+         padding-left: 10px;
+         font-size: 10px;
+      }
+
+      .sidebar-anchor {
+         color: #fff;
+         text-decoration: none;
+         font-size: 1.4em;
+         text-transform: uppercase;
+         position: relative;
+         padding-bottom: 7px;
+      }
+
+      .sidebar-anchor:before {
+         content: "";
+         width: 0;
+         height: 2px;
+         position: absolute;
+         bottom: 0;
+         left: 0;
+         background-color: #FF9933;
+         -webkit-transition: all 0.2s ease-in-out;
+         -moz-transition: all 0.2s ease-in-out;
+         -ms-transition: all 0.2s ease-in-out;
+         -o-transition: all 0.2s ease-in-out;
+         transition: all 0.2s ease-in-out;
+      }
+
+      .sidebar-anchor:hover:before {
+         width: 100%;
+      }
+
+      #loader-6 #loader {
+         position: relative;
+         left: 50%;
+         top: 50%;
+         z-index: 2;
+      }
+
+      #loader-6 #loader {
+         height: 0.5vw;
+         width: 0.5vw;
+         border-radius: 100%;
+         display: inline-block;
+         box-shadow: red -1vw -1vw 0 0.5vw, yellow 1vw -1vw 0 0.5vw, white 1vw 1vw 0 0.5vw, blue -1vw 1vw 0 0.5vw;
+         animation: dots 4s infinite ease-in-out;
+      }
+
+      @keyframes dots {
+         0% {
+            box-shadow: red -1vw -1vw 0 0.5vw, yellow 1vw -1vw 0 0.5vw, white 1vw 1vw 0 0.5vw, blue -1vw 1vw 0 0.5vw;
+         }
+
+         8.33% {
+            box-shadow: red 1vw -1vw 0 0.5vw, yellow 1vw -1vw 0 0.5vw, white 1vw 1vw 0 0.5vw, blue -1vw 1vw 0 0.5vw;
+         }
+
+         16.67% {
+            box-shadow: red 1vw 1vw 0 0.5vw, yellow 1vw 1vw 0 0.5vw, white 1vw 1vw 0 0.5vw, blue -1vw 1vw 0 0.5vw;
+         }
+
+         25% {
+            box-shadow: red -1vw 1vw 0 0.5vw, yellow -1vw 1vw 0 0.5vw, white -1vw 1vw 0 0.5vw, blue -1vw 1vw 0 0.5vw;
+         }
+
+         33.33% {
+            box-shadow: red -1vw -1vw 0 0.5vw, yellow -1vw 1vw 0 0.5vw, white -1vw -1vw 0 0.5vw, blue -1vw -1vw 0 0.5vw;
+         }
+
+         41.67% {
+            box-shadow: red 1vw -1vw 0 0.5vw, yellow -1vw 1vw 0 0.5vw, white -1vw -1vw 0 0.5vw, blue 1vw -1vw 0 0.5vw;
+         }
+
+         50% {
+            box-shadow: red 1vw 1vw 0 0.5vw, yellow -1vw 1vw 0 0.5vw, white -1vw -1vw 0 0.5vw, blue 1vw -1vw 0 0.5vw;
+         }
+
+         58.33% {
+            box-shadow: red -1vw 1vw 0 0.5vw, yellow -1vw 1vw 0 0.5vw, white -1vw -1vw 0 0.5vw, blue 1vw -1vw 0 0.5vw;
+         }
+
+         66.67% {
+            box-shadow: red -1vw -1vw 0 0.5vw, yellow -1vw -1vw 0 0.5vw, white -1vw -1vw 0 0.5vw, blue 1vw -1vw 0 0.5vw;
+         }
+
+         75% {
+            box-shadow: red 1vw -1vw 0 0.5vw, yellow 1vw -1vw 0 0.5vw, white 1vw -1vw 0 0.5vw, blue 1vw -1vw 0 0.5vw;
+         }
+
+         83.33% {
+            box-shadow: red 1vw 1vw 0 0.5vw, yellow 1vw -1vw 0 0.5vw, white 1vw 1vw 0 0.5vw, blue 1vw 1vw 0 0.5vw;
+         }
+
+         91.67% {
+            box-shadow: red -1vw 1vw 0 0.5vw, yellow 1vw -1vw 0 0.5vw, white 1vw 1vw 0 0.5vw, blue -1vw 1vw 0 0.5vw;
+         }
+
+         100% {
+            box-shadow: red -1vw -1vw 0 0.5vw, yellow 1vw -1vw 0 0.5vw, white 1vw 1vw 0 0.5vw, blue -1vw 1vw 0 0.5vw;
+         }
+      }
+
+      .header h1 {
+         font-size: 2.17em;
+         text-decoration: underline #fbe44a;
+         color: #fff;
+         margin-left: 50px;
+         margin-top: -22.5px;
+      }
+
+      .container {
+         padding: 0px;
+         padding-top: 0px;
+         margin-top: -60px;
+         width: 1000px;
+      }
+
+      .container h1 {
+         font-size: 60px;
+         padding: 0px 50px;
+      }
+
+      .container p {
+         padding: 0px 50px;
+      }
+
+      .grid-each {
+         display: flex;
+      }
+
+      .info-area {
+         margin-top: -10px;
+         margin-bottom: 37px;
+         width: 50%;
+      }
+
+      .widget-frame-1 h2 {
+         font-size: 40px;
+         color: #162738;
+      }
+
+      iframe {
+         width: 414px;
+         height: 800px;
+         border: none;
+      }
+
+      .carousel-wrapper {
+         height: 800px;
+         position: relative;
+         width: 1000px;
+      }
+
+      .carousel-item {
+         position: absolute;
+         top: 0;
+         bottom: 0;
+         left: 0;
+         right: 0;
+         padding: 0px 50px;
+         opacity: 0;
+         transition: all 0.4s ease-in-out;
+      }
+
+      .carousel-item a {
+         pointer-events: none;
+         cursor: not-allowed;
+      }
+
+      .arrow {
+         border: solid #FBE44A;
+         border-width: 0 4px 4px 0;
+         display: inline-block;
+         padding: 16px;
+         display: none
+      }
+
+      .arrow-prev {
+         left: -30px;
+         position: absolute;
+         top: 35%;
+         transform: translateY(-50%) rotate(135deg);
+      }
+
+      .arrow-next {
+         right: 000px;
+         position: absolute;
+         top: 35%;
+         transform: translateY(-50%) rotate(-45deg);
+      }
+
+      .light {
+         color: white;
+      }
+
+      [id^="item"] {
+         display: none;
+      }
+
+      .item-1 {
+         z-index: 2;
+         opacity: 1;
+      }
+
+      *:target~.item-1 {
+         opacity: 0;
+      }
+
+      #item-1:target~.item-1 {
+         opacity: 1;
+      }
+
+      #item-2:target~.item-2,
+      #item-3:target~.item-3,
+      #item-4:target~.item-4,
+      #item-5:target~.item-5,
+      #item-6:target~.item-6,
+      #item-7:target~.item-7,
+      #item-8:target~.item-8,
+      #item-9:target~.item-9,
+      #item-10:target~.item-10,
+      #item-11:target~.item-11 {
+         z-index: 3;
+         opacity: 1;
+      }
+
+      #brg {
+         display: none;
+      }
+
+      #brg ul {
+         list-style: none;
+         margin-top: -55px;
+         margin-left: -30px;
+      }
+
+      .bar1,
+      .bar2,
+      .bar3 {
+         width: 35px;
+         height: 5px;
+         background-color: #fbe44a;
+         margin: 6px 0;
+         transition: 0.4s;
+      }
+
+      .change .bar1 {
+         -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+         transform: rotate(-45deg) translate(-9px, 6px);
+      }
+
+      .change .bar2 {
+         opacity: 0;
+      }
+
+      .change .bar3 {
+         -webkit-transform: rotate(45deg) translate(-8px, -8px);
+         transform: rotate(45deg) translate(-8px, -8px);
+      }
+
+      @media only screen and (max-width: 1270px) {
+         .container {
+            width: 77%;
+         }
+
+         .info-area {
+            margin-left: 0px;
+         }
+      }
+
+      @media only screen and (max-width: 1118px) {
+         .container p {
+            padding-right: 100px;
+         }
+      }
+
+      @media only screen and (max-width: 857px) {
+         .container {
+            width: 60%;
+         }
+
+         .container p {
+            padding: 0px 10px;
+         }
+
+         .carousel-item {
+            padding: 0px 10px;
+         }
+
+         .container h1 {
+            padding: 0px 10px;
+         }
+
+         .info-area {
+            width: 40%;
+         }
+      }
+
+      @media only screen and (max-width: 705px) {
+         .container {
+            margin-left: 0;
+            margin-right: auto;
+            width: 90%;
+         }
+
+         .sidebar {
+            width: 0px;
+            transition: 1s;
+         }
+
+         #brg {
+            display: block;
+         }
+
+         .info-area {
+            width: 90vw;
+            margin-right: 10px;
+         }
+      }
+   </style>
+</head>
+
+<body>
+
+   <div id="loading-screen">
+      <div class="loader-wrapper" id="loader-6">
+         <div id="loader"></div>
+      </div>
+   </div>
+   <div id="body-wrapper">
+      <main>
+         <div class="main-wrapper">
+            <nav>
+               <div class="nav-right hidden-xs">
+                  <div class="button" id="btn">
+                     <div class="bar top"></div>
+                     <div class="bar middle"></div>
+                     <div class="bar bottom"></div>
+                  </div>
+               </div>
+            </nav>
+            <nav>
+               <div id="brg" onclick="o(this)">
+                  <ul>
+                     <li class="bar1"></li>
+                     <li class="bar2"></li>
+                     <li class="bar3"></li>
+                  </ul>
+               </div>
+            </nav>
+            <div class="container">
+               <h1>Widgets</h1>
+               <p>We currently have a Basic Scoreboard widget and are creating a range of additional widgets to showcase
+                  our real-time,
+                  analytical data. The list to the right shows the next widgets coming up.
+               <p style="font-style: italic;">Please select a live match from the fixture bar on the left. Alternatively
+                  you can view our demo match 24/7..</p>
+               </p>
+               <div class="carousel-wrapper"><span id="item-1"></span><span id="item-2"></span><span
+                     id="item-3"></span><span id="item-4"></span><span id="item-5"></span><span id="item-6"></span><span
+                     id="item-7"></span><span id="item-8"></span><span id="item-9"></span><span
+                     id="item-10"></span><span id="item-11"></span>
+                  <div class="carousel-item item-1">
+                     <div class="grid">
+                        <div class="grid-each">
+                           <div class="widget-frame-1">
+                              <h2>Basic Scoreboard </h2>
+                              <h3>This widget includes:</h3>
+                              <div class="info-area" style="font-style: italic">Basic match overview, Powerbar
+                                 indicating win probability, recent ball results visual, basic scorecard, commentary,
+                                 squads. This widget is real time and available for every professional match around the
+                                 world, which currently stands at
+                                 over 25,000 live hours.</div><iframe class="iFrame" style="visibility: hidden"
+                                 onload="this.style.visibility='visible';"
+                                 src="http://widget.decimalcricket.com/basicscoreboard/"></iframe>
+                           </div>
+                        </div>
+                     </div><a class="arrow arrow-prev" href="#item-11"></a><a class="arrow arrow-next"
+                        href="#item-2"></a>
+                  </div>
+               </div>
+            </div>
+      </main>
+      <div class="sidebar">
+         <ul class="sidebar-list">
+            <li class="sidebar-item-widgets"><a href="#" class="sidebar-anchor-fixtures-title">
+                  <h3>Widgets </h3>
+               </a></li>
+            <li class="sidebar-item"><a href="#item-1" class="sidebar-anchor sidebar-anchor-active"
+                  style="color: #FF9933; border-bottom: #FF9933;">Basic Scoreboard</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-anchor">Intermediate Scoreboard</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-anchor">Pre Match Report</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-anchor">Basic Tournament Display</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-anchor">Intermediate Tournament Display</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-anchor">Advanced Tournament Display</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-anchor">TAS Batting Profile</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-anchor">TAS AVRatings</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-anchor">Advanced Scoreboard</a></li>
+            <li class="sidebar-item"><a href="#" class="sidebar-anchor">Web App Example</a></li>
+         </ul>
+      </div>
+   </div>
+   </div>
+   </div>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script>window.addEventListener('load', function () {
+         var ee = document.getElementById('loading-screen'),
+            t = document.getElementById('body-wrapper'); (ee.style.display = 'none'), (t.style.display = 'block')
+      })
+
+      let z = document.getElementsByClassName('sidebar')[0];
+
+      function o(x) {
+         x.classList.toggle('change')
+         navSize = z.style.width
+         if (navSize == '270px') {
+            return close()
+         }
+         return open()
+      }
+
+      function open() {
+         z.style.cssText = 'width: 270px;'
+      }
+
+      function close() {
+         z.style.cssText = 'width: 0px;'
+      }
+
+   </script>
+</body>
+
+</html>
