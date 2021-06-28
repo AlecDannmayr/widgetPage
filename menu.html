@@ -800,6 +800,8 @@
                   return obj.competition !== 'Quantum Cricket League';
                });
 
+
+
                document.addEventListener('click', function (event) {
                   if (!event.target.matches('.sidebar-anchor-fixtures')) return;
                   event.preventDefault();
@@ -815,6 +817,7 @@
 
 
                for (e = 0; e < r.length; e++) {
+                  console.log(r[e].status.substring(0, 14))
                   s[e].innerHTML = r[e].name.split("v").join("<br />").split(",")[0];
                   var tt = r[e].start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
                   rt = r[e].start.split("T")[1].substring(0, 5);
