@@ -780,10 +780,11 @@
                      newArticle = document.createElement('li')
                      newArticle.setAttribute('class', 'sidebar-item-fixtures')
                      fixlst.append(newArticle)
+                     const inf = document.getElementsByClassName("sidebar-item-fixtures");
 
                      nr = document.createElement('a')
                      nr.setAttribute('class', 'sidebar-anchor-fixtures')
-                     nr.appendChild(nr)
+                     inf.appendChild(nr)
                      document.getElementsByClassName("sidebar-item-fixtures").appendChild(nr);
 
                   }
