@@ -776,7 +776,7 @@
 
                for (e = 0; e < r.length; e++) {
                   if (r[e].status.substring(0, 15) != "Match in Progress") {
-                     const fixlst = document.querySelector('.sidebar-list-fixtures'), fixdt = document.querySelector('.date-time');
+                     const fixlst = document.querySelector('.sidebar-list-fixtures');
                      newArticle = document.createElement('li')
                      newArticle.setAttribute('class', 'sidebar-item-fixtures')
                      newArticle = document.createElement('a')
@@ -784,11 +784,12 @@
                      newArticle = document.createElement('div')
                      newArticle.setAttribute('class', 'date-time')
                      fixlst.append(newArticle)
-                     newArticle = document.createElement('p')
-                     newArticle.setAttribute('class', 'fixture-time')
-                     newArticle = document.createElement('p')
-                     newArticle.setAttribute('class', 'fixture-data')
-                     fixdt.append(newArticle)
+                     const fixdt = document.querySelector('.date-time');
+                     nr = document.createElement('p')
+                     nr.setAttribute('class', 'fixture-time')
+                     nr = document.createElement('p')
+                     nr.setAttribute('class', 'fixture-data')
+                     fixdt.append(nr)
 
                   }
                   s[e].innerHTML = r[e].name.split("v").join("<br />").split(",")[0];
