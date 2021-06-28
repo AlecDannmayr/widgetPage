@@ -833,9 +833,49 @@
    </div>
    </div>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-   <script>window.addEventListener('load', function () {
+   <script>
+      var fixturesApi = fetch("http://feed.decimalcricket.com/api/match/list", { method: "GET", headers: { "x-api-key": "decimaltest", "Content-Type": "application/json" } });
+
+
+      window.addEventListener('load', function () {
          var ee = document.getElementById('loading-screen'),
             t = document.getElementById('body-wrapper'); (ee.style.display = 'none'), (t.style.display = 'block')
+
+         fixturesApi
+            .then((response) => response.json())
+            .then((json) => {
+               var r = json.matches,
+                  s = document.getElementsByClassName("sidebar-anchor-fixtures"),
+                  n = document.getElementsByClassName("fixture-data"),
+                  q = document.getElementsByClassName("fixture-time");
+
+               r = r.filter(function (obj) {
+                  return obj.competition !== 'Quantum Cricket League';
+               });
+
+               document.addEventListener('click', function (event) {
+                  if (!event.target.matches('.sidebar-anchor-fixtures')) return;
+                  event.preventDefault();
+                  var idNo = event.target.getAttribute("data"),
+                     v = r[idNo],
+                     xx = v.id,
+                     x = v.id,
+                     w = document.getElementsByClassName("iFrame")[0];
+                  w.contentWindow.matchRun(x);
+                  w.style.height = w.contentWindow.document.body.scrollHeight + 'px';
+               }, false)
+
+
+
+               for (e = 0; e < r.length; e++) {
+                  s[e].innerHTML = r[e].name.split("v").join("<br />").split(",")[0];
+                  var tt = r[e].start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
+                  rt = r[e].start.split("T")[1].substring(0, 5);
+                  q[e].innerHTML = rt;
+                  n[e].innerHTML = tt;
+
+               }
+            });
       })
 
       let z = document.getElementsByClassName('sidebar')[0];
