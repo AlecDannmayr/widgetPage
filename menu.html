@@ -779,17 +779,13 @@
                      const fixlst = document.querySelector('.sidebar-list-fixtures');
                      newArticle = document.createElement('li')
                      newArticle.setAttribute('class', 'sidebar-item-fixtures')
-                     newArticle = document.createElement('a')
-                     newArticle.setAttribute('class', 'sidebar-anchor-fixtures')
-                     newArticle = document.createElement('div')
-                     newArticle.setAttribute('class', 'date-time')
+
                      fixlst.append(newArticle)
-                     const fixdt = document.querySelector('.date-time');
                      nr = document.createElement('p')
                      nr.setAttribute('class', 'fixture-time')
-                     nr = document.createElement('p')
-                     nr.setAttribute('class', 'fixture-data')
-                     fixdt.append(nr)
+                     nra = document.createElement('p')
+                     nra.setAttribute('class', 'fixture-data')
+                     fixdt.appendChild(nr)
 
                   }
                   s[e].innerHTML = r[e].name.split("v").join("<br />").split(",")[0];
