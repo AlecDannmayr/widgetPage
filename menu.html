@@ -730,49 +730,10 @@
             <li class="sidebar-item-fixtures-fixtures"><a href="#" class="sidebar-anchor-fixtures-title">
                   <h3>Fixtures</h3>
                </a></li>
-            <li class="sidebar-item-fixtures"><a href="#" data=0 class="sidebar-anchor-fixtures"></a>
+            <li class="sidebar-item-fixtures"><a href="#" class="sidebar-anchor-fixture">Demo</a>
                <div class="date-time">
-                  <p class="fixture-data">sdsfg</p>
-                  <p class="fixture-time">ssdfsdfsf</p>
+                  <p>24/7</p>
                </div>
-            </li>
-            <li class="sidebar-item-fixtures"><a href="#" data=1 class="sidebar-anchor-fixtures"></a>
-               <div class="date-time">
-                  <p class="fixture-data"></p>
-                  <p class="fixture-time"></p>
-               </div>
-            </li>
-            <li class="sidebar-item-fixtures"><a href="#" data=2 class="sidebar-anchor-fixtures"></a>
-               <div class="date-time">
-                  <p class="fixture-data"></p>
-                  <p class="fixture-time"></p>
-               </div>
-            </li>
-            <li class="sidebar-item-fixtures"><a href="#" data=3 class="sidebar-anchor-fixtures"></a>
-               <div class="date-time">
-                  <p class="fixture-data"></p>
-                  <p class="fixture-time"></p>
-               </div>
-            </li>
-            <li class="sidebar-item-fixtures"><a href="#" data=4 class="sidebar-anchor-fixtures"></a>
-               <div class="date-time">
-                  <p class="fixture-data"></p>
-                  <p class="fixture-time"></p>
-               </div>
-            </li>
-            <li class="sidebar-item-fixtures"><a href="#" data=5 class="sidebar-anchor-fixtures"></a>
-               <div class="date-time">
-                  <p class="fixture-data"></p>
-                  <p class="fixture-time"></p>
-               </div>
-            </li>
-            <li class="sidebar-item-fixtures"><a href="#" data=6 class="sidebar-anchor-fixtures"></a>
-               <div class="date-time">
-                  <p class="fixture-data"></p>
-                  <p class="fixture-time"></p>
-               </div>
-            </li>
-
             </li>
          </ul>
       </div>
@@ -817,7 +778,9 @@
 
 
                for (e = 0; e < r.length; e++) {
-                  console.log(r[e].status.substring(0, 14))
+                  if (r[e].status.substring(0, 15) == "Match in Progress") {
+
+                  }
                   s[e].innerHTML = r[e].name.split("v").join("<br />").split(",")[0];
                   var tt = r[e].start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
                   rt = r[e].start.split("T")[1].substring(0, 5);
