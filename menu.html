@@ -496,7 +496,7 @@
 
       .sidebar-fixtures {
          height: 10%;
-         width: 270px;
+         width: calc(100% - 270px);
          position: fixed;
          top: 0;
          z-index: 2;
@@ -504,11 +504,6 @@
          background-color: #12232E;
          overflow: auto;
          border-right: 2px solid #FF9933;
-      }
-
-      .sidebar-fixtures::-webkit-scrollbar {
-         width: 0px;
-         background-color: #FF9933;
       }
 
       .sidebar-list-fixtures {
@@ -529,9 +524,6 @@
       .sidebar-list-fixtures li:nth-child(2n) {
          background-color: #132638;
       }
-
-
-
 
       .sidebar-item-fixtures-fixtures,
       .sidebar-item-widgets {
@@ -558,8 +550,11 @@
       .sidebar-anchor-fixtures-title {
          font-size: 1em;
          padding-bottom: 0px;
-
          white-space: nowrap;
+      }
+
+      .sidebar-anchor-fixtures-title {
+         width: 10%;
       }
 
 
