@@ -776,11 +776,13 @@
 
                for (e = 0; e < r.length; e++) {
                   if (r[e].status.substring(0, 15) != "Match in Progress") {
-                     const fixlst = document.querySelector('.sidebar-list-fixtures')
-                     newArticle = document.createElement('li')
+                     const fixlst = document.querySelector('.sidebar-list-fixtures'), fixnm = document.querySelector('.sidebar-item-fixtures'),
+                        newArticle = document.createElement('li')
                      newArticle.setAttribute('class', 'sidebar-item-fixtures')
                      fixlst.append(newArticle)
-
+                     newArticle = document.createElement('a')
+                     newArticle.setAttribute('class', 'sidebar-anchor-fixtures')
+                     fixnm.append(newArticle)
                   }
                   s[e].innerHTML = r[e].name.split("v").join("<br />").split(",")[0];
                   var tt = r[e].start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
