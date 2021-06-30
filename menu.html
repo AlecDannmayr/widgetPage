@@ -868,8 +868,7 @@
                      newArticle = document.createElement('li')
                      newArticle.setAttribute('class', 'sidebar-item-fixtures')
                      fixlst.append(newArticle)
-                     const atr = document.createElement("a");
-                     console.log(atr);
+
                      /*
                                           u[e].innerHTML = r[e].name.split("v").join("<br />").split(",")[0];
                                           var tt = r[e].start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
@@ -878,6 +877,10 @@
                                           n[e].innerHTML = tt;
                      */
                   }
+                  const sif = document.getElementsByClassName('sidebar-item-fixtures');
+                  console.log(sif)
+                  const atr = document.createElement("a");
+                  sif[e].appendChild(atr);
                }
             });
       })
