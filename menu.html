@@ -749,8 +749,7 @@
             </li>
             <li class="sidebar-item-fixtures-demo"><a href="#" class="sidebar-demo-fixture">Live Games:</a>
                <div class="date-time-demo">
-                  <p>DEMO</p>
-                  <p>24/7</p>
+                  <p id="gmn">DEMO</p>
                </div>
             </li>
          </ul>
@@ -891,19 +890,21 @@
                      for (i = 0; i < 2; i++) {
                         const ap = document.createElement("p");
                         dat[e].appendChild(ap);
-                     } /*else {
-
-                     }*/
-
+                     }
+                  } else {
+                     const gmn = document.querySelector('#gmn');
+                     gmn.innerHTML = nA.childNodes.length
                   }
-                  /*
-        u[e].innerHTML = r[e].name.split("v").join("<br />").split(",")[0];
-        var tt = r[e].start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
-        rt = r[e].start.split("T")[1].substring(0, 5);
-        q[e].innerHTML = rt;
-        n[e].innerHTML = tt;
-*/
+
                }
+               /*
+     u[e].innerHTML = r[e].name.split("v").join("<br />").split(",")[0];
+     var tt = r[e].start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
+     rt = r[e].start.split("T")[1].substring(0, 5);
+     q[e].innerHTML = rt;
+     n[e].innerHTML = tt;
+*/
+
             });
       })
 
