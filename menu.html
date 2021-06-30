@@ -749,6 +749,15 @@
                      <div class="carousel-item item-1">
                         <div class="widget-frame-1">
                            <div>
+                              <h2>Basic Scoreboard </h2>
+                              <h3>This widget includes:</h3>
+                              <div>Basic match overview, Powerbar
+                                 indicating win probability, recent ball results visual, basic scorecard, commentary,
+                                 squads. This widget is real time and available for every professional match around the
+                                 world, which currently stands at
+                                 over 25,000 live hours.</div>
+                           </div>
+                           <div>
                               <iframe class="iFrame" style="visibility: hidden"
                                  onload="this.style.visibility='visible';"
                                  src="http://widget.decimalcricket.com/basicscoreboard/"></iframe>
@@ -855,14 +864,15 @@
       })
 
       let z = document.getElementsByClassName('sidebar')[0];
-
-      function sz() {
-         var ws = window.outerWidth;
-         console.log(ws)
-         if (ws > 767) {
-            z.style.cssText = 'width: 270px;'
-         }
-      }
+      /*
+            function sz() {
+               var ws = window.outerWidth;
+               console.log(ws)
+               if (ws > 767) {
+                  z.style.cssText = 'width: 270px;'
+               }
+            }
+            */
       function o(x) {
          x.classList.toggle('change')
          navSize = z.style.width
