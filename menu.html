@@ -372,7 +372,12 @@
          color: #162738;
       }
 
-      .widget-frame-1 div:nth-child(3) {
+      .widget-frame-1 div:nth-child(1) {
+         display: none;
+      }
+
+      .widget-frame-1 div:nth-child(3),
+      .widget-frame-1 div:nth-child(1) {
          margin-left: 100px;
          margin-top: -30px;
 
@@ -647,6 +652,15 @@
          .widget-frame-1 {
             display: block;
          }
+
+         .widget-frame-1 div:nth-child(3) {
+            display: none;
+         }
+
+         .widget-frame-1 div:nth-child(1) {
+            display: block;
+            margin-bottom: 200px;
+         }
       }
 
       @media only screen and (max-width: 1118px) {
@@ -703,13 +717,7 @@
             transition: 1s;
          }
 
-         .widget-frame-1 div:nth-child(3) {
-            display: none;
-         }
 
-         .widget-frame-1 div:nth-child(1) {
-            display: block;
-         }
       }
    </style>
 </head>
