@@ -881,10 +881,12 @@
                   const atr = document.createElement("a");
                   atr.setAttribute('class', 'sidebar-anchor-fixtures')
                   sif[e].appendChild(atr);
-                  const sif = document.querySelectorAll('.sidebar-anchor-fixtures');
+                  const saf = document.querySelectorAll('.sidebar-anchor-fixtures');
                   const adiv = document.createElement("div");
                   adiv.setAttribute('class', 'date-time')
-                  atr[e].appendChild(adiv);
+                  saf[e].appendChild(adiv);
+                  const ap = document.createElement("p");
+                  adiv[e].appendChild(ap);
                }
             });
       })
