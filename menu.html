@@ -75,10 +75,6 @@
          transition: transform 0.7s ease-in-out;
       }
 
-      #disres {
-         display: none
-      }
-
       .sidebar {
          height: 100%;
          width: 270px;
@@ -650,35 +646,7 @@
          }
       }
 
-      @media only screen and (max-width: 857px) {
-         .container {
-            width: 60%;
-         }
-
-         .container p {
-            padding: 0px 10px;
-         }
-
-         .carousel-item {
-            padding: 0px 10px;
-         }
-
-         .container h1 {
-            padding: 0px 10px;
-         }
-
-         .info-area {
-            width: 40%;
-         }
-      }
-
       @media only screen and (max-width: 705px) {
-         .container {
-            margin-left: 0;
-            margin-right: auto;
-            width: 90%;
-         }
-
          .sidebar {
             width: 0px;
             transition: 1s;
@@ -686,11 +654,6 @@
 
          #brg {
             display: block;
-         }
-
-         .info-area {
-            width: 90vw;
-            margin-right: 10px;
          }
       }
    </style>
@@ -739,21 +702,12 @@
                         id="item-9"></span><span id="item-10"></span><span id="item-11"></span>
                      <div class="carousel-item item-1">
                         <div class="widget-frame-1">
-                           <div id="disres">
-                              <h2>Basic Scoreboard </h2>
-                              <h3>This widget includes:</h3>
-                              <div>Basic match overview, Powerbar
-                                 indicating win probability, recent ball results visual, basic scorecard, commentary,
-                                 squads. This widget is real time and available for every professional match around the
-                                 world, which currently stands at
-                                 over 25,000 live hours.</div>
-                           </div>
                            <div>
                               <iframe class="iFrame" style="visibility: hidden"
                                  onload="this.style.visibility='visible';"
                                  src="http://widget.decimalcricket.com/basicscoreboard/"></iframe>
                            </div>
-                           <div id="dis">
+                           <div>
                               <h2>Basic Scoreboard </h2>
                               <h3>This widget includes:</h3>
                               <div>Basic match overview, Powerbar
