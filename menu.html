@@ -872,12 +872,14 @@
                }, false)
 
                for (e = 0; e < r.length; e++) {
-                  if (r[e].status.substring(0, 17) != "Match in Progress") {
+                  if (r[e].status.substring(0, 17) == "Match in Progress") {
                      function mtn(n) {
                         n++
                         return n;
                      }
-                     console.log(n.length)
+                     cmip = mtn(n)
+
+                     console.log(cmip)
 
 
                      const fixlst = document.querySelector('.sidebar-list-fixtures');
