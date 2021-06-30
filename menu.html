@@ -775,25 +775,27 @@
                }, false)
 
                for (e = 0; e < r.length; e++) {
-                  if (r[e].status.substring(0, 15) != "Match in Progress") {
+                  if (r[e].status.substring(0, 15) == "Match Scheduled") {//Match in Progress
                      const fixlst = document.querySelector('.sidebar-list-fixtures');
                      newArticle = document.createElement('li')
                      newArticle.setAttribute('class', 'sidebar-item-fixtures')
                      fixlst.append(newArticle)
                      const inf = document.getElementsByClassName("sidebar-item-fixtures");
 
+
+                     /*
                      nr = document.createElement('a')
                      nr.setAttribute('class', 'sidebar-anchor-fixtures')
                      inf.appendChild(nr)
                      document.getElementsByClassName("sidebar-item-fixtures").appendChild(nr);
+*/
 
+                     s[e].innerHTML = r[e].name.split("v").join("<br />").split(",")[0];
+                     var tt = r[e].start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
+                     rt = r[e].start.split("T")[1].substring(0, 5);
+                     q[e].innerHTML = rt;
+                     n[e].innerHTML = tt;
                   }
-                  s[e].innerHTML = r[e].name.split("v").join("<br />").split(",")[0];
-                  var tt = r[e].start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
-                  rt = r[e].start.split("T")[1].substring(0, 5);
-                  q[e].innerHTML = rt;
-                  n[e].innerHTML = tt;
-
                }
             });
       })
