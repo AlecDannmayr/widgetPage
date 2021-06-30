@@ -884,9 +884,10 @@
                   const saf = document.querySelectorAll('.sidebar-anchor-fixtures');
                   const adiv = document.createElement("div");
                   adiv.setAttribute('class', 'date-time')
-                  saf[e].appendChild(adiv);
+                  adiv[e].appendChild(saf);
+                  const adat = document.querySelectorAll('date-time');
                   const ap = document.createElement("p");
-                  adiv[e].appendChild(ap);
+                  adat[e].appendChild(ap);
                }
             });
       })
