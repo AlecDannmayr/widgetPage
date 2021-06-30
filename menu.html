@@ -705,7 +705,7 @@
    </style>
 </head>
 
-<body>
+<body onresize="sz()">
 
    <div id="loading-screen">
       <div class="loader-wrapper" id="loader-6">
@@ -872,6 +872,8 @@
       function close() {
          z.style.cssText = 'width: 0px;'
       }
+
+      sz() = ws = window.outerWidth;
 
    </script>
 </body>
