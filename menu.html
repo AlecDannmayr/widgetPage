@@ -872,12 +872,14 @@
                }, false)
 
                for (e = 0; e < r.length; e++) {
-                  if (r[e].status.substring(0, 17) == "Match in Progress") {
-                     function mtn() {
-                        cmip++
+                  if (r[e].status.substring(0, 17) != "Match in Progress") {
+                     function mtn(n) {
+                        n++
+                        return n;
                      }
-                     console.log(cmip)
-                     console.log("Match In Progress");
+                     console.log(n)
+
+
                      const fixlst = document.querySelector('.sidebar-list-fixtures');
                      nA = document.createElement('li')
                      nA.setAttribute('class', 'sidebar-item-fixtures')
