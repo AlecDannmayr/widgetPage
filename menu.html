@@ -578,12 +578,14 @@
 
       }
 
-      .sidebar-item-fixtures {
+      .sidebar-item-fixtures,
+      .sidebar-item-fixtures-demo {
          color: #fff;
          font-size: 10px;
       }
 
-      .date-time {
+      .date-time,
+      .date-time-demo {
          display: flex;
       }
 
@@ -731,6 +733,20 @@
       </div>
    </div>
    <div id="body-wrapper">
+      <div class="sidebar-fixtures">
+         <ul class="sidebar-list-fixtures">
+            <li class="sidebar-item-fixtures-fixtures"><a href="#" class="sidebar-anchor-fixtures-title">
+                  <h3>Fixtures</h3>
+               </a></li>
+            <li class="sidebar-item-fixtures-demo"><a href="#" class="sidebar-demo-fixture">Multan Sultans<br>sahore
+                  Qalandars</a>
+               <div class="date-time-demo">
+                  <p>DEMO</p>
+                  <p>24/7</p>
+               </div>
+            </li>
+         </ul>
+      </div>
       <main>
          <div class="main-wrapper">
             <nav>
@@ -814,20 +830,7 @@
             <li class="sidebar-item"><a href="#" class="sidebar-anchor">Web App Example</a></li>
          </ul>
       </div>
-      <div class="sidebar-fixtures">
-         <ul class="sidebar-list-fixtures">
-            <li class="sidebar-item-fixtures-fixtures"><a href="#" class="sidebar-anchor-fixtures-title">
-                  <h3>Fixtures</h3>
-               </a></li>
-            <li class="sidebar-item-fixtures"><a href="#" class="sidebar-demo-fixture">Multan Sultans<br>sahore
-                  Qalandars</a>
-               <div class="date-time">
-                  <p>DEMO</p>
-                  <p>24/7</p>
-               </div>
-            </li>
-         </ul>
-      </div>
+
    </div>
 
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -885,14 +888,11 @@
                   adiv.setAttribute('class', 'date-time')
                   sif[e].appendChild(adiv);
                   const dat = document.querySelectorAll('.date-time');
-
                   for (i = 0; i < 2; i++) {
                      const ap = document.createElement("p");
                      dat[e].appendChild(ap);
                   }
                }
-
-
             });
       })
 
