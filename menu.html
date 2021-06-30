@@ -873,11 +873,10 @@
 
                for (e = 0; e < r.length; e++) {
                   if (r[e].status.substring(0, 17) == "Match in Progress") {
-                     function mtn(n) {
-                        n++
-                        return n;
-                     }
-                     cmip = mtn(n)
+
+                     cmip++
+
+
 
                      console.log(cmip)
 
@@ -901,7 +900,7 @@
                      }
                   } else {
                      const gmn = document.querySelector('#gmn');
-                     // gmn.innerHTML = 
+                     gmn.innerHTML = cmip
                   }
 
                }
