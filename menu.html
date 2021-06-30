@@ -25,6 +25,7 @@
 
       a {
          text-decoration: none;
+         cursor: pointer;
       }
 
       #body-wrapper {
@@ -526,7 +527,8 @@
          display: flex;
       }
 
-      .sidebar-item-fixtures:not(:first-child) {
+      .sidebar-item-fixtures:not(:first-child),
+      .sidebar-item-fixtures-demo {
          padding: 0px 14px 0px 14px;
          padding-top: 8px;
          cursor: pointer;
@@ -883,6 +885,7 @@
                   const sif = document.querySelectorAll('.sidebar-item-fixtures');
                   const atr = document.createElement("a");
                   atr.setAttribute('class', 'sidebar-anchor-fixtures')
+                  atr.setAttribute('id', 'sidebar-anchor-fixtures')
                   sif[e].appendChild(atr);
                   const adiv = document.createElement("div");
                   adiv.setAttribute('class', 'date-time')
