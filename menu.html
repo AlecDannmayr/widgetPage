@@ -870,6 +870,14 @@
                   w.style.height = w.contentWindow.document.body.scrollHeight + 'px';
                }, false)
 
+               function sz() {
+                  var ws = window.outerWidth;
+                  console.log(w)
+                  if (ws < 438) {
+                     w.style.width = w.contentWindow.document.body.width + 'px';
+                  }
+               }
+
                for (e = 0; e < r.length; e++) {
                   if (r[e].status.substring(0, 16) != "Match in Progress") {
                      console.log("Match In Progress");
@@ -891,15 +899,7 @@
       })
 
       let z = document.getElementsByClassName('sidebar')[0];
-      /*
-            function sz() {
-               var ws = window.outerWidth;
-               console.log(ws)
-               if (ws > 767) {
-                  z.style.cssText = 'width: 270px;'
-               }
-            }
-            */
+
       function o(x) {
          x.classList.toggle('change')
          navSize = z.style.width
