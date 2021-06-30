@@ -874,8 +874,13 @@
       }
 
       function sz() {
-         return window.outerWidth;
+         var ws = window.outerWidth;
+         comsole.log(ws)
+         z.style.cssText = 'width: 270px;'
+         if (ws >= 767) {
+         }
       }
+
 
    </script>
 </body>
