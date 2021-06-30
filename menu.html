@@ -723,7 +723,7 @@
    </style>
 </head>
 
-<body onresize="sz()">
+<body>
 
    <div id="loading-screen">
       <div class="loader-wrapper" id="loader-6">
@@ -885,8 +885,9 @@
                   adiv.setAttribute('class', 'date-time')
                   sif[e].appendChild(adiv);
                   const dat = document.querySelectorAll('.date-time');
-                  const ap = document.createElement("p");
-                  for (i = 0; 1 < 2; i++) {
+
+                  for (i = 0; i < 2; i++) {
+                     const ap = document.createElement("p");
                      dat[e].appendChild(ap);
                   }
                }
@@ -913,9 +914,6 @@
       function close() {
          z.style.cssText = 'width: 0px;'
       }
-
-
-
 
    </script>
 </body>
