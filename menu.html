@@ -865,9 +865,9 @@
                   if (r[e].status.substring(0, 17) != "Match in Progress") {
                      console.log("Match In Progress");
                      const fixlst = document.querySelector('.sidebar-list-fixtures');
-                     newArticle = document.createElement('li')
-                     newArticle.setAttribute('class', 'sidebar-item-fixtures')
-                     fixlst.append(newArticle)
+                     nA = document.createElement('li')
+                     nA.setAttribute('class', 'sidebar-item-fixtures')
+                     fixlst.append(nA)
 
                      /*
                                           u[e].innerHTML = r[e].name.split("v").join("<br />").split(",")[0];
@@ -877,8 +877,8 @@
                                           n[e].innerHTML = tt;
                      */
                   }
-                  const sif = document.getElementsByClassName('sidebar-item-fixtures');
-                  console.log(sif)
+                  const sif = document.querySelectorAll('.sidebar-item-fixtures');
+                  console.log(sif[e])
                   const atr = document.createElement("a");
                   sif[e].appendChild(atr);
                }
