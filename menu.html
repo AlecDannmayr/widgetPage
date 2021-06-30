@@ -853,7 +853,7 @@
                var r = json.matches,
                   s = document.getElementsByClassName("sidebar-anchor-fixtures"),
                   n = document.getElementsByClassName("fixture-data"),
-                  q = document.getElementsByClassName("fixture-time");
+                  q = document.getElementsByClassName("fixture-time"), cmip = 0;
 
                r = r.filter(function (obj) {
                   return obj.competition !== 'Quantum Cricket League';
@@ -873,6 +873,10 @@
 
                for (e = 0; e < r.length; e++) {
                   if (r[e].status.substring(0, 17) == "Match in Progress") {
+                     function mtn() {
+                        cmip++
+                     }
+                     console.log(cmip)
                      console.log("Match In Progress");
                      const fixlst = document.querySelector('.sidebar-list-fixtures');
                      nA = document.createElement('li')
@@ -893,7 +897,7 @@
                      }
                   } else {
                      const gmn = document.querySelector('#gmn');
-                     gmn.innerHTML = nA.childNodes.length
+                     // gmn.innerHTML = 
                   }
 
                }
