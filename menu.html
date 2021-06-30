@@ -722,11 +722,9 @@
             width: 100%;
             transition: 1s;
          }
-      }
 
-      @media only screen and (max-width: 438px) {
-         iframe {
-            width: 300px;
+         .widget-frame-1 div:nth-child(3) iframe {
+            margin-bottom: 100px;
          }
       }
    </style>
@@ -869,14 +867,6 @@
                   w.contentWindow.matchRun(x);
                   w.style.height = w.contentWindow.document.body.scrollHeight + 'px';
                }, false)
-
-               function sz() {
-                  var ws = window.outerWidth;
-                  console.log(w)
-                  if (ws < 438) {
-                     w.style.width = w.contentWindow.document.body.width + 'px';
-                  }
-               }
 
                for (e = 0; e < r.length; e++) {
                   if (r[e].status.substring(0, 16) != "Match in Progress") {
