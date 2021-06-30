@@ -878,9 +878,13 @@
                      */
                   }
                   const sif = document.querySelectorAll('.sidebar-item-fixtures');
-                  console.log(sif[e])
                   const atr = document.createElement("a");
+                  atr.setAttribute('class', 'sidebar-anchor-fixtures')
                   sif[e].appendChild(atr);
+                  const sif = document.querySelectorAll('.sidebar-anchor-fixtures');
+                  const adiv = document.createElement("div");
+                  adiv.setAttribute('class', 'date-time')
+                  atr[e].appendChild(adiv);
                }
             });
       })
