@@ -905,13 +905,14 @@
                nxdg = document.createElement('li')
                nxdg.setAttribute('class', 'sidebar-item-fixtures-demo')
                fixlst.append(nxdg);
-               const sifxl = document.getElementsByClassName('sidebar-item-fixtures-demo')[2]
-               const nxdga = document.createElement("a");
+               const sifxl = document.getElementsByClassName('sidebar-item-fixtures-demo')[2], nxdga = document.createElement("a");
                nxdga.setAttribute('class', 'sidebar-anchor-fixtures')
                nxdga.setAttribute('href', '#')
                nxdga.innerHTML = "Tomorrows Games:"
                sifxl.appendChild(nxdga);
-
+               const dnta = document.getElementsByClassName('date-time-demo')[2], dntat = document.createElement("p");
+               dntat.setAttribute('id', 'tmsg')
+               dnta.appendChild(dntat);
 
 
 
