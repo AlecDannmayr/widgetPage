@@ -895,10 +895,11 @@
 
 
 
-                  const str = gst[e].start.substring(0, 10).split("-").splice(1).reverse().join(" ");
+                  const str = gst[e].start.substring(0, 10).split("-").splice(1).reverse().join(" "), strdy = str.substring(2, 5);
                   if (str.charAt(0) == 0) {
-                     console.log(str)
                   }
+
+                  console.log(strdy)
 
                   //*   console.log(str.split("-").reverse().join(" ")) *//
 
