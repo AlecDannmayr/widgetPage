@@ -887,44 +887,44 @@
                      adiv.setAttribute('class', 'date-time')
                      sif[e].appendChild(adiv);
                      const dat = document.querySelectorAll('.date-time');
-                     for (i = 0; i < 2; i++) {
-                        const ap = document.createElement("p");
-                        dat[e].appendChild(ap);
+                     for (let i = 0; i < 2; i++) {
+                        if (i = 0) {
+                           const ap = document.createElement("p");
+                           dat[e].appendChild(ap);
+                        }
                      }
-                  } else {
                      const gmn = document.querySelector('#gmn');
                      gmn.innerHTML = cmip
                   }
-               }
-               /* 
-     u[e].innerHTML = r[e].name.split("v").join("<br />").split(",")[0];
-     var tt = r[e].start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
-     rt = r[e].start.split("T")[1].substring(0, 5);
-     q[e].innerHTML = rt;
-     n[e].innerHTML = tt;
-*/
+                  /* 
+        u[e].innerHTML = r[e].name.split("v").join("<br />").split(",")[0];
+        var tt = r[e].start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
+        rt = r[e].start.split("T")[1].substring(0, 5);
+        q[e].innerHTML = rt;
+        n[e].innerHTML = tt;
+   */
 
-            });
-      })
+               };
+            })
 
-      let z = document.getElementsByClassName('sidebar')[0];
+         let z = document.getElementsByClassName('sidebar')[0];
 
-      function o(x) {
-         x.classList.toggle('change')
-         navSize = z.style.width
-         if (navSize == '270px') {
-            return close()
+         function o(x) {
+            x.classList.toggle('change')
+            navSize = z.style.width
+            if (navSize == '270px') {
+               return close()
+            }
+            return open()
          }
-         return open()
-      }
 
-      function open() {
-         z.style.cssText = 'width: 270px;'
-      }
+         function open() {
+            z.style.cssText = 'width: 270px;'
+         }
 
-      function close() {
-         z.style.cssText = 'width: 0px;'
-      }
+         function close() {
+            z.style.cssText = 'width: 0px;'
+         }
 
    </script>
 </body>
