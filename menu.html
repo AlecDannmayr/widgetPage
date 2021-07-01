@@ -919,63 +919,7 @@
                      dt[e].appendChild(ad);
                   }
                }
-               nxdg = document.createElement('li')
-               nxdg.setAttribute('class', 'sidebar-item-fixtures-demo')
-               fixlst.append(nxdg);
-               const sifxl = document.getElementsByClassName('sidebar-item-fixtures-demo')[2], nxdga = document.createElement("a");
-               nxdga.setAttribute('class', 'sidebar-anchor-fixtures')
-               nxdga.setAttribute('href', '#')
-               nxdga.innerHTML = "Games Today:"
-               sifxl.appendChild(nxdga);
-               dntat = document.createElement("div");
-               dntat.setAttribute('class', 'date-time-demo')
-               sifxl.append(dntat);
-               const tgdtd = document.getElementsByClassName('date-time-demo')[2]
-               nxdgat = document.createElement("p");
-               nxdgat.setAttribute('id', 'nxgn')
-               tgdtd.appendChild(nxdgat);
 
-
-
-               for (var ee = 0; ee < r.length; ee++) {
-                  if (r[ee].status.substring(0, 15) == "Match Scheduled") {
-                     var day = td.getDate().toString(), mnt = td.getMonth() + 1, gdy = r[ee].start.substring(0, 10).split("-").splice(1).reverse().join(" ").substring(0, 2), gmth = r[ee].start.substring(0, 10).split("-").splice(1).reverse().join(" ").substring(3, 5)
-                     if (day.length <= 1) {
-                        day = "0" + day;
-                     }
-                     if (mnt.toString().length <= 1) {
-                        mnt = "0" + mnt;
-                     }
-                     if (day == gdy && mnt == gmth) {
-
-                        nxndc++
-                        var todg = document.createElement('li')
-                        todg.setAttribute('class', 'sidebar-item-fixtures-today')
-                        fixlst.append(todg);
-
-                        var toi = document.querySelectorAll('.sidebar-item-fixtures-today');
-                        console.log(toi[ee])
-                        var tatr = document.createElement("a");
-                        tatr.setAttribute('class', 'sidebar-anchor-fixtures')
-                        tatr.setAttribute('href', '#');
-                        toi.append(tatr);
-                     }
-                  }
-               }
-
-
-
-               const gmn = document.querySelector('#gmn'), nxgn = document.querySelector('#nxgn')
-               if (cmip != 0) {
-                  gmn.innerHTML = cmip
-               } else {
-                  gmn.innerHTML = "No Live Games"
-               }
-               if (nxndc != 0) {
-                  nxgn.innerHTML = nxndc
-               } else {
-                  nxgn.innerHTML = "No Games Tomorrow"
-               }
             });
       })
 
