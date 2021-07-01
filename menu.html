@@ -846,7 +846,7 @@
          fixturesApi
             .then((response) => response.json())
             .then((json) => {
-               let r = json.matches, cmip = 0, sif;
+               let r = json.matches, cmip = 0, sif, gst = r;
 
                r = r.filter(function (obj) {
                   return obj.competition !== 'Quantum Cricket League';
@@ -889,8 +889,11 @@
                      ad.setAttribute('class', 'fixture-data')
                      ad.innerHTML = r[e].start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
                      dt[e].appendChild(ad);
-                     console.log(r[e].start)
                   }
+                  const strt = gst[e].start;
+                  console.log(strt.substring(0, 10))
+
+
                }
                const gmn = document.querySelector('#gmn');
                if (cmip != 0) {
