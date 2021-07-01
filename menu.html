@@ -846,7 +846,7 @@
          fixturesApi
             .then((response) => response.json())
             .then((json) => {
-               var r = json.matches, cmip = 0, sif, gst = r, td = new Date(), fixlst = document.querySelector('.sidebar-list-fixtures');
+               var r = json.matches, cmip = 0, nxndc = 0, sif, gst = r, td = new Date(), fixlst = document.querySelector('.sidebar-list-fixtures');
 
                r = r.filter(function (obj) {
                   return obj.competition !== 'Quantum Cricket League';
@@ -898,7 +898,7 @@
                      }
 
                      if (day == gdy && mnt == gmth) {
-
+                        console.log(td.getDay() + 1)
                      }
                   }
                }
@@ -919,14 +919,17 @@
                tgdtd.appendChild(nxdgat);
 
 
-               const gmn = document.querySelector('#gmn');
+               const gmn = document.querySelector('#gmn'), nxgn = document.querySelector('#nxgn')
                if (cmip != 0) {
                   gmn.innerHTML = cmip
                } else {
                   gmn.innerHTML = "No Live Games"
                }
-
-
+               if (nxndc != 0) {
+                  nxgn.innerHTML = nxgn
+               } else {
+                  nxgn.innerHTML = "No Games Tomorrow"
+               }
             });
       })
 
