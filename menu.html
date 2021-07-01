@@ -896,13 +896,11 @@
 
 
                   var day = td.getDate().toString(), mnt = td.getMonth() + 1, gdy = r[e].start.substring(0, 10).split("-").splice(1).reverse().join(" ").substring(0, 2), gmth = r[e].start.substring(0, 10).split("-").splice(1).reverse().join(" ").substring(3, 5)
-                  if (mnt.toString() <= 1) {
-                     mnt = 0 + mnt;
-                     console.log(mnt)
+                  if (mnt.toString().length <= 1) {
+                     mnt = "0" + mnt;
                   }
                   if (day.length <= 1) {
-                     day = 0 + day;
-
+                     day = "0" + day;
                   }
 
 
