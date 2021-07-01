@@ -846,7 +846,7 @@
          fixturesApi
             .then((response) => response.json())
             .then((json) => {
-               var r = json.matches, cmip = 0, sif, gst = r, td = new Date(), fixlst = document.querySelector('.sidebar-list-fixtures');
+               var r = json.matches, cmip = 0, sif, gst = r, td = new Date(), fixlst = document.querySelector('.sidebar-list-fixtures'), sif = document.querySelectorAll('.sidebar-item-fixtures');
 
                r = r.filter(function (obj) {
                   return obj.competition !== 'Quantum Cricket League';
@@ -864,17 +864,12 @@
                   w.style.height = w.contentWindow.document.body.scrollHeight + 'px';
                }, false)
 
-               nxdg = document.createElement('li')
-               nxdg.setAttribute('class', 'sidebar-item-fixtures-demos')
-               fixlst.append(nxdg);
-
                for (e = 0; e < r.length; e++) {
                   if (r[e].status.substring(0, 16) != "Match in Progress") {
                      cmip++
                      nA = document.createElement('li')
                      nA.setAttribute('class', 'sidebar-item-fixtures')
                      fixlst.append(nA);
-                     sif = document.querySelectorAll('.sidebar-item-fixtures');
                      const atr = document.createElement("a");
                      atr.setAttribute('class', 'sidebar-anchor-fixtures')
                      atr.setAttribute('href', '#')
@@ -905,20 +900,16 @@
 
                      }
                   }
-
-
-
-
-
-
-
-
-
-
-
-
-
                }
+               nxdg = document.createElement('li')
+               nxdg.setAttribute('class', 'sidebar-item-fixtures-demo')
+               fixlst.append(nxdg);
+
+
+
+
+
+
                const gmn = document.querySelector('#gmn');
                if (cmip != 0) {
                   gmn.innerHTML = cmip
