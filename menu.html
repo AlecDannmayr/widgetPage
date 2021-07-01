@@ -906,7 +906,7 @@
                nxdgat = document.createElement("p");
                nxdgat.setAttribute('id', 'nxgn')
                tgdtd.appendChild(nxdgat);
-               let e;
+
                for (e = 0; e < r.length; e++) {
                   if (r[e].status.substring(0, 16) == "Match in Progress") {
                      cmip++
@@ -941,6 +941,7 @@
                      }
 
                      if (day == gdy && mnt == gmth) {
+
                         nxndc++
                         todg = document.createElement('li')
                         todg.setAttribute('class', 'sidebar-item-fixtures-today')
@@ -951,7 +952,7 @@
                         tatr.setAttribute('class', 'sidebar-anchor-fixtures')
                         tatr.setAttribute('href', '#')
                         tatr.innerHTML = r[e].name.split("v").join("<br />").split(",")[0];
-                        toi[e].appendChild(tatr);
+                        toi[e].appendChild(atr);
                      }
                   }
                }
