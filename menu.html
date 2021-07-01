@@ -888,14 +888,14 @@
                      sif[e].appendChild(adiv);
                      const dt = document.querySelectorAll('.date-time')
                      at = document.createElement("p");
-                     at.setAttribute('class', 'time')
+                     at.setAttribute('class', 'fixture-time')
                      dt[e].appendChild(at);
+                     n[e].innerHTML = r[e].start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
                      ad = document.createElement("p");
                      ad.setAttribute('class', 'date')
                      dt[e].appendChild(ad);
-                     const gmn = document.querySelector('#gmn'), gt = document.getElementsByClassName('time');
+                     const gmn = document.querySelector('#gmn');
                      gmn.innerHTML = cmip
-                     console.log(sif[e].children);
                   }
 
 
@@ -903,11 +903,11 @@
 
                }
                /* 
-     u[e].innerHTML = r[e].name.split("v").join("<br />").split(",")[0];
-     var tt = r[e].start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
-     rt = r[e].start.split("T")[1].substring(0, 5);
-     q[e].innerHTML = rt;
-     n[e].innerHTML = tt;
+      u[e].innerHTML = r[e].name.split("v").join("<br />").split(",")[0];
+       
+      q[e].innerHTML = r[e].start.split("T")[1].substring(0, 5);
+     
+   
 */
 
             });
