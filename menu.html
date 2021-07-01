@@ -898,6 +898,13 @@
                   gmn.innerHTML = "No Live Games"
                }
 
+
+               r.start.sort(function (a, b) {
+                  // Turn your strings into dates, and then subtract them
+                  // to get a value that is either negative, positive, or zero.
+                  console.log(new Date(b.date) - new Date(a.date));
+               });
+
                const td = new Date()
                console.log(td.getDate())
                console.log(td.getMonth())
