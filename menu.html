@@ -846,7 +846,7 @@
          fixturesApi
             .then((response) => response.json())
             .then((json) => {
-               var r = json.matches, cmip = 0, sif, gst = r, td = new Date()
+               var r = json.matches, cmip = 0, sif, gst = r, td = new Date();
 
                r = r.filter(function (obj) {
                   return obj.competition !== 'Quantum Cricket League';
@@ -891,12 +891,12 @@
                      dt[e].appendChild(ad);
                   }
 
-                  let test = td
-                  console.log(test.substring(7, 14));
+                  console.log(td.getMonth())
 
 
-                  const str = gst[e].start.substring(0, 10).split("-").reverse().join(" ");
 
+                  const str = gst[e].start.substring(0, 10).split("-").splice(1).reverse().join(" ");
+                  console.log(str)
                   //*   console.log(str.split("-").reverse().join(" ")) *//
 
 
