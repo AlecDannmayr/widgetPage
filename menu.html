@@ -886,14 +886,19 @@
                      const adiv = document.createElement("div");
                      adiv.setAttribute('class', 'date-time')
                      sif[e].appendChild(adiv);
-                     const dat = document.querySelectorAll('.date-time')
-                     ap = document.createElement("p");
-                     ap.setAttribute('class', 'time')
-                     dat[e].appendChild(ap);
+                     const dt = document.querySelectorAll('.date-time')
+                     at = document.createElement("p");
+                     at.setAttribute('class', 'time')
+                     dt[e].appendChild(at);
+                     ad = document.createElement("p");
+                     ad.setAttribute('class', 'date')
+                     dt[e].appendChild(ad);
                   }
-
-                  const gmn = document.querySelector('#gmn');
+                  const gmn = document.querySelector('#gmn'), gt = document.getElementsByClassName('time');
                   gmn.innerHTML = cmip
+
+                  console.log(gt[e])
+
                }
                /* 
      u[e].innerHTML = r[e].name.split("v").join("<br />").split(",")[0];
