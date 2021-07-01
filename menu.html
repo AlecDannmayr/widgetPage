@@ -846,7 +846,7 @@
          fixturesApi
             .then((response) => response.json())
             .then((json) => {
-               let r = json.matches, cmip = 0, sif, gst = r, td = new Date();
+               let r = json.matches, cmip = 0, sif, gst = r;
 
                r = r.filter(function (obj) {
                   return obj.competition !== 'Quantum Cricket League';
@@ -891,6 +891,11 @@
                      dt[e].appendChild(ad);
                   }
 
+                  const td = new Date()
+                  console.log(td.getDate())
+                  console.log(td.getMonth())
+
+
                   console.log(td.getDate())
                   console.log(td.getMonth())
 
@@ -906,15 +911,6 @@
                } else {
                   gmn.innerHTML = "No Live Games"
                }
-
-               /*
-                              gst.sort(function (a, b) {
-                                 // Turn your strings into dates, and then subtract them
-                                 // to get a value that is either negative, positive, or zero.
-                                 console.log(new Date(b.date) - new Date(a.date));
-                              });
-                              */
-
 
 
             });
