@@ -908,7 +908,7 @@
                tgdtd.appendChild(nxdgat);
 
                for (e = 0; e < r.length; e++) {
-                  if (r[e].status.substring(0, 16) == "Match in Progress") {
+                  if (r[e].status.substring(0, 16) != "Match in Progress") {
                      cmip++
                      nA = document.createElement('li')
                      nA.setAttribute('class', 'sidebar-item-fixtures')
@@ -939,20 +939,18 @@
                      if (mnt.toString().length <= 1) {
                         mnt = "0" + mnt;
                      }
-                     for (e = 0; e < r.length; e++) {
-                        if (day == gdy && mnt == gmth) {
-                           nxndc++
-                           todg = document.createElement('li')
-                           todg.setAttribute('class', 'sidebar-item-fixtures-today')
-                           fixlst.append(todg);
-                           const toi = document.querySelectorAll('.sidebar-item-fixtures-today');
-                           console.log(toi)
-                           const tatr = document.createElement("a");
-                           tatr.setAttribute('class', 'sidebar-anchor-fixtures')
-                           tatr.setAttribute('href', '#');
-                           tatr.innerHTML = r[e].name.split("v").join("<br />").split(",")[0];
-                           toi[e].appendChild(atr);
-                        }
+                     if (day == gdy && mnt == gmth) {
+                        nxndc++
+                        todg = document.createElement('li')
+                        todg.setAttribute('class', 'sidebar-item-fixtures-today')
+                        fixlst.append(todg);
+                        const toi = document.querySelectorAll('.sidebar-item-fixtures-today');
+                        console.log(toi)
+                        const tatr = document.createElement("a");
+                        tatr.setAttribute('class', 'sidebar-anchor-fixtures')
+                        tatr.setAttribute('href', '#');
+                        tatr.innerHTML = r[e].name.split("v").join("<br />").split(",")[0];
+                        toi[e].appendChild(atr);
                      }
                   }
                }
