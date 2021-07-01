@@ -846,18 +846,11 @@
          fixturesApi
             .then((response) => response.json())
             .then((json) => {
-               let r = json.matches, cmip = 0, sif, gst = r;
+               let r = json.matches, cmip = 0, sif;
 
                r = r.filter(function (obj) {
                   return obj.competition !== 'Quantum Cricket League';
                });
-
-               gst = r.filter(function (str) {
-                  return str.start;
-               });
-
-
-               console.log(str())
 
                document.addEventListener('click', function (event) {
                   if (!event.target.matches('.sidebar-anchor-fixtures')) return;
@@ -896,6 +889,7 @@
                      ad.setAttribute('class', 'fixture-data')
                      ad.innerHTML = r[e].start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
                      dt[e].appendChild(ad);
+                     console.log(r[e].start)
                   }
                }
                const gmn = document.querySelector('#gmn');
