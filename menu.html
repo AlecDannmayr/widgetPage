@@ -891,12 +891,14 @@
                      dt[e].appendChild(ad);
                   }
 
-                  const tdd = td.getDate()
-                  const tmd = td.getMonth()
-
+                  let tdd = td.getDate(), tmd = td.getMonth()
+                  tdd = 24
 
                   const str = gst[e].start.substring(5, 10);
-                  console.log(tdd, str)
+                  if (tdd < 12) {
+                     tdd = tdd + 12;
+                     console.log(tdd)
+                  }
                   //   if (str == )
                   //*   console.log(str.split("-").reverse().join(" ")) *//
 
