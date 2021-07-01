@@ -846,7 +846,7 @@
          fixturesApi
             .then((response) => response.json())
             .then((json) => {
-               let r = json.matches, cmip = 0, sif, gst = r;
+               let r = json.matches, cmip = 0, sif, gst = r, td = new Date();
 
                r = r.filter(function (obj) {
                   return obj.competition !== 'Quantum Cricket League';
@@ -890,8 +890,15 @@
                      ad.innerHTML = r[e].start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
                      dt[e].appendChild(ad);
                   }
-                  const str = gst[e].start.substring(0, 10);
-                  console.log(str)
+
+                  const tdd = td.getDate()
+                  const tmd = td.getMonth()
+
+
+                  const str = gst[e].start.substring(5, 10);
+                  console.log(tdd, str)
+                  //   if (str == )
+                  //*   console.log(str.split("-").reverse().join(" ")) *//
 
 
                }
@@ -909,10 +916,6 @@
                                  console.log(new Date(b.date) - new Date(a.date));
                               });
                               */
-
-               const td = new Date()
-               console.log(td.getDate())
-               console.log(td.getMonth())
 
 
 
