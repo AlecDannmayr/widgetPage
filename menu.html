@@ -894,11 +894,12 @@
 
 
             for (e = 0; e < r.length; e++) {
-               if (r[e].status.substring(1, 17) != "Match in Progress") {
+               console.log(fixlst)
+               if (r[e].status.substring(1, 17) == "Match in Progress") {
                   cmip++
                   nA = document.createElement('li')
                   nA.setAttribute('class', 'sidebar-item-fixtures')
-                  fixlst.append(nA);
+                  fixlst.append(nA);/*
                   sif = document.querySelectorAll('.sidebar-item-fixtures');
                   const atr = document.createElement("a");
                   atr.setAttribute('class', 'sidebar-anchor-fixtures')
@@ -917,6 +918,7 @@
                   ad.setAttribute('class', 'fixture-data')
                   ad.innerHTML = r[e].start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
                   dt[e].appendChild(ad);
+                  */
                }
             }
             /*
