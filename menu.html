@@ -846,7 +846,7 @@
          fixturesApi
             .then((response) => response.json())
             .then((json) => {
-               let r = json.matches, cmip = 0, sif;
+               let r = json.matches, cmip = 0, sif, gst = r;
 
                r = r.filter(function (obj) {
                   return obj.competition !== 'Quantum Cricket League';
@@ -890,6 +890,7 @@
                      ad.innerHTML = r[e].start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
                      dt[e].appendChild(ad);
                   }
+                  console.log(gst[e])
                }
                const gmn = document.querySelector('#gmn');
                if (cmip != 0) {
@@ -898,12 +899,13 @@
                   gmn.innerHTML = "No Live Games"
                }
 
-
-               r.start.sort(function (a, b) {
-                  // Turn your strings into dates, and then subtract them
-                  // to get a value that is either negative, positive, or zero.
-                  console.log(new Date(b.date) - new Date(a.date));
-               });
+               /*
+                              gst.sort(function (a, b) {
+                                 // Turn your strings into dates, and then subtract them
+                                 // to get a value that is either negative, positive, or zero.
+                                 console.log(new Date(b.date) - new Date(a.date));
+                              });
+                              */
 
                const td = new Date()
                console.log(td.getDate())
