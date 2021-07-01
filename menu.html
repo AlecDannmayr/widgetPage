@@ -882,19 +882,20 @@
                      const atr = document.createElement("a");
                      atr.setAttribute('class', 'sidebar-anchor-fixtures')
                      atr.setAttribute('href', '#')
+
                      sif[e].appendChild(atr);
                      const adiv = document.createElement("div");
                      adiv.setAttribute('class', 'date-time')
                      sif[e].appendChild(adiv);
                      const dt = document.querySelectorAll('.date-time')
                      at = document.createElement("p");
-                     at.setAttribute('class', 'fixture-time')
+                     at.setAttribute('class', 'fixture-time').innerHTML = r[e].start.split("T")[1].substring(0, 5) + "&nbsp&nbsp";
                      dt[e].appendChild(at);
-                     q[e].innerHTML = r[e].start.split("T")[1].substring(0, 5) + "&nbsp&nbsp";
                      ad = document.createElement("p");
                      ad.setAttribute('class', 'fixture-data')
+                     ad].innerHTML = r[e].start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
                      dt[e].appendChild(ad);
-                     n[e].innerHTML = r[e].start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
+
                      const gmn = document.querySelector('#gmn');
                      gmn.innerHTML = cmip
                   }
