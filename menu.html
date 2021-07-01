@@ -914,24 +914,29 @@
                      nA.setAttribute('class', 'sidebar-item-fixtures')
                      fixlst.append(nA);
                      sif = document.querySelectorAll('.sidebar-item-fixtures');
-                     const atr = document.createElement("a");
-                     atr.setAttribute('class', 'sidebar-anchor-fixtures')
-                     atr.setAttribute('href', '#')
-                     atr.innerHTML = r[e].name.split("v").join("<br />").split(",")[0];
-                     sif[e].appendChild(atr);
-                     const adiv = document.createElement("div");
-                     adiv.setAttribute('class', 'date-time')
-                     sif[e].appendChild(adiv);
-                     const dt = document.querySelectorAll('.date-time')
-                     at = document.createElement("p");
-                     at.setAttribute('class', 'fixture-time')
-                     at.innerHTML = r[e].start.split("T")[1].substring(0, 5) + "&nbsp&nbsp";
-                     dt[e].appendChild(at);
-                     ad = document.createElement("p");
-                     ad.setAttribute('class', 'fixture-data')
-                     ad.innerHTML = r[e].start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
-                     dt[e].appendChild(ad);
-                  } else {
+                     for (eo = 0; eo < sif.length; eo++) {
+                        const atr = document.createElement("a");
+                        atr.setAttribute('class', 'sidebar-anchor-fixtures')
+                        atr.setAttribute('href', '#')
+                        atr.innerHTML = r[e].name.split("v").join("<br />").split(",")[0];
+                        sif[e].appendChild(atr);
+                        const adiv = document.createElement("div");
+                        adiv.setAttribute('class', 'date-time')
+                        sif[e].appendChild(adiv);
+                        const dt = document.querySelectorAll('.date-time')
+                        at = document.createElement("p");
+                        at.setAttribute('class', 'fixture-time')
+                        at.innerHTML = r[e].start.split("T")[1].substring(0, 5) + "&nbsp&nbsp";
+                        dt[e].appendChild(at);
+                        ad = document.createElement("p");
+                        ad.setAttribute('class', 'fixture-data')
+                        ad.innerHTML = r[e].start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
+                        dt[e].appendChild(ad);
+                     }
+
+
+                     console.log(r[e].status.substring(0, 14) == "Match Scheduled")
+                  } else if (r[e].status.substring(0, 14) == "Match Scheduled") {
                      var day = td.getDate().toString(), mnt = td.getMonth() + 1, gdy = r[e].start.substring(0, 10).split("-").splice(1).reverse().join(" ").substring(0, 2), gmth = r[e].start.substring(0, 10).split("-").splice(1).reverse().join(" ").substring(3, 5)
                      if (day.length <= 1) {
                         day = "0" + day;
