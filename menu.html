@@ -889,6 +889,22 @@
                      break;
                }
 
+               nxdg = document.createElement('li')
+               nxdg.setAttribute('class', 'sidebar-item-fixtures-demo')
+               fixlst.append(nxdg);
+               const sifxl = document.getElementsByClassName('sidebar-item-fixtures-demo')[2], nxdga = document.createElement("a");
+               nxdga.setAttribute('class', 'sidebar-anchor-fixtures')
+               nxdga.setAttribute('href', '#')
+               nxdga.innerHTML = "Games Today:"
+               sifxl.appendChild(nxdga);
+               dntat = document.createElement("div");
+               dntat.setAttribute('class', 'date-time-demo')
+               sifxl.append(dntat);
+               const tgdtd = document.getElementsByClassName('date-time-demo')[2]
+               nxdgat = document.createElement("p");
+               nxdgat.setAttribute('id', 'nxgn')
+               tgdtd.appendChild(nxdgat);
+
                for (e = 0; e < r.length; e++) {
                   if (r[e].status.substring(0, 16) == "Match in Progress") {
                      cmip++
@@ -924,25 +940,13 @@
 
                      if (day == gdy && mnt == gmth) {
                         nxndc++
-                        console.log(r[e])
+                        todg = document.createElement('li')
+                        todg.setAttribute('class', 'sidebar-item-fixtures')
+                        fixlst.append(todg);
                      }
                   }
                }
-               nxdg = document.createElement('li')
-               nxdg.setAttribute('class', 'sidebar-item-fixtures-demo')
-               fixlst.append(nxdg);
-               const sifxl = document.getElementsByClassName('sidebar-item-fixtures-demo')[2], nxdga = document.createElement("a");
-               nxdga.setAttribute('class', 'sidebar-anchor-fixtures')
-               nxdga.setAttribute('href', '#')
-               nxdga.innerHTML = "Tomorrows Games:"
-               sifxl.appendChild(nxdga);
-               dntat = document.createElement("div");
-               dntat.setAttribute('class', 'date-time-demo')
-               sifxl.append(dntat);
-               const tgdtd = document.getElementsByClassName('date-time-demo')[2]
-               nxdgat = document.createElement("p");
-               nxdgat.setAttribute('id', 'nxgn')
-               tgdtd.appendChild(nxdgat);
+
 
 
                const gmn = document.querySelector('#gmn'), nxgn = document.querySelector('#nxgn')
