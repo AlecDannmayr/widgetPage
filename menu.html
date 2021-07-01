@@ -505,7 +505,7 @@
          width: calc(100% - 270px);
          position: fixed;
          top: 0;
-         z-index: 2;
+         z-index: 10;
          left: 0;
          background-color: #12232E;
          overflow: auto;
@@ -916,7 +916,8 @@
                      ad.setAttribute('class', 'fixture-data')
                      ad.innerHTML = r[e].start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
                      dt[e].appendChild(ad);
-                     console.log(r[e].status.substring(0, 14) == "Match Scheduled")
+
+
                   } else {
                      var day = td.getDate().toString(), mnt = td.getMonth() + 1, gdy = r[e].start.substring(0, 10).split("-").splice(1).reverse().join(" ").substring(0, 2), gmth = r[e].start.substring(0, 10).split("-").splice(1).reverse().join(" ").substring(3, 5)
                      if (day.length <= 1) {
@@ -940,6 +941,19 @@
                            tatr.setAttribute('href', '#');
                            tatr.innerHTML = r[e].name.split("v").join("<br />").split(",")[0];
                            toi[ee].appendChild(tatr);
+                           const tgdnt = document.createElement("div");
+                           tgdnt.setAttribute('class', 'date-time')
+                           toi[ee].append(tgdnt);
+                           const tdt = document.querySelectorAll('.date-time')
+                           tat = document.createElement("p");
+                           tat.setAttribute('class', 'fixture-time')
+                           tat.innerHTML = r[ee].start.split("T")[1].substring(0, 5) + "&nbsp&nbsp";
+                           tdt[ee].appendChild(tat);
+                           tatt = document.createElement("p");
+                           tatt.setAttribute('class', 'fixture-data')
+                           tatt.innerHTML = r[ee].start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
+                           tdt[ee].appendChild(tatt);
+
                         }
                      }
                   }
