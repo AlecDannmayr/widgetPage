@@ -908,7 +908,7 @@
                tgdtd.appendChild(nxdgat);
 
                for (e = 0; e < r.length; e++) {
-                  if (r[e].status.substring(0, 16) != "Match in Progress") {
+                  if (r[e].status.substring(0, 16) == "Match in Progress") {
                      cmip++
                      nA = document.createElement('li')
                      nA.setAttribute('class', 'sidebar-item-fixtures')
@@ -951,6 +951,7 @@
                         tatr.setAttribute('href', '#');
                         tatr.innerHTML = r[e].name.split("v").join("<br />").split(",")[0];
                         toi[e].appendChild(atr);
+                        console.log(r[e])
                      }
                   }
                }
