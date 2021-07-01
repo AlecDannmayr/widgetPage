@@ -891,12 +891,15 @@
                      dt[e].appendChild(ad);
                   }
 
-                  console.log(td.getMonth())
+                  console.log(td.getMonth() + 1)
 
 
 
                   const str = gst[e].start.substring(0, 10).split("-").splice(1).reverse().join(" ");
-                  console.log(str)
+                  if (str.charAt(0) == 0) {
+                     console.log(str)
+                  }
+
                   //*   console.log(str.split("-").reverse().join(" ")) *//
 
 
