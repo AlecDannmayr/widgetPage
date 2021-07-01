@@ -908,7 +908,7 @@
                tgdtd.appendChild(nxdgat);
 
                for (e = 0; e < r.length; e++) {
-                  if (r[e].status.substring(0, 16) == "Match in Progress") {
+                  if (r[e].status.substring(0, 16) != "Match in Progress") {
                      cmip++
                      nA = document.createElement('li')
                      nA.setAttribute('class', 'sidebar-item-fixtures')
@@ -931,9 +931,7 @@
                      ad.setAttribute('class', 'fixture-data')
                      ad.innerHTML = r[e].start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
                      dt[e].appendChild(ad);
-                  }
-
-                  if (r[e].status.substring(0, 14) == "Match Scheduled") {
+                  } else {
                      console.log("match in progress")
 
                      var day = td.getDate().toString(), mnt = td.getMonth() + 1, gdy = r[e].start.substring(0, 10).split("-").splice(1).reverse().join(" ").substring(0, 2), gmth = r[e].start.substring(0, 10).split("-").splice(1).reverse().join(" ").substring(3, 5)
@@ -948,13 +946,14 @@
                         todg = document.createElement('li')
                         todg.setAttribute('class', 'sidebar-item-fixtures-today')
                         fixlst.append(todg);
+                        /*
                         const toi = document.querySelectorAll('.sidebar-item-fixtures-today');
                         console.log(toi)
                         const tatr = document.createElement("a");
                         tatr.setAttribute('class', 'sidebar-anchor-fixtures')
                         tatr.setAttribute('href', '#');
-                        tatr.innerHTML = r[e].name.split("v").join("<br />").split(",")[0];
                         toi.appendChild(tatr);
+                        */
                      }
                   }
                }
