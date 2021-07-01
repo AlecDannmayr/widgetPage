@@ -891,21 +891,7 @@
                      break;
                }
 
-               nxdg = document.createElement('li')
-               nxdg.setAttribute('class', 'sidebar-item-fixtures-demo')
-               fixlst.append(nxdg);
-               const sifxl = document.getElementsByClassName('sidebar-item-fixtures-demo')[2], nxdga = document.createElement("a");
-               nxdga.setAttribute('class', 'sidebar-anchor-fixtures')
-               nxdga.setAttribute('href', '#')
-               nxdga.innerHTML = "Games Today:"
-               sifxl.appendChild(nxdga);
-               dntat = document.createElement("div");
-               dntat.setAttribute('class', 'date-time-demo')
-               sifxl.append(dntat);
-               const tgdtd = document.getElementsByClassName('date-time-demo')[2]
-               nxdgat = document.createElement("p");
-               nxdgat.setAttribute('id', 'nxgn')
-               tgdtd.appendChild(nxdgat);
+
 
                for (e = 0; e < r.length; e++) {
                   if (r[e].status.substring(0, 16) != "Match in Progress") {
@@ -932,28 +918,43 @@
                      ad.innerHTML = r[e].start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
                      dt[e].appendChild(ad);
                   }
-                  if (r[e].status.substring(0, 15) == "Match Scheduled") {
-                     var day = td.getDate().toString(), mnt = td.getMonth() + 1, gdy = r[e].start.substring(0, 10).split("-").splice(1).reverse().join(" ").substring(0, 2), gmth = r[e].start.substring(0, 10).split("-").splice(1).reverse().join(" ").substring(3, 5)
-                     if (day.length <= 1) {
-                        day = "0" + day;
-                     }
-                     if (mnt.toString().length <= 1) {
-                        mnt = "0" + mnt;
-                     }
-                     if (day == gdy && mnt == gmth) {
-                        console.log("match in progress")
-                        nxndc++
-                        todg = document.createElement('li')
-                        todg.setAttribute('class', 'sidebar-item-fixtures-today')
-                        fixlst.append(todg);
+               }
+               nxdg = document.createElement('li')
+               nxdg.setAttribute('class', 'sidebar-item-fixtures-demo')
+               fixlst.append(nxdg);
+               const sifxl = document.getElementsByClassName('sidebar-item-fixtures-demo')[2], nxdga = document.createElement("a");
+               nxdga.setAttribute('class', 'sidebar-anchor-fixtures')
+               nxdga.setAttribute('href', '#')
+               nxdga.innerHTML = "Games Today:"
+               sifxl.appendChild(nxdga);
+               dntat = document.createElement("div");
+               dntat.setAttribute('class', 'date-time-demo')
+               sifxl.append(dntat);
+               const tgdtd = document.getElementsByClassName('date-time-demo')[2]
+               nxdgat = document.createElement("p");
+               nxdgat.setAttribute('id', 'nxgn')
+               tgdtd.appendChild(nxdgat);
 
-                        const toi = document.querySelectorAll('.sidebar-item-fixtures-today');
-                        const tatr = document.createElement("a");
-                        tatr.setAttribute('class', 'sidebar-anchor-fixtures')
-                        tatr.setAttribute('href', '#');
-                        toi.appendChild(tatr);
+               if (r[e].status.substring(0, 15) == "Match Scheduled") {
+                  var day = td.getDate().toString(), mnt = td.getMonth() + 1, gdy = r[e].start.substring(0, 10).split("-").splice(1).reverse().join(" ").substring(0, 2), gmth = r[e].start.substring(0, 10).split("-").splice(1).reverse().join(" ").substring(3, 5)
+                  if (day.length <= 1) {
+                     day = "0" + day;
+                  }
+                  if (mnt.toString().length <= 1) {
+                     mnt = "0" + mnt;
+                  }
+                  if (day == gdy && mnt == gmth) {
+                     console.log("match in progress")
+                     nxndc++
+                     todg = document.createElement('li')
+                     todg.setAttribute('class', 'sidebar-item-fixtures-today')
+                     fixlst.append(todg);
 
-                     }
+                     const toi = document.querySelectorAll('.sidebar-item-fixtures-today');
+                     const tatr = document.createElement("a");
+                     tatr.setAttribute('class', 'sidebar-anchor-fixtures')
+                     tatr.setAttribute('href', '#');
+
                   }
                }
 
