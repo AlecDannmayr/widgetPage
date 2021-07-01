@@ -846,7 +846,7 @@
          fixturesApi
             .then((response) => response.json())
             .then((json) => {
-               var r = json.matches, cmip = 0, sif, gst = r, td = new Date();
+               var r = json.matches, cmip = 0, sif, gst = r, td = new Date(), fixlst = document.querySelector('.sidebar-list-fixtures');
 
                r = r.filter(function (obj) {
                   return obj.competition !== 'Quantum Cricket League';
@@ -864,10 +864,13 @@
                   w.style.height = w.contentWindow.document.body.scrollHeight + 'px';
                }, false)
 
+               nxdg = document.createElement('li')
+               nxdg.setAttribute('class', 'sidebar-item-fixtures-demos')
+               fixlst.append(nxdg);
+
                for (e = 0; e < r.length; e++) {
-                  if (r[e].status.substring(0, 16) == "Match in Progress") {
+                  if (r[e].status.substring(0, 16) != "Match in Progress") {
                      cmip++
-                     const fixlst = document.querySelector('.sidebar-list-fixtures');
                      nA = document.createElement('li')
                      nA.setAttribute('class', 'sidebar-item-fixtures')
                      fixlst.append(nA);
