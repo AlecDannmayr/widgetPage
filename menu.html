@@ -846,7 +846,7 @@
          fixturesApi
             .then((response) => response.json())
             .then((json) => {
-               var r = json.matches, cmip = 0, sif, gst = r;
+               var r = json.matches, cmip = 0, sif, gst = r, td = new Date()
 
                r = r.filter(function (obj) {
                   return obj.competition !== 'Quantum Cricket League';
@@ -890,6 +890,15 @@
                      ad.innerHTML = r[e].start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
                      dt[e].appendChild(ad);
                   }
+
+                  console.log(td)
+
+
+
+                  const str = gst[e].start.substring(0, 10);
+                  console.log(str)
+                  //*   console.log(str.split("-").reverse().join(" ")) *//
+
 
                }
                const gmn = document.querySelector('#gmn');
