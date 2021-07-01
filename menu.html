@@ -526,7 +526,8 @@
       }
 
       .sidebar-item-fixtures:not(:first-child),
-      .sidebar-item-fixtures-demo {
+      .sidebar-item-fixtures-demo,
+      .sidebar-item-fixtures-today {
          padding: 0px 14px 0px 14px;
          padding-top: 8px;
          cursor: pointer;
@@ -579,7 +580,8 @@
       }
 
       .sidebar-item-fixtures,
-      .sidebar-item-fixtures-demo {
+      .sidebar-item-fixtures-demo,
+      .sidebar-item-fixtures-today {
          color: #fff;
          font-size: 10px;
       }
@@ -939,15 +941,14 @@
                      }
 
                      if (day == gdy && mnt == gmth) {
+                        console.log(r[e])
                         nxndc++
                         todg = document.createElement('li')
-                        todg.setAttribute('class', 'sidebar-item-fixtures')
+                        todg.setAttribute('class', 'sidebar-item-fixtures-today')
                         fixlst.append(todg);
-                        sift = document.querySelectorAll('.sidebar-item-fixtures');
-                        const atrt = document.createElement("a");
-                        atrt.setAttribute('class', 'sidebar-anchor-fixtures')
-                        atrt.setAttribute('href', '#')
-                        sift[e].appendChild(atrt);
+                        toi = document.querySelectorAll('.sidebar-item-fixtures-today');
+                        console.log(toi[e])
+
                      }
                   }
                }
