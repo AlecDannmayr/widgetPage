@@ -853,7 +853,9 @@
                var r = json.matches,
                   s = document.getElementsByClassName("sidebar-anchor-fixtures"),
                   n = document.getElementsByClassName("fixture-data"),
-                  q = document.getElementsByClassName("fixture-time"), cmip = 0;
+                  q = document.getElementsByClassName("fixture-time"),
+                  sif = document.querySelectorAll('.sidebar-item-fixtures'),
+                  cmip = 0;
 
                r = r.filter(function (obj) {
                   return obj.competition !== 'Quantum Cricket League';
@@ -878,7 +880,6 @@
                      nA = document.createElement('li')
                      nA.setAttribute('class', 'sidebar-item-fixtures')
                      fixlst.append(nA)
-                     const sif = document.querySelectorAll('.sidebar-item-fixtures');
                      const atr = document.createElement("a");
                      atr.setAttribute('class', 'sidebar-anchor-fixtures')
                      atr.setAttribute('href', '#')
@@ -897,7 +898,8 @@
                   const gmn = document.querySelector('#gmn'), gt = document.getElementsByClassName('time');
                   gmn.innerHTML = cmip
 
-                  console.log(gt[e])
+
+                  console.log(sif);
 
                }
                /* 
