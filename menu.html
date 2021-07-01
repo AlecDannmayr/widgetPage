@@ -865,7 +865,7 @@
                }, false)
 
                for (e = 0; e < r.length; e++) {
-                  if (r[e].status.substring(0, 17) == "Match in Progress") {
+                  if (r[e].status.substring(0, 17) != "Match in Progress") {
                      cmip++
                      const fixlst = document.querySelector('.sidebar-list-fixtures');
                      nA = document.createElement('li')
@@ -874,8 +874,8 @@
                      sif = document.querySelectorAll('.sidebar-item-fixtures');
                      const atr = document.createElement("a");
                      atr.setAttribute('class', 'sidebar-anchor-fixtures')
-                     atr.innerHTML = r[e].name.split("v").join("<br />").split(",")[0];
                      atr.setAttribute('href', '#')
+
                      sif[e].appendChild(atr);
                      const adiv = document.createElement("div");
                      adiv.setAttribute('class', 'date-time')
@@ -889,6 +889,7 @@
                      ad.setAttribute('class', 'fixture-data')
                      ad.innerHTML = r[e].start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
                      dt[e].appendChild(ad);
+                     atr.innerHTML = r[e].name.split("v").join("<br />").split(",")[0];
                   }
 
                   const td = new Date()
