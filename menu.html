@@ -865,14 +865,13 @@
                }, false)
 
                for (e = 0; e < r.length; e++) {
-                  if (r[e].status.substring(0, 17) != "Match in Progress") {
+                  if (r[e].status.substring(0, 16) != "Match in Progress") {
                      cmip++
                      const fixlst = document.querySelector('.sidebar-list-fixtures');
-                     sif = document.querySelectorAll('.sidebar-item-fixtures');
                      nA = document.createElement('li')
                      nA.setAttribute('class', 'sidebar-item-fixtures')
-                     fixlst.append(nA)
-
+                     fixlst.append(nA);
+                     sif = document.querySelectorAll('.sidebar-item-fixtures');
                      const atr = document.createElement("a");
                      atr.setAttribute('class', 'sidebar-anchor-fixtures')
                      atr.setAttribute('href', '#')
