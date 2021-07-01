@@ -846,7 +846,7 @@
          fixturesApi
             .then((response) => response.json())
             .then((json) => {
-               var r = json.matches, cmip = 0, sif, gst = r, td = new Date(), fixlst = document.querySelector('.sidebar-list-fixtures'), sif = document.querySelectorAll('.sidebar-item-fixtures');
+               var r = json.matches, cmip = 0, sif, gst = r, td = new Date(), fixlst = document.querySelector('.sidebar-list-fixtures');
 
                r = r.filter(function (obj) {
                   return obj.competition !== 'Quantum Cricket League';
@@ -870,6 +870,7 @@
                      nA = document.createElement('li')
                      nA.setAttribute('class', 'sidebar-item-fixtures')
                      fixlst.append(nA);
+                     sif = document.querySelectorAll('.sidebar-item-fixtures');
                      const atr = document.createElement("a");
                      atr.setAttribute('class', 'sidebar-anchor-fixtures')
                      atr.setAttribute('href', '#')
@@ -904,7 +905,10 @@
                nxdg = document.createElement('li')
                nxdg.setAttribute('class', 'sidebar-item-fixtures-demo')
                fixlst.append(nxdg);
-
+               const nxdga = document.createElement("a");
+               nxdga.setAttribute('class', 'sidebar-anchor-fixtures')
+               nxdga.setAttribute('href', '#')
+               sif[e].appendChild(nxdga);
 
 
 
