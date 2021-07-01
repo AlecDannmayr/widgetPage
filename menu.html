@@ -848,7 +848,7 @@
          fixturesApi
             .then((response) => response.json())
             .then((json) => {
-               var r = json.matches, cmip = 0, nxndc = 0, sif, gst = r, td = new Date(), fixlst = document.querySelector('.sidebar-list-fixtures');
+               var r = json.matches, cmip = 0, nxndc = 0, sif, gst = r, td = new Date();
 
                r = r.filter(function (obj) {
                   return obj.competition !== 'Quantum Cricket League';
@@ -894,11 +894,12 @@
 
 
                for (e = 0; e < r.length; e++) {
-                  if (r[e].status.substring(0, 17) == "Match in Progress") {
+                  if (r[e].status.substring(1, 17) == "Match in Progress") {
+                     fixlst = document.querySelector('.sidebar-list-fixtures');
                      cmip++
                      nA = document.createElement('li')
                      nA.setAttribute('class', 'sidebar-item-fixtures')
-                     fixlst.append(nA);
+                     fixlst[e].append(nA);
                      sif = document.querySelectorAll('.sidebar-item-fixtures');
                      const atr = document.createElement("a");
                      atr.setAttribute('class', 'sidebar-anchor-fixtures')
