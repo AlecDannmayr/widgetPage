@@ -864,6 +864,31 @@
                   w.style.height = w.contentWindow.document.body.scrollHeight + 'px';
                }, false)
 
+               let dotw = td.getDay(), dyw;
+               switch (dotw) {
+                  case 1:
+                     dyw = "Monday"
+                     break;
+                  case 2:
+                     dyw = "Tuesday"
+                     break;
+                  case 3:
+                     dyw = "Wednesday"
+                     break;
+                  case 4:
+                     dyw = "Thursday"
+                     break;
+                  case 5:
+                     dyw = "Friday"
+                     break;
+                  case 6:
+                     dyw = "Saturday"
+                     break;
+                  case 7:
+                     dyw = "Sunday"
+                     break;
+               }
+
                for (e = 0; e < r.length; e++) {
                   if (r[e].status.substring(0, 16) == "Match in Progress") {
                      cmip++
@@ -898,31 +923,7 @@
                      }
 
                      if (day == gdy && mnt == gmth) {
-                        let dotw = td.getDay(), dyw;
-                        switch (dotw) {
-                           case 1:
-                              dyw = "Monday"
-                              break;
-                           case 2:
-                              dyw = "Tuesday"
-                              break;
-                           case 3:
-                              dyw = "Wednesday"
-                              break;
-                           case 4:
-                              dyw = "Thursday"
-                              break;
-                           case 5:
-                              dyw = "Friday"
-                              break;
-                           case 6:
-                              dyw = "Saturday"
-                              break;
-                           case 7:
-                              dyw = "Sunday"
-                              break;
-                        }
-                        console.log(dyw)
+                        console.log(r[e])
                      }
                   }
                }
