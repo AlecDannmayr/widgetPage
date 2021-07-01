@@ -894,7 +894,8 @@
 
 
             for (e = 0; e < r.length; e++) {
-               if (r[e].status.substring(1, 17) != "Match in Progress") {
+               console.log(r[e].status == "Match in Progress - Match Stable (est.latency:3 seconds)")
+               if (r[e].status.substring(0, 16) == "Match in Progress") {
                   cmip++
                   nA = document.createElement('li')
                   nA.setAttribute('class', 'sidebar-item-fixtures')
