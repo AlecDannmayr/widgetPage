@@ -898,31 +898,31 @@
                      }
 
                      if (day == gdy && mnt == gmth) {
-                        const dotw = td.getDay() + 1;
+                        let dotw = td.getDay(), dyw;
                         switch (dotw) {
                            case 1:
-                              console.log("day 1")
+                              dyw = "Monday"
                               break;
                            case 2:
-                              console.log("day 2")
+                              dyw = "Tuesday"
                               break;
                            case 3:
-                              console.log("day 3")
+                              dyw = "Wednesday"
                               break;
                            case 4:
-                              console.log("day 4")
+                              dyw = "Thursday"
                               break;
                            case 5:
-                              console.log("day 5")
+                              dyw = "Friday"
                               break;
                            case 6:
-                              console.log("day 6")
+                              dyw = "Saturday"
                               break;
                            case 7:
-                              console.log("day 7")
+                              dyw = "Sunday"
                               break;
-
                         }
+                        console.log(dyw)
                      }
                   }
                }
