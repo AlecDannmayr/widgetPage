@@ -839,7 +839,7 @@
       </div>
 
    </div>
-   <script>var fixturesApi = fetch("http://feed.decimalcricket.com/api/match/list", { method: "GET", headers: { "x-api-key": "decimaltest", "Content-Type": "application/json" } });
+   <script>var fixturesApi = { method: "GET", headers: { "x-api-key": "decimaltest", "Content-Type": "application/json" } });
 
       window.addEventListener('load', function () {
          var ee = document.getElementById('loading-screen'),
@@ -892,21 +892,12 @@
             }
 
 
-
+            console.log(r)
             for (e = 0; e < r.length; e++) {
 
-               if (r[e].status.substring(0, 17) != "Match in Progress") {
-                  cmip++
-                  nA = document.createElement('li')
-                  nA.setAttribute('class', 'sidebar-item-fixtures')
-                  fixlst.append(nA);
+               if (r[e].status.substring(0, 17) == "Match in Progress") {
 
-                  var sif = document.querySelectorAll('.sidebar-item-fixtures'), atr = document.createElement("a");
-                  atr.setAttribute('class', 'sidebar-anchor-fixtures')
-                  atr.setAttribute('href', '#')
-                  atr.innerHTML = r[e].name.split("v").join("<br />").split(",")[0];
-                  sif[e].appendChild(atr);
-                  console.log(sif[e])
+                  console.log("Game on")
                   /*
                const adiv = document.createElement("div");
                adiv.setAttribute('class', 'date-time')
