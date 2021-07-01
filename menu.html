@@ -872,7 +872,7 @@
                }, false)
 
                for (e = 0; e < r.length; e++) {
-                  if (r[e].status.substring(0, 17) == "Match in Progress") {
+                  if (r[e].status.substring(0, 17) != "Match in Progress") {
                      cmip++
                      const fixlst = document.querySelector('.sidebar-list-fixtures');
                      nA = document.createElement('li')
