@@ -906,13 +906,14 @@
                tgdtd.appendChild(nxdgat);
 
                for (e = 0; e < r.length; e++) {
-                  if (r[e].status.substring(0, 16) == "Match in Progress") {
+                  sif = document.querySelectorAll('.sidebar-item-fixtures');
+                  const atr = document.createElement("a");
+                  if (r[e].status.substring(0, 16) != "Match in Progress") {
                      cmip++
                      nA = document.createElement('li')
                      nA.setAttribute('class', 'sidebar-item-fixtures')
                      fixlst.append(nA);
-                     sif = document.querySelectorAll('.sidebar-item-fixtures');
-                     const atr = document.createElement("a");
+                     atr
                      atr.setAttribute('class', 'sidebar-anchor-fixtures')
                      atr.setAttribute('href', '#')
                      atr.innerHTML = r[e].name.split("v").join("<br />").split(",")[0];
@@ -943,6 +944,7 @@
                         todg = document.createElement('li')
                         todg.setAttribute('class', 'sidebar-item-fixtures')
                         fixlst.append(todg);
+
                      }
                   }
                }
