@@ -905,11 +905,12 @@
                nxdg = document.createElement('li')
                nxdg.setAttribute('class', 'sidebar-item-fixtures-demo')
                fixlst.append(nxdg);
+               const sifxl = document.getElementsByClassName('sidebar-item-fixtures-demo')[2]
                const nxdga = document.createElement("a");
                nxdga.setAttribute('class', 'sidebar-anchor-fixtures')
                nxdga.setAttribute('href', '#')
-               sif[e].appendChild(nxdga);
-
+               nxdga.innerHTML = "Tomorrows Games:"
+               sifxl.appendChild(nxdga);
 
 
 
