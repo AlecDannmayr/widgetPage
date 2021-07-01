@@ -892,26 +892,26 @@
             }
 
 
-            console.log(r)
+
             for (e = 0; e < r.length; e++) {
 
                if (r[e].status.substring(0, 17) == "Match in Progress") {
 
                   console.log("Game on")
-                  /*
-               const adiv = document.createElement("div");
-               adiv.setAttribute('class', 'date-time')
-               sif[e].appendChild(adiv);
-               const dt = document.querySelectorAll('.date-time')
-               at = document.createElement("p");
-               at.setAttribute('class', 'fixture-time')
-               at.innerHTML = r[e].start.split("T")[1].substring(0, 5) + "&nbsp&nbsp";
-               dt[e].appendChild(at);
-               ad = document.createElement("p");
-               ad.setAttribute('class', 'fixture-data')
-               ad.innerHTML = r[e].start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
-               dt[e].appendChild(ad);
-                 */
+
+                  const adiv = document.createElement("div");
+                  adiv.setAttribute('class', 'date-time')
+                  sif[e].appendChild(adiv);
+                  const dt = document.querySelectorAll('.date-time')
+                  at = document.createElement("p");
+                  at.setAttribute('class', 'fixture-time')
+                  at.innerHTML = r[e].start.split("T")[1].substring(0, 5) + "&nbsp&nbsp";
+                  dt[e].appendChild(at);
+                  ad = document.createElement("p");
+                  ad.setAttribute('class', 'fixture-data')
+                  ad.innerHTML = r[e].start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
+                  dt[e].appendChild(ad);
+
                }
             }
             /*
