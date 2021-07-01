@@ -839,7 +839,7 @@
       </div>
 
    </div>
-   <script>var fixturesApi = { method: "GET", headers: { "x-api-key": "decimaltest", "Content-Type": "application/json" } });
+   <script>var fixturesApi = fetch("http://feed.decimalcricket.com/api/match/list", { method: "GET", headers: { "x-api-key": "decimaltest", "Content-Type": "application/json" } });
 
       window.addEventListener('load', function () {
          var ee = document.getElementById('loading-screen'),
