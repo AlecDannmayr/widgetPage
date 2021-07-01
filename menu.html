@@ -6,9 +6,6 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    <title>Widgets </title>
-   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-   <meta http-equiv="Pragma" content="no-cache" />
-   <meta http-equiv="Expires" content="0" />
    <style>
       @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
@@ -750,7 +747,7 @@
             </li>
             <li class="sidebar-item-fixtures-demo"><a href="#" class="sidebar-demo-fixture">Live Games:</a>
                <div class="date-time-demo">
-                  <p id="gmn">DEMO</p>
+                  <p id="gmn"></p>
                </div>
             </li>
          </ul>
@@ -840,8 +837,6 @@
       </div>
 
    </div>
-
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    <script>var fixturesApi = fetch("http://feed.decimalcricket.com/api/match/list", { method: "GET", headers: { "x-api-key": "decimaltest", "Content-Type": "application/json" } });
 
       window.addEventListener('load', function () {
