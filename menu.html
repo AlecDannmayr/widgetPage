@@ -891,15 +891,18 @@
                      dt[e].appendChild(ad);
                   }
 
-                  console.log(td.getMonth() + 1)
 
 
 
-                  const str = gst[e].start.substring(0, 10).split("-").splice(1).reverse().join(" "), strdy = str.substring(2, 5);
-                  if (str.charAt(0) == 0) {
+
+                  const day = td.getDay(), mnt = td.getMonth() + 1, str = gst[e].start.substring(0, 10).split("-").splice(1).reverse().join(" "), strdy = str.substring(2, 5), stda = str.substring(0, 1);
+                  if (strdy == mnt && day == stda) {
+                     console.log("Same Month, and same day")
                   }
 
-                  console.log(strdy)
+
+
+                  console.log(td.getDay())
 
                   //*   console.log(str.split("-").reverse().join(" ")) *//
 
