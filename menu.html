@@ -906,7 +906,7 @@
                nxdgat = document.createElement("p");
                nxdgat.setAttribute('id', 'nxgn')
                tgdtd.appendChild(nxdgat);
-
+               let e;
                for (e = 0; e < r.length; e++) {
                   if (r[e].status.substring(0, 16) == "Match in Progress") {
                      cmip++
@@ -946,11 +946,12 @@
                         todg.setAttribute('class', 'sidebar-item-fixtures-today')
                         fixlst.append(todg);
                         const toi = document.querySelectorAll('.sidebar-item-fixtures-today');
+                        console.log(toi)
                         const tatr = document.createElement("a");
                         tatr.setAttribute('class', 'sidebar-anchor-fixtures')
                         tatr.setAttribute('href', '#')
                         tatr.innerHTML = r[e].name.split("v").join("<br />").split(",")[0];
-                        console.log(toi[e]);
+                        toi[e].appendChild(tatr);
                      }
                   }
                }
