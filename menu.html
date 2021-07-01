@@ -886,12 +886,12 @@
                      const adiv = document.createElement("div");
                      adiv.setAttribute('class', 'date-time')
                      sif[e].appendChild(adiv);
-                     const dat = document.querySelectorAll('.date-time'), ap = document.createElement("p");
-                     for (let i = 0; i < 2; i++) {
-                        ap.setAttribute('class', 'time')
-                        dat[e].appendChild(ap);
-                     }
+                     const dat = document.querySelectorAll('.date-time')
+                     ap = document.createElement("p");
+                     ap.setAttribute('class', 'time')
+                     dat[e].appendChild(ap);
                   }
+
                   const gmn = document.querySelector('#gmn');
                   gmn.innerHTML = cmip
                }
