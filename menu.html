@@ -846,7 +846,7 @@
          fixturesApi
             .then((response) => response.json())
             .then((json) => {
-               var r = json.matches, cmip = 0, sif, gst = r;
+               let r = json.matches, cmip = 0, sif;
 
                r = r.filter(function (obj) {
                   return obj.competition !== 'Quantum Cricket League';
@@ -874,8 +874,8 @@
                      sif = document.querySelectorAll('.sidebar-item-fixtures');
                      const atr = document.createElement("a");
                      atr.setAttribute('class', 'sidebar-anchor-fixtures')
-                     atr.setAttribute('href', '#')
                      atr.innerHTML = r[e].name.split("v").join("<br />").split(",")[0];
+                     atr.setAttribute('href', '#')
                      sif[e].appendChild(atr);
                      const adiv = document.createElement("div");
                      adiv.setAttribute('class', 'date-time')
@@ -890,7 +890,6 @@
                      ad.innerHTML = r[e].start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
                      dt[e].appendChild(ad);
                   }
-
                }
                const gmn = document.querySelector('#gmn');
                if (cmip != 0) {
@@ -898,6 +897,11 @@
                } else {
                   gmn.innerHTML = "No Live Games"
                }
+
+               const td = new Date()
+               console.log(td.getDate())
+               console.log(td.getMonth())
+
 
 
             });
