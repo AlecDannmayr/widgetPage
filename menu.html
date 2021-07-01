@@ -848,7 +848,7 @@
       fixturesApi
          .then((response) => response.json())
          .then((json) => {
-            var r = json.matches, cmip = 0, nxndc = 0, sif, gst = r, td = new Date();
+            var r = json.matches, cmip = 0, nxndc = 0, sif, gst = r, td = new Date(), fixlst = document.querySelector('.sidebar-list-fixtures');
 
             r = r.filter(function (obj) {
                return obj.competition !== 'Quantum Cricket League';
@@ -894,18 +894,18 @@
 
 
             for (e = 0; e < r.length; e++) {
-, fixlst = document.querySelector('.sidebar-list-fixtures')
-               if (r[e].status.substring(1, 17) == "Match in Progress") {
+               if (r[e].status.substring(1, 17) != "Match in Progress") {
                   cmip++
                   nA = document.createElement('li')
                   nA.setAttribute('class', 'sidebar-item-fixtures')
-                  fixlst.append(nA);/*
+                  fixlst.append(nA);
                   sif = document.querySelectorAll('.sidebar-item-fixtures');
                   const atr = document.createElement("a");
                   atr.setAttribute('class', 'sidebar-anchor-fixtures')
                   atr.setAttribute('href', '#')
                   atr.innerHTML = r[e].name.split("v").join("<br />").split(",")[0];
-                  sif[e].appendChild(atr);
+                  sif.appendChild(atr);
+                  /*
                   const adiv = document.createElement("div");
                   adiv.setAttribute('class', 'date-time')
                   sif[e].appendChild(adiv);
@@ -918,7 +918,6 @@
                   ad.setAttribute('class', 'fixture-data')
                   ad.innerHTML = r[e].start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
                   dt[e].appendChild(ad);
-                  */
                }
             }
             /*
@@ -977,7 +976,7 @@
                nxgn.innerHTML = "No Games Tomorrow"
             }
             */
-         });
+               });
 
 
       let z = document.getElementsByClassName('sidebar')[0];
