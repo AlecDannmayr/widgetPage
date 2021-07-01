@@ -850,8 +850,10 @@
          fixturesApi
             .then((response) => response.json())
             .then((json) => {
-               let r = json.matches,
-                  s = document.getElementsByClassName("sidebar-anchor-fixtures"), cmip = 0, sif;
+               var r = json.matches,
+                  s = document.getElementsByClassName("sidebar-anchor-fixtures"),
+                  n = document.getElementsByClassName("fixture-data"),
+                  q = document.getElementsByClassName("fixture-time"), cmip = 0, sif;
 
                r = r.filter(function (obj) {
                   return obj.competition !== 'Quantum Cricket League';
@@ -888,19 +890,19 @@
                      at = document.createElement("p");
                      at.setAttribute('class', 'fixture-time')
                      dt[e].appendChild(at);
+                     q[e].innerHTML = r[e].start.split("T")[1].substring(0, 5);
                      ad = document.createElement("p");
-                     ad.setAttribute('class', 'date')
+                     ad.setAttribute('class', 'fixture-data')
                      dt[e].appendChild(ad);
+                     n[e].innerHTML = r[e].start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
                      const gmn = document.querySelector('#gmn');
                      gmn.innerHTML = cmip
                   }
-                  const n = document.getElementsByClassName("fixture-data"), q = document.getElementsByClassName("fixture-time");
-                  n[e].innerHTML = r[e].start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
                }
                /* 
       u[e].innerHTML = r[e].name.split("v").join("<br />").split(",")[0];
        
-      q[e].innerHTML = r[e].start.split("T")[1].substring(0, 5);
+      
      
    
 */
