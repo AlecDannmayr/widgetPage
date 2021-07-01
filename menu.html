@@ -886,16 +886,10 @@
                      const adiv = document.createElement("div");
                      adiv.setAttribute('class', 'date-time')
                      sif[e].appendChild(adiv);
-                     const dat = document.querySelectorAll('.date-time');
+                     const dat = document.querySelectorAll('.date-time'), ap = document.createElement("p");
                      for (let i = 0; i < 2; i++) {
-                        if (i <= 0) {
-                           const ap = document.createElement("p");
-                           ap.setAttribute('class', 'time')
-                           dat[e].appendChild(ap);
-                        } else {
-                           ap.setAttribute('class', 'date')
-                           dat[e].appendChild(ap);
-                        }
+                        ap.setAttribute('class', 'time')
+                        dat[e].appendChild(ap);
                      }
                   }
                   const gmn = document.querySelector('#gmn');
