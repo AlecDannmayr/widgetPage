@@ -852,6 +852,13 @@
                   return obj.competition !== 'Quantum Cricket League';
                });
 
+               gst = r.filter(function (str) {
+                  return str.start;
+               });
+
+
+               console.log(str())
+
                document.addEventListener('click', function (event) {
                   if (!event.target.matches('.sidebar-anchor-fixtures')) return;
                   event.preventDefault();
@@ -890,7 +897,6 @@
                      ad.innerHTML = r[e].start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
                      dt[e].appendChild(ad);
                   }
-                  console.log(gst[e])
                }
                const gmn = document.querySelector('#gmn');
                if (cmip != 0) {
