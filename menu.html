@@ -908,35 +908,31 @@
                tgdtd.appendChild(nxdgat);
 
                for (e = 0; e < r.length; e++) {
-                  if (r[e].status.substring(0, 17) != "Match in Progress") {
+                  if (r[e].status.substring(0, 17) == "Match in Progress") {
                      cmip++
                      nA = document.createElement('li')
                      nA.setAttribute('class', 'sidebar-item-fixtures')
                      fixlst.append(nA);
                      sif = document.querySelectorAll('.sidebar-item-fixtures');
-                     for (eo = 0; eo < sif.length; eo++) {
-                        const atr = document.createElement("a");
-                        atr.setAttribute('class', 'sidebar-anchor-fixtures')
-                        atr.setAttribute('href', '#')
-                        atr.innerHTML = r[e].name.split("v").join("<br />").split(",")[0];
-                        sif[e].appendChild(atr);
-                        const adiv = document.createElement("div");
-                        adiv.setAttribute('class', 'date-time')
-                        sif[e].appendChild(adiv);
-                        const dt = document.querySelectorAll('.date-time')
-                        at = document.createElement("p");
-                        at.setAttribute('class', 'fixture-time')
-                        at.innerHTML = r[e].start.split("T")[1].substring(0, 5) + "&nbsp&nbsp";
-                        dt[e].appendChild(at);
-                        ad = document.createElement("p");
-                        ad.setAttribute('class', 'fixture-data')
-                        ad.innerHTML = r[e].start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
-                        dt[e].appendChild(ad);
-                     }
-
-
+                     const atr = document.createElement("a");
+                     atr.setAttribute('class', 'sidebar-anchor-fixtures')
+                     atr.setAttribute('href', '#')
+                     atr.innerHTML = r[e].name.split("v").join("<br />").split(",")[0];
+                     sif[e].appendChild(atr);
+                     const adiv = document.createElement("div");
+                     adiv.setAttribute('class', 'date-time')
+                     sif[e].appendChild(adiv);
+                     const dt = document.querySelectorAll('.date-time')
+                     at = document.createElement("p");
+                     at.setAttribute('class', 'fixture-time')
+                     at.innerHTML = r[e].start.split("T")[1].substring(0, 5) + "&nbsp&nbsp";
+                     dt[e].appendChild(at);
+                     ad = document.createElement("p");
+                     ad.setAttribute('class', 'fixture-data')
+                     ad.innerHTML = r[e].start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
+                     dt[e].appendChild(ad);
                      console.log(r[e].status.substring(0, 14) == "Match Scheduled")
-                  } else if (r[e].status.substring(0, 14) == "Match Scheduled") {
+                  } else {
                      var day = td.getDate().toString(), mnt = td.getMonth() + 1, gdy = r[e].start.substring(0, 10).split("-").splice(1).reverse().join(" ").substring(0, 2), gmth = r[e].start.substring(0, 10).split("-").splice(1).reverse().join(" ").substring(3, 5)
                      if (day.length <= 1) {
                         day = "0" + day;
@@ -944,14 +940,16 @@
                      if (mnt.toString().length <= 1) {
                         mnt = "0" + mnt;
                      }
-                     for (e = 0; e < r.length; e++) {
-                        if (day == gdy && mnt == gmth) {
+                     console.log(gdy[e])
+                     if (day == gdy && mnt == gmth) {
+                        for (e = 0; e < r.length; e++) {
+
+
                            nxndc++
                            todg = document.createElement('li')
                            todg.setAttribute('class', 'sidebar-item-fixtures-today')
                            fixlst.append(todg);
                            const toi = document.querySelectorAll('.sidebar-item-fixtures-today');
-                           console.log(toi)
                            const tatr = document.createElement("a");
                            tatr.setAttribute('class', 'sidebar-anchor-fixtures')
                            tatr.setAttribute('href', '#');
