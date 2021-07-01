@@ -948,15 +948,13 @@
                      if (day == gdy && mnt == gmth) {
                         console.log("match in progress")
                         nxndc++
-                        todg = document.createElement('li')
-                        todg.setAttribute('class', 'sidebar-item-fixtures-today')
+                        const todg = document.createElement('li');
+                        todg = setAttribute('class', 'sidebar-item-fixtures-today')
                         fixlst.append(todg);
-
-                        const toi = document.querySelectorAll('.sidebar-item-fixtures-today');
-                        const tatr = document.createElement("a");
+                        var toi = document.querySelectorAll('.sidebar-item-fixtures-today'), tatr = document.createElement("a");
                         tatr.setAttribute('class', 'sidebar-anchor-fixtures')
                         tatr.setAttribute('href', '#');
-                        toi[e].append(tatr);
+                        toi.appendChild(tatr);
                      }
                   }
                }
