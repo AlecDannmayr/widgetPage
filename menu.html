@@ -846,7 +846,7 @@
          fixturesApi
             .then((response) => response.json())
             .then((json) => {
-               let r = json.matches, cmip = 0, sif, gst = r;
+               var r = json.matches, cmip = 0, sif, gst = r;
 
                r = r.filter(function (obj) {
                   return obj.competition !== 'Quantum Cricket League';
@@ -875,7 +875,7 @@
                      const atr = document.createElement("a");
                      atr.setAttribute('class', 'sidebar-anchor-fixtures')
                      atr.setAttribute('href', '#')
-
+                     atr.innerHTML = r[e].name.split("v").join("<br />").split(",")[0];
                      sif[e].appendChild(atr);
                      const adiv = document.createElement("div");
                      adiv.setAttribute('class', 'date-time')
@@ -889,21 +889,7 @@
                      ad.setAttribute('class', 'fixture-data')
                      ad.innerHTML = r[e].start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
                      dt[e].appendChild(ad);
-                     atr.innerHTML = r[e].name.split("v").join("<br />").split(",")[0];
                   }
-
-                  const td = new Date()
-                  console.log(td.getDate())
-                  console.log(td.getMonth())
-
-
-                  console.log(td.getDate())
-                  console.log(td.getMonth())
-
-
-                  const str = gst[e].start.substring(0, 10);
-                  //*   console.log(str.split("-").reverse().join(" ")) *//
-
 
                }
                const gmn = document.querySelector('#gmn');
