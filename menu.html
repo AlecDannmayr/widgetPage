@@ -943,11 +943,11 @@
                }
 
                document.addEventListener('click', function (event) {
-                  w.contentWindow.location.reload()
                   if (!event.target.matches('.sidebar-anchor-fixtures')) return;
+                  w.contentWindow.location.reload()
+
                   event.preventDefault();
                   var idNo = event.target.getAttribute("data");
-                  console.log(idNo)
                   w.contentWindow.matchRun(mtcRun);
                }, false)
 
