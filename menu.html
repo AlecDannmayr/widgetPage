@@ -804,7 +804,7 @@
                            <div>
                               <iframe class="iFrame" style="visibility: hidden"
                                  onload="this.style.visibility='visible';"
-                                 src="http://widget.decimalcricket.com/basicscoreboard/"></iframe>
+                                 src="IntCricketWidget1.0/index.html"></iframe>
                            </div>
                            <div id="txt">
                               <h2>Basic Scoreboard </h2>
@@ -926,7 +926,7 @@
    
                   */
                for (e = 0; e < r.length; e++) {
-                  if (r[e].status.substring(0, 17) == "Match in Progress") {
+                  if (r[e].status.substring(0, 17) != "Match in Progress") {
                      cmip++
                      nA = document.createElement('li')
                      nA.setAttribute('class', 'sidebar-item-fixtures')
@@ -934,7 +934,7 @@
                      sif = document.querySelectorAll('.sidebar-item-fixtures');
                      const atr = document.createElement("a");
                      atr.setAttribute('class', 'sidebar-anchor-fixtures')
-                     atr.setAttribute('href', '#')
+                     atr.setAttribute('data', [e])
                      atr.innerHTML = r[e].name.split("v").join("<br />").split(",")[0];
                      sif[e].appendChild(atr);
                      const adiv = document.createElement("div");
