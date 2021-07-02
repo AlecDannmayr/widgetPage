@@ -804,7 +804,7 @@
                            <div>
                               <iframe class="iFrame" style="visibility: hidden"
                                  onload="this.style.visibility='visible';"
-                                 src="IntCricketWidget1.0/index.html"></iframe>
+                                 src="http://widget.decimalcricket.com/basicscoreboard/"></iframe>
                            </div>
                            <div id="txt">
                               <h2>Basic Scoreboard </h2>
@@ -915,33 +915,37 @@
    
 
                   */
+
+
+
+
+
                for (e = 0; e < r.length; e++) {
 
 
-                  if (r[e].status.substring(0, 8) != "Match in Progress") {
-                     cmip++
-                     nA = document.createElement('li')
-                     nA.setAttribute('class', 'sidebar-item-fixtures')
-                     fixlst.append(nA);
-                     sif = document.querySelectorAll('.sidebar-item-fixtures');
-                     const atr = document.createElement("a");
-                     atr.setAttribute('class', 'sidebar-anchor-fixtures')
-                     atr.setAttribute('data', r[e].id)
-                     atr.innerHTML = r[e].name.split("v").join("<br />").split(",")[0];
-                     sif[e].appendChild(atr);
-                     const adiv = document.createElement("div");
-                     adiv.setAttribute('class', 'date-time')
-                     sif[e].appendChild(adiv);
-                     const dt = document.querySelectorAll('.date-time')
-                     at = document.createElement("p");
-                     at.setAttribute('class', 'fixture-time')
-                     at.innerHTML = r[e].start.split("T")[1].substring(0, 5) + "&nbsp&nbsp";
-                     dt[e].appendChild(at);
-                     ad = document.createElement("p");
-                     ad.setAttribute('class', 'fixture-data')
-                     ad.innerHTML = r[e].start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
-                     dt[e].appendChild(ad);
-                  }
+                  cmip++
+                  nA = document.createElement('li')
+                  nA.setAttribute('class', 'sidebar-item-fixtures')
+                  fixlst.append(nA);
+                  sif = document.querySelectorAll('.sidebar-item-fixtures');
+                  const atr = document.createElement("a");
+                  atr.setAttribute('class', 'sidebar-anchor-fixtures')
+                  atr.setAttribute('data', r[e].id)
+                  atr.innerHTML = r[e].name.split("v").join("<br />").split(",")[0];
+                  sif[e].appendChild(atr);
+                  const adiv = document.createElement("div");
+                  adiv.setAttribute('class', 'date-time')
+                  sif[e].appendChild(adiv);
+                  const dt = document.querySelectorAll('.date-time')
+                  at = document.createElement("p");
+                  at.setAttribute('class', 'fixture-time')
+                  at.innerHTML = r[e].start.split("T")[1].substring(0, 5) + "&nbsp&nbsp";
+                  dt[e].appendChild(at);
+                  ad = document.createElement("p");
+                  ad.setAttribute('class', 'fixture-data')
+                  ad.innerHTML = r[e].start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
+                  dt[e].appendChild(ad);
+
                }
 
                /*
