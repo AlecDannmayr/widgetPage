@@ -950,19 +950,19 @@
                   w.contentWindow.matchRun(mtcRun);
                }, false)
 
-               /*
-                             const gmn = document.querySelector('#gmn'), nxgn = document.querySelector('#nxgn')
-                             if (cmip != 0) {
-                                gmn.innerHTML = cmip
-                             } else {
-                                gmn.innerHTML = "<br>No Live Games"
-                             }
-                            
-                             if (nxndc != 0) {
-                                nxgn.innerHTML = nxndc
-                             } else {
-                                nxgn.innerHTML = "No Games Tomorrow"
-                             }*/
+
+               const gmn = document.querySelector('#gmn'), nxgn = document.querySelector('#nxgn')
+               if (cmip != 0) {
+                  gmn.innerHTML = cmip
+               } else {
+                  gmn.innerHTML = "<br>No Live Games"
+               }
+
+               if (nxndc != 0) {
+                  nxgn.innerHTML = nxndc
+               } else {
+                  nxgn.innerHTML = "No Games Tomorrow"
+               }
 
             });
       })
