@@ -848,10 +848,6 @@
       }
 
       console.log(getQueryStringValue("name"));
-
-      const tre = document.querySelectorAll('sidebar-anchor-fixtures')
-      console.log(tre)
-
       window.addEventListener('load', function () {
          var ee = document.getElementById('loading-screen'),
             t = document.getElementById('body-wrapper'); (ee.style.display = 'none'), (t.style.display = 'block')
@@ -919,7 +915,7 @@
    
                   */
                for (e = 0; e < r.length; e++) {
-                  if (r[e].status.substring(0, 17) != "Match in Progress") {
+                  if (r[e].status.substring(0, 17) == "Match in Progress") {
                      cmip++
                      nA = document.createElement('li')
                      nA.setAttribute('class', 'sidebar-item-fixtures')
