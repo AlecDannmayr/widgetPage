@@ -740,7 +740,7 @@
             <li class="sidebar-item-fixtures-fixtures"><a href="#" class="sidebar-anchor-fixtures-title">
                   <h3>Fixtures</h3>
                </a></li>
-            <li class="sidebar-item-fixtures-demo"><a href="#" data="0" class="sidebar-demo-fixture">Multan
+            <li class="sidebar-item-fixtures-demo"><a href="" data="0" class="sidebar-demo-fixture">Multan
                   Sultans<br>sahore
                   Qalandars</a>
                <div class="date-time-demo">
@@ -866,8 +866,20 @@
                   if (!event.target.matches('.sidebar-demo-fixture')) return;
                   event.preventDefault();
                   w = document.getElementsByClassName("iFrame")[0];
+
                   w.contentWindow.matchDemo("1000002370LIVE1001");
-                  //  w.style.height = w.contentWindow.document.body.scrollHeight + 'px';
+
+               }, false)
+
+               document.addEventListener('click', function (event) {
+                  if (!event.target.matches('.sidebar-anchor-fixtures')) return;
+                  event.preventDefault();
+                  var idNo = event.target.getAttribute("data"),
+                     v = r[idNo],
+                     xx = v.id,
+                     x = v.id,
+                     w = document.getElementsByClassName("iFrame")[0];
+                  w.contentWindow.matchRun(x);
                }, false)
                /*
                   let dotw = td.getDay(), dyw;
