@@ -861,11 +861,10 @@
                r = r.filter(function (obj) {
                   return obj.competition !== 'Quantum Cricket League';
                });
-
+               w = document.getElementsByClassName("iFrame")[0];
                document.addEventListener('click', function (event) {
                   if (!event.target.matches('.sidebar-demo-fixture')) return;
                   event.preventDefault();
-                  w = document.getElementsByClassName("iFrame")[0];
                   w.contentWindow.matchDemo("1000002370LIVE1001");
                }, false)
 
@@ -944,10 +943,10 @@
                }
 
                document.addEventListener('click', function (event) {
+                  w.contentWindow.location.reload()
                   if (!event.target.matches('.sidebar-anchor-fixtures')) return;
                   event.preventDefault();
-                  var idNo = event.target.getAttribute("data"),
-                     w = document.getElementsByClassName("iFrame")[0];
+                  var idNo = event.target.getAttribute("data");
                   w.contentWindow.matchRun(mtcRun);
                }, false)
 
