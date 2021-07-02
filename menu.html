@@ -934,6 +934,7 @@
                      sif = document.querySelectorAll('.sidebar-item-fixtures');
                      const atr = document.createElement("a");
                      atr.setAttribute('class', 'sidebar-anchor-fixtures')
+                     atr.setAttribute('data', r[e].id)
                      atr.innerHTML = r[e].name.split("v").join("<br />").split(",")[0];
                      sif[e].appendChild(atr);
                      const adiv = document.createElement("div");
