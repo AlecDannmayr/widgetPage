@@ -849,6 +849,9 @@
 
       console.log(getQueryStringValue("name"));
 
+      const tre = document.querySelectorAll('sidebar-anchor-fixtures')
+      console.log(tre)
+
       window.addEventListener('load', function () {
          var ee = document.getElementById('loading-screen'),
             t = document.getElementById('body-wrapper'); (ee.style.display = 'none'), (t.style.display = 'block')
@@ -942,28 +945,27 @@
                   }
                }
 
-               const tre = document.querySelectorAll('sidebar-anchor-fixtures')
-               console.log(tre)
-               tre[e].addEventListener('click', function (event) {
-                  w.contentWindow.location.reload()
-                  event.preventDefault();
-                  var idNo = event.target.getAttribute("data");
-                  w.contentWindow.matchRun(mtcRun);
-               });
-
                /*
-                             const gmn = document.querySelector('#gmn'), nxgn = document.querySelector('#nxgn')
-                             if (cmip != 0) {
-                                gmn.innerHTML = cmip
-                             } else {
-                                gmn.innerHTML = "<br>No Live Games"
-                             }
-                            
-                             if (nxndc != 0) {
-                                nxgn.innerHTML = nxndc
-                             } else {
-                                nxgn.innerHTML = "No Games Tomorrow"
-                             }*/
+                tre[e].addEventListener('click', function (event) {
+                   w.contentWindow.location.reload()
+                   event.preventDefault();
+                   var idNo = event.target.getAttribute("data");
+                   w.contentWindow.matchRun(mtcRun);
+                });
+ 
+                /*
+                              const gmn = document.querySelector('#gmn'), nxgn = document.querySelector('#nxgn')
+                              if (cmip != 0) {
+                                 gmn.innerHTML = cmip
+                              } else {
+                                 gmn.innerHTML = "<br>No Live Games"
+                              }
+                             
+                              if (nxndc != 0) {
+                                 nxgn.innerHTML = nxndc
+                              } else {
+                                 nxgn.innerHTML = "No Games Tomorrow"
+                              }*/
 
             });
       })
