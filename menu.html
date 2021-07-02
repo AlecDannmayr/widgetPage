@@ -740,7 +740,8 @@
             <li class="sidebar-item-fixtures-fixtures"><a href="#" class="sidebar-anchor-fixtures-title">
                   <h3>Fixtures</h3>
                </a></li>
-            <li class="sidebar-item-fixtures-demo"><a href="#" class="sidebar-demo-fixture">Multan Sultans<br>sahore
+            <li class="sidebar-item-fixtures-demo"><a href="#" data="0" class="sidebar-demo-fixture">Multan
+                  Sultans<br>sahore
                   Qalandars</a>
                <div class="date-time-demo">
                   <p>DEMO</p>
@@ -803,7 +804,7 @@
                            <div>
                               <iframe class="iFrame" style="visibility: hidden"
                                  onload="this.style.visibility='visible';"
-                                 src="http://widget.decimalcricket.com/basicscoreboard/"></iframe>
+                                 src="IntCricketWidget1.0/index.html"></iframe>
                            </div>
                            <div id="txt">
                               <h2>Basic Scoreboard </h2>
@@ -842,6 +843,11 @@
 
    </div>
    <script>var fixturesApi = fetch("http://feed.decimalcricket.com/api/match/list", { method: "GET", headers: { "x-api-key": "decimaltest", "Content-Type": "application/json" } });
+      function getQueryStringValue(key) {
+         return decodeURIComponent(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent(key).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));
+      }
+
+      console.log(getQueryStringValue("name"));
 
       window.addEventListener('load', function () {
          var ee = document.getElementById('loading-screen'),
@@ -857,8 +863,9 @@
                });
 
                document.addEventListener('click', function (event) {
-                  if (!event.target.matches('.sidebar-anchor-fixtures')) return;
+                  if (!event.target.matches('.sidebar-demo-fixture')) return;
                   event.preventDefault();
+                  console.log("Test")
                   var idNo = event.target.getAttribute("data"),
                      v = r[idNo],
                      xx = v.id,
@@ -867,54 +874,52 @@
                   w.contentWindow.matchRun(x);
                   w.style.height = w.contentWindow.document.body.scrollHeight + 'px';
                }, false)
-
-
                /*
-               let dotw = td.getDay(), dyw;
-               switch (dotw) {
-                  case 1:
-                     dyw = "Monday"
-                     break;
-                  case 2:
-                     dyw = "Tuesday"
-                     break;
-                  case 3:
-                     dyw = "Wednesday"
-                     break;
-                  case 4:
-                     dyw = "Thursday"
-                     break;
-                  case 5:
-                     dyw = "Friday"
-                     break;
-                  case 6:
-                     dyw = "Saturday"
-                     break;
-                  case 7:
-                     dyw = "Sunday"
-                     break;
-               }
-
-
-               const prep = document.getElementsByClassName('sidebar-item-fixtures-today')
-               console.log(prep)
-               nxdg = document.createElement('li')
-               nxdg.setAttribute('class', 'sidebar-item-fixtures-demo')
-               fixlst.append(nxdg);
-               const sifxl = document.getElementsByClassName('sidebar-item-fixtures-demo')[2], nxdga = document.createElement("a");
-               nxdga.setAttribute('class', 'sidebar-anchor-fixtures')
-               nxdga.setAttribute('href', '#')
-               nxdga.innerHTML = "Games Today:"
-               sifxl.appendChild(nxdga);
-               dntat = document.createElement("div");
-               dntat.setAttribute('class', 'date-time-demo')
-               sifxl.append(dntat);
-               const tgdtd = document.getElementsByClassName('date-time-demo')[2]
-               nxdgat = document.createElement("p");
-               nxdgat.setAttribute('id', 'nxgn')
-               tgdtd.appendChild(nxdgat);
-
-               */
+                  let dotw = td.getDay(), dyw;
+                  switch (dotw) {
+                     case 1:
+                        dyw = "Monday"
+                        break;
+                     case 2:
+                        dyw = "Tuesday"
+                        break;
+                     case 3:
+                        dyw = "Wednesday"
+                        break;
+                     case 4:
+                        dyw = "Thursday"
+                        break;
+                     case 5:
+                        dyw = "Friday"
+                        break;
+                     case 6:
+                        dyw = "Saturday"
+                        break;
+                     case 7:
+                        dyw = "Sunday"
+                        break;
+                  }
+   
+   
+                  const prep = document.getElementsByClassName('sidebar-item-fixtures-today')
+                  console.log(prep)
+                  nxdg = document.createElement('li')
+                  nxdg.setAttribute('class', 'sidebar-item-fixtures-demo')
+                  fixlst.append(nxdg);
+                  const sifxl = document.getElementsByClassName('sidebar-item-fixtures-demo')[2], nxdga = document.createElement("a");
+                  nxdga.setAttribute('class', 'sidebar-anchor-fixtures')
+                  nxdga.setAttribute('href', '#')
+                  nxdga.innerHTML = "Games Today:"
+                  sifxl.appendChild(nxdga);
+                  dntat = document.createElement("div");
+                  dntat.setAttribute('class', 'date-time-demo')
+                  sifxl.append(dntat);
+                  const tgdtd = document.getElementsByClassName('date-time-demo')[2]
+                  nxdgat = document.createElement("p");
+                  nxdgat.setAttribute('id', 'nxgn')
+                  tgdtd.appendChild(nxdgat);
+   
+                  */
                for (e = 0; e < r.length; e++) {
                   if (r[e].status.substring(0, 17) == "Match in Progress") {
                      cmip++
