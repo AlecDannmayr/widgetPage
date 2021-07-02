@@ -869,16 +869,7 @@
                   w.contentWindow.matchDemo("1000002370LIVE1001");
                }, false)
 
-               document.addEventListener('click', function (event) {
-                  if (!event.target.matches('.sidebar-anchor-fixtures')) return;
-                  event.preventDefault();
-                  var idNo = event.target.getAttribute("data"),
-                     v = r[idNo],
-                     xx = v.id,
-                     x = v.id,
-                     w = document.getElementsByClassName("iFrame")[0];
-                  w.contentWindow.matchRun(x);
-               }, false)
+
                /*
                   let dotw = td.getDay(), dyw;
                   switch (dotw) {
@@ -952,6 +943,16 @@
                   }
                }
 
+               document.addEventListener('click', function (event) {
+                  if (!event.target.matches('.sidebar-anchor-fixtures')) return;
+                  event.preventDefault();
+                  var idNo = event.target.getAttribute("data"),
+                     v = r[idNo],
+
+                     w = document.getElementsByClassName("iFrame")[0];
+                  console.log(v)
+                  w.contentWindow.matchRun(x);
+               }, false)
 
                /*
                              const gmn = document.querySelector('#gmn'), nxgn = document.querySelector('#nxgn')
