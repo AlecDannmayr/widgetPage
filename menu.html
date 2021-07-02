@@ -934,7 +934,7 @@
                      sif = document.querySelectorAll('.sidebar-item-fixtures');
                      const atr = document.createElement("a");
                      atr.setAttribute('class', 'sidebar-anchor-fixtures')
-                     atr.setAttribute('data', [e])
+                     atr.setAttribute('data', '1')
                      atr.innerHTML = r[e].name.split("v").join("<br />").split(",")[0];
                      sif[e].appendChild(atr);
                      const adiv = document.createElement("div");
@@ -949,7 +949,8 @@
                      ad.setAttribute('class', 'fixture-data')
                      ad.innerHTML = r[e].start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
                      dt[e].appendChild(ad);
-
+                     const yyy = sif[e].getAttribute("data");
+                     console.log(yyy)
                   }
                }
                /*
