@@ -913,10 +913,16 @@
                   nxdgat.setAttribute('id', 'nxgn')
                   tgdtd.appendChild(nxdgat);
    
+
                   */
+
+
+
                for (e = 0; e < r.length; e++) {
-                  console.log(r[e].status.substring(0, 16))
-                  if (r[e].status === "Match in Progress - Match Stable (est.latency:1 second) (12000405504)") {
+                  if (r[e].status.substring(0, 17) == "Match in Progress") {
+                     console.log("Hello")
+                  }
+                  if (r[e].status.substring(0, 17) == "Match in Progress") {
                      cmip++
                      nA = document.createElement('li')
                      nA.setAttribute('class', 'sidebar-item-fixtures')
