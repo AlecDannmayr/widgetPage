@@ -917,9 +917,9 @@
                   */
 
                for (e = 0; e < r.length; e++) {
-                  if (r[e].status.substring(0, 17) == "Match in Progress") {
-                     console.log("Hello")
-                  }
+
+                  console.log(r[e].status);
+
                   if (r[e].status.substring(0, 17) == "Match in Progress") {
                      cmip++
                      nA = document.createElement('li')
