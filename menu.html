@@ -865,14 +865,9 @@
                document.addEventListener('click', function (event) {
                   if (!event.target.matches('.sidebar-demo-fixture')) return;
                   event.preventDefault();
-                  console.log("Test")
-                  var idNo = event.target.getAttribute("data"),
-                     v = r[idNo],
-                     xx = v.id,
-                     x = v.id,
-                     w = document.getElementsByClassName("iFrame")[0];
-                  w.contentWindow.matchRun(x);
-                  w.style.height = w.contentWindow.document.body.scrollHeight + 'px';
+                  w = document.getElementsByClassName("iFrame")[0];
+                  w.contentWindow.matchRun("1000002370LIVE1001");
+                  //  w.style.height = w.contentWindow.document.body.scrollHeight + 'px';
                }, false)
                /*
                   let dotw = td.getDay(), dyw;
