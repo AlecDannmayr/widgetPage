@@ -942,14 +942,14 @@
                   }
                }
 
-               document.addEventListener('click', function (event) {
-                  if (!event.target.matches('.sidebar-anchor-fixtures')) return;
+               const tre = document.querySelectorAll('sidebar-anchor-fixtures')
+               console.log(tre)
+               tre[e].addEventListener('click', function (event) {
                   w.contentWindow.location.reload()
-
                   event.preventDefault();
                   var idNo = event.target.getAttribute("data");
                   w.contentWindow.matchRun(mtcRun);
-               }, false)
+               });
 
                /*
                              const gmn = document.querySelector('#gmn'), nxgn = document.querySelector('#nxgn')
