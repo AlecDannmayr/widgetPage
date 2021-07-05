@@ -45,20 +45,20 @@
          --thumbBG: #fbe44a;
       }
 
-      body::-webkit-scrollbar {
+      body::-webkit-scrollbar, .sidebar-list-fixtures::-webkit-scrollbar {
          width: 11px;
       }
 
-      body {
+      body, .sidebar-list-fixtures {
          scrollbar-width: thin;
          scrollbar-color: var(--thumbBG) var(--scrollbarBG);
       }
 
-      body::-webkit-scrollbar-track {
+      body::-webkit-scrollbar-track, .sidebar-list-fixtures::-webkit-scrollbar  {
          background: var(--scrollbarBG);
       }
 
-      body::-webkit-scrollbar-thumb {
+      body::-webkit-scrollbar-thumb,  .sidebar-list-fixtures::-webkit-scrollbar-thumb {
          background-color: var(--thumbBG);
          border: 3px solid var(--scrollbarBG);
       }
@@ -524,28 +524,7 @@
          text-align: left;
          display: flex;
          scroll-behavior: smooth;
-         overflow-y: hidden;
       }
-
- .sidebar-list-fixtures::-webkit-scrollbar {
-  width: 2px;
-}
-
-/* Track */
- .sidebar-list-fixtures::-webkit-scrollbar-track {
-  border-radius: 0px;
-    width: 1px
-}
- 
-/* Handle */
- .sidebar-list-fixtures::-webkit-scrollbar-thumb {
-  background: #fbe44a; 
-  border-radius: 0px;
-  width: 1px
-}
-
-
-   
 
       .sidebar-item-fixtures:not(:first-child),
       .sidebar-item-fixtures-demo,
@@ -978,7 +957,7 @@
                       w.child.matchRun(mtcRun)
                }, false)
 */
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+
 
                 document.addEventListener('click', function (event) {
                   if (!event.target.matches('.sidebar-anchor-fixtures')) return;
@@ -987,7 +966,7 @@
                    
                   console.log(idNo);
                   w = document.getElementsByClassName("iFrame")[0];
-                  w.contentWindow.matchRun();
+                  w.contentWindow.matchRun(x);
                   w.style.height = w.contentWindow.document.body.scrollHeight + 'px';
                }, false)
 
