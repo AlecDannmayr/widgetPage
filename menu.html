@@ -49,7 +49,7 @@
          width: 11px;
       }
 
-      body,  .sidebar-list-fixtures {
+      body {
          scrollbar-width: thin;
          scrollbar-color: var(--thumbBG) var(--scrollbarBG);
       }
@@ -58,7 +58,7 @@
          background: var(--scrollbarBG);
       }
 
-      body::-webkit-scrollbar-thumb,  .sidebar-list-fixtures::-webkit-scrollbar-thumb {
+      body::-webkit-scrollbar-thumb {
          background-color: var(--thumbBG);
          border: 3px solid var(--scrollbarBG);
       }
@@ -525,7 +525,13 @@
          display: flex;
          scroll-behavior: smooth;
          overflow-y: hidden;
+         padding-bottom: 10px
       }
+
+      ::-webkit-scrollbar {
+  width: 10px;
+}
+
    
 
       .sidebar-item-fixtures:not(:first-child),
