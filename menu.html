@@ -221,7 +221,7 @@
          padding-left: 10px;
          padding-bottom: 15.6px;
          margin-top: 9px;
-                  padding-right: 23px;
+         padding-right: 23px;
       }
 
       .sidebar-item-fixtures-fixtures h3 {
@@ -530,15 +530,15 @@
       }
 
       .sidebar-list-fixtures::-webkit-scrollbar {
-  display: none;
+         display: none;
       }
-      
-.sidebar-list-fixtures {
--ms-overflow-style: none;
-  scrollbar-width: none;
-}
 
-   
+      .sidebar-list-fixtures {
+         -ms-overflow-style: none;
+         scrollbar-width: none;
+      }
+
+
 
       .sidebar-item-fixtures:not(:first-child),
       .sidebar-item-fixtures-demo,
@@ -873,7 +873,7 @@
                });
 
 
-           
+
 
                /*
                   let dotw = td.getDay(), dyw;
@@ -923,7 +923,7 @@
 
                   */
 
-         
+
 
                console.log(moment("2019-06-04").isSame("2019-06-04"))
 
@@ -941,7 +941,7 @@
                      const atr = document.createElement("a");
                      atr.setAttribute('class', 'sidebar-anchor-fixtures')
                      atr.setAttribute('data', r[e].id)
-                       atr.setAttribute('href', "#")
+                     atr.setAttribute('href', "#")
                      atr.innerHTML = r[e].name.split("v").join("<br />").split(",")[0];
                      sif[e].appendChild(atr);
                      const adiv = document.createElement("div");
@@ -973,13 +973,13 @@
 */
 
 
-                document.addEventListener('click', function (event) {
+               document.addEventListener('click', function (event) {
                   if (!event.target.matches('.sidebar-anchor-fixtures')) return;
                   event.preventDefault();
                   var idNo = event.target.getAttribute("data");
                   w = document.getElementsByClassName("iFrame")[0];
                   w.contentWindow.matchRun(idNo);
-             
+
                }, false)
 
 
