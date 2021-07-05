@@ -918,11 +918,12 @@
 
 
 
-               r.sort(function (a, b) { return a - b });
-               console.log(r)
 
                for (e = 0; e < r.length; e++) {
 
+
+                  var tre = r.sort(function (a, b) { return a - b });
+                  console.log(tre)
 
                   if (r[e].status.substring(0, 17) != "Match in Progress") {
                      cmip++
