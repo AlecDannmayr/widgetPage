@@ -6,6 +6,7 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    <title>Widgets </title>
+   <script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
    <style>
       @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
@@ -916,10 +917,11 @@
 
                   */
 
-               r.forEach((e) => {
-                  console.log(`${e.competition}`);
+               r.sort((a, b) => {
+                  return a.start - b.start;
                });
 
+               console.log(r)
 
                for (e = 0; e < r.length; e++) {
 
