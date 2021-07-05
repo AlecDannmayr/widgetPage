@@ -6,7 +6,7 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    <title>Widgets </title>
-   <script src="https://momentjs.com/downloads/moment-with-locales.js"></script>
+   <script src="moment.js"></script>
    <style>
       @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
@@ -917,11 +917,9 @@
 
                   */
 
-               r.sort((a, b) => {
-                  return a.start - b.start;
-               });
+         
 
-               console.log(r)
+               console.log(moment("2019-06-04").isSame("2019-06-04"))
 
                for (e = 0; e < r.length; e++) {
 
