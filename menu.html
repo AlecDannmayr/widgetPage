@@ -917,6 +917,10 @@
                   */
 
 
+
+               r.sort(function (a, b) { return a - b });
+               console.log(r)
+
                for (e = 0; e < r.length; e++) {
 
 
@@ -944,7 +948,7 @@
                      ad.innerHTML = r[e].start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
                      dt[e].appendChild(ad);
 
-                     console.log(sif)
+                     // console.log(sif)
                   }
 
                }
