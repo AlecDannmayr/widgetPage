@@ -972,12 +972,13 @@
                }, false)
 */
 
-
+               var w = document.getElementsByClassName("iFrame")[0];
                document.addEventListener('click', function (event) {
                   if (!event.target.matches('.sidebar-anchor-fixtures')) return;
+                  w.contentWindow.location.reload();
                   event.preventDefault();
                   var idNo = event.target.getAttribute("data");
-                  w = document.getElementsByClassName("iFrame")[0];
+
                   w.contentWindow.matchRun(idNo);
 
                }, false)
@@ -986,8 +987,8 @@
 
                document.addEventListener('click', function (event) {
                   if (!event.target.matches('.sidebar-demo-fixture')) return;
+                  w.contentWindow.location.reload();
                   event.preventDefault();
-                  w = document.getElementsByClassName("iFrame")[0];
                   w.contentWindow.matchRun("1000004510LIVE1001");
                }, false)
 
