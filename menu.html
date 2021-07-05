@@ -45,20 +45,20 @@
          --thumbBG: #fbe44a;
       }
 
-      body::-webkit-scrollbar, .sidebar-list-fixtures::-webkit-scrollbar {
+      body::-webkit-scrollbar, {
          width: 11px;
       }
 
-      body, .sidebar-list-fixtures {
+      body {
          scrollbar-width: thin;
          scrollbar-color: var(--thumbBG) var(--scrollbarBG);
       }
 
-      body::-webkit-scrollbar-track, .sidebar-list-fixtures::-webkit-scrollbar  {
+      body::-webkit-scrollbar-track {
          background: var(--scrollbarBG);
       }
 
-      body::-webkit-scrollbar-thumb,  .sidebar-list-fixtures::-webkit-scrollbar-thumb {
+      body::-webkit-scrollbar-thumb {
          background-color: var(--thumbBG);
          border: 3px solid var(--scrollbarBG);
       }
@@ -524,6 +524,12 @@
          text-align: left;
          display: flex;
          scroll-behavior: smooth;
+         overflow-y: hidden;
+
+      }
+
+      .sidebar-list-fixtures::-webkit-scrollbar {
+ width: 3px
       }
 
       .sidebar-item-fixtures:not(:first-child),
