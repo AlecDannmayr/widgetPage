@@ -45,7 +45,7 @@
          --thumbBG: #fbe44a;
       }
 
-      body::-webkit-scrollbar, {
+      body::-webkit-scrollbar {
          width: 11px;
       }
 
@@ -528,9 +528,16 @@
 
       }
 
-      .sidebar-list-fixtures::-webkit-scrollbar {
- width: 3px
+      .sidebar-list-fixtures ul::-webkit-scrollbar {
+  display: none;
       }
+      
+.sidebar-list-fixtures {
+-ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+   
 
       .sidebar-item-fixtures:not(:first-child),
       .sidebar-item-fixtures-demo,
@@ -747,6 +754,7 @@
             <li class="sidebar-item-fixtures-fixtures"><a href="#" class="sidebar-anchor-fixtures-title">
                   <h3>Fixtures</h3>
                </a></li>
+               <div class="side-bar-scroll">
             <li class="sidebar-item-fixtures-demo"><a href="#" data="0" class="sidebar-demo-fixture">Multan
                   Sultans<br>sahore
                   Qalandars</a>
@@ -755,6 +763,7 @@
                   <p>24/7</p>
                </div>
             </li>
+            </div>
             <!--
             <li class="sidebar-item-fixtures-demo"><a href="#" class="sidebar-demo-fixture">Live Games:</a>
                <div class="date-time-demo">
