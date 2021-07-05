@@ -977,11 +977,9 @@
                   if (!event.target.matches('.sidebar-anchor-fixtures')) return;
                   event.preventDefault();
                   var idNo = event.target.getAttribute("data");
-                   
-                  console.log(idNo);
                   w = document.getElementsByClassName("iFrame")[0];
-                  w.contentWindow.matchRun(x);
-                  w.style.height = w.contentWindow.document.body.scrollHeight + 'px';
+                  w.contentWindow.matchRun(idNo);
+             
                }, false)
 
 
