@@ -917,10 +917,10 @@
                   */
 
 
-               for (e = 0; e < r.length; e++) {
+               for (e = 1; e < r.length; e++) {
 
 
-                  if (r[e].status.substring(0, 17) == "Match in Progress") {
+                  if (r[e].status.substring(0, 17) != "Match in Progress") {
                      cmip++
                      nA = document.createElement('li')
                      nA.setAttribute('class', 'sidebar-item-fixtures')
@@ -930,7 +930,7 @@
                      atr.setAttribute('class', 'sidebar-anchor-fixtures')
                      atr.setAttribute('data', r[e].id)
                      atr.innerHTML = r[e].name.split("v").join("<br />").split(",")[0];
-                     sif[e].appensdChild(atr);
+                     sif[e].appendChild(atr);
                      const adiv = document.createElement("div");
                      adiv.setAttribute('class', 'date-time')
                      sif[e].appendChild(adiv);
