@@ -948,16 +948,27 @@
 
                }
 
-               
+               /*
                document.addEventListener('click', function (event) {
                       w = document.getElementsByClassName("iFrame")[0];
                   if (!event.target.matches('.sidebar-anchor-fixtures')) return;
                   event.preventDefault();
                    var x = event.target.getAttribute("data");
-                      w.Window.matchRun(mtcRun)
+                      w.child.matchRun(mtcRun)
                }, false)
+*/
 
 
+                document.addEventListener('click', function (event) {
+                  if (!event.target.matches('.sidebar-anchor-fixtures')) return;
+                  event.preventDefault();
+                  var idNo = event.target.getAttribute("data");
+                   
+                  console.log(idNo);
+                  w = document.getElementsByClassName("iFrame")[0];
+                  w.contentWindow.matchRun(x);
+                  w.style.height = w.contentWindow.document.body.scrollHeight + 'px';
+               }, false)
 
 
                /*
