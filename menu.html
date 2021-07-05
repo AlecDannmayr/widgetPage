@@ -525,12 +525,25 @@
          display: flex;
          scroll-behavior: smooth;
          overflow-y: hidden;
-         padding-bottom: 10px
       }
 
-      ::-webkit-scrollbar {
-  width: 10px;
+ .sidebar-list-fixtures::-webkit-scrollbar {
+  width: 2px;
 }
+
+/* Track */
+ .sidebar-list-fixtures::-webkit-scrollbar-track {
+  border-radius: 0px;
+    width: 1px
+}
+ 
+/* Handle */
+ .sidebar-list-fixtures::-webkit-scrollbar-thumb {
+  background: #fbe44a; 
+  border-radius: 0px;
+  width: 1px
+}
+
 
    
 
