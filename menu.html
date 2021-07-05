@@ -974,12 +974,12 @@
 
 
                document.addEventListener('click', function (event) {
-                  if (!event.target.matches('.sidebar-anchor-fixtures'))
-                     return;
+                  if (!event.target.matches('.sidebar-anchor-fixtures')) return;
                   event.preventDefault();
                   var idNo = event.target.getAttribute("data");
                   w = document.getElementsByClassName("iFrame")[0];
                   w.contentWindow.matchRun(idNo);
+
                }, false)
 
 
@@ -988,7 +988,7 @@
                   if (!event.target.matches('.sidebar-demo-fixture')) return;
                   event.preventDefault();
                   w = document.getElementsByClassName("iFrame")[0];
-                  w.contentWindow.matchRun(idNo);
+                  w.contentWindow.matchRun("1000004510LIVE1001");
 
                }, false)
 
