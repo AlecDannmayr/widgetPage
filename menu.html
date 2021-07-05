@@ -972,9 +972,8 @@
                }, false)
 */
 
-
+               var w = document.getElementsByClassName("iFrame")[0], idNo = event.target.getAttribute("data");
                document.addEventListener('click', function (event) {
-                  var w = document.getElementsByClassName("iFrame")[0], idNo = event.target.getAttribute("data");
                   if (!event.target.matches('.sidebar-anchor-fixtures')) return;
                   w.contentWindow.location.reload();
                   event.preventDefault();
