@@ -741,7 +741,7 @@
             <li class="sidebar-item-fixtures-fixtures"><a href="#" class="sidebar-anchor-fixtures-title">
                   <h3>Fixtures</h3>
                </a></li>
-            <li class="sidebar-item-fixtures-demo"><a href="" data="0" class="sidebar-demo-fixture">Multan
+            <li class="sidebar-item-fixtures-demo"><a href="#" data="0" class="sidebar-demo-fixture">Multan
                   Sultans<br>sahore
                   Qalandars</a>
                <div class="date-time-demo">
@@ -844,14 +844,6 @@
 
    </div>
    <script>var fixturesApi = fetch("http://feed.decimalcricket.com/api/match/list", { method: "GET", headers: { "x-api-key": "decimaltest", "Content-Type": "application/json" } });
-      function getQueryStringValue(key) {
-         return decodeURIComponent(window.location.search.replace(new RegExp("^(?:.*[&\\?]" + encodeURIComponent(key).replace(/[\.\+\*]/g, "\\$&") + "(?:\\=([^&]*))?)?.*$", "i"), "$1"));
-      }
-
-      console.log(getQueryStringValue("name"));
-      window.addEventListener('load', function () {
-         var ee = document.getElementById('loading-screen'),
-            t = document.getElementById('body-wrapper'); (ee.style.display = 'none'), (t.style.display = 'block')
 
          fixturesApi
             .then((response) => response.json())
@@ -861,13 +853,15 @@
                r = r.filter(function (obj) {
                   return obj.competition !== 'Quantum Cricket League';
                });
-
+              for (ii = 0; ii < sift.length; i++) {
+                 console.log(sift[ii])
+              }
        
                w = document.getElementsByClassName("iFrame")[0];
                document.addEventListener('click', function (event) {
                   if (!event.target.matches('.sidebar-item-fixture')) return;
                   event.preventDefault();
-                     console.log(sift)
+                  
                        w.contentWindow.matchDemo(x);
                }, false)
 
