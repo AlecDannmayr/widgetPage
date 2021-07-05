@@ -861,14 +861,14 @@
                r = r.filter(function (obj) {
                   return obj.competition !== 'Quantum Cricket League';
                });
-               var idNo = event.target.getAttribute("data");
-               console.log(idNo);
+
        
                w = document.getElementsByClassName("iFrame")[0];
                document.addEventListener('click', function (event) {
                   if (!event.target.matches('.sidebar-demo-fixture')) return;
                   event.preventDefault();
-                 
+                   var idNo = event.target.getAttribute("data");
+                     console.log(idNo)
                        w.contentWindow.matchDemo(x);
                }, false)
 
