@@ -852,23 +852,14 @@
          fixturesApi
             .then((response) => response.json())
             .then((json) => {
-               var r = json.matches, cmip = 0, nxndc = 0, sif, gst = r, td = new Date(), fixlst = document.querySelector('.sidebar-list-fixtures'), sift = document.querySelectorAll('sidebar-item-fixtures')
+               var r = json.matches, cmip = 0, nxndc = 0, sif, gst = r, td = new Date(), fixlst = document.querySelector('.sidebar-list-fixtures'), sift = document.getElementsByClassName('sidebar-item-fixtures')
 
                r = r.filter(function (obj) {
                   return obj.competition !== 'Quantum Cricket League';
                });
 
-for (ii = 0; ii < sift.length; ii++) {                 
-    console.log(sift[ii])
-}
-               w = document.getElementsByClassName("iFrame")[0];
-               document.addEventListener('click', function (event) {
-                  if (!event.target.matches('.sidebar-item-fixture')) return;
-                  event.preventDefault();
-                  
-                       w.contentWindow.matchDemo(x);
-               }, false)
 
+           
 
                /*
                   let dotw = td.getDay(), dyw;
@@ -956,6 +947,15 @@ for (ii = 0; ii < sift.length; ii++) {
                   }
 
                }
+
+                   w = document.getElementsByClassName("iFrame")[0];
+               document.addEventListener('click', function (event) {
+                  if (!event.target.matches('.sidebar-anchor-fixtures')) return;
+                  event.preventDefault();
+                   var x = event.target.getAttribute("data");
+                       w.contentWindow.matchDemo(x);
+               }, false)
+
 
 
 
