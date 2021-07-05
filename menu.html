@@ -953,8 +953,10 @@
                   if (!event.target.matches('.sidebar-anchor-fixtures')) return;
                   event.preventDefault();
                    var x = event.target.getAttribute("data");
-                  w.contentWindow.document.matchRun(x);
-                  w.style.height = w.contentWindow.document.body.scrollHeight + 'px';
+                     console.log(w.contentWindow)
+                  w.contentWindow.matchRun(x);
+                
+                  w.style.height = w.contentWindow.body.scrollHeight + 'px';
                }, false)
 
 
