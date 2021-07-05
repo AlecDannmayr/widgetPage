@@ -741,7 +741,7 @@
             <li class="sidebar-item-fixtures-fixtures"><a href="#" class="sidebar-anchor-fixtures-title">
                   <h3>Fixtures</h3>
                </a></li>
-            <li class="sidebar-item-fixtures-demo"><a href="" data="0" class="sidebar-demo-fixture">Multan
+            <li class="sidebar-item-fixtures-demo"><a href="#" data="0" class="sidebar-demo-fixture">Multan
                   Sultans<br>sahore
                   Qalandars</a>
                <div class="date-time-demo">
@@ -939,6 +939,7 @@
                      const atr = document.createElement("a");
                      atr.setAttribute('class', 'sidebar-anchor-fixtures')
                      atr.setAttribute('data', r[e].id)
+                       atr.setAttribute('href', "#")
                      atr.innerHTML = r[e].name.split("v").join("<br />").split(",")[0];
                      sif[e].appendChild(atr);
                      const adiv = document.createElement("div");
