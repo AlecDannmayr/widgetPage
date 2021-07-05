@@ -845,6 +845,10 @@
    </div>
    <script>var fixturesApi = fetch("http://feed.decimalcricket.com/api/match/list", { method: "GET", headers: { "x-api-key": "decimaltest", "Content-Type": "application/json" } });
 
+      window.addEventListener('load', function () {
+         var ee = document.getElementById('loading-screen'),
+            t = document.getElementById('body-wrapper'); (ee.style.display = 'none'), (t.style.display = 'block')
+
          fixturesApi
             .then((response) => response.json())
             .then((json) => {
@@ -853,10 +857,10 @@
                r = r.filter(function (obj) {
                   return obj.competition !== 'Quantum Cricket League';
                });
-              for (ii = 0; ii < sift.length; i++) {
-                 console.log(sift[ii])
-              }
-       
+
+for (ii = 0; ii < sift.length; ii++) {                 
+    console.log(sift[ii])
+}
                w = document.getElementsByClassName("iFrame")[0];
                document.addEventListener('click', function (event) {
                   if (!event.target.matches('.sidebar-item-fixture')) return;
