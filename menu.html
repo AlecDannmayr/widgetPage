@@ -45,11 +45,11 @@
          --thumbBG: #fbe44a;
       }
 
-      body::-webkit-scrollbar,  .sidebar-list-fixtures::-webkit-scrollbar {
+      body::-webkit-scrollbar {
          width: 11px;
       }
 
-      body {
+      body,  .sidebar-list-fixtures {
          scrollbar-width: thin;
          scrollbar-color: var(--thumbBG) var(--scrollbarBG);
       }
@@ -58,7 +58,7 @@
          background: var(--scrollbarBG);
       }
 
-      body::-webkit-scrollbar-thumb {
+      body::-webkit-scrollbar-thumb,  .sidebar-list-fixtures::-webkit-scrollbar-thumb {
          background-color: var(--thumbBG);
          border: 3px solid var(--scrollbarBG);
       }
@@ -526,8 +526,7 @@
          scroll-behavior: smooth;
          overflow-y: hidden;
       }
-
-      
+   
 
       .sidebar-item-fixtures:not(:first-child),
       .sidebar-item-fixtures-demo,
