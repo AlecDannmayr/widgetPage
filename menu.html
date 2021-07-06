@@ -925,6 +925,9 @@
                   */
 
 
+               const asArray = Object.entries(r)
+               const fltAr = asArray.filter(([key, value]) => value != '')
+               console.log(fltAr)
 
                console.log(moment())
 
