@@ -902,25 +902,8 @@
                         break;
                   }
    
-
-                  const prep = document.getElementsByClassName('sidebar-item-fixtures-today')
-                  console.log(prep)
-                  nxdg = document.createElement('li')
-                  nxdg.setAttribute('class', 'sidebar-item-fixtures-demo')
-                  fixlst.append(nxdg);
-                  const sifxl = document.getElementsByClassName('sidebar-item-fixtures-demo')[2], nxdga = document.createElement("a");
-                  nxdga.setAttribute('class', 'sidebar-anchor-fixtures')
-                  nxdga.setAttribute('href', '#')
-                  nxdga.innerHTML = "Games Today:"
-                  sifxl.appendChild(nxdga);
-                  dntat = document.createElement("div");
-                  dntat.setAttribute('class', 'date-time-demo')
-                  sifxl.append(dntat);
-                  const tgdtd = document.getElementsByClassName('date-time-demo')[2]
-                  nxdgat = document.createElement("p");
-                  nxdgat.setAttribute('id', 'nxgn')
-                  tgdtd.appendChild(nxdgat);
    */
+
 
 
    r.sort((a, b) => {
@@ -932,7 +915,7 @@
            let moments = moment();
                let nuDt = moments.format().substring(0, 10)
                      function filter_games(r) {
-                  return r.start != nuDt;
+                  return r.start = nuDt;
                }
                var filtered = r.filter(filter_games);
 
@@ -965,6 +948,25 @@
                   }
 
                }
+
+               const prep = document.getElementsByClassName('sidebar-item-fixtures-today')
+               console.log(prep)
+               nxdg = document.createElement('li')
+               nxdg.setAttribute('class', 'sidebar-item-fixtures-demo')
+               fixlst.append(nxdg);
+               const sifxl = document.getElementsByClassName('sidebar-item-fixtures-demo')[2], nxdga = document.createElement("a");
+               nxdga.setAttribute('class', 'sidebar-anchor-fixtures')
+               nxdga.setAttribute('href', '#')
+               nxdga.innerHTML = "Games Today:"
+               sifxl.appendChild(nxdga);
+               dntat = document.createElement("div");
+               dntat.setAttribute('class', 'date-time-demo')
+               sifxl.append(dntat);
+               const tgdtd = document.getElementsByClassName('date-time-demo')[2]
+               nxdgat = document.createElement("p");
+               nxdgat.setAttribute('id', 'nxgn')
+               tgdtd.appendChild(nxdgat);
+
 
                /*
                document.addEventListener('click', function (event) {
