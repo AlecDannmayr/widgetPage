@@ -924,10 +924,9 @@
 
                   */ 
                  const asArray = Object.entries(r)
-               const fltAr = asArray.filter(([key, value]) => value != '')
-               const tmndyt = fltAr;
-               console.log(tmndyt.sort());
-    
+               const fltAr = asArray.filter(([key, value]) => value != 'Match in Progress')
+               console.log(fltAr);
+         
               
                for (e = 0; e < r.length; e++) {
                   if (r[e].status.substring(0, 17) != "Match in Progress") {
