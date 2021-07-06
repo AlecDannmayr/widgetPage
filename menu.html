@@ -922,6 +922,17 @@
                   tgdtd.appendChild(nxdgat);
    */
 
+
+   r.sort((a, b) => {
+                  let da = new Date(a.start),
+                     db = new Date(b.start);
+                  return da - db;
+               });
+
+               r.forEach((e) => {
+                  console.log(`${e.competition} ${e.id} ${e.name} ${e.start} ${e.status}`);
+               });
+
                 
            let moments = moment();
                let nuDt = moments.format().substring(0, 10)
