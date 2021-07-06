@@ -953,7 +953,7 @@
                      atr.setAttribute('class', 'sidebar-anchor-fixtures')
                      atr.setAttribute('data', r[e].id)
                      atr.setAttribute('href', "#")
-                     atr.innerHTML = filtered[e].name.split("v").join("<br />").split(",")[0];
+                     atr.innerHTML = `${ e.name }.split("v").join("<br />").split(",")[0]`;
                      sif[e].appendChild(atr);
                      const adiv = document.createElement("div");
                      adiv.setAttribute('class', 'date-time')
