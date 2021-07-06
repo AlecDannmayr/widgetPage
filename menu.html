@@ -910,13 +910,11 @@
                });
 
 // Checks for games Today and outputs as var 'filtered'
-var rt = r
-					console.log(rt)
+
                let moments = moment();
                let nuDt = moments.format().substring(0, 10)
                function filter_games(r) {
                   return r.start != nuDt;
-										
                }
                var filtered = r.filter(filter_games);
 
@@ -929,7 +927,6 @@ var rt = r
 					}
 					var filteredTomorrow = r.filter(filter_games_tomorrow);
 
-	console.log(tomorrow)
 /*
 					let nuDt = moments.format().substring(0, 10)
 					function filter_games(r) {
@@ -986,6 +983,10 @@ var rt = r
 							sif[e].style.cssText = "padding-right: 40px;"
                   }
                }
+
+	// Removed first IPL Outright Fixture from list
+
+	document.getElementsByClassName('sidebar-item-fixtures')[0].style.display = "none";
 
 	// Display todays game count
 
