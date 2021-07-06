@@ -903,7 +903,6 @@
                   }
    
    
-                
               
                 
                
@@ -926,7 +925,7 @@
                nxdg = document.createElement('li')
                nxdg.setAttribute('class', 'sidebar-item-fixtures-demo')
                fixlst.append(nxdg);
-            const sifxl = document.getElementsByClassName('sidebar-item-fixtures-demo')[1], nxdga = document.createElement("a");
+               const sifxl = document.getElementsByClassName('sidebar-item-fixtures-demo')[1], nxdga = document.createElement("a");
                nxdga.setAttribute('class', 'sidebar-anchor-fixtures')
                nxdga.setAttribute('href', '#')
                nxdga.innerHTML = "Games Today:"
@@ -934,10 +933,11 @@
                  dntat = document.createElement("div");
                dntat.setAttribute('class', 'date-time-demo')
                sifxl.append(dntat);
-                  const tgdtd = document.getElementsByClassName('date-time-demo')[2]
+               const tgdtd = document.getElementsByClassName('date-time-demo')[1]
                nxdgat = document.createElement("p");
                nxdgat.setAttribute('id', 'nxgn')
                tgdtd.appendChild(nxdgat);
+
                  for (e = 0; e < filtered.length; e++) {
                   if (filtered.length > 0) {
                      cmip++
@@ -968,17 +968,6 @@
 
                }
 
-          
-
-               /*
-               document.addEventListener('click', function (event) {
-                      w = document.getElementsByClassName("iFrame")[0];
-                  if (!event.target.matches('.sidebar-anchor-fixtures')) return;
-                  event.preventDefault();
-                   var x = event.target.getAttribute("data");
-                      w.child.matchRun(mtcRun)
-               }, false)
-*/
 
 
 
@@ -998,16 +987,7 @@
                  w.contentWindow.matchRun("1000004510LIVE1001");
                }, false)
 
-
-               /*
-                tre[e].addEventListener('click', function (event) {
-                   w.contentWindow.location.reload()
-                   event.preventDefault();
-                   var idNo = event.target.getAttribute("data");
-                   w.contentWindow.matchRun(mtcRun);
-                });
- 
-                /*
+           
                               const gmn = document.querySelector('#gmn'), nxgn = document.querySelector('#nxgn')
                               if (cmip != 0) {
                                  gmn.innerHTML = cmip
@@ -1019,7 +999,7 @@
                                  nxgn.innerHTML = nxndc
                               } else {
                                  nxgn.innerHTML = "No Games Tomorrow"
-                              }*/
+                              }
 
             });
       })
