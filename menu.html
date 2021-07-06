@@ -922,21 +922,16 @@
                   tgdtd.appendChild(nxdgat);
    
 
-                  */     for (e = 0; e < r.length; e++) {
+                  */  
            
-           
+               let nuDt = moment().format().substring(0, 10)
                      function filter_games(r) {
-                  return r.start.substring(0,9) == "2021-07-04T10:00:00.000Z";
+                  return r.start.substring(0,9) == nuDt;
                }
 
                var filtered = r.filter(filter_games);
 
-             console.log(r)
-
-             
-               let nuDt = moment("DATETIME_LOCAL")
-               console.log(nuDt)
-              
+                 for (e = 0; e < r.length; e++) {
            
                   if (r[e].status.substring(0, 17) != "Match in Progress") {
                      cmip++
