@@ -972,11 +972,11 @@
                }, false)
 */
 
-             var w, idNo;
+            var w, idNo;
                document.addEventListener('click', function (event) {
                   if (!event.target.matches('.sidebar-anchor-fixtures')) return;
-                    w = document.getElementsByClassName("iFrame")[0];
-                    idNo = event.target.getAttribute("data");
+                 w = document.getElementsByClassName("iFrame")[0];
+               idNo = event.target.getAttribute("data");
                   w.contentWindow.location.reload();
                   event.preventDefault();
                   w.addEventListener("load", function () {
@@ -990,10 +990,11 @@
 
                document.addEventListener('click', function (event) {
                   if (!event.target.matches('.sidebar-demo-fixture')) return;
+                   w = document.getElementsByClassName("iFrame")[0];
                   w.contentWindow.location.reload();
-                  event.preventDefault();
-                  w.contentWindow.matchRun("1000004510LIVE1001");
-                  console.log(w, idNo)
+                 w.contentWindow.matchRun("1000004510LIVE1001");
+                 console.log(w);
+                 
                }, false)
 
 
