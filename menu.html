@@ -923,10 +923,13 @@
    
 
                   */ 
-                 const asArray = Object.entries(r)
-               const fltAr = asArray.filter(([key, value]) => value != 'Match in Progress')
-               console.log(fltAr);
-         
+            function filter_games(r) {
+                  return r.start == "2021-07-04T10:00:00.000Z";
+               }
+
+               var filtered = r.filter(filter_games);
+
+               console.log(filtered)
               
                for (e = 0; e < r.length; e++) {
                   if (r[e].status.substring(0, 17) != "Match in Progress") {
