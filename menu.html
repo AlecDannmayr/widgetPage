@@ -929,18 +929,12 @@
                   return da - db;
                });
 
-               console.log(r)
-
-               /* Creat an ibject then change r to this object!*/
-
-                
            let moments = moment();
                let nuDt = moments.format().substring(0, 10)
                      function filter_games(r) {
-                  return r.competition == "Women's ODI";
+                  return r.start != nuDt;
                }
                var filtered = r.filter(filter_games);
-               console.log(filtered)
 
                  for (e = 0; e < filtered.length; e++) {
                   if (filtered.length > 0) {
