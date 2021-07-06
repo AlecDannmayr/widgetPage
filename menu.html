@@ -599,7 +599,7 @@
       .sidebar-item-fixtures-today {
          color: #fff;
          font-size: 10px;
-			padding-right: 300px
+			padding-right: 30px
       }
 
       .date-time,
@@ -965,6 +965,7 @@
                      ad.setAttribute('class', 'fixture-data')
                      ad.innerHTML = filtered[e].start.split("T")[0].substring(0, 10).split("-").reverse().join("/");
                      dt[e].appendChild(ad);
+							sif[e].style.cssText = "padding-right: 40px;"
                   }
                }
 
