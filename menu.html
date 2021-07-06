@@ -937,7 +937,7 @@
                nxdgat = document.createElement("p");
                nxdgat.setAttribute('id', 'nxgn')
                tgdtd.appendChild(nxdgat);
-
+               
                  for (e = 0; e < filtered.length; e++) {
                   if (filtered.length > 0) {
                      cmip++
@@ -968,6 +968,17 @@
 
                }
 
+          
+
+               /*
+               document.addEventListener('click', function (event) {
+                      w = document.getElementsByClassName("iFrame")[0];
+                  if (!event.target.matches('.sidebar-anchor-fixtures')) return;
+                  event.preventDefault();
+                   var x = event.target.getAttribute("data");
+                      w.child.matchRun(mtcRun)
+               }, false)
+*/
 
 
 
@@ -987,20 +998,17 @@
                  w.contentWindow.matchRun("1000004510LIVE1001");
                }, false)
 
-           
+
                               const gmn = document.querySelector('#gmn'), nxgn = document.querySelector('#nxgn')
                               if (cmip != 0) {
                                  gmn.innerHTML = cmip
                               } else {
                                  gmn.innerHTML = "<br>No Live Games"
                               }
-                             
                               if (nxndc != 0) {
                                  nxgn.innerHTML = nxndc
                               } else {
                                  nxgn.innerHTML = "No Games Tomorrow"
-                              }
-
             });
       })
 
