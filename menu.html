@@ -986,7 +986,8 @@
 
 	// Removed first IPL Outright Fixture from list
 
-	document.getElementsByClassName('sidebar-item-fixtures')[0].style.display = "none";
+					const rmv = document.getElementsByClassName('sidebar-item-fixtures')[0];
+					rmv.parentNode.removeChild(rmv);
 
 	// Display todays game count
 
@@ -996,12 +997,13 @@
 					} else {
 						gmn.innerHTML = "<br>No Live Games"
 					}
-
+/*
 					if (nxndc != 0) {
 						nxgn.innerHTML = "<br>" + nxndc
 					} else {
 						nxgn.innerHTML = "No Games Tomorrow"
 					}
+*/
 
 // Listens for live games from fixtures and sends game id of game to content window and runs live game socket
 
