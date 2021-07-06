@@ -928,9 +928,13 @@
                      db = new Date(b.start);
                   return da - db;
                });
-
+let competition, idnm, name, start, status;
                r.forEach((e) => {
-                  console.log(`${e.competition} ${e.id} ${e.name} ${e.start} ${e.status}`);
+                  competition = e.competition 
+                  idnm = e.id
+                  name = e.name
+                  start = e.start
+                  status = e.status
                });
 
                 
@@ -953,7 +957,7 @@
                      atr.setAttribute('class', 'sidebar-anchor-fixtures')
                      atr.setAttribute('data', r[e].id)
                      atr.setAttribute('href', "#")
-                     atr.innerHTML = `${ e.name }.split("v").join("<br />").split(",")[0]`;
+                     atr.innerHTML = filtered[e].name.split("v").join("<br />").split(",")[0];
                      sif[e].appendChild(atr);
                      const adiv = document.createElement("div");
                      adiv.setAttribute('class', 'date-time')
