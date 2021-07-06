@@ -977,16 +977,16 @@
                   if (!event.target.matches('.sidebar-anchor-fixtures')) return;
                   w = document.getElementsByClassName("iFrame")[0];
                   event.preventDefault();
-                  w.reset();
+                  w.close();
                }, false)
 
 
                var w, idNo;
                document.addEventListener('click', function (event) {
-.sidebar-demo-fixture')) return;
+                  if (!event.target.matches('.sidebar-demo-fixture')) return;
                   w = document.getElementsByClassName("iFrame")[0];
                   event.preventDefault();
-                  w.reset();
+                  w.close();
                }, false)
 
                
