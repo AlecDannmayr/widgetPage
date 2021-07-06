@@ -923,18 +923,17 @@
    
 
                   */  
-           
-               let nuDt = moment().format().substring(0, 10)
+           let moments = moment();
+               let nuDt = moments.format().substring(0, 10)
                      function filter_games(r) {
-                  return r.start.substring(0,9) != nuDt;
+                  return r.start.substring(0,9) == nuDt;
                }
-
                var filtered = r.filter(filter_games);
                console.log(filtered)
 
                  for (e = 0; e < r.length; e++) {
            
-                  if (r[e].status.substring(0, 17) != "Match in Progress") {
+                  if (filtered.length > 0) {
                      cmip++
                      nA = document.createElement('li')
                      nA.setAttribute('class', 'sidebar-item-fixtures')
