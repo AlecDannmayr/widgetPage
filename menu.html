@@ -922,19 +922,22 @@
                   tgdtd.appendChild(nxdgat);
    
 
-                  */ 
-            function filter_games(r) {
+                  */     for (e = 0; e < r.length; e++) {
+           
+           
+                     function filter_games(r) {
                   return r.start.substring(0,9) == "2021-07-04T10:00:00.000Z";
                }
 
                var filtered = r.filter(filter_games);
 
-             let testsu = r.start;
+             console.log(r[e].start.substring(0, 9))
+
+             
                let nuDt = new Date()
-                    console.log(testsu.substring(0, 9))
-               console.log(nuDt)
+               console.log(nuDt.pop(10))
               
-               for (e = 0; e < r.length; e++) {
+           
                   if (r[e].status.substring(0, 17) != "Match in Progress") {
                      cmip++
                      nA = document.createElement('li')
