@@ -918,7 +918,7 @@
            let moments = moment();
                let nuDt = moments.format().substring(0, 10)
                      function filter_games(r) {
-                  return r.start == nuDt;
+                  return r.start != nuDt;
                }
                var filtered = r.filter(filter_games);
                const prep = document.getElementsByClassName('sidebar-item-fixtures-today')
@@ -998,22 +998,19 @@
                  w.contentWindow.matchRun("1000004510LIVE1001");
                }, false)
 
-
-
-         
+               // Display todays game count
                               const gmn = document.querySelector('#gmn'), nxgn = document.querySelector('#nxgn')
                               if (cmip != 0) {
-                                 gmn.innerHTML = cmip
+                                 gmn.innerHTML = "<br>" + cmip
                               } else {
                                  gmn.innerHTML = "<br>No Live Games"
                               }
                              
                               if (nxndc != 0) {
-                                 nxgn.innerHTML = nxndc
+                                 nxgn.innerHTML = "<br>" + nxndc
                               } else {
                                  nxgn.innerHTML = "No Games Tomorrow"
                               }
-
             });
       })
 
