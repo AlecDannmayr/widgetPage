@@ -923,17 +923,13 @@
    
 
                   */
-
-
-               const asArray = Object.entries(r)
-               const fltAr = asArray.filter(([key, value]) => value != '')
-               console.log(fltAr)
-
-               console.log(moment())
-
+    
+              
                for (e = 0; e < r.length; e++) {
-
-
+           
+                  const asArray = Object.entries(r)
+                  const fltAr = asArray.filter(([key, value]) => value != '')
+                  console.log(fltAr[e][1].start)
 
 
                   if (r[e].status.substring(0, 17) != "Match in Progress") {
