@@ -918,7 +918,7 @@
            let moments = moment();
                let nuDt = moments.format().substring(0, 10)
                      function filter_games(r) {
-                  return r.start != nuDt;
+                  return r.start == nuDt;
                }
                var filtered = r.filter(filter_games);
                const prep = document.getElementsByClassName('sidebar-item-fixtures-today')
@@ -935,7 +935,7 @@
                sifxl.append(dntat);
                const tgdtd = document.getElementsByClassName('date-time-demo')[1]
                nxdgat = document.createElement("p");
-               nxdgat.setAttribute('id', 'nxgn')
+               nxdgat.setAttribute('id', 'gmn')
                tgdtd.appendChild(nxdgat);
                
                  for (e = 0; e < filtered.length; e++) {
@@ -999,16 +999,21 @@
                }, false)
 
 
+
+         
                               const gmn = document.querySelector('#gmn'), nxgn = document.querySelector('#nxgn')
                               if (cmip != 0) {
                                  gmn.innerHTML = cmip
                               } else {
                                  gmn.innerHTML = "<br>No Live Games"
                               }
+                             
                               if (nxndc != 0) {
                                  nxgn.innerHTML = nxndc
                               } else {
                                  nxgn.innerHTML = "No Games Tomorrow"
+                              }
+
             });
       })
 
