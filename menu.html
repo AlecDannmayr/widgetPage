@@ -978,12 +978,8 @@
                  w = document.getElementsByClassName("iFrame")[0];
                idNo = event.target.getAttribute("data");
                   w.contentWindow.location.reload();
-                  event.preventDefault();
-                  w.addEventListener("load", function () {
                      event.preventDefault();
                      w.contentWindow.matchRun(idNo);
-                     console.log(w, idNo)
-                  })
                }, false)
 
 
@@ -993,8 +989,6 @@
                    w = document.getElementsByClassName("iFrame")[0];
                   w.contentWindow.location.reload();
                  w.contentWindow.matchRun("1000004510LIVE1001");
-                 console.log(w);
-                 
                }, false)
 
 
