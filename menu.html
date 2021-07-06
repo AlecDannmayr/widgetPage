@@ -742,7 +742,7 @@
    </style>
 </head>
 
-<body>
+<body onload="docLoad()">
 
    <div id="loading-screen">
       <div class="loader-wrapper" id="loader-6">
@@ -972,24 +972,7 @@
                }, false)
 */
 
-            var w, idNo;
-                document.addEventListener('click', function (event) {
-                  if (!event.target.matches('.sidebar-anchor-fixtures')) return;
-                  w = document.getElementsByClassName("iFrame")[0];
-                  event.preventDefault();
-                  w.close();
-               }, false)
 
-
-               var w, idNo;
-               document.addEventListener('click', function (event) {
-                  if (!event.target.matches('.sidebar-demo-fixture')) return;
-                  w = document.getElementsByClassName("iFrame")[0];
-                  event.preventDefault();
-                  w.close();
-               }, false)
-
-               
 
                document.addEventListener('click', function (event) {
                   if (!event.target.matches('.sidebar-anchor-fixtures')) return;
