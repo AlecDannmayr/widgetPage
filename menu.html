@@ -918,9 +918,16 @@
                }
                var filtered = r.filter(filter_games);
 
-					let tomorrow = moments.add(1, 'days').format();
-console.log(tomorrow)
 // Checks for games Tomorrow and outputs as var 'filteredTomorrow'
+
+
+					let tomorrow = moments.add(1, 'days').format().substring(0, 10);
+					 function filter_games_tomorrow(r) {
+						return r.start == tomorrow;
+					}
+					var filteredTomorrow = r.filter(filter_games_tomorrow);
+
+					console.log(r.start)
 /*
 					let nuDt = moments.format().substring(0, 10)
 					function filter_games(r) {
