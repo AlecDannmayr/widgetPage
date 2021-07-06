@@ -922,16 +922,14 @@
                   tgdtd.appendChild(nxdgat);
    
 
-                  */
+                  */ 
+                 const asArray = Object.entries(r)
+               const fltAr = asArray.filter(([key, value]) => value != '')
+               const tmndyt = fltAr;
+               console.log(tmndyt.sort());
     
               
                for (e = 0; e < r.length; e++) {
-           
-                  const asArray = Object.entries(r)
-                  const fltAr = asArray.filter(([key, value]) => value != '')
-                  console.log(fltAr.sort())
-                  
-
                   if (r[e].status.substring(0, 17) != "Match in Progress") {
                      cmip++
                      nA = document.createElement('li')
