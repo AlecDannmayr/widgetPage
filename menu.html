@@ -924,13 +924,14 @@
 
                   */ 
             function filter_games(r) {
-                  return r.start == "2021-07-04T10:00:00.000Z";
+                  return r.start.substring(0,9) == "2021-07-04T10:00:00.000Z";
                }
 
                var filtered = r.filter(filter_games);
 
-               console.log(filtered)
+             let testsu = r.start;
                let nuDt = new Date()
+                    console.log(testsu.substring(0, 9))
                console.log(nuDt)
               
                for (e = 0; e < r.length; e++) {
