@@ -72,11 +72,12 @@ window.addEventListener('load', function () {
 
          let tomorrow = moments.add(1, 'days').format().substring(0, 10)
          function filter_games_tomorrow(r) {
-            return r.start == tomorrow
-         }
-         for (i = 0; i < r.length; r++) {
-            var filteredTomorrow = r[i].filter(filter_games_tomorrow)
-            console.log(r)
+            for (i = 0; i < r.length; r++) {
+               return r[i].start == tomorrow
+            }
+
+            var filteredTomorrow = r.filter(filter_games_tomorrow)
+            console.log(filteredTomorrow)
          }
          /*
                               let nuDt = moments.format().substring(0, 10)
