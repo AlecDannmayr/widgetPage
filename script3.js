@@ -64,7 +64,7 @@ window.addEventListener('load', function () {
          let moments = moment()
          let nuDt = moments.format().substring(0, 10)
          function filter_games(r) {
-            return r.start == nuDt
+            return r.start != nuDt
          }
          var filtered = r.filter(filter_games)
 
@@ -74,8 +74,10 @@ window.addEventListener('load', function () {
          function filter_games_tomorrow(r) {
             return r.start == tomorrow
          }
-         var filteredTomorrow = r.filter(filter_games_tomorrow)
-
+         for (i = 0; i < r.length; r++) {
+            var filteredTomorrow = r[i].filter(filter_games_tomorrow)
+            console.log(r)
+         }
          /*
                               let nuDt = moments.format().substring(0, 10)
                               function filter_games(r) {
