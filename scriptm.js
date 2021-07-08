@@ -167,6 +167,7 @@ window.addEventListener('load', function () {
                idNo = event.target.getAttribute('data')
                event.preventDefault()
                w.contentWindow.matchRun(idNo)
+               w.style.height = w.contentWindow.document.body.scrollHeight + 'px'
             },
             false
          )
@@ -179,6 +180,7 @@ window.addEventListener('load', function () {
                if (!event.target.matches('.sidebar-demo-fixture')) return
                w = document.getElementsByClassName('iFrame')[0]
                w.contentWindow.matchRun('1000004510LIVE1001')
+               w.style.height = w.contentWindow.document.body.scrollHeight + 'px'
             },
             false
          )
