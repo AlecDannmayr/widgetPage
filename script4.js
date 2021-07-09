@@ -157,7 +157,7 @@ window.addEventListener('load', function () {
                               }
                */
 
-         // Listens for live games from fixtures and sends game id of game to content window and runs live game socket
+         // Listens for live games from fixtures and sends game did of game to content window and runs live game socket
 
          document.addEventListener(
             'click',
