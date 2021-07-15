@@ -667,12 +667,12 @@ function matchRun(idNo) {
                      } else if (current_over > 0) {
                         switch (covb) {
                            case 0:
-                              int0 = int
-                              int1 = int
-                              int2 = int
-                              int3 = int
-                              int4 = int
-                              int5 = int
+                              int0 = intn
+                              int1 = intn
+                              int2 = intn
+                              int3 = intn
+                              int4 = intn
+                              int5 = intn
                               covb0 = 6
                               covb1 = 5
                               covb2 = 4
