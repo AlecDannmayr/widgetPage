@@ -628,6 +628,9 @@ function matchRun(idNo) {
                      coms[3].innerHTML = int + '.' + covb3 + '  ' + '| ' + commentaries[3].split('-')[0]
                      coms[4].innerHTML = int + '.' + covb4 + '  ' + '| ' + commentaries[4].split('-')[0]
                      coms[5].innerHTML = int + '.' + covb5 + '  ' + '| ' + commentaries[5].split('-')[0]
+
+                     if (current_over) {
+                     }
                   }
                }
             }
