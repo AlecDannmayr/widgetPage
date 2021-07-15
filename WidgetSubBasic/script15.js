@@ -561,7 +561,7 @@ function matchRun(idNo) {
                   coms[k].innerHTML = cint + '.' + crtbl + '  '
                } else {
                   let covb0, covb1, covb2, covb3, covb4, covb5
-                  if (current_over_balls != '') {
+                  if (current_over == 0) {
                      console.log(commentaries[0])
                      switch (covb) {
                         case 0:
