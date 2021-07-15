@@ -574,6 +574,12 @@ function matchRun(idNo) {
                               covb3 = ''
                               covb4 = ''
                               covb5 = ''
+                              int0 = 0
+                              int1 = 0
+                              int2 = 0
+                              int3 = 0
+                              int4 = 0
+                              int5 = 0
                               break
                            case 1:
                               covb0 = 1
@@ -582,7 +588,12 @@ function matchRun(idNo) {
                               covb3 = ''
                               covb4 = ''
                               covb5 = ''
-
+                              int0 = int
+                              int1 = int
+                              int2 = int
+                              int3 = int
+                              int4 = int
+                              int5 = int
                               break
                            case 2:
                               covb0 = 2
@@ -591,6 +602,12 @@ function matchRun(idNo) {
                               covb3 = ''
                               covb4 = ''
                               covb5 = ''
+                              int0 = int
+                              int1 = int
+                              int2 = int
+                              int3 = int
+                              int4 = int
+                              int5 = int
                               break
                            case 3:
                               covb0 = 3
@@ -599,6 +616,12 @@ function matchRun(idNo) {
                               covb3 = ''
                               covb4 = ''
                               covb5 = ''
+                              int0 = int
+                              int1 = int
+                              int2 = int
+                              int3 = int
+                              int4 = int
+                              int5 = int
                               break
                            case 4:
                               covb0 = 4
@@ -607,6 +630,12 @@ function matchRun(idNo) {
                               covb3 = 1
                               covb4 = ''
                               covb5 = ''
+                              int0 = int
+                              int1 = int
+                              int2 = int
+                              int3 = int
+                              int4 = int
+                              int5 = int
                               break
                            case 5:
                               covb0 = 5
@@ -615,6 +644,12 @@ function matchRun(idNo) {
                               covb3 = 2
                               covb4 = 1
                               covb5 = ''
+                              int0 = int
+                              int1 = int
+                              int2 = int
+                              int3 = int
+                              int4 = int
+                              int5 = int
                               break
                            case 6:
                               covb0 = 6
@@ -623,6 +658,12 @@ function matchRun(idNo) {
                               covb3 = 3
                               covb4 = 2
                               covb5 = 1
+                              int0 = int
+                              int1 = int
+                              int2 = int
+                              int3 = int
+                              int4 = int
+                              int5 = int
                               break
                         }
                      } else if (current_over > 0) {
@@ -686,12 +727,12 @@ function matchRun(idNo) {
                               break
                         }
                      }
-                     coms[0].innerHTML = int + '.' + covb0 + '  ' + '| ' + commentaries[0].split('-')[0]
-                     coms[1].innerHTML = int + '.' + covb1 + '  ' + '| ' + commentaries[1].split('-')[0]
-                     coms[2].innerHTML = int + '.' + covb2 + '  ' + '| ' + commentaries[2].split('-')[0]
-                     coms[3].innerHTML = int + '.' + covb3 + '  ' + '| ' + commentaries[3].split('-')[0]
-                     coms[4].innerHTML = int + '.' + covb4 + '  ' + '| ' + commentaries[4].split('-')[0]
-                     coms[5].innerHTML = int + '.' + covb5 + '  ' + '| ' + commentaries[5].split('-')[0]
+                     coms[0].innerHTML = int0 + '.' + covb0 + '  ' + '| ' + commentaries[0].split('-')[0]
+                     coms[1].innerHTML = int1 + '.' + covb1 + '  ' + '| ' + commentaries[1].split('-')[0]
+                     coms[2].innerHTML = int2 + '.' + covb2 + '  ' + '| ' + commentaries[2].split('-')[0]
+                     coms[3].innerHTML = int3 + '.' + covb3 + '  ' + '| ' + commentaries[3].split('-')[0]
+                     coms[4].innerHTML = int4 + '.' + covb4 + '  ' + '| ' + commentaries[4].split('-')[0]
+                     coms[5].innerHTML = int5 + '.' + covb5 + '  ' + '| ' + commentaries[5].split('-')[0]
                   }
                }
             }
