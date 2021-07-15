@@ -269,6 +269,8 @@ function matchRun(idNo) {
                t1fis = document.getElementById('team-one-score'),
                t2fis = document.getElementById('team-two-score'),
                t1o = innings1overs
+            const inss1 = t1o.parseInt(innings1overs, 10)
+            console.log(innings1overs.parseInt())
             tofo.innerHTML = t1o + ' Ovs'
 
             // Team Two Overs
@@ -551,7 +553,7 @@ function matchRun(idNo) {
             var { commentaries, current_over, current_over_balls } = msg.commentary
             var coms = document.getElementsByClassName('cms'),
                ndcm = document.getElementById('comms-list').childNodes
-            let int = parseInt(current_over, 10),
+            let int = parseInt(current_over, 10) + 1,
                cint = int.toString(),
                covb = parseInt(current_over_balls, 10)
             for (k = 0; k < coms.length; k++) {
@@ -560,8 +562,7 @@ function matchRun(idNo) {
                   coms[k].innerHTML = cint + '.' + crtbl + '  '
                } else {
                   let covb0, covb1, covb2, covb3, covb4, covb5
-
-                  if (commentaries[0] != '') {
+                  if (current_over_balls != '') {
                      console.log(commentaries[0])
                      switch (covb) {
                         case 0:
