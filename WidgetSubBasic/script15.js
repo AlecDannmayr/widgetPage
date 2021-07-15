@@ -557,7 +557,7 @@ function matchRun(idNo) {
             ;(cint = int.toString()), (covb = parseInt(current_over_balls, 10))
             for (k = 0; k < coms.length; k++) {
                const crtbl = parseInt([k], 10) + 1
-               if (intn > 0) {
+               if (intn > 1) {
                   intn
                }
                if (commentaries[k].split('-')[0] == '.') {
@@ -565,65 +565,68 @@ function matchRun(idNo) {
                } else {
                   let covb0, covb1, covb2, covb3, covb4, covb5
                   if (current_over_balls != '') {
-                     switch (covb) {
-                        case 0:
-                           covb0 = ''
-                           covb1 = ''
-                           covb2 = ''
-                           covb3 = ''
-                           covb4 = ''
-                           covb5 = ''
-                           break
-                        case 1:
-                           covb0 = 1
-                           covb1 = 6
-                           covb2 = 5
-                           covb3 = 4
-                           covb4 = 3
-                           covb5 = 2
+                     if (current_over == 0 && current_over_balls <= 5) {
+                        switch (covb) {
+                           case 0:
+                              covb0 = ''
+                              covb1 = ''
+                              covb2 = ''
+                              covb3 = ''
+                              covb4 = ''
+                              covb5 = ''
+                              break
+                           case 1:
+                              covb0 = 1
+                              covb1 = 6
+                              covb2 = 5
+                              covb3 = 4
+                              covb4 = 3
+                              covb5 = 2
 
-                           break
-                        case 2:
-                           covb0 = 2
-                           covb1 = 1
-                           covb2 = 6
-                           covb3 = 5
-                           covb4 = 4
-                           covb5 = 3
-                           break
-                        case 3:
-                           covb0 = 3
-                           covb1 = 2
-                           covb2 = 1
-                           covb3 = 6
-                           covb4 = 5
-                           covb5 = 4
-                           break
-                        case 4:
-                           covb0 = 4
-                           covb1 = 3
-                           covb2 = 2
-                           covb3 = 1
-                           covb4 = 6
-                           covb5 = 5
-                           break
-                        case 5:
-                           covb0 = 5
-                           covb1 = 4
-                           covb2 = 3
-                           covb3 = 2
-                           covb4 = 1
-                           covb5 = 2
-                           break
-                        case 6:
-                           covb0 = 6
-                           covb1 = 5
-                           covb2 = 4
-                           covb3 = 3
-                           covb4 = 2
-                           covb5 = 1
-                           break
+                              break
+                           case 2:
+                              covb0 = 2
+                              covb1 = 1
+                              covb2 = 6
+                              covb3 = 5
+                              covb4 = 4
+                              covb5 = 3
+                              break
+                           case 3:
+                              covb0 = 3
+                              covb1 = 2
+                              covb2 = 1
+                              covb3 = 6
+                              covb4 = 5
+                              covb5 = 4
+                              break
+                           case 4:
+                              covb0 = 4
+                              covb1 = 3
+                              covb2 = 2
+                              covb3 = 1
+                              covb4 = 6
+                              covb5 = 5
+                              break
+                           case 5:
+                              covb0 = 5
+                              covb1 = 4
+                              covb2 = 3
+                              covb3 = 2
+                              covb4 = 1
+                              covb5 = 2
+                              break
+                           case 6:
+                              covb0 = 6
+                              covb1 = 5
+                              covb2 = 4
+                              covb3 = 3
+                              covb4 = 2
+                              covb5 = 1
+                              break
+                        }
                      }
+
                      coms[0].innerHTML = intn + '.' + covb0 + '  ' + '| ' + commentaries[0].split('-')[0]
                      coms[1].innerHTML = intn + '.' + covb1 + '  ' + '| ' + commentaries[1].split('-')[0]
                      coms[2].innerHTML = intn + '.' + covb2 + '  ' + '| ' + commentaries[2].split('-')[0]
