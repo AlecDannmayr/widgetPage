@@ -564,36 +564,51 @@ function matchRun(idNo) {
                   switch (covb) {
                      case 0:
                         covb0 = 1
+                        covb1 = ''
+                        covb2 = ''
+                        covb3 = ''
+                        covb4 = ''
+                        covb5 = ''
                         break
                      case 1:
                         covb0 = 2
                         covb1 = 1
+                        covb2 = ''
+                        covb3 = ''
+                        covb4 = ''
+                        covb5 = ''
                         break
                      case 2:
                         covb0 = 3
                         covb1 = 2
                         covb2 = 1
+                        covb3 = ''
+                        covb4 = ''
+                        covb5 = ''
                         break
                      case 3:
                         covb0 = 4
                         covb1 = 3
                         covb2 = 2
                         covb3 = 1
+                        covb4 = ''
+                        covb5 = ''
                         break
                      case 4:
                         covb0 = 5
                         covb1 = 4
                         covb2 = 3
                         covb3 = 2
-                        covb3 = 1
+                        covb4 = 1
+                        covb5 = ''
                         break
                      case 5:
                         covb0 = 6
                         covb1 = 5
                         covb2 = 4
                         covb3 = 3
-                        covb3 = 2
-                        covb3 = 1
+                        covb4 = 2
+                        covb5 = 1
                         break
                   }
                   const cmlg = covb.length
