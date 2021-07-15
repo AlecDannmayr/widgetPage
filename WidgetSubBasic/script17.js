@@ -271,7 +271,7 @@ function matchRun(idNo) {
                t2fis = document.getElementById('team-two-score'),
                t1o = innings1overs,
                t1op1 = parseFloat(t1o) + 1
-            tofo.innerHTML = t1op1 + ' Ovs'
+            tofo.innerHTML = t1o + ' Ovs'
 
             // Team Two Overs
 
@@ -291,7 +291,7 @@ function matchRun(idNo) {
                t2fo.innerHTML = ''
             } else if (currentinnings == 2 || currentinnings == 4) {
                t2fis.innerHTML = t2s + ' / '
-               t2fo.innerHTML = '&nbsp&nbsp&nbsp' + t2op1 + ' Ovs'
+               t2fo.innerHTML = '&nbsp&nbsp&nbsp' + t2o + ' Ovs'
                ftbi.style.display = 'none'
                stbi.style.display = 'block'
             }
@@ -553,8 +553,8 @@ function matchRun(idNo) {
             var { commentaries, current_over, current_over_balls } = msg.commentary
             var coms = document.getElementsByClassName('cms'),
                ndcm = document.getElementById('comms-list').childNodes
-            let int = parseInt(current_over, 10) + 1,
-               intn = parseInt(current_over)
+            let int = parseInt(current_over, 10),
+               intn = parseInt(current_over) - 1
             ;(cint = int.toString()), (covb = parseInt(current_over_balls, 10))
             for (k = 0; k < coms.length; k++) {
                const crtbl = parseInt([k], 10) + 1
