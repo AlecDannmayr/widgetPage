@@ -557,13 +557,14 @@ function matchRun(idNo) {
             ;(cint = int.toString()), (covb = parseInt(current_over_balls, 10))
             for (k = 0; k < coms.length; k++) {
                const crtbl = parseInt([k], 10) + 1
+               console.log(intn - 1)
                if (commentaries[k].split('-')[0] == '.') {
                   coms[k].innerHTML = cint + '.' + crtbl + '  '
                } else {
                   let covb0, covb1, covb2, covb3, covb4, covb5
                   if (current_over_balls != '') {
                      switch (covb) {
-                       case 0:
+                        case 0:
                            covb0 = ''
                            covb1 = ''
                            covb2 = ''
@@ -619,14 +620,14 @@ function matchRun(idNo) {
                            covb4 = 2
                            covb5 = 1
                            break
-                     const cmlg = covb.length
+                     }
                      coms[0].innerHTML = int + '.' + covb0 + '  ' + '| ' + commentaries[0].split('-')[0]
                      coms[1].innerHTML = int + '.' + covb1 + '  ' + '| ' + commentaries[1].split('-')[0]
                      coms[2].innerHTML = int + '.' + covb2 + '  ' + '| ' + commentaries[2].split('-')[0]
                      coms[3].innerHTML = int + '.' + covb3 + '  ' + '| ' + commentaries[3].split('-')[0]
                      coms[4].innerHTML = int + '.' + covb4 + '  ' + '| ' + commentaries[4].split('-')[0]
                      coms[5].innerHTML = int + '.' + covb5 + '  ' + '| ' + commentaries[5].split('-')[0]
-                  } 
+                  }
                }
             }
 
