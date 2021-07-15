@@ -679,7 +679,6 @@ function matchRun(idNo) {
                               covb3 = ''
                               covb4 = ''
                               covb5 = ''
-
                               break
                            case 1:
                               int0 = int
@@ -694,7 +693,6 @@ function matchRun(idNo) {
                               covb3 = 4
                               covb4 = 3
                               covb5 = 2
-
                               break
                            case 2:
                               int0 = int
@@ -709,7 +707,6 @@ function matchRun(idNo) {
                               covb3 = 5
                               covb4 = 4
                               covb5 = 3
-
                               break
                            case 3:
                               int0 = int
@@ -724,7 +721,6 @@ function matchRun(idNo) {
                               covb3 = 6
                               covb4 = 5
                               covb5 = 4
-
                               break
                            case 4:
                               int0 = int
@@ -739,7 +735,6 @@ function matchRun(idNo) {
                               covb3 = 1
                               covb4 = 6
                               covb5 = 5
-
                               break
                            case 5:
                               int0 = int
@@ -753,7 +748,7 @@ function matchRun(idNo) {
                               covb2 = 3
                               covb3 = 2
                               covb4 = 1
-                              covb5 = 2
+                              covb5 = 6
                               break
                            case 6:
                               int0 = int
