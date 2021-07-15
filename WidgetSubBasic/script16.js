@@ -791,9 +791,9 @@ function matchRun(idNo) {
                eachObj,
                property
             fltinlt = Array.from(fltin)
-
-            rt.innerHTML = ''
-
+            for (i = 0; i < recent.length; i++) {
+               rt[i].innerHTML = ''
+            }
             /* Mutates Object to remove properties not needed for play-by-play, */
 
             for (i = 0; i < fltin.length; i++) {
