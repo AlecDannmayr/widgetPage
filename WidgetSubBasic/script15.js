@@ -562,14 +562,13 @@ function matchRun(idNo) {
                   console.log(covb)
 
                   const cmlg = covb.length
-                  coms[0].innerHTML = int + '.' + 1 + '  ' + '| ' + commentaries[0].split('-')[0]
-                  coms[1].innerHTML = int + '.' + 2 + '  ' + '| ' + commentaries[1].split('-')[0]
-                  coms[2].innerHTML = int + '.' + 3 + '  ' + '| ' + commentaries[2].split('-')[0]
-                  coms[3].innerHTML = int + '.' + 4 + '  ' + '| ' + commentaries[3].split('-')[0]
-                  coms[4].innerHTML = int + '.' + 5 + '  ' + '| ' + commentaries[4].split('-')[0]
-                  coms[5].innerHTML = int + '.' + 6 + '  ' + '| ' + commentaries[5].split('-')[0]
+                  coms[0].innerHTML = int + '.' + covb + '  ' + '| ' + commentaries[0].split('-')[0]
+                  coms[1].innerHTML = int + '.' + covb + '  ' + '| ' + commentaries[1].split('-')[0]
+                  coms[2].innerHTML = int + '.' + covb + '  ' + '| ' + commentaries[2].split('-')[0]
+                  coms[3].innerHTML = int + '.' + covb + '  ' + '| ' + commentaries[3].split('-')[0]
+                  coms[4].innerHTML = int + '.' + covb + '  ' + '| ' + commentaries[4].split('-')[0]
+                  coms[5].innerHTML = int + '.' + covb + '  ' + '| ' + commentaries[5].split('-')[0]
                }
-               console.log(covb)
             }
 
             break
