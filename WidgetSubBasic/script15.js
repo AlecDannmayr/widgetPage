@@ -565,7 +565,7 @@ function matchRun(idNo) {
                      console.log(commentaries[0])
                      switch (covb) {
                         case 0:
-                           covb0 = 1
+                           covb0 = ''
                            covb1 = ''
                            covb2 = ''
                            covb3 = ''
@@ -573,6 +573,14 @@ function matchRun(idNo) {
                            covb5 = ''
                            break
                         case 1:
+                           covb0 = 1
+                           covb1 = ''
+                           covb2 = ''
+                           covb3 = ''
+                           covb4 = ''
+                           covb5 = ''
+                           break
+                        case 2:
                            covb0 = 2
                            covb1 = 1
                            covb2 = ''
@@ -580,7 +588,7 @@ function matchRun(idNo) {
                            covb4 = ''
                            covb5 = ''
                            break
-                        case 2:
+                        case 3:
                            covb0 = 3
                            covb1 = 2
                            covb2 = 1
@@ -588,7 +596,7 @@ function matchRun(idNo) {
                            covb4 = ''
                            covb5 = ''
                            break
-                        case 3:
+                        case 4:
                            covb0 = 4
                            covb1 = 3
                            covb2 = 2
@@ -596,7 +604,7 @@ function matchRun(idNo) {
                            covb4 = ''
                            covb5 = ''
                            break
-                        case 4:
+                        case 5:
                            covb0 = 5
                            covb1 = 4
                            covb2 = 3
@@ -604,7 +612,7 @@ function matchRun(idNo) {
                            covb4 = 1
                            covb5 = ''
                            break
-                        case 5:
+                        case 6:
                            covb0 = 6
                            covb1 = 5
                            covb2 = 4
