@@ -559,6 +559,7 @@ function matchRun(idNo) {
                if (commentaries[k].split('-')[0] == '.') {
                   coms[k].innerHTML = cint + '.' + crtbl + '  '
                } else {
+                  console.log(covb)
                   coms[0].innerHTML = int + '.' + 1 + '  ' + '| ' + commentaries[0].split('-')[0]
                   coms[1].innerHTML = int + '.' + 2 + '  ' + '| ' + commentaries[1].split('-')[0]
                   coms[2].innerHTML = int + '.' + 3 + '  ' + '| ' + commentaries[2].split('-')[0]
