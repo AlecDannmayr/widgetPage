@@ -1,0 +1,854 @@
+//let socket = new WebSocket('ws://demo-feed-widget-uat.decimalcricket.com/DEMO:Wi')
+var socket = 0 /*remove commenting for socket = 0 and comment out socket.open below when intergrated into menu */
+
+socket.onopen = function () {
+   socket.send(
+      `{
+                                        "msg_type":"feed_subscription",
+                                        "feed_id":"1000004510LIVE1001",
+                                        "feed_filter":["event", "powerbar", "scorecard", "scoreboard", "lineups", "commentary", "match_update", "scoregrid", "alerts"]
+                                      }`
+   )
+}
+
+//* Global scoped variables (not ideal but is a must for the way the data is structured) */
+
+let g2h = document.getElementById('second-header'),
+   mtin = document.getElementById('third-header-game-info'),
+   cmli = document.getElementById('comms-list'),
+   gsb = document.getElementById('score-body'),
+   pb = document.getElementById('win-probability-done'),
+   snc1 = document.getElementById('team-one-title-name'),
+   snc2 = document.getElementById('team-two-title-name'),
+   st1 = document.getElementById('selection-team-one'),
+   st2 = document.getElementById('selection-team-two'),
+   st1t = document.getElementById('selection-team-one-teams'),
+   st2t = document.getElementById('selection-team-two-teams'),
+   mt1 = document.getElementById('team-one-name'),
+   mt2 = document.getElementById('team-two-name'),
+   lbs = document.getElementById('selection-live'),
+   cbs = document.getElementById('selection-comms'),
+   tbs = document.getElementById('selection-teams'),
+   cg = document.getElementById('commsGrid'),
+   cgt = document.getElementById('commsGridTwo'),
+   tosl = document.getElementById('team-one-Section'),
+   sgl = document.getElementById('selector-grid-two'),
+   sgt = document.getElementById('selector-grid-teams'),
+   scgl = document.getElementById('scorecardGrid'),
+   scglt = document.getElementById('scorecardGridTwo'),
+   tgto = document.getElementById('teamsGrid'),
+   tgtt = document.getElementById('teamsGridTwo'),
+   ngi = document.querySelector('.ngi'),
+   lod = document.querySelector('#loader-1'),
+   lodTx = document.querySelector('#load-tx'),
+   rtse = document.getElementById('rtse'),
+   matchVs = document.getElementById('addVs'),
+   cover = document.querySelector('.cover'),
+   innings1battingteam,
+   shortNameOne,
+   shortNameTwo,
+   hoa,
+   t1n,
+   t2n,
+   igsn
+
+/* switch on to use with menu */
+
+function matchRun(idNo) {
+   var obj = {
+      msg_type: 'feed_subscription',
+      feed_id: idNo,
+      feed_filter: ['event', 'powerbar', 'scorecard', 'scoreboard', 'lineups', 'commentary', 'match_update', 'scoregrid'],
+   }
+   var snd = JSON.stringify(obj)
+   if (idNo == '1000004510LIVE1001' && socket == 0) {
+      socket = new WebSocket('ws://demo-feed-widget-uat.decimalcricket.com/DEMO:Wi')
+      socket.onopen = function () {
+         socket.send(snd)
+      }
+   } else if (idNo == '1000004510LIVE1001' && socket.readyState == 1) {
+      socket.close()
+      socket = new WebSocket('ws://demo-feed-widget-uat.decimalcricket.com/DEMO:Wi')
+      socket.onopen = function () {
+         socket.send(snd)
+      }
+   } else if (idNo != '1000004510LIVE1001' && socket == 0) {
+      socket = new WebSocket('ws://feed.decimalcricket.com')
+      socket.onopen = function () {
+         socket.send(snd)
+      }
+   } else if (idNo != '1000004510LIVE1001' && socket.readyState == 1) {
+      socket.close()
+      socket = new WebSocket('ws://feed.decimalcricket.com')
+      socket.onopen = function () {
+         socket.send(snd)
+      }
+   }
+
+   // socket on message
+
+   socket.onmessage = function (event) {
+      var msg = JSON.parse(event.data)
+
+      // switch statment listens for messages
+
+      switch (msg.msg_type) {
+         case 'match_update':
+            var { event_status, competition, description, start_datetime } = msg.match_update
+            const gub = document.getElementById('main-body'),
+               glb = document.getElementById('all-data-section'),
+               pbp = document.getElementById('gameAndBallsInfo'),
+               acdc = document.getElementById('countDownClock')
+            masb = gsb
+
+            // Opens widget dependant on event_status
+
+            if (event_status === 'BREAK_IN_PLAY' || event_status === 'MATCH_SCHEDULED' || event_status === 'MATCH_COMPLETE') {
+               snc1.innerHTML = ' '
+               snc2.innerHTML = ' '
+               var startDate = start_datetime.substr(0, 10),
+                  startTime = start_datetime.slice(11, 16)
+               matchVs.innerHTML = competition + ' <br> ' + ' Start Date: ' + startDate + ' | ' + ' Start Time: ' + startTime
+               mtin.innerHTML = description.replace(',', '<br/>')
+               setInterval(function () {
+                  acdc.style.cssText = 'display: none; justify-content: center;'
+               }, 1000)
+               matchVs.style.cssText = 'margin: 0px 70px;'
+               masb.style.cssText = 'visibility: hidden:'
+               gub.style.cssText = 'background-image: url(Icons/cricketGround.png); background-repeat: no-repeat;'
+               glb.style.cssText = 'visibility: hidden; display: none;'
+               pbp.style.display = 'none'
+               rtse.style.display = 'none'
+               ngi.style.cssText = 'display: block;'
+               cover.style.display = 'none'
+               lod.style.display = 'none'
+               lodTx.style.display = 'none'
+            } else if (event_status === 'MATCH_STABLE' || event_status === 'RUNS_LIKELY' || event_status === 'BALL_IN_PROGRESS' || event_status === 'UMPIRE_REVIEW') {
+               cover.style.display = 'block'
+               snc1.innerHTML = ' '
+               snc2.innerHTML = ' '
+               rtse.style.display = 'block'
+               glb.style.cssText = 'visibility: visible; display: block;'
+               pbp.style.display = 'block'
+               acdc.style.display = 'none'
+               mtin.innerHTML = description
+               matchVs.style.cssText = 'margin-top: 7px;'
+               matchVs.innerHTML = ''
+               masb.style.cssText = 'visibility: visible'
+               gub.style.cssText = 'background-image: none;'
+               ngi.style.display = 'none'
+               lod.style.display = 'flex'
+               lodTx.style.display = 'block'
+            } else if (event_status === 'EVENT_CLOSED') {
+               gub.style.cssText = 'background-image: url(Icons/cricketGround.png); background-repeat: no-repeat'
+               mtin.innerHTML = 'The game is inactive<br>select another game'
+               glb.style.cssText = 'visibility: hidden; display: none;'
+               rtse.style.display = 'none'
+               matchVs.innerHTML = 'Game Inactive'
+               matchVs.style.cssText = 'margin-top: 7px;'
+               masb.style.cssText = 'visibility: hidden'
+               pbp.style.display = 'none'
+               g2h.style.cssText = 'display: flex; align-items: center;'
+               snc1.innerHTML = ' '
+               snc2.innerHTML = ' '
+               ngi.style.cssText = 'display: block;'
+            }
+
+            /* Countdown Clock not yet enabled 
+
+            var GetStartTime = start_datetime
+            setInterval(function () {
+               function getTimeRemaining(endtime) {
+                  const total = Date.parse(endtime) - Date.parse(new Date()),
+                     seconds = Math.floor((total / 1000) % 60),
+                     minutes = Math.floor((total / 1000 / 60) % 60),
+                     hours = Math.floor((total / (1000 * 60 * 60)) % 24),
+                     days = Math.floor(total / (1000 * 60 * 60 * 24))
+                  return {
+                     total,
+                     days,
+                     hours,
+                     minutes,
+                     seconds,
+                  }
+               }
+
+               function initializeClock(id, endtime) {
+                  const clock = document.getElementById(id),
+                     daysSpan = clock.querySelector('.days'),
+                     hoursSpan = clock.querySelector('.hours'),
+                     minutesSpan = clock.querySelector('.minutes'),
+                     secondsSpan = clock.querySelector('.seconds')
+
+                  function updateClock() {
+                     const t = getTimeRemaining(endtime)
+                     daysSpan.innerHTML = t.days
+                     hoursSpan.innerHTML = ('0' + t.hours).slice(-2)
+                     minutesSpan.innerHTML = ('0' + t.minutes).slice(-2)
+                     secondsSpan.innerHTML = ('0' + t.seconds).slice(-2)
+                     if (t.total <= 0) {
+                        clearInterval(timeinterval)
+                        var clockDiv = document.getElementById('clockdiv')
+                        clockDiv.style.color = 'orange'
+                     }
+                  }
+                  updateClock()
+                  var timeinterval = setInterval(updateClock, 1000)
+               }
+               initializeClock('clockdiv', GetStartTime)
+            }, 1000)
+         }
+
+*/
+
+            break
+
+         case 'event':
+            var { scoreline, event_description, scoreboard, event_status } = msg.event
+            var bip = document.getElementById('third-header-game-info')
+
+            // Indicates break-in-play status
+
+            if (event_description === 'Break in Play - Lunch') {
+               bip.innerText = 'Break in Play - Lunch'
+            } else if (event_description === 'Break in Play - Tea') {
+               bip.innerText = 'Break in Play - Tea'
+            } else if (event_description.substr(0, 13) === 'MATCH_COMPLETE') {
+            }
+
+            const sist = event_status.split('_').join(' '),
+               gsts = document.getElementById('third-header-game-status')
+
+            // Changes match Stable to Waiting for Bowl
+            gsts.innerHTML = sist
+
+            if (scoreboard[0].name === 'away') {
+               hoa = 'away'
+            }
+
+            // shows scoreline
+
+            var gami = document.getElementsByClassName('gami')
+            gami[0].innerHTML = scoreline
+            gami[0].style.cssText = 'margin-top: 0px;'
+
+            break
+
+         case 'scoreboard':
+            var { matchtitle, innings1battingteam, innings1bowlingteam, innings2runs, innings1runs, innings1wickets, innings2wickets, innings1overs, innings2overs, status, currentinnings } = msg.scoreboard
+
+            //* disables loader when message activated */
+
+            lod.style.display = 'none'
+            lodTx.style.display = 'none'
+            cover.style.display = 'none'
+
+            var hmw = status.split(' ').slice(0, 2).join(' '),
+               wnr = document.getElementById('winner-declaration'),
+               wi1 = document.getElementById('winner-image-team-one'),
+               wi2 = document.getElementById('winner-image-team-two')
+
+            if (hmw == 'Match Complete' && innings1runs > innings2runs) {
+               wnr.style.display = 'block'
+               wnr.innerHTML = status
+               wi1.style.display = 'block'
+               wi2.style.display = 'none'
+               g2h.style.cssText = 'padding-right: 20px;'
+            } else if (hmw == 'Match Complete' && innings1runs < innings2runs) {
+               wnr.style.display = 'block'
+               wnr.innerHTML = status
+               wi1.style.display = 'none'
+               wi2.style.display = 'block'
+               g2h.style.cssText = 'padding-left: 20px;'
+            }
+
+            // Team one Overs
+
+            const tofo = document.getElementById('team-one-overs'),
+               t2fo = document.getElementById('team-two-overs'),
+               t1fis = document.getElementById('team-one-score'),
+               t2fis = document.getElementById('team-two-score'),
+               t1o = innings1overs
+            tofo.innerHTML = t1o + ' Ovs'
+
+            // Team Two Overs
+
+            let t2o = innings2overs,
+               TeamOneScore = innings1runs,
+               t2s = innings2runs
+            t1fis.innerHTML = TeamOneScore + ' / '
+
+            // change batting or bowling Icon
+
+            const ftbi = document.getElementById('icon-team-one'),
+               stbi = document.getElementById('icon-team-two'),
+               t1sl = TeamOneScore.toString().length
+
+            if (currentinnings == 1 || currentinnings == 3) {
+               t2fis.innerHTML = ''
+               t2fo.innerHTML = ''
+            } else if (currentinnings == 2 || currentinnings == 4) {
+               t2fis.innerHTML = t2s + ' / '
+               t2fo.innerHTML = '&nbsp&nbsp&nbsp' + t2o + ' Ovs'
+               ftbi.style.display = 'none'
+               stbi.style.display = 'block'
+            }
+            if (t1sl >= 2 && t1sl < 3 && t2s !== '') {
+               t2fis.innerHTML = t2s + ' / '
+            } else if (t1sl >= 3 && t1sl < 4 && t2s !== '') {
+               t2fis.innerHTML = '&nbsp&nbsp&nbsp' + t2s + ' / '
+            }
+
+            // Current Wickets Team One
+
+            const t1w = innings1wickets,
+               t1fw = document.getElementById('team-one-wickets')
+            t1fw.innerHTML = t1w
+
+            // Current Wickets Team Two
+
+            const t2fw = document.getElementById('team-two-wickets'),
+               teamTwoWickets = innings2wickets
+            ;(t2fw.innerHTML = teamTwoWickets), (addVs = document.getElementById('addVs'))
+
+            // Team playing
+
+            t1n = innings1battingteam
+            t2n = innings1bowlingteam
+            mt1.innerHTML = t1n
+            mt2.innerHTML = t2n
+            addVs.style.cssText = 'display: flex; justify-content: center; vertical-align: center;'
+            addVs.innerHTML = 'vs'
+
+            // Show Match Info
+
+            mtin.innerHTML = matchtitle
+
+            // Displays  end of day
+
+            if (status === 'Break in Play - Stumps') {
+               mtin.innerHtml = status
+            } else {
+               mtin.innerHTML = matchtitle
+            }
+
+            // Team names
+
+            snc1.innerHTML = shortNameOne
+            snc2.innerHTML = shortNameTwo
+
+            break
+
+         case 'lineups':
+            const { teams } = msg.lineups
+            /* Team name for teams and batter and bowler */
+            var t1p = document.getElementsByClassName('b'),
+               t2p = document.getElementsByClassName('b2'),
+               t1b = document.getElementsByClassName('b1sn'),
+               t2bw = document.getElementsByClassName('bw1sn'),
+               hdb1 = document.getElementsByClassName('hdb1'),
+               hdb2 = document.getElementsByClassName('hdb2'),
+               hdbw1 = document.getElementsByClassName('hdbw1'),
+               hdbw2 = document.getElementsByClassName('hdbw2'),
+               shortnameOne
+
+            // Check all of this! // if innings1team === teams[p]
+
+            if (igsn == '1' || igsn == null) {
+               for (i = 0; i < t1p.length; i++) {
+                  if (t1n == teams[0].short_name) {
+                     shortNameOne = teams[0].short_name
+                     shortNameTwo = teams[1].short_name
+                  } else {
+                     shortNameOne = teams[1].short_name
+                     shortNameTwo = teams[0].short_name
+                  }
+
+                  t1p[i].innerHTML = teams[1].players[i].name
+                  t1b[i].innerHTML = teams[1].players[i].name
+                  t2p[i].innerHTML = teams[0].players[i].name
+                  t2bw[i].innerHTML = teams[0].players[i].name
+                  bhcp = teams[1].players[i].bat_hand.split('-')[0]
+                  bhcp2 = teams[0].players[i].bat_hand.split('-')[0]
+                  hdb1[i].innerHTML = bhcp.charAt(0).toUpperCase() + bhcp.slice(1)
+                  hdb2[i].innerHTML = bhcp.charAt(0).toUpperCase() + bhcp.slice(1)
+                  hdbw1[i].innerHTML = teams[1].players[i].bowler_style
+                  hdbw2[i].innerHTML = teams[0].players[i].bowler_style
+               }
+            } else {
+               for (i = 0; i < t1p.length; i++) {
+                  t1p[i].innerHTML = teams[0].players[i].name
+                  t1b[i].innerHTML = teams[0].players[i].name
+                  t2p[i].innerHTML = teams[1].players[i].name
+                  t2bw[i].innerHTML = teams[1].players[i].name
+                  bhcp = teams[0].players[i].bat_hand.split('-')[0]
+                  bhcp2 = teams[1].players[i].bat_hand.split('-')[0]
+                  hdb1[i].innerHTML = bhcp.charAt(0).toUpperCase() + bhcp.slice(1)
+                  hdb2[i].innerHTML = bhcp.charAt(0).toUpperCase() + bhcp.slice(1)
+                  hdbw1[i].innerHTML = teams[0].players[i].bowler_style
+                  hdbw2[i].innerHTML = teams[1].players[i].bowler_style
+               }
+            }
+
+            const wpb = document.getElementById('win-probability-bar')
+
+            if (teams[0].name == mt1.textContent) {
+               pb.style.backgroundColor = '#' + teams[0].colour
+               wpb.style.backgroundColor = '#' + teams[1].colour
+            } else if (teams[1].name == mt2.textContent) {
+               pb.style.backgroundColor = '#' + teams[1].colour
+               wpb.style.backgroundColor = '#' + teams[0].colour
+            } else {
+               return
+            }
+
+            break
+
+         case 'powerbar':
+            var { team1winpercentage, team2winpercentage } = msg.powerbar
+
+            let teamnOneWinPercentage = team1winpercentage * 100,
+               powerBart1 = teamnOneWinPercentage.toFixed(0),
+               t1pe = document.getElementById('team-one-percentage'),
+               t2pe = document.getElementById('team-two-percentage')
+            teamTwoWinPercentage = team2winpercentage * 100
+            powerBart2 = teamTwoWinPercentage.toFixed(0)
+
+            pb.style.width = teamTwoWinPercentage + '%'
+
+            // if statement finds which team is the the left of powerbar
+
+            if (hoa == 'away') {
+               t1pe.innerHTML = shortNameOne + ' ' + powerBart2 + '%'
+               t2pe.innerHTML = shortNameTwo + ' ' + powerBart1 + '%'
+            } else {
+               t1pe.innerHTML = shortNameTwo + ' ' + powerBart2 + '%'
+               t2pe.innerHTML = shortNameOne + ' ' + powerBart1 + '%'
+            }
+
+            break
+
+         // Scorecard case
+
+         case 'scorecard':
+            var { batting, bowling, bat_now, bowl_now, extras, inns_now, inns1, inns2, inns3, inns4 } = msg.scorecard
+
+            igsn = inns_now
+            if (igsn == 1 || igsn == 3) {
+               st1.innerHTML = shortNameOne
+               st2.innerHTML = shortNameTwo
+               st1t.innerHTML = shortNameOne
+               st2t.innerHTML = shortNameTwo
+            } else {
+               st2.innerHTML = shortNameOne
+               st1.innerHTML = shortNameTwo
+               st2t.innerHTML = shortNameOne
+               st1t.innerHTML = shortNameTwo
+            }
+
+            let t1r = document.getElementsByClassName('b1r'),
+               t1b2 = document.getElementsByClassName('b1b'),
+               t14s = document.getElementsByClassName('b14s'),
+               t16s = document.getElementsByClassName('b16s'),
+               t2bnb = document.getElementsByClassName('bw1nb'),
+               t2bo = document.getElementsByClassName('bw1o'),
+               t2br = document.getElementsByClassName('bw1r'),
+               t2bw2 = document.getElementsByClassName('bw1w'),
+               stts = document.getElementsByClassName('b1st'),
+               exts = document.getElementsByClassName('eb'),
+               insNo
+
+            // switch statement looks for inning no
+
+            switch (inns_now) {
+               case 1:
+                  insNo = inns1
+                  break
+               case 2:
+                  insNo = inns2
+                  break
+               case 3:
+                  insNo = inns3
+                  break
+               case 4:
+                  insNo = inns4
+                  break
+            }
+
+            for (j = 0; j < t1r.length; j++) {
+               t1r[j].innerHTML = insNo.batting[j].runs
+               t1b2[j].innerHTML = insNo.batting[j].balls
+               t14s[j].innerHTML = insNo.batting[j].fours
+               t16s[j].innerHTML = insNo.batting[j].sixes
+               t2bnb[j].innerHTML = insNo.bowling[j].nb
+               t2bo[j].innerHTML = insNo.bowling[j].overs
+               t2br[j].innerHTML = insNo.bowling[j].runs
+               t2bw2[j].innerHTML = insNo.bowling[j].wd
+               stts[j].innerHTML = insNo.batting[j].status.replace(/,[^,]+$/, '')
+            }
+            tbs.addEventListener('click', function () {
+               sgt.style.display = 'block'
+               tosl.style.display = 'none'
+               sgl.style.display = 'none'
+               cg.style.display = 'none'
+               cgt.style.display = 'none'
+               cmli.style.display = 'none'
+               scglt.style.display = 'none'
+               cbs.style.cssText = 'background-color: #221f1f'
+               lbs.style.cssText = 'background-color: #221f1f'
+               tbs.style.cssText = 'background-color: #2483c5'
+               tgto.style.display = 'grid'
+               tgtt.style.display = 'none'
+               st1t.style.cssText = 'background-color: #2483c5'
+            })
+            st1t.addEventListener('click', function () {
+               tgto.style.display = 'grid'
+               tgtt.style.display = 'none'
+               st2t.style.cssText = 'background-color: #221f1f'
+               st1t.style.cssText = 'background-color: #2483c5'
+            })
+            st2t.addEventListener('click', function () {
+               tgtt.style.display = 'grid'
+               tgto.style.display = 'none'
+               st1t.style.cssText = 'background-color: #221f1f'
+               st2t.style.cssText = 'background-color: #2483c5'
+            })
+
+            lbs.addEventListener('click', function () {
+               cg.style.display = 'none'
+               cgt.style.display = 'none'
+               tosl.style.display = 'grid'
+               sgl.style.display = 'block'
+               sgt.style.display = 'none'
+               tgto.style.display = 'none'
+               tgtt.style.display = 'none'
+               cbs.style.cssText = 'background-color: #221f1f'
+               lbs.style.cssText = 'background-color: #2483c5'
+               tbs.style.cssText = 'background-color: #221f1f'
+               st1.style.cssText = 'background-color: #2483c5'
+               st2.style.cssText = 'background-color: #221f1f'
+               cmli.style.display = 'none'
+               scgl.style.display = 'grid'
+               st2t.style.cssText = 'background-color: #221f1f'
+               st1t.style.cssText = 'background-color: #221f1f'
+            })
+            st1.addEventListener('click', function () {
+               st1.style.cssText = 'background-color: #2483c5'
+               st2.style.cssText = 'background-color: #221f1f'
+               scglt.style.display = 'none'
+               scgl.style.display = 'grid'
+            })
+            st2.addEventListener('click', function () {
+               st2.style.cssText = 'background-color: #2483c5'
+               st1.style.cssText = 'background-color: #221f1f'
+               scgl.style.display = 'none'
+               scglt.style.display = 'grid'
+            })
+
+            break
+
+         case 'commentary':
+            var { commentaries, current_over, current_over_balls } = msg.commentary
+            var coms = document.getElementsByClassName('cms'),
+               ndcm = document.getElementById('comms-list').childNodes
+            let int = parseInt(current_over, 10),
+               cint = int.toString(),
+               covb = parseInt(current_over_balls, 10)
+            for (k = 0; k < coms.length; k++) {
+               const crtbl = parseInt([k], 10) + 1
+               if (commentaries[k].split('-')[0] == '.') {
+                  coms[k].innerHTML = cint + '.' + crtbl + '  '
+               } else {
+                  coms[0].innerHTML = int + '.' + 1 + '  ' + '| ' + commentaries[0].split('-')[0]
+                  coms[1].innerHTML = int + '.' + 2 + '  ' + '| ' + commentaries[1].split('-')[0]
+                  coms[2].innerHTML = int + '.' + 3 + '  ' + '| ' + commentaries[2].split('-')[0]
+                  coms[3].innerHTML = int + '.' + 4 + '  ' + '| ' + commentaries[3].split('-')[0]
+                  coms[4].innerHTML = int + '.' + 5 + '  ' + '| ' + commentaries[4].split('-')[0]
+                  coms[5].innerHTML = int + '.' + 6 + '  ' + '| ' + commentaries[5].split('-')[0]
+               }
+               console.log(covb)
+            }
+
+            break
+
+         case 'scoregrid':
+            const { overs } = msg.scoregrid
+
+            let nxt = igsn - 1,
+               asArray = Object.entries(overs),
+               fltAr = asArray[nxt].filter(([key, value]) => value != ''),
+               fltin = fltAr[1],
+               recent = document.querySelector('.recent'),
+               rt = document.querySelectorAll('.rt'),
+               eachObj,
+               property
+            fltinlt = Array.from(fltin)
+
+            /* Mutates Object to remove properties not needed for play-by-play, */
+
+            for (i = 0; i < fltin.length; i++) {
+               eachObj = fltinlt[i]
+               delete eachObj['bowlerid']
+               delete eachObj['ov']
+               delete eachObj['runs']
+               delete eachObj['total']
+               delete eachObj['wkts']
+
+               /* Checks for repeated property 
+
+            /* Removed b7/8/9/10 if no extra balls played */
+
+               if (fltinlt[i].b7 == null) {
+                  delete eachObj['b7']
+                  delete eachObj['b8']
+                  delete eachObj['b9']
+                  delete eachObj['b10']
+               } else if (fltinlt[i].b7 != null || fltinlt[i].b8 == null) {
+                  delete eachObj['b8']
+                  delete eachObj['b9']
+                  delete eachObj['b10']
+                  delete eachObj['b10']
+               } else if (fltinlt[i].b7 != null || fltinlt[i].b10 == null) {
+                  delete eachObj['b10']
+               }
+
+               if (fltinlt.length <= 2) {
+                  rt[0].innerHTML = fltin[0].b1
+                  rt[1].innerHTML = fltin[0].b2
+                  rt[2].innerHTML = fltin[0].b3
+                  rt[3].innerHTML = fltin[0].b4
+                  rt[4].innerHTML = fltin[0].b5
+                  rt[5].innerHTML = fltin[0].b6
+                  if (fltinlt[1] != undefined) {
+                     rt[6].innerHTML = fltin[1].b1
+                     rt[7].innerHTML = fltin[1].b2
+                     rt[8].innerHTML = fltin[1].b3
+                     rt[9].innerHTML = fltin[1].b4
+                     rt[10].innerHTML = fltin[1].b5
+                     rt[11].innerHTML = fltin[1].b6
+                  }
+               } else if (fltinlt.length == 3) {
+                  for (i = 0; i < fltinlt.length; i++) {
+                     rt[0].innerHTML = fltin[i].b1
+                     rt[1].innerHTML = fltin[i].b2
+                     rt[2].innerHTML = fltin[i].b3
+                     rt[3].innerHTML = fltin[i].b4
+                     rt[4].innerHTML = fltin[i].b5
+                     rt[5].innerHTML = fltin[i].b6
+                     rt[6].innerHTML = fltin[0].b1
+                     rt[7].innerHTML = fltin[0].b2
+                     rt[8].innerHTML = fltin[0].b3
+                     rt[9].innerHTML = fltin[0].b4
+                     rt[10].innerHTML = fltin[0].b5
+                     rt[11].innerHTML = fltin[0].b6
+                  }
+               } else if (fltinlt.length > 3) {
+                  for (i = 0; i < fltinlt.length; i++) {
+                     rt[0].innerHTML = fltin[i].b1
+                     rt[1].innerHTML = fltin[i].b2
+                     rt[2].innerHTML = fltin[i].b3
+                     rt[3].innerHTML = fltin[i].b4
+                     rt[4].innerHTML = fltin[i].b5
+                     rt[5].innerHTML = fltin[i].b6
+                     const slitwo = fltin.slice(-2)
+                     rt[6].innerHTML = slitwo[0].b1
+                     rt[7].innerHTML = slitwo[0].b2
+                     rt[8].innerHTML = slitwo[0].b3
+                     rt[9].innerHTML = slitwo[0].b4
+                     rt[10].innerHTML = slitwo[0].b5
+                     rt[11].innerHTML = slitwo[0].b6
+                  }
+               }
+               for (it = 0; it < 12; it++) {
+                  switch (rt[it].textContent) {
+                     case '88':
+                        rt[it].style.cssText = 'background-color: #fff; color: #000000; padding: 6.4px 7px;'
+                        break
+                     case '-':
+                        rt[it].style.cssText = 'background-color: #2F4F4F; color: #fff; padding: 6.4px 10px;'
+                        break
+                     case '':
+                        rt[it].style.cssText = 'background-color: #2F4F4F; color: #fff; padding: 6.4px 13px;'
+                        break
+                     case '0':
+                        rt[it].style.cssText = 'background-color: #fff; color: #000000; padding: 6.4px 10px;'
+                        break
+                     case '1':
+                        rt[it].style.cssText = 'background-color: #fff; color: #000000;padding: 6.4px 10px;'
+                        break
+                     case '2':
+                        rt[it].style.cssText = 'background-color: #2188CD; color: #000000;padding: 6.4px 10px;'
+                        break
+                     case '3':
+                        rt[it].style.cssText = 'background-color: #2188CD; color: #000000;padding: 6.4px 10px;'
+                        break
+                     case '4':
+                        rt[it].style.cssText = 'background-color: #162738; color: #fff;padding: 6.4px 10px;'
+                        break
+                     case '5':
+                        rt[it].style.cssText = 'background-color: #162738; color: #fff;padding: 6.4px 10px;'
+                        break
+                     case '6':
+                        rt[it].style.cssText = 'background-color: #F96D33; color: #fff; padding: 6.4px 10px;'
+                        break
+                     case '4ar':
+                        rt[it].style.cssText = 'background-color: #162738; color: #000000;padding: 6.4px 8px'
+                        break
+                     case 'W':
+                        rt[it].style.cssText = 'background-color: #000; color: #fff;padding: 6.4px 9px; text-transform: lowercase;'
+                        break
+                     case 'w0':
+                        rt[it].style.cssText = 'background-color: #000; color: #fff;padding: 6.4px 7px'
+                        break
+                     case 'w1':
+                        rt[it].style.cssText = 'background-color: #000; color: #fff;padding: 6.4px 7px'
+                        break
+                     case 'w2':
+                        rt[it].style.cssText = 'background-color: #000; color: #fff;padding: 6.4px 7px'
+                        break
+                     case 'wn':
+                        rt[it].style.cssText = 'background-color: #000; color: #fff;padding: 6.4px 7px'
+                        break
+                     case 'w1n':
+                        rt[it].style.cssText = 'background-color: #000; color: #fff;padding: 6.4px 7px'
+                        break
+                     case 'w2n':
+                        rt[it].style.cssText = 'background-color: #000; color: #fff;padding: 6.4px 7px'
+                        break
+                     case 'fly1':
+                        rt[it].style.cssText = 'background-color: #000; color: #fff;padding: 6.4px 4px'
+                        break
+                     case 'l1':
+                        rt[it].style.cssText = 'background-color: #4BC408; color: #000;padding: 6.4px 7px'
+                        break
+                     case 'l2':
+                        rt[it].style.cssText = 'background-color: #4BC408; color: #000;padding: 6.4px 7px'
+                        break
+                     case 'l3':
+                        rt[it].style.cssText = 'background-color: #4BC408; color: #000;padding: 6.4px 7px'
+                        break
+                     case 'l4':
+                        rt[it].style.cssText = 'background-color: #4BC408; color: #000;padding: 6.4px 7px'
+                        break
+                     case 'l5':
+                        rt[it].style.cssText = 'background-color: #4BC408; color: #000;padding: 6.4px 7px'
+                        break
+                     case '1b':
+                        rt[it].style.cssText = 'background-color: #4BC408; color: #000;padding: 6.4px 7px'
+                        break
+                     case '2b':
+                        rt[it].style.cssText = 'background-color: #4BC408; color: #000;padding: 6.4px 7px'
+                        break
+                     case '3b':
+                        rt[it].style.cssText = 'background-color: #4BC408; color: #000;padding: 6.4px 7px'
+                        break
+                     case '4b':
+                        rt[it].style.cssText = 'background-color: #4BC408; color: #000;padding: 6.4px 7px'
+                        break
+                     case '5b':
+                        rt[it].style.cssText = 'background-color: #4BC408; color: #000;padding: 6.4px 7px'
+                        break
+                     case 'sw':
+                        rt[it].style.cssText = 'background-color: #000; color: #fff;padding: 6.4px 7px'
+                        break
+                     case 'sw':
+                        rt[it].style.cssText = 'background-color: #000; color: #fff;padding: 6.4px 7px'
+                        break
+                     case '0w':
+                        rt[it].style.cssText = 'background-color: #4BC408; color: #000;padding: 6.4px 7px'
+                        break
+                     case '1w':
+                        rt[it].style.cssText = 'background-color: #4BC408; color: #000;padding: 6.4px 7px'
+                        break
+                     case '2w':
+                        rt[it].style.cssText = 'background-color: #4BC408; color: #000;padding: 6.4px 7px'
+                        break
+                     case '3w':
+                        rt[it].style.cssText = 'background-color: #4BC408; color: #000;padding: 6.4px 7px'
+                        break
+                     case '4w':
+                        rt[it].style.cssText = 'background-color: #4BC408; color: #000;padding: 6.4px 7px'
+                        break
+                     case '0n':
+                        rt[it].style.cssText = 'background-color: #4BC408; color: #000;padding: 6.4px 7px'
+                        break
+                     case '1n':
+                        rt[it].style.cssText = 'background-color: #4BC408; color: #000;padding: 6.4px 7px'
+                        break
+                     case '2n':
+                        rt[it].style.cssText = 'background-color: #4BC408; color: #000;padding: 6.4px 7px'
+                        break
+                     case '3n':
+                        rt[it].style.cssText = 'background-color: #4BC408; color: #000;padding: 6.4px 7px'
+                        break
+                     case '4n':
+                        rt[it].style.cssText = 'background-color: #144708; color: #fff;padding: 6.4px 7px'
+                        break
+                     case '5n':
+                        rt[it].style.cssText = 'background-color: #144708; color: #fff; padding: 6.4px 7px'
+                        break
+                     case '6n':
+                        rt[it].style.cssText = 'background-color: #144708; color: #fff; padding: 6.4px 7px'
+                        break
+                  }
+               }
+            }
+            break
+      }
+   }
+}
+
+// Adds "unknown" to teams fields with no data
+
+/*
+
+   const nds = document.getElementById('teamsGrid').childNodes,
+      ndst2 = document.getElementById('teamsGridTwo').childNodes
+   for (i = 0; i < nds.length; i++) {
+      if (nds[i].textContent == '0' || nds[i].textContent == '' || nds[i].textContent == '.') {
+         nds[i].innerHTML = 'Unknown'
+      } else if (ndst2[i].textContent == '0' || ndst2[i].textContent == '' || ndst2[i].textContent == '.') {
+         ndst2[i].innerHTML = 'Unknown'
+      }
+   }
+
+*/
+
+// Opns team batting scores first
+
+let opni = false
+function opno() {
+   opni = true
+   tosl.style.display = 'grid'
+   sgl.style.display = 'block'
+   sgt.style.display = 'none'
+   cbs.style.cssText = 'background-color: #221f1f'
+   lbs.style.cssText = 'background-color: #2483c5'
+   tbs.style.cssText = 'background-color: #221f1f'
+   scgl.style.display = 'grid'
+   scglt.style.display = 'none'
+   lbs.style.cssText = 'background-color: #2483c5'
+   st1.style.cssText = 'background-color: #2483c5'
+}
+function opot() {
+   if (!opni) opno()
+}
+opot()
+
+cbs.addEventListener('click', function () {
+   cg.style.display = 'grid'
+   cgt.style.display = 'grid'
+   tosl.style.display = 'none'
+   sgl.style.display = 'none'
+   sgt.style.display = 'none'
+   tgto.style.display = 'none'
+   tgtt.style.display = 'none'
+   scgl.style.display = 'none'
+   cmli.style.display = 'block'
+   scglt.style.display = 'none'
+   cbs.style.cssText = 'background-color: #2483c5'
+   lbs.style.cssText = 'background-color: #221f1f'
+   tbs.style.cssText = 'background-color: #221f1f'
+   st2t.style.cssText = 'background-color: #221f1f'
+   st1t.style.cssText = 'background-color: #221f1f'
+})
