@@ -50,7 +50,8 @@ let g2h = document.getElementById('second-header'),
    hoa,
    t1n,
    t2n,
-   igsn
+   igsn,
+   event_description
 
 /* switch on to use with menu */
 
@@ -790,6 +791,8 @@ function matchRun(idNo) {
                eachObj,
                property
             fltinlt = Array.from(fltin)
+
+            rt.innerHTML = ''
 
             /* Mutates Object to remove properties not needed for play-by-play, */
 
