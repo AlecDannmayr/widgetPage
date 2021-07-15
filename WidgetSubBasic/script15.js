@@ -269,8 +269,8 @@ function matchRun(idNo) {
                t1fis = document.getElementById('team-one-score'),
                t2fis = document.getElementById('team-two-score'),
                t1o = innings1overs
-            const inss1 = t1o.parseInt(innings1overs, 10)
-            console.log(innings1overs.parseInt())
+            const inss1 = parseInt(t1o, 10)
+            console.log(inss1)
             tofo.innerHTML = t1o + ' Ovs'
 
             // Team Two Overs
