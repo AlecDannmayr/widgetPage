@@ -559,8 +559,12 @@ function matchRun(idNo) {
                if (commentaries[k].split('-')[0] == '.') {
                   coms[k].innerHTML = cint + '.' + crtbl + '  '
                } else {
-                  console.log(covb)
                   let covb0, covb1, covb2, covb3, covb4, covb5
+
+                  if (Array.isArray(commentaries) && commentaries.length) output = true
+                  else output = false
+
+                  console.log(output)
                   switch (covb) {
                      case 0:
                         covb0 = 1
