@@ -667,18 +667,18 @@ function matchRun(idNo) {
                      } else if (current_over > 0) {
                         switch (covb) {
                            case 0:
-                              int0 = intn
-                              int1 = intn
-                              int2 = intn
-                              int3 = intn
-                              int4 = intn
-                              int5 = intn
-                              covb0 = ''
-                              covb1 = ''
-                              covb2 = ''
-                              covb3 = ''
-                              covb4 = ''
-                              covb5 = ''
+                              int0 = int
+                              int1 = int
+                              int2 = int
+                              int3 = int
+                              int4 = int
+                              int5 = int
+                              covb0 = 6
+                              covb1 = 5
+                              covb2 = 4
+                              covb3 = 3
+                              covb4 = 2
+                              covb5 = 1
                               break
                            case 1:
                               int0 = int
@@ -1007,19 +1007,15 @@ function matchRun(idNo) {
 
 // Adds "unknown" to teams fields with no data
 
-/*
-
-   const nds = document.getElementById('teamsGrid').childNodes,
-      ndst2 = document.getElementById('teamsGridTwo').childNodes
-   for (i = 0; i < nds.length; i++) {
-      if (nds[i].textContent == '0' || nds[i].textContent == '' || nds[i].textContent == '.') {
-         nds[i].innerHTML = 'Unknown'
-      } else if (ndst2[i].textContent == '0' || ndst2[i].textContent == '' || ndst2[i].textContent == '.') {
-         ndst2[i].innerHTML = 'Unknown'
-      }
+const nds = document.getElementById('teamsGrid').childNodes,
+   ndst2 = document.getElementById('teamsGridTwo').childNodes
+for (i = 0; i < nds.length; i++) {
+   if (nds[i].textContent == '0' || nds[i].textContent == '' || nds[i].textContent == '.') {
+      nds[i].innerHTML = '-'
+   } else if (ndst2[i].textContent == '0' || ndst2[i].textContent == '' || ndst2[i].textContent == '.') {
+      ndst2[i].innerHTML = '-'
    }
-
-*/
+}
 
 // Opns team batting scores first
 
