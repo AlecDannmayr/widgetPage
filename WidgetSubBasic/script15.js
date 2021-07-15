@@ -560,8 +560,8 @@ function matchRun(idNo) {
                   coms[k].innerHTML = cint + '.' + crtbl + '  '
                } else {
                   let covb0, covb1, covb2, covb3, covb4, covb5
-                  console.log(commentaries.b1)
-                  if (commentaries.b1 != '') {
+                  console.log(commentaries[0])
+                  if (commentaries[0] !== '') {
                      switch (covb) {
                         case 0:
                            covb0 = 1
