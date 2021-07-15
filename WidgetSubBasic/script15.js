@@ -667,20 +667,27 @@ function matchRun(idNo) {
                      } else if (current_over > 0) {
                         switch (covb) {
                            case 0:
+                              int0 = intn
+                              int1 = intn
+                              int2 = intn
+                              int3 = intn
+                              int4 = intn
+                              int5 = intn
                               covb0 = ''
                               covb1 = ''
                               covb2 = ''
                               covb3 = ''
                               covb4 = ''
                               covb5 = ''
-                              int0 = int
-                              int1 = int - 1
-                              int2 = int - 1
-                              int3 = int
-                              int4 = int
-                              int5 = int
+
                               break
                            case 1:
+                              int0 = int
+                              int1 = intn
+                              int2 = intn
+                              int3 = intn
+                              int4 = intn
+                              int5 = intn
                               covb0 = 1
                               covb1 = 6
                               covb2 = 5
@@ -690,30 +697,57 @@ function matchRun(idNo) {
 
                               break
                            case 2:
+                              int0 = int
+                              int1 = int
+                              int2 = intn
+                              int3 = intn
+                              int4 = intn
+                              int5 = intn
                               covb0 = 2
                               covb1 = 1
                               covb2 = 6
                               covb3 = 5
                               covb4 = 4
                               covb5 = 3
+
                               break
                            case 3:
+                              int0 = int
+                              int1 = int
+                              int2 = int
+                              int3 = intn
+                              int4 = intn
+                              int5 = intn
                               covb0 = 3
                               covb1 = 2
                               covb2 = 1
                               covb3 = 6
                               covb4 = 5
                               covb5 = 4
+
                               break
                            case 4:
+                              int0 = int
+                              int1 = int
+                              int2 = int
+                              int3 = int
+                              int4 = intn
+                              int5 = intn
                               covb0 = 4
                               covb1 = 3
                               covb2 = 2
                               covb3 = 1
                               covb4 = 6
                               covb5 = 5
+
                               break
                            case 5:
+                              int0 = int
+                              int1 = int
+                              int2 = int
+                              int3 = int
+                              int4 = int
+                              int5 = intn
                               covb0 = 5
                               covb1 = 4
                               covb2 = 3
@@ -722,6 +756,12 @@ function matchRun(idNo) {
                               covb5 = 2
                               break
                            case 6:
+                              int0 = int
+                              int1 = int
+                              int2 = int
+                              int3 = int
+                              int4 = int
+                              int5 = int
                               covb0 = 6
                               covb1 = 5
                               covb2 = 4
