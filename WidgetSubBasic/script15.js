@@ -557,7 +557,9 @@ function matchRun(idNo) {
             ;(cint = int.toString()), (covb = parseInt(current_over_balls, 10))
             for (k = 0; k < coms.length; k++) {
                const crtbl = parseInt([k], 10) + 1
-               console.log(intn - 1)
+               if (intn > 0) {
+                  intn - 1
+               }
                if (commentaries[k].split('-')[0] == '.') {
                   coms[k].innerHTML = cint + '.' + crtbl + '  '
                } else {
@@ -574,35 +576,35 @@ function matchRun(idNo) {
                            break
                         case 1:
                            covb0 = 1
-                           covb1 = intn - 1
-                           covb2 = intn - 1
-                           covb3 = intn - 1
-                           covb4 = intn - 1
-                           covb5 = intn - 1
+                           covb1 = intn
+                           covb2 = intn
+                           covb3 = intn
+                           covb4 = intn
+                           covb5 = intn
                            break
                         case 2:
                            covb0 = 2
                            covb1 = 1
-                           covb2 = intn - 1
-                           covb3 = intn - 1
-                           covb4 = intn - 1
-                           covb5 = intn - 1
+                           covb2 = intn
+                           covb3 = intn
+                           covb4 = intn
+                           covb5 = intn
                            break
                         case 3:
                            covb0 = 3
                            covb1 = 2
                            covb2 = 1
-                           covb3 = intn - 1
-                           covb4 = intn - 1
-                           covb5 = intn - 1
+                           covb3 = intn
+                           covb4 = intn
+                           covb5 = intn
                            break
                         case 4:
                            covb0 = 4
                            covb1 = 3
                            covb2 = 2
                            covb3 = 1
-                           covb4 = intn - 1
-                           covb5 = intn - 1
+                           covb4 = intn
+                           covb5 = intn
                            break
                         case 5:
                            covb0 = 5
@@ -610,7 +612,7 @@ function matchRun(idNo) {
                            covb2 = 3
                            covb3 = 2
                            covb4 = 1
-                           covb5 = intn - 1
+                           covb5 = intn
                            break
                         case 6:
                            covb0 = 6
