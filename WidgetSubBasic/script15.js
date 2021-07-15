@@ -561,7 +561,7 @@ function matchRun(idNo) {
                   coms[k].innerHTML = cint + '.' + crtbl + '  '
                } else {
                   let covb0, covb1, covb2, covb3, covb4, covb5
-                  if (current_over == 0) {
+                  if (current_over_balls != '') {
                      console.log(commentaries[0])
                      switch (covb) {
                         case 0:
@@ -628,9 +628,6 @@ function matchRun(idNo) {
                      coms[3].innerHTML = int + '.' + covb3 + '  ' + '| ' + commentaries[3].split('-')[0]
                      coms[4].innerHTML = int + '.' + covb4 + '  ' + '| ' + commentaries[4].split('-')[0]
                      coms[5].innerHTML = int + '.' + covb5 + '  ' + '| ' + commentaries[5].split('-')[0]
-
-                     if (current_over) {
-                     }
                   }
                }
             }
