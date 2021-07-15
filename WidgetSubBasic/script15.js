@@ -557,9 +557,7 @@ function matchRun(idNo) {
             ;(cint = int.toString()), (covb = parseInt(current_over_balls, 10))
             for (k = 0; k < coms.length; k++) {
                const crtbl = parseInt([k], 10) + 1
-               if (intn > 0) {
-                  int = parseInt(current_over)
-               }
+
                if (commentaries[k].split('-')[0] == '.') {
                   coms[k].innerHTML = cint + '.' + crtbl + '  '
                } else {
@@ -675,6 +673,12 @@ function matchRun(idNo) {
                               covb3 = ''
                               covb4 = ''
                               covb5 = ''
+                              int0 = int
+                              int1 = int - 1
+                              int2 = int - 1
+                              int3 = int
+                              int4 = int
+                              int5 = int
                               break
                            case 1:
                               covb0 = 1
