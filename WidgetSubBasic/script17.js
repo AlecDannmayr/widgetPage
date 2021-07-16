@@ -459,7 +459,7 @@ socket.onmessage = function (event) {
             exts = document.getElementsByClassName('eb'),
             insNo,
             ex1 = document.querySelectorAll('.ex1'),
-            tl1 = document.querySelectorAll('tl1')
+            tl1 = document.querySelectorAll('.tl1')
 
          // switch statement looks for inning no
 
@@ -478,13 +478,14 @@ socket.onmessage = function (event) {
                break
          }
 
-         const extrar = Object.values(insNo.extras)
+         // Takes extras object transforms into array and used reduce to add values together
 
-         console.log(
-            extrar.reduce(function (acc, val) {
+         const extrar = Object.values(insNo.extras),
+            addext = extrar.reduce(function (acc, val) {
                return acc + val
             }, 0)
-         )
+
+         ex1[1].innerHtml = 'Hello'
 
          for (j = 0; j < t1r.length; j++) {
             t1r[j].innerHTML = insNo.batting[j].runs
