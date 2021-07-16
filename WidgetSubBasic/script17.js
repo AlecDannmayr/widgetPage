@@ -457,9 +457,15 @@ socket.onmessage = function (event) {
             t2bw2 = document.getElementsByClassName('bw1w'),
             stts = document.getElementsByClassName('b1st'),
             exts = document.getElementsByClassName('eb'),
-            insNo
+            insNo,
+            ex1 = document.querySelectorAll('.ex1'),
+            tl1 = document.querySelectorAll('tl1')
 
          // switch statement looks for inning no
+
+         for (const [key, value] of Object.entries(extras)) {
+            console.log(`${key}: ${value}`)
+         }
 
          switch (inns_now) {
             case 1:
