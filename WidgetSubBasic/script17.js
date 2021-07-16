@@ -458,8 +458,8 @@ socket.onmessage = function (event) {
             stts = document.getElementsByClassName('b1st'),
             exts = document.getElementsByClassName('eb'),
             insNo,
-            ex1 = document.getElementById('ex1'),
-            tl1 = document.getElementById('tl1')
+            ex1 = document.querySelectorAll('ex1'),
+            tl1 = document.getElementsByClassName('tl1')
 
          // switch statement looks for inning no
 
@@ -485,8 +485,8 @@ socket.onmessage = function (event) {
                return acc + val
             }, 0)
 
-         console.log(ex1, tl1, val)
-         ex1.innerText = val
+         console.log(ex1, tl1)
+         ex1[0].innerText = addext
 
          for (j = 0; j < t1r.length; j++) {
             t1r[j].innerHTML = insNo.batting[j].runs
