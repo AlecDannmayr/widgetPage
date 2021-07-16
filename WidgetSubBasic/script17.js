@@ -432,7 +432,7 @@ socket.onmessage = function (event) {
       // Scorecard case
 
       case 'scorecard':
-         var { batting, bowling, bat_now, bowl_now, extras, inns_now, inns1, inns2, inns3, inns4 } = msg.scorecard
+         var { batting, bowling, bat_now, bowl_now, inns_now, inns1, inns2, inns3, inns4 } = msg.scorecard
 
          igsn = inns_now
          if (igsn == 1 || igsn == 3) {
@@ -463,10 +463,6 @@ socket.onmessage = function (event) {
 
          // switch statement looks for inning no
 
-         for (const [key, value] of Object.entries(extras)) {
-            console.log(`${key}: ${value}`)
-         }
-
          switch (inns_now) {
             case 1:
                insNo = inns1
@@ -480,6 +476,10 @@ socket.onmessage = function (event) {
             case 4:
                insNo = inns4
                break
+         }
+
+         for (const [key, value] of Object.entries(insNo.extras)) {
+            console.log(`${key}: ${value}`)
          }
 
          for (j = 0; j < t1r.length; j++) {
