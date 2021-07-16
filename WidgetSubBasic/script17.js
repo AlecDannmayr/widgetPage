@@ -58,8 +58,8 @@ let g2h = document.getElementById('second-header'),
    event_description
 
 gsts.innerHTML = ''
-wi1.style.display = 'block'
-wi2.style.display = 'block'
+wi1.style.display = 'none'
+wi2.style.display = 'none'
 
 /* switch on to use with menu 
 
