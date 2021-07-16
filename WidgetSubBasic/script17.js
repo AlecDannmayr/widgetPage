@@ -458,7 +458,7 @@ socket.onmessage = function (event) {
             stts = document.getElementsByClassName('b1st'),
             exts = document.getElementsByClassName('eb'),
             insNo,
-            ex1 = document.querySelectorAll('ex1'),
+            ex1 = document.getElementsByClassName('ex1'),
             tl1 = document.getElementsByClassName('tl1')
 
          // switch statement looks for inning no
