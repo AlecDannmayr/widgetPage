@@ -43,6 +43,9 @@ let g2h = document.getElementById('second-header'),
    rtse = document.getElementById('rtse'),
    matchVs = document.getElementById('addVs'),
    cover = document.querySelector('.cover'),
+   t1fis = document.getElementById('team-one-score'),
+   t2fis = document.getElementById('team-two-score'),
+   t1fw = document.getElementById('team-one-wickets'),
    innings1battingteam,
    shortNameOne,
    shortNameTwo,
@@ -50,9 +53,7 @@ let g2h = document.getElementById('second-header'),
    t1n,
    t2n,
    igsn,
-   event_description,
-   t1fis,
-   t2fis
+   event_description
 
 /* switch on to use with menu 
 
@@ -268,8 +269,6 @@ socket.onmessage = function (event) {
 
          const tofo = document.getElementById('team-one-overs'),
             t2fo = document.getElementById('team-two-overs'),
-            t1fis = document.getElementById('team-one-score'),
-            t2fis = document.getElementById('team-two-score'),
             t1o = innings1overs,
             t1op1 = parseFloat(t1o) + 1
          tofo.innerHTML = t1o + ' Ovs'
@@ -304,8 +303,7 @@ socket.onmessage = function (event) {
 
          // Current Wickets Team One
 
-         const t1w = innings1wickets,
-            t1fw = document.getElementById('team-one-wickets')
+         const t1w = innings1wickets
          t1fw.innerHTML = t1w
 
          // Current Wickets Team Two
@@ -488,7 +486,8 @@ socket.onmessage = function (event) {
             }, 0)
 
          ex1[0].innerText = addext
-         tl1[0].innerText = t1fis.textContent
+         tl1[0].innerText = t1fis.textContent + t1fw.textContent
+
          for (j = 0; j < t1r.length; j++) {
             t1r[j].innerHTML = insNo.batting[j].runs
             t1b2[j].innerHTML = insNo.batting[j].balls
