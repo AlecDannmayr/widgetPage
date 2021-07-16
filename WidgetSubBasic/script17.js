@@ -50,7 +50,9 @@ let g2h = document.getElementById('second-header'),
    t1n,
    t2n,
    igsn,
-   event_description
+   event_description,
+   t1fis,
+   t2fis
 
 /* switch on to use with menu 
 
@@ -485,9 +487,8 @@ socket.onmessage = function (event) {
                return acc + val
             }, 0)
 
-         console.log(ex1, tl1)
          ex1[0].innerText = addext
-
+         tl1[0].innerText = t1fis.textContent
          for (j = 0; j < t1r.length; j++) {
             t1r[j].innerHTML = insNo.batting[j].runs
             t1b2[j].innerHTML = insNo.batting[j].balls
