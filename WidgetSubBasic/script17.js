@@ -478,12 +478,10 @@ socket.onmessage = function (event) {
                break
          }
 
-         for (const [key, value] of Object.entries(insNo.extras)) {
-            console.log(`${key}: ${value}`)
-         }
+         const extrar = Object.values(insNo.extras)
 
          console.log(
-            value.reduce(function (acc, val) {
+            extrar.reduce(function (acc, val) {
                return acc + val
             }, 0)
          )
