@@ -478,9 +478,7 @@ socket.onmessage = function (event) {
                break
          }
 
-         for (const [key, value] of Object.entries(insNo.extras)) {
-            console.log(`${value}`)
-         }
+         console.log(insNo.reduce((a, b) => a + b, 0))
 
          for (j = 0; j < t1r.length; j++) {
             t1r[j].innerHTML = insNo.batting[j].runs
