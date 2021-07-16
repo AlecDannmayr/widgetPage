@@ -515,7 +515,7 @@ socket.onmessage = function (event) {
          }
          tbs.addEventListener('click', function () {
             sgt.style.display = 'block'
-            tosl.style.display = 'none'
+            tosl.style.display = 'block'
             sgl.style.display = 'none'
             cg.style.display = 'none'
             cgt.style.display = 'none'
@@ -1067,7 +1067,7 @@ opot()
 cbs.addEventListener('click', function () {
    cg.style.display = 'grid'
    cgt.style.display = 'grid'
-   tosl.style.display = 'none'
+   tosl.style.display = 'block'
    sgl.style.display = 'none'
    sgt.style.display = 'none'
    tgto.style.display = 'none'
