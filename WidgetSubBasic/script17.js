@@ -46,14 +46,12 @@ let g2h = document.getElementById('second-header'),
    t1fis = document.getElementById('team-one-score'),
    t2fis = document.getElementById('team-two-score'),
    t1fw = document.getElementById('team-one-wickets'),
-   innings1battingteam,
-   shortNameOne,
-   shortNameTwo,
-   hoa,
-   t1n,
-   t2n,
-   igsn,
-   event_description
+   gsts = document.getElementById('third-header-game-status')
+;(wi1 = document.getElementById('winner-image-team-one')), (wi2 = document.getElementById('winner-image-team-two')), innings1battingteam, shortNameOne, shortNameTwo, hoa, t1n, t2n, igsn, event_description
+
+gsts.innerHTML = ''
+wi1.style.display = 'none'
+wi2.style.display = 'none'
 
 /* switch on to use with menu 
 
@@ -219,8 +217,7 @@ socket.onmessage = function (event) {
          } else if (event_description.substr(0, 13) === 'MATCH_COMPLETE') {
          }
 
-         const sist = event_status.split('_').join(' '),
-            gsts = document.getElementById('third-header-game-status')
+         const sist = event_status.split('_').join(' ')
 
          // Changes match Stable to Waiting for Bowl
          gsts.innerHTML = sist
@@ -247,22 +244,20 @@ socket.onmessage = function (event) {
          cover.style.display = 'none'
 
          var hmw = status.split(' ').slice(0, 2).join(' '),
-            wnr = document.getElementById('winner-declaration'),
-            wi1 = document.getElementById('winner-image-team-one'),
-            wi2 = document.getElementById('winner-image-team-two')
+            wnr = document.getElementById('winner-declaration')
 
          if (hmw == 'Match Complete' && innings1runs > innings2runs) {
-            wnr.style.display = 'block'
+            gami[0].innerHTML = scoreline
             wnr.innerHTML = status
             wi1.style.display = 'block'
             wi2.style.display = 'none'
             g2h.style.cssText = 'padding-right: 20px;'
          } else if (hmw == 'Match Complete' && innings1runs < innings2runs) {
-            wnr.style.display = 'block'
             wnr.innerHTML = status
             wi1.style.display = 'none'
             wi2.style.display = 'block'
             g2h.style.cssText = 'padding-left: 20px;'
+            gami[0].innerHTML = scoreline
          }
 
          // Team one Overs
@@ -359,7 +354,9 @@ socket.onmessage = function (event) {
             shortnameOne
 
          // Check all of this! // if innings1team === teams[p]
-         console.log(igsn)
+
+         //  i if (bowler == )
+
          if (igsn == '1' || igsn == null || igsn == '3') {
             for (i = 0; i < t1p.length; i++) {
                if (t1n == teams[0].short_name) {
