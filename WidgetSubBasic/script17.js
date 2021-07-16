@@ -46,8 +46,17 @@ let g2h = document.getElementById('second-header'),
    t1fis = document.getElementById('team-one-score'),
    t2fis = document.getElementById('team-two-score'),
    t1fw = document.getElementById('team-one-wickets'),
-   gsts = document.getElementById('third-header-game-status')
-;(wi1 = document.getElementById('winner-image-team-one')), (wi2 = document.getElementById('winner-image-team-two')), innings1battingteam, shortNameOne, shortNameTwo, hoa, t1n, t2n, igsn, event_description
+   gsts = document.getElementById('third-header-game-status'),
+   wi1 = document.getElementById('winner-image-team-one'),
+   wi2 = document.getElementById('winner-image-team-two'),
+   innings1battingteam,
+   shortNameOne,
+   shortNameTwo,
+   hoa,
+   t1n,
+   t2n,
+   igsn,
+   event_description
 
 gsts.innerHTML = ''
 wi1.style.display = 'none'
