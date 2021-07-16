@@ -479,7 +479,7 @@ socket.onmessage = function (event) {
          }
 
          for (const [key, value] of Object.entries(insNo.extras)) {
-            console.log(`${key}: ${value}`)
+            console.log(`${value}`)
          }
 
          for (j = 0; j < t1r.length; j++) {
