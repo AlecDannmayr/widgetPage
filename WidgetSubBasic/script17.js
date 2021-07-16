@@ -340,6 +340,11 @@ socket.onmessage = function (event) {
 
          break
 
+      case 'bowling_analysis':
+         var { bowler } = msg.bowling_analysis
+         console.log(bowler)
+         break
+
       case 'lineups':
          const { teams } = msg.lineups
          /* Team name for teams and batter and bowler */
@@ -354,8 +359,8 @@ socket.onmessage = function (event) {
             shortnameOne
 
          // Check all of this! // if innings1team === teams[p]
-
-         if (igsn == '1' || igsn == null) {
+         console.log(igsn)
+         if (igsn == '1' || igsn == null || igsn == '3') {
             for (i = 0; i < t1p.length; i++) {
                if (t1n == teams[0].short_name) {
                   shortNameOne = teams[0].short_name
@@ -427,11 +432,6 @@ socket.onmessage = function (event) {
             t2pe.innerHTML = shortNameOne + ' ' + powerBart1 + '%'
          }
 
-         break
-
-      case 'bowling_analysis':
-         var { bowler } = msg.bowling_analysis
-         console.log(bowler)
          break
 
       // Scorecard case
