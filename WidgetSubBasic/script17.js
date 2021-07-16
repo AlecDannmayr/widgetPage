@@ -433,8 +433,8 @@ socket.onmessage = function (event) {
 
       case 'scorecard':
          var { batting, bowling, bat_now, bowl_now, inns_now, inns1, inns2, inns3, inns4 } = msg.scorecard
-         const inssNow = document.querySelector('#ins-now')
-         inssNow.innerHTML = inns_now
+
+         igsn = inns_now
          if (igsn == 1 || igsn == 3) {
             st1.innerHTML = shortNameOne
             st2.innerHTML = shortNameTwo
@@ -446,6 +446,9 @@ socket.onmessage = function (event) {
             st2t.innerHTML = shortNameOne
             st1t.innerHTML = shortNameTwo
          }
+
+         const inssNow = document.querySelector('#ins-now')
+         inssNow.innerHTML = inns_now
 
          let t1r = document.getElementsByClassName('b1r'),
             t1b2 = document.getElementsByClassName('b1b'),
