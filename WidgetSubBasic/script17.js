@@ -893,9 +893,6 @@ socket.onmessage = function (event) {
             }
             for (it = 0; it < 12; it++) {
                switch (rt[it].textContent) {
-                  case '88':
-                     rt[it].style.cssText = 'background-color: #fff; color: #000000; padding: 6.4px 7px;'
-                     break
                   case '-':
                      rt[it].style.cssText = 'background-color: #2F4F4F; color: #fff; padding: 6.4px 10px;'
                      break
@@ -946,9 +943,6 @@ socket.onmessage = function (event) {
                      break
                   case 'w2n':
                      rt[it].style.cssText = 'background-color: #000; color: #fff;padding: 6.4px 7px'
-                     break
-                  case 'fly1':
-                     rt[it].style.cssText = 'background-color: #000; color: #fff;padding: 6.4px 4px'
                      break
                   case 'l1':
                      rt[it].style.cssText = 'background-color: #4BC408; color: #000;padding: 6.4px 7px'
@@ -1021,6 +1015,10 @@ socket.onmessage = function (event) {
                      break
                   case '6n':
                      rt[it].style.cssText = 'background-color: #144708; color: #fff; padding: 6.4px 7px'
+                     break
+                  default:
+                     rt[it].style.cssText = 'background-color: #fff; color: #000000; padding: 6.4px 10px;'
+                     rt[it].innerHTML = '-'
                      break
                }
             }
