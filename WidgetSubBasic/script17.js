@@ -429,6 +429,11 @@ socket.onmessage = function (event) {
 
          break
 
+      case 'bowling_analysis':
+         var { bowler } = msg.bowling_analysis
+         console.log(bowler)
+         break
+
       // Scorecard case
 
       case 'scorecard':
