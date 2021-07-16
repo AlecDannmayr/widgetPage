@@ -517,6 +517,7 @@ socket.onmessage = function (event) {
             tosl.style.display = 'none'
             sgl.style.display = 'none'
             cg.style.display = 'none'
+            cgt.style.display = 'none'
             cmli.style.display = 'none'
             scglt.style.display = 'none'
             cbs.style.cssText = 'background-color: #221f1f'
@@ -541,6 +542,7 @@ socket.onmessage = function (event) {
 
          lbs.addEventListener('click', function () {
             cg.style.display = 'none'
+            cgt.style.display = 'none'
             tosl.style.display = 'grid'
             sgl.style.display = 'block'
             sgt.style.display = 'none'
@@ -559,7 +561,7 @@ socket.onmessage = function (event) {
          st1.addEventListener('click', function () {
             st1.style.cssText = 'background-color: #2483c5'
             st2.style.cssText = 'background-color: #221f1f'
-            scglt.style.display = 'none'
+            scglt.style.display = 'grid'
             scgl.style.display = 'grid'
          })
          st2.addEventListener('click', function () {
@@ -1063,6 +1065,7 @@ opot()
 
 cbs.addEventListener('click', function () {
    cg.style.display = 'grid'
+   cgt.style.display = 'grid'
    tosl.style.display = 'none'
    sgl.style.display = 'none'
    sgt.style.display = 'none'
