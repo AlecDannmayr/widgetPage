@@ -448,7 +448,7 @@ socket.onmessage = function (event) {
          }
 
          const inssNow = document.querySelector('#ins-now')
-         inssNow.innerHTML = inns_now
+         inssNow.innerHTML = 'Inning: ' + inns_now
 
          let t1r = document.getElementsByClassName('b1r'),
             t1b2 = document.getElementsByClassName('b1b'),
@@ -551,13 +551,13 @@ socket.onmessage = function (event) {
          st1.addEventListener('click', function () {
             st1.style.cssText = 'background-color: #2483c5'
             st2.style.cssText = 'background-color: #221f1f'
-            scglt.style.display = 'none'
+            scglt.style.display = 'grid'
             scgl.style.display = 'grid'
          })
          st2.addEventListener('click', function () {
             st2.style.cssText = 'background-color: #2483c5'
             st1.style.cssText = 'background-color: #221f1f'
-            scgl.style.display = 'none'
+            scgl.style.display = 'grid'
             scglt.style.display = 'grid'
          })
 
