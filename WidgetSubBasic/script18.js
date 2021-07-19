@@ -561,7 +561,7 @@ socket.onmessage = function (event) {
          st2.addEventListener('click', function () {
             st2.style.cssText = 'background-color: #2483c5'
             st1.style.cssText = 'background-color: #221f1f'
-            tosl2.style.display = 'none'
+            tosl.style.display = 'none'
             tosl2.style.display = 'block'
          })
 
