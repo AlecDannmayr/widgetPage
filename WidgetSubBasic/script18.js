@@ -33,8 +33,6 @@ let g2h = document.getElementById('second-header'),
    tosl = document.getElementById('team-one-Section'),
    sgl = document.getElementById('selector-grid-two'),
    sgt = document.getElementById('selector-grid-teams'),
-   scgl = document.getElementById('scorecardGrid'),
-   scglt = document.getElementById('scorecardGridTwo'),
    tgto = document.getElementById('teamsGrid'),
    tgtt = document.getElementById('teamsGridTwo'),
    ngi = document.querySelector('.ngi'),
@@ -518,8 +516,6 @@ socket.onmessage = function (event) {
             sgl.style.display = 'none'
             cg.style.display = 'none'
             cmli.style.display = 'none'
-            scglt.style.display = 'none'
-            scgl.style.display = 'none'
             cbs.style.cssText = 'background-color: #221f1f'
             lbs.style.cssText = 'background-color: #221f1f'
             tbs.style.cssText = 'background-color: #2483c5'
@@ -560,14 +556,12 @@ socket.onmessage = function (event) {
          st1.addEventListener('click', function () {
             st1.style.cssText = 'background-color: #2483c5'
             st2.style.cssText = 'background-color: #221f1f'
-            scglt.style.display = 'none'
             scgl.style.display = 'grid'
          })
          st2.addEventListener('click', function () {
             st2.style.cssText = 'background-color: #2483c5'
             st1.style.cssText = 'background-color: #221f1f'
             scgl.style.display = 'none'
-            scglt.style.display = 'grid'
          })
 
          break
@@ -1052,8 +1046,6 @@ function opno() {
    cbs.style.cssText = 'background-color: #221f1f'
    lbs.style.cssText = 'background-color: #2483c5'
    tbs.style.cssText = 'background-color: #221f1f'
-   scgl.style.display = 'grid'
-   scglt.style.display = 'none'
    lbs.style.cssText = 'background-color: #2483c5'
    st1.style.cssText = 'background-color: #2483c5'
 }
@@ -1071,7 +1063,6 @@ cbs.addEventListener('click', function () {
    tgtt.style.display = 'none'
    scgl.style.display = 'none'
    cmli.style.display = 'block'
-   scglt.style.display = 'none'
    cbs.style.cssText = 'background-color: #2483c5'
    lbs.style.cssText = 'background-color: #221f1f'
    tbs.style.cssText = 'background-color: #221f1f'
