@@ -515,7 +515,7 @@ socket.onmessage = function (event) {
             st1t.style.cssText = 'background-color: #2483c5'
          })
          st2t.addEventListener('click', function () {
-            tgtt.style.display = 'grid'
+            tosl2.style.display = 'block'
             tgto.style.display = 'none'
             st1t.style.cssText = 'background-color: #221f1f'
             st2t.style.cssText = 'background-color: #2483c5'
