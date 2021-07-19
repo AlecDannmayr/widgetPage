@@ -295,14 +295,14 @@ socket.onmessage = function (event) {
             t2fo.innerHTML = ''
          } else if (currentinnings == 2 || currentinnings == 4) {
             t2fis.innerHTML = t2s + ' / '
-            t2fo.innerHTML = '&nbsp&nbsp&nbsp' + t2o + ' Ovs'
+            t2fo.innerHTML = t2o + ' Ovs'
             ftbi.style.display = 'none'
             stbi.style.display = 'block'
          }
          if (t1sl >= 2 && t1sl < 3 && t2s !== '') {
             t2fis.innerHTML = t2s + ' / '
          } else if (t1sl >= 3 && t1sl < 4 && t2s !== '') {
-            t2fis.innerHTML = '&nbsp&nbsp&nbsp' + t2s + ' / '
+            t2fis.innerHTML = t2s + ' / '
          }
 
          // Current Wickets Team One
