@@ -509,9 +509,7 @@ socket.onmessage = function (event) {
          ex1[0].innerText = addext
          tl1[0].innerText = t1fis.textContent + t1fw.textContent
 
-         let j
-
-         if (inns_now != 1 || inns_now != 3) {
+         if (inns_now == 2 || inns_now == 4) {
             for (j = 0; j < t1r.length; j++) {
                t1r[j].innerHTML = insNo.batting[j].runs
                t1b2[j].innerHTML = insNo.batting[j].balls
@@ -524,15 +522,17 @@ socket.onmessage = function (event) {
                stts[j].innerHTML = insNo.batting[j].status.replace(/,[^,]+$/, '')
             }
          } else if (inns_now == 1 || inns_now == 3) {
-            t1r2[j].innerHTML = insNo.batting[j].runs
-            t1b22[j].innerHTML = insNo.batting[j].balls
-            t14s2[j].innerHTML = insNo.batting[j].fours
-            t16s2[j].innerHTML = insNo.batting[j].sixes
-            t2bnb2[j].innerHTML = insNo.bowling[j].nb
-            t2bo2[j].innerHTML = insNo.bowling[j].overs
-            t2br2[j].innerHTML = insNo.bowling[j].runs
-            t2bw2[j].innerHTML = insNo.bowling[j].wd
-            stts2[j].innerHTML = insNo.batting[j].status.replace(/,[^,]+$/, '')
+            for (j = 0; j < t1r.length; j++) {
+               t1r2[j].innerHTML = insNo.batting[j].runs
+               t1b22[j].innerHTML = insNo.batting[j].balls
+               t14s2[j].innerHTML = insNo.batting[j].fours
+               t16s2[j].innerHTML = insNo.batting[j].sixes
+               t2bnb2[j].innerHTML = insNo.bowling[j].nb
+               t2bo2[j].innerHTML = insNo.bowling[j].overs
+               t2br2[j].innerHTML = insNo.bowling[j].runs
+               t2bw2[j].innerHTML = insNo.bowling[j].wd
+               stts2[j].innerHTML = insNo.batting[j].status.replace(/,[^,]+$/, '')
+            }
          }
 
          tbs.addEventListener('click', function () {
