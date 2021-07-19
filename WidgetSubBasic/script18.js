@@ -1,5 +1,5 @@
-//let socket = new WebSocket('ws://demo-feed-widget-uat.decimalcricket.com/DEMO:Wi')
-var socket = 0 /*remove commenting for socket = 0 and comment out socket.open below when intergrated into menu */
+let socket = new WebSocket('ws://demo-feed-widget-uat.decimalcricket.com/DEMO:Wi')
+//var socket = 0 /*remove commenting for socket = 0 and comment out socket.open below when intergrated into menu */
 
 socket.onopen = function () {
    socket.send(
