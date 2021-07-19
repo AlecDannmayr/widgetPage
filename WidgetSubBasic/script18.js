@@ -31,6 +31,7 @@ let g2h = document.getElementById('second-header'),
    tbs = document.getElementById('selection-teams'),
    cg = document.getElementById('commsGrid'),
    tosl = document.getElementById('team-one-Section'),
+   tosl2 = document.getElementById('team-two-Section'),
    sgl = document.getElementById('selector-grid-two'),
    sgt = document.getElementById('selector-grid-teams'),
    scgl = document.getElementById('scorecardGrid'),
@@ -489,7 +490,6 @@ socket.onmessage = function (event) {
             sgl.style.display = 'none'
             cg.style.display = 'none'
             cmli.style.display = 'none'
-            scgl.style.display = 'none'
             cbs.style.cssText = 'background-color: #221f1f'
             lbs.style.cssText = 'background-color: #221f1f'
             tbs.style.cssText = 'background-color: #2483c5'
@@ -523,19 +523,20 @@ socket.onmessage = function (event) {
             st1.style.cssText = 'background-color: #2483c5'
             st2.style.cssText = 'background-color: #221f1f'
             cmli.style.display = 'none'
-            scgl.style.display = 'grid'
             st2t.style.cssText = 'background-color: #221f1f'
             st1t.style.cssText = 'background-color: #221f1f'
          })
          st1.addEventListener('click', function () {
             st1.style.cssText = 'background-color: #2483c5'
             st2.style.cssText = 'background-color: #221f1f'
-            scgl.style.display = 'grid'
+            tosl.style.cssText = 'display: block'
+            tosl2.style.cssText = 'display: none'
          })
          st2.addEventListener('click', function () {
             st2.style.cssText = 'background-color: #2483c5'
             st1.style.cssText = 'background-color: #221f1f'
-            scgl.style.display = 'none'
+            tosl.style.cssText = 'display: none'
+            tosl2.style.cssText = 'display: block'
          })
 
          break
@@ -1020,7 +1021,6 @@ function opno() {
    cbs.style.cssText = 'background-color: #221f1f'
    lbs.style.cssText = 'background-color: #2483c5'
    tbs.style.cssText = 'background-color: #221f1f'
-   scgl.style.display = 'grid'
    lbs.style.cssText = 'background-color: #2483c5'
    st1.style.cssText = 'background-color: #2483c5'
 }
@@ -1036,7 +1036,6 @@ cbs.addEventListener('click', function () {
    sgt.style.display = 'none'
    tgto.style.display = 'none'
    tgtt.style.display = 'none'
-   scgl.style.display = 'none'
    cmli.style.display = 'block'
    cbs.style.cssText = 'background-color: #2483c5'
    lbs.style.cssText = 'background-color: #221f1f'
