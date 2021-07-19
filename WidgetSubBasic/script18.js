@@ -1,6 +1,6 @@
 //let socket = new WebSocket('ws://demo-feed-widget-uat.decimalcricket.com/DEMO:Wi')
 var socket = 0 /*remove commenting for socket = 0 and comment out socket.open below when intergrated into menu */
-/*
+
 socket.onopen = function () {
    socket.send(
       `{
@@ -10,7 +10,7 @@ socket.onopen = function () {
                                       }`
    )
 }
-*/
+
 //* Global scoped variables (not ideal but is a must for the way the data is structured) */
 
 let g2h = document.getElementById('second-header'),
@@ -62,7 +62,7 @@ gsts.innerHTML = ''
 wi1.style.display = 'none'
 wi2.style.display = 'none'
 
-/* switch on to use with menu */
+/* switch on to use with menu 
 
 function matchRun(idNo) {
    var obj = {
@@ -94,7 +94,7 @@ function matchRun(idNo) {
          socket.send(snd)
       }
    }
-
+*/
 // socket on message
 
 socket.onmessage = function (event) {
@@ -1028,7 +1028,7 @@ socket.onmessage = function (event) {
          break
    }
 }
-}
+//}
 
 // Adds "unknown" to teams fields with no data
 
