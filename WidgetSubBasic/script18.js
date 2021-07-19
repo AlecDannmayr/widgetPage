@@ -534,6 +534,7 @@ socket.onmessage = function (event) {
             st2.style.cssText = 'background-color: #221f1f'
             cmli.style.display = 'none'
             scgl.style.display = 'grid'
+            scglt.style.display = 'grid'
             st2t.style.cssText = 'background-color: #221f1f'
             st1t.style.cssText = 'background-color: #221f1f'
          })
@@ -1033,7 +1034,7 @@ function opno() {
    lbs.style.cssText = 'background-color: #2483c5'
    tbs.style.cssText = 'background-color: #221f1f'
    scgl.style.display = 'grid'
-   scglt.style.display = 'none'
+   scglt.style.display = 'grid'
    lbs.style.cssText = 'background-color: #2483c5'
    st1.style.cssText = 'background-color: #2483c5'
 }
