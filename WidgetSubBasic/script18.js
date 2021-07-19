@@ -29,8 +29,8 @@ let g2h = document.getElementById('second-header'),
    lbs = document.getElementById('selection-live'),
    cbs = document.getElementById('selection-comms'),
    tbs = document.getElementById('selection-teams'),
-   cg = document.getElementById('commsGrid'),
    tosl = document.getElementById('team-one-Section'),
+   tosl2 = document.getElementById('team-two-Section'),
    sgl = document.getElementById('selector-grid-two'),
    sgt = document.getElementById('selector-grid-teams'),
    tgto = document.getElementById('teamsGrid'),
@@ -513,13 +513,13 @@ socket.onmessage = function (event) {
          tbs.addEventListener('click', function () {
             sgt.style.display = 'block'
             tosl.style.display = 'block'
+            tosl2.style.display = 'none'
             sgl.style.display = 'none'
-            cg.style.display = 'none'
             cmli.style.display = 'none'
             cbs.style.cssText = 'background-color: #221f1f'
             lbs.style.cssText = 'background-color: #221f1f'
             tbs.style.cssText = 'background-color: #2483c5'
-            tgto.style.display = 'grid'
+            tgto.style.display = 'none'
             tgtt.style.display = 'none'
             st1t.style.cssText = 'background-color: #2483c5'
          })
@@ -537,8 +537,8 @@ socket.onmessage = function (event) {
          })
 
          lbs.addEventListener('click', function () {
-            cg.style.display = 'none'
             tosl.style.display = 'grid'
+            tosl2.style.display = 'none'
             sgl.style.display = 'block'
             sgt.style.display = 'none'
             tgto.style.display = 'none'
@@ -549,19 +549,20 @@ socket.onmessage = function (event) {
             st1.style.cssText = 'background-color: #2483c5'
             st2.style.cssText = 'background-color: #221f1f'
             cmli.style.display = 'none'
-            scgl.style.display = 'grid'
             st2t.style.cssText = 'background-color: #221f1f'
             st1t.style.cssText = 'background-color: #221f1f'
          })
          st1.addEventListener('click', function () {
             st1.style.cssText = 'background-color: #2483c5'
             st2.style.cssText = 'background-color: #221f1f'
-            scgl.style.display = 'grid'
+            tosl2.style.display = 'none'
+            tosl.style.display = 'block'
          })
          st2.addEventListener('click', function () {
             st2.style.cssText = 'background-color: #2483c5'
             st1.style.cssText = 'background-color: #221f1f'
-            scgl.style.display = 'none'
+            tosl2.style.display = 'none'
+            tosl2.style.display = 'block'
          })
 
          break
@@ -1041,6 +1042,7 @@ let opni = false
 function opno() {
    opni = true
    tosl.style.display = 'grid'
+   tosl2.style.display = 'none'
    sgl.style.display = 'block'
    sgt.style.display = 'none'
    cbs.style.cssText = 'background-color: #221f1f'
@@ -1055,13 +1057,12 @@ function opot() {
 opot()
 
 cbs.addEventListener('click', function () {
-   cg.style.display = 'grid'
-   tosl.style.display = 'block'
+   tosl.style.display = 'none'
+   tosl2.style.display = 'none'
    sgl.style.display = 'none'
    sgt.style.display = 'none'
    tgto.style.display = 'none'
    tgtt.style.display = 'none'
-   scgl.style.display = 'none'
    cmli.style.display = 'block'
    cbs.style.cssText = 'background-color: #2483c5'
    lbs.style.cssText = 'background-color: #221f1f'
