@@ -510,7 +510,8 @@ socket.onmessage = function (event) {
          tl1[0].innerText = t1fis.textContent + t1fw.textContent
 
          let j
-         if (insNo != 1 || insNo != 3) {
+
+         if (inns_now != 1 || inns_now != 3) {
             for (j = 0; j < t1r.length; j++) {
                t1r[j].innerHTML = insNo.batting[j].runs
                t1b2[j].innerHTML = insNo.batting[j].balls
@@ -522,7 +523,7 @@ socket.onmessage = function (event) {
                t2bw2[j].innerHTML = insNo.bowling[j].wd
                stts[j].innerHTML = insNo.batting[j].status.replace(/,[^,]+$/, '')
             }
-         } else if (insNo == 1 || insNo == 3) {
+         } else if (inns_now == 1 || inns_now == 3) {
             t1r2[j].innerHTML = insNo.batting[j].runs
             t1b22[j].innerHTML = insNo.batting[j].balls
             t14s2[j].innerHTML = insNo.batting[j].fours
