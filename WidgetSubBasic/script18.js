@@ -295,14 +295,14 @@ socket.onmessage = function (event) {
             t2fo.innerHTML = ''
          } else if (currentinnings == 2 || currentinnings == 4) {
             t2fis.innerHTML = t2s + ' / '
-            t2fo.innerHTML = t2o + ' Ovs'
+            t2fo.innerHTML = '&nbsp&nbsp&nbsp' + t2o + ' Ovs'
             ftbi.style.display = 'none'
             stbi.style.display = 'block'
          }
          if (t1sl >= 2 && t1sl < 3 && t2s !== '') {
             t2fis.innerHTML = t2s + ' / '
          } else if (t1sl >= 3 && t1sl < 4 && t2s !== '') {
-            t2fis.innerHTML = t2s + ' / '
+            t2fis.innerHTML = '&nbsp&nbsp&nbsp' + t2s + ' / '
          }
 
          // Current Wickets Team One
@@ -366,19 +366,40 @@ socket.onmessage = function (event) {
 
          //  i if (bowler == )
 
-         for (i = 0; i < t1p.length; i++) {
-            shortNameOne = teams[0].short_name
-            shortNameTwo = teams[1].short_name
-            t1p[i].innerHTML = teams[1].players[i].name
-            t1b[i].innerHTML = teams[1].players[i].name
-            t2p[i].innerHTML = teams[0].players[i].name
-            t2bw[i].innerHTML = teams[0].players[i].name
-            bhcp = teams[1].players[i].bat_hand.split('-')[0]
-            bhcp2 = teams[0].players[i].bat_hand.split('-')[0]
-            hdb1[i].innerHTML = bhcp.charAt(0).toUpperCase() + bhcp.slice(1)
-            hdb2[i].innerHTML = bhcp.charAt(0).toUpperCase() + bhcp.slice(1)
-            hdbw1[i].innerHTML = teams[1].players[i].bowler_style
-            hdbw2[i].innerHTML = teams[0].players[i].bowler_style
+         if (igsn == '1' || igsn == null || igsn == '3') {
+            for (i = 0; i < t1p.length; i++) {
+               if (t1n == teams[0].short_name) {
+                  shortNameOne = teams[0].short_name
+                  shortNameTwo = teams[1].short_name
+               } else {
+                  shortNameOne = teams[1].short_name
+                  shortNameTwo = teams[0].short_name
+               }
+
+               t1p[i].innerHTML = teams[1].players[i].name
+               t1b[i].innerHTML = teams[1].players[i].name
+               t2p[i].innerHTML = teams[0].players[i].name
+               t2bw[i].innerHTML = teams[0].players[i].name
+               bhcp = teams[1].players[i].bat_hand.split('-')[0]
+               bhcp2 = teams[0].players[i].bat_hand.split('-')[0]
+               hdb1[i].innerHTML = bhcp.charAt(0).toUpperCase() + bhcp.slice(1)
+               hdb2[i].innerHTML = bhcp.charAt(0).toUpperCase() + bhcp.slice(1)
+               hdbw1[i].innerHTML = teams[1].players[i].bowler_style
+               hdbw2[i].innerHTML = teams[0].players[i].bowler_style
+            }
+         } else {
+            for (i = 0; i < t1p.length; i++) {
+               t1p[i].innerHTML = teams[0].players[i].name
+               t1b[i].innerHTML = teams[0].players[i].name
+               t2p[i].innerHTML = teams[1].players[i].name
+               t2bw[i].innerHTML = teams[1].players[i].name
+               bhcp = teams[0].players[i].bat_hand.split('-')[0]
+               bhcp2 = teams[1].players[i].bat_hand.split('-')[0]
+               hdb1[i].innerHTML = bhcp.charAt(0).toUpperCase() + bhcp.slice(1)
+               hdb2[i].innerHTML = bhcp.charAt(0).toUpperCase() + bhcp.slice(1)
+               hdbw1[i].innerHTML = teams[0].players[i].bowler_style
+               hdbw2[i].innerHTML = teams[1].players[i].bowler_style
+            }
          }
 
          const wpb = document.getElementById('win-probability-bar')
@@ -424,10 +445,18 @@ socket.onmessage = function (event) {
       case 'scorecard':
          var { batting, bowling, bat_now, bowl_now, inns_now, inns1, inns2, inns3, inns4 } = msg.scorecard
 
-         st1.innerHTML = shortNameOne
-         st2.innerHTML = shortNameTwo
-         st1t.innerHTML = shortNameOne
-         st2t.innerHTML = shortNameTwo
+         igsn = inns_now
+         if (igsn == 1 || igsn == 3) {
+            st1.innerHTML = shortNameOne
+            st2.innerHTML = shortNameTwo
+            st1t.innerHTML = shortNameOne
+            st2t.innerHTML = shortNameTwo
+         } else {
+            st2.innerHTML = shortNameOne
+            st1.innerHTML = shortNameTwo
+            st2t.innerHTML = shortNameOne
+            st1t.innerHTML = shortNameTwo
+         }
 
          const inssNow = document.querySelector('#ins-now')
          inssNow.innerHTML = 'Inning: ' + inns_now
@@ -526,21 +555,20 @@ socket.onmessage = function (event) {
             st2.style.cssText = 'background-color: #221f1f'
             cmli.style.display = 'none'
             scgl.style.display = 'grid'
-            scglt.style.display = 'grid'
             st2t.style.cssText = 'background-color: #221f1f'
             st1t.style.cssText = 'background-color: #221f1f'
          })
          st1.addEventListener('click', function () {
             st1.style.cssText = 'background-color: #2483c5'
             st2.style.cssText = 'background-color: #221f1f'
-            scglt.style.display = 'grid'
+            scglt.style.display = 'none'
             scgl.style.display = 'grid'
          })
          st2.addEventListener('click', function () {
             st2.style.cssText = 'background-color: #2483c5'
             st1.style.cssText = 'background-color: #221f1f'
             scgl.style.display = 'none'
-            scglt.style.display = 'none'
+            scglt.style.display = 'grid'
          })
 
          break
@@ -1026,7 +1054,7 @@ function opno() {
    lbs.style.cssText = 'background-color: #2483c5'
    tbs.style.cssText = 'background-color: #221f1f'
    scgl.style.display = 'grid'
-   scglt.style.display = 'grid'
+   scglt.style.display = 'none'
    lbs.style.cssText = 'background-color: #2483c5'
    st1.style.cssText = 'background-color: #2483c5'
 }
