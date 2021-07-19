@@ -443,17 +443,11 @@ socket.onmessage = function (event) {
          var { batting, bowling, bat_now, bowl_now, inns_now, inns1, inns2, inns3, inns4 } = msg.scorecard
 
          igsn = inns_now
-         if (igsn == 1 || igsn == 3) {
-            st1.innerHTML = shortNameOne
-            st2.innerHTML = shortNameTwo
-            st1t.innerHTML = shortNameOne
-            st2t.innerHTML = shortNameTwo
-         } else {
-            st2.innerHTML = shortNameOne
-            st1.innerHTML = shortNameTwo
-            st2t.innerHTML = shortNameOne
-            st1t.innerHTML = shortNameTwo
-         }
+
+         st1.innerHTML = shortNameOne
+         st2.innerHTML = shortNameTwo
+         st1t.innerHTML = shortNameOne
+         st2t.innerHTML = shortNameTwo
 
          const inssNow = document.querySelector('#ins-now')
          inssNow.innerHTML = 'Inning: ' + inns_now
