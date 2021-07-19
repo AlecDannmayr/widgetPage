@@ -424,18 +424,10 @@ socket.onmessage = function (event) {
       case 'scorecard':
          var { batting, bowling, bat_now, bowl_now, inns_now, inns1, inns2, inns3, inns4 } = msg.scorecard
 
-         igsn = inns_now
-         if (igsn == 1 || igsn == 3) {
-            st1.innerHTML = shortNameOne
-            st2.innerHTML = shortNameTwo
-            st1t.innerHTML = shortNameOne
-            st2t.innerHTML = shortNameTwo
-         } else {
-            st2.innerHTML = shortNameOne
-            st1.innerHTML = shortNameTwo
-            st2t.innerHTML = shortNameOne
-            st1t.innerHTML = shortNameTwo
-         }
+         st1.innerHTML = shortNameOne
+         st2.innerHTML = shortNameTwo
+         st1t.innerHTML = shortNameOne
+         st2t.innerHTML = shortNameTwo
 
          const inssNow = document.querySelector('#ins-now')
          inssNow.innerHTML = 'Inning: ' + inns_now
@@ -498,7 +490,6 @@ socket.onmessage = function (event) {
             sgl.style.display = 'none'
             cg.style.display = 'none'
             cmli.style.display = 'none'
-            scglt.style.display = 'none'
             scgl.style.display = 'none'
             cbs.style.cssText = 'background-color: #221f1f'
             lbs.style.cssText = 'background-color: #221f1f'
@@ -534,21 +525,18 @@ socket.onmessage = function (event) {
             st2.style.cssText = 'background-color: #221f1f'
             cmli.style.display = 'none'
             scgl.style.display = 'grid'
-            scglt.style.display = 'grid'
             st2t.style.cssText = 'background-color: #221f1f'
             st1t.style.cssText = 'background-color: #221f1f'
          })
          st1.addEventListener('click', function () {
             st1.style.cssText = 'background-color: #2483c5'
             st2.style.cssText = 'background-color: #221f1f'
-            scglt.style.display = 'grid'
             scgl.style.display = 'grid'
          })
          st2.addEventListener('click', function () {
             st2.style.cssText = 'background-color: #2483c5'
             st1.style.cssText = 'background-color: #221f1f'
             scgl.style.display = 'none'
-            scglt.style.display = 'none'
          })
 
          break
@@ -1034,7 +1022,6 @@ function opno() {
    lbs.style.cssText = 'background-color: #2483c5'
    tbs.style.cssText = 'background-color: #221f1f'
    scgl.style.display = 'grid'
-   scglt.style.display = 'grid'
    lbs.style.cssText = 'background-color: #2483c5'
    st1.style.cssText = 'background-color: #2483c5'
 }
@@ -1052,7 +1039,6 @@ cbs.addEventListener('click', function () {
    tgtt.style.display = 'none'
    scgl.style.display = 'none'
    cmli.style.display = 'block'
-   scglt.style.display = 'none'
    cbs.style.cssText = 'background-color: #2483c5'
    lbs.style.cssText = 'background-color: #221f1f'
    tbs.style.cssText = 'background-color: #221f1f'
