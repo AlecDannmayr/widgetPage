@@ -512,14 +512,14 @@ socket.onmessage = function (event) {
          }
          tbs.addEventListener('click', function () {
             sgt.style.display = 'block'
-            tosl.style.display = 'block'
+            tosl.style.display = 'none'
             tosl2.style.display = 'none'
             sgl.style.display = 'none'
             cmli.style.display = 'none'
             cbs.style.cssText = 'background-color: #221f1f'
             lbs.style.cssText = 'background-color: #221f1f'
             tbs.style.cssText = 'background-color: #2483c5'
-            tgto.style.display = 'none'
+            tgto.style.display = 'grid'
             tgtt.style.display = 'none'
             st1t.style.cssText = 'background-color: #2483c5'
          })
