@@ -366,15 +366,7 @@ socket.onmessage = function (event) {
 
          //  i if (bowler == )
 
-         if (igsn == '1' || igsn == null || igsn == '3') {
-            for (i = 0; i < t1p.length; i++) {
-               if (t1n == teams[0].short_name) {
-                  shortNameOne = teams[0].short_name
-                  shortNameTwo = teams[1].short_name
-               } else {
-                  shortNameOne = teams[1].short_name
-                  shortNameTwo = teams[0].short_name
-               }
+  
 
                t1p[i].innerHTML = teams[1].players[i].name
                t1b[i].innerHTML = teams[1].players[i].name
