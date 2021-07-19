@@ -31,7 +31,6 @@ let g2h = document.getElementById('second-header'),
    tbs = document.getElementById('selection-teams'),
    cg = document.getElementById('commsGrid'),
    tosl = document.getElementById('team-one-Section'),
-   tosl2 = document.getElementById('team-two-Section'),
    sgl = document.getElementById('selector-grid-two'),
    sgt = document.getElementById('selector-grid-teams'),
    scgl = document.getElementById('scorecardGrid'),
@@ -515,7 +514,7 @@ socket.onmessage = function (event) {
             st1t.style.cssText = 'background-color: #2483c5'
          })
          st2t.addEventListener('click', function () {
-            tosl2.style.display = 'block'
+            tgtt.style.display = 'grid'
             tgto.style.display = 'none'
             st1t.style.cssText = 'background-color: #221f1f'
             st2t.style.cssText = 'background-color: #2483c5'
