@@ -458,19 +458,29 @@ socket.onmessage = function (event) {
          const inssNow = document.querySelector('#ins-now')
          inssNow.innerHTML = 'Inning: ' + inns_now
 
-         let t1r = document.getElementsByClassName('b1r'),
-            t1b2 = document.getElementsByClassName('b1b'),
-            t14s = document.getElementsByClassName('b14s'),
-            t16s = document.getElementsByClassName('b16s'),
-            t2bnb = document.getElementsByClassName('bw1nb'),
-            t2bo = document.getElementsByClassName('bw1o'),
-            t2br = document.getElementsByClassName('bw1r'),
-            t2bw2 = document.getElementsByClassName('bw1w'),
-            stts = document.getElementsByClassName('b1st'),
-            exts = document.getElementsByClassName('eb'),
+         let t1r = document.querySelectorAll('.b1r'),
+            t1b2 = document.querySelectorAll('.b1b'),
+            t14s = document.querySelectorAll('.b14s'),
+            t16s = document.querySelectorAll('.b16s'),
+            t2bnb = document.querySelectorAll('.bw1nb'),
+            t2bo = document.querySelectorAll('.bw1o'),
+            t2br = document.querySelectorAll('.bw1r'),
+            t2bw2 = document.querySelectorAll('.bw1w'),
+            stts = document.querySelectorAll('.b1st'),
             insNo,
-            ex1 = document.getElementsByClassName('ex1'),
-            tl1 = document.getElementsByClassName('tl1')
+            ex1 = document.querySelectorAll('.ex1'),
+            tl1 = document.querySelectorAll('.tl1'),
+            t1r2 = document.querySelectorAll('.b1r2'),
+            t1b22 = document.querySelectorAll('.b1b2'),
+            t14s2 = document.querySelectorAll('.b14s2'),
+            t16s2 = document.querySelectorAll('.b16s2'),
+            t2bnb2 = document.querySelectorAll('.bw1nb2'),
+            t2bo2 = document.querySelectorAll('.bw1o2'),
+            t2br2 = document.querySelectorAll('.bw1r2'),
+            t2bw22 = document.querySelectorAll('.bw1w2'),
+            stts2 = document.querySelectorAll('.b1st2'),
+            ex12 = document.querySelectorAll('.ex12'),
+            tl12 = document.querySelectorAll('.tl12')
 
          // switch statement looks for inning no
 
