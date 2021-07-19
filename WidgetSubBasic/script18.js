@@ -509,17 +509,31 @@ socket.onmessage = function (event) {
          ex1[0].innerText = addext
          tl1[0].innerText = t1fis.textContent + t1fw.textContent
 
-         for (j = 0; j < t1r.length; j++) {
-            t1r[j].innerHTML = insNo.batting[j].runs
-            t1b2[j].innerHTML = insNo.batting[j].balls
-            t14s[j].innerHTML = insNo.batting[j].fours
-            t16s[j].innerHTML = insNo.batting[j].sixes
-            t2bnb[j].innerHTML = insNo.bowling[j].nb
-            t2bo[j].innerHTML = insNo.bowling[j].overs
-            t2br[j].innerHTML = insNo.bowling[j].runs
+         let j
+         if (insNo != 1 || insNo != 3) {
+            for (j = 0; j < t1r.length; j++) {
+               t1r[j].innerHTML = insNo.batting[j].runs
+               t1b2[j].innerHTML = insNo.batting[j].balls
+               t14s[j].innerHTML = insNo.batting[j].fours
+               t16s[j].innerHTML = insNo.batting[j].sixes
+               t2bnb[j].innerHTML = insNo.bowling[j].nb
+               t2bo[j].innerHTML = insNo.bowling[j].overs
+               t2br[j].innerHTML = insNo.bowling[j].runs
+               t2bw2[j].innerHTML = insNo.bowling[j].wd
+               stts[j].innerHTML = insNo.batting[j].status.replace(/,[^,]+$/, '')
+            }
+         } else if (insNo == 1 || insNo == 3) {
+            t1r2[j].innerHTML = insNo.batting[j].runs
+            t1b22[j].innerHTML = insNo.batting[j].balls
+            t14s2[j].innerHTML = insNo.batting[j].fours
+            t16s2[j].innerHTML = insNo.batting[j].sixes
+            t2bnb2[j].innerHTML = insNo.bowling[j].nb
+            t2bo2[j].innerHTML = insNo.bowling[j].overs
+            t2br2[j].innerHTML = insNo.bowling[j].runs
             t2bw2[j].innerHTML = insNo.bowling[j].wd
-            stts[j].innerHTML = insNo.batting[j].status.replace(/,[^,]+$/, '')
+            stts2[j].innerHTML = insNo.batting[j].status.replace(/,[^,]+$/, '')
          }
+
          tbs.addEventListener('click', function () {
             sgt.style.display = 'block'
             tosl.style.display = 'none'
