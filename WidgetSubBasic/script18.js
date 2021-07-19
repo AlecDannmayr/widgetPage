@@ -1018,7 +1018,7 @@ socket.onmessage = function (event) {
                      rt[it].style.cssText = 'background-color: #144708; color: #fff; padding: 6.4px 7px'
                      break
                   default:
-                     rt[it].style.cssText = 'background-color: #fff; color: #000000; padding: 6.4px 10px;'
+                     rt[it].style.cssText = 'background-color: #fff; color: #000; padding: 6.4px 10px;'
                      rt[it].innerHTML = '-'
                      break
                }
