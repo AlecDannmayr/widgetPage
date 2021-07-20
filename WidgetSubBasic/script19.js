@@ -1,6 +1,6 @@
-let socket = new WebSocket('ws://demo-feed-widget-uat.decimalcricket.com/DEMO:Wi')
-//var socket = 0 /*remove commenting for socket = 0 and comment out socket.open below when intergrated into menu */
-/*
+//let socket = new WebSocket('ws://demo-feed-widget-uat.decimalcricket.com/DEMO:Wi')
+var socket = 0 /*remove commenting for socket = 0 and comment out socket.open below when intergrated into menu */
+
 socket.onopen = function () {
    socket.send(
       `{
@@ -9,7 +9,7 @@ socket.onopen = function () {
                                         "feed_filter":["event", "powerbar", "scorecard", "scoreboard", "lineups", "commentary", "match_update", "scoregrid", "alerts"]
                                       }`
    )
-}*/
+}
 
 //* Global scoped variables (not ideal but is a must for the way the data is structured) */
 
@@ -163,7 +163,6 @@ function matchRun(idNo) {
             }
 
             /* Countdown Clock not yet enabled 
-
             var GetStartTime = start_datetime
             setInterval(function () {
                function getTimeRemaining(endtime) {
@@ -180,14 +179,12 @@ function matchRun(idNo) {
                      seconds,
                   }
                }
-
                function initializeClock(id, endtime) {
                   const clock = document.getElementById(id),
                      daysSpan = clock.querySelector('.days'),
                      hoursSpan = clock.querySelector('.hours'),
                      minutesSpan = clock.querySelector('.minutes'),
                      secondsSpan = clock.querySelector('.seconds')
-
                   function updateClock() {
                      const t = getTimeRemaining(endtime)
                      daysSpan.innerHTML = t.days
@@ -206,7 +203,6 @@ function matchRun(idNo) {
                initializeClock('clockdiv', GetStartTime)
             }, 1000)
          }
-
 */
 
             break
@@ -816,7 +812,6 @@ function matchRun(idNo) {
                delete eachObj['wkts']
 
                /* Checks for repeated property 
-
             /* Removed b7/8/9/10 if no extra balls played */
 
                if (fltinlt[i].b7 == null) {
