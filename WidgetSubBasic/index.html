@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scoreboard</title>
-    <meta http-equiv="cache-Control" content="no-cache, no-store, must-revalidate" />
-    <meta http-equiv="pragma" content="no-cache" />
-    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
     <script src="script19.js" async></script>
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap");
@@ -20,15 +20,15 @@
             color: #221f1f;
             background-color: #ffffff;
             min-width: 414px;
-            height: 826px;
-            overflow: unset;
+            height: 800px;
+            overflow: hidden;
             position: relative;
             z-index: 90;
         }
 
         .cover {
             min-width: 414px;
-            height: 826px;
+            height: 800px;
             position: absolute;
             z-index: 100;
             background-color: #221f1f;
@@ -39,7 +39,7 @@
         s .wrapper {
             max-width: 414px;
             width: 414px;
-            height: 826px;
+            height: 800px;
         }
 
         h1 {
@@ -136,18 +136,6 @@
             display: none;
         }
 
-
-        #winner-image-team-one {
-            position: absolute;
-            left: 27px;
-        }
-
-        #winner-image-team-two {
-            position: absolute;
-            right: 27px;
-        }
-
-
         #main-body {
             background-image: url("Icons/cricketGround.png");
             background-repeat: no-repeat;
@@ -171,7 +159,7 @@
         .overs-and-score {
             display: flex;
             position: absolute;
-            right: 0em;
+            left: 15.5em;
             word-wrap: none;
             white-space: nowrap
         }
@@ -333,9 +321,10 @@
         }
 
         #teamsGrid,
+        #scorecardGridTwo,
+        #scorecardGrid,
         #teamsGridTwo,
         #team-one-Section,
-        #team-two-Section,
         #selector-grid-two,
         #selector-grid-teams {
             display: none
@@ -367,17 +356,8 @@
             padding-left: 0px;
             padding-right: 0px;
             grid-template-rows: 30px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px;
-            grid-template-columns: 45% 13.75% 13.75% 13.75% 13.75%;
-            font-weight: 400;
-            text-align: center;
-        }
-
-        .bw1sn {
-            text-align: left;
-        }
-
-        #scorecardGridTwo span:nth-child(1) {
-            text-align: left;
+            grid-template-columns: auto auto auto auto auto;
+            font-weight: 400
         }
 
 
@@ -385,28 +365,33 @@
             font-size: 20px
         }
 
+        .exb,
+        .exb2 {
+            margin-top: -10px;
+            padding-bottom: 0px;
+        }
+
+        .exb2 {
+            margin-top: -16px;
+        }
+
         .extr1,
         .ex1 {
-            margin-top: 0px;
+            margin-top: 10px;
         }
 
         .totl1,
         .tl1 {
             margin-top: 4px;
-            margin-bottom: 4px;
         }
 
-        .sihr {
-            width: 120%
-        }
-
-        #team-two-Section-bowls .scorecard-grid span:nth-child(-n + 6):not(.scorecard-grid-bowl),
-        #team-two-Section-bowls .scorecard-grid span:nth-child(-n + 6):not(.scorecard-grid-bowl),
-        #team-two-Section-bowls .scorecard-grid span:nth-child(6n + 1):not(.scorecard-grid-bowl),
+        #team-two-Section .scorecard-grid span:nth-child(-n + 6):not(.scorecard-grid-bowl),
+        #team-one-Section .scorecard-grid span:nth-child(-n + 6):not(.scorecard-grid-bowl),
+        #team-two-Section .scorecard-grid span:nth-child(6n + 1):not(.scorecard-grid-bowl),
         #team-one-Section .scorecard-grid span:nth-child(6n + 1):not(.scorecard-grid-bowl),
-        #team-two-Section-bowls .scorecard-grid-bowl span:nth-child(-n + 5),
+        #team-two-Section .scorecard-grid-bowl span:nth-child(-n + 5),
         #team-one-Section .scorecard-grid-bowl span:nth-child(-n + 5),
-        #team-two-Section-bowls .scorecard-grid-bowl span:nth-child(5n + 1),
+        #team-two-Section .scorecard-grid-bowl span:nth-child(5n + 1),
         #team-one-Section .scorecard-grid-bowl span:nth-child(5n + 1),
         .teams-grid-data span:nth-child(-n + 4),
         .teams-grid-data-team-two span:nth-child(-n + 4),
@@ -415,13 +400,49 @@
             font-weight: 800
         }
 
+        .comms-grid-two,
+        .comms-grid-two-team-two {
+            display: none;
+            grid-template-columns: repeat(1, 1fr);
+            word-wrap: none;
+            white-space: nowrap;
+            padding: 10px;
+            margin-top: 10.6px
+        }
+
+        .comms-grid-two-data {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            word-wrap: none;
+            white-space: nowrap;
+            text-align: left;
+            padding: 0 10px 10px 10px;
+            margin-right: 10px;
+            margin-left: 26px;
+            margin-top: -10px;
+            font-size: 10px;
+            grid-template-rows: 30px;
+            letter-spacing: 1px
+        }
+
+        .comms-grid-two>span {
+            font-weight: 400;
+            padding-top: 4px;
+            padding-bottom: 4px;
+            padding: 10px 14px
+        }
+
+        .comms-grid-two div {
+            position: fixed;
+            left: 10px;
+            margin-top: -20.6px;
+            font-weight: 800
+        }
+
         #comms-list {
             display: none;
             font-size: 14px;
             font-weight: 600;
-            left: 10px;
-            font-weight: 800;
-            padding: 0 10px 10px 10px;
         }
 
         .cms {
@@ -430,6 +451,10 @@
 
         .comms-grid-two div {
             margin-bottom: 14.9px
+        }
+
+        #commsGridTwo {
+            display: none
         }
 
         .teams-grid-data,
@@ -451,11 +476,12 @@
         .teams-grid-data>span,
         .teams-grid-data-team-two>span {
             font-weight: 400;
+
             padding-bottom: 4px
         }
 
-        #team-two-Section-bowls {
-            margin-top: -2px;
+        #team-two-Section {
+            margin-top: 14px;
         }
 
         .teams-grid-data span:nth-child(4n + 2),
@@ -656,10 +682,10 @@
         }
 
         .ngi {
-            height: 501px;
+            height: 401px;
             max-width: 414px;
             background-repeat: no-repeat;
-            background-image: url(Content/lowerCricketGround1.png);
+            background-image: url(Content/lowerCricketGround.png);
             background-repeat: no-repeat;
         }
 
@@ -681,6 +707,7 @@
 
         #recent p,
         .gami,
+        #winner-declaration,
         #ins-now {
             display: flex;
             justify-content: left;
@@ -724,6 +751,10 @@
 
         #recent:nth-child(5) {
             margin-right: 20px;
+        }
+
+        #winner-declaration {
+            display: none
         }
 
         @media only screen and (min-width: 414px) {
@@ -987,6 +1018,9 @@
                             </div>
                         </div>
                     </div>
+                    <div class="winner-declaration">
+                        <p id="winner-declaration"></p>
+                    </div>
                     <div class="game-status-info">
                         <p id="game-status-info"></p>
                     </div>
@@ -1069,83 +1103,56 @@
                                 class="b1r"></span><span class="b1b"></span><span class="b14s"></span><span class="b16s"></span><span class="b1sn"></span><span class="b1st"></span><span class="b1r"></span><span
                                 class="b1b"></span><span class="b14s"></span><span class="b16s"></span><span class="b1sn"></span><span class="b1st"></span><span class="b1r"></span><span class="b1b"></span><span
                                 class="b14s"></span><span class="b16s"></span><span class="b1sn"></span><span class="b1st"></span><span class="b1r"></span><span class="b1b"></span><span class="b14s"></span><span
-                                class="b16s"></span>
-                            <hr class="sihr"><span></span><span></span><span></span><span></span><span></span><span class="extr1">Extras</span><span
-                                class="ex1"></span><span></span><span></span><span></span><span></span><span class="totl1">Total</span><span class="tl1"></span><span></span><span></span><span></span><span></span>
-                            <hr class="sihr">
-                        </div>
-                        <div id="team-two-Section-bowls">
-                            <div class="scorecard-grid-bowl" id="scorecardGridTwo"><span class="scorecard-grid-header">Bowler</span><span class="scorecard-grid-header">Nb</span><span
-                                    class="scorecard-grid-header">Ovrs</span><span class="scorecard-grid-header">Runs</span><span class="scorecard-grid-header">Wds</span><span class="bw1sn"></span><span
-                                    class="bw1nb"></span><span class="bw1o"></span><span class="bw1r"></span><span class="bw1w"></span><span class="bw1sn"></span><span class="bw1nb"></span><span class="bw1o"></span><span
-                                    class="bw1r"></span><span class="bw1w"></span><span class="bw1sn"></span><span class="bw1nb"></span><span class="bw1o"></span><span class="bw1r"></span><span class="bw1w"></span><span
-                                    class="bw1sn"></span><span class="bw1nb"></span><span class="bw1o"></span><span class="bw1r"></span><span class="bw1w"></span><span class="bw1sn"></span><span
-                                    class="bw1nb"></span><span class="bw1o"></span><span class="bw1r"></span><span class="bw1w"></span><span class="bw1sn"></span><span class="bw1nb"></span><span class="bw1o"></span><span
-                                    class="bw1r"></span><span class="bw1w"></span><span class="bw1sn"></span><span class="bw1nb"></span><span class="bw1o"></span><span class="bw1r"></span><span class="bw1w"></span><span
-                                    class="bw1sn"></span><span class="bw1nb"></span><span class="bw1o"></span><span class="bw1r"></span><span class="bw1w"></span><span class="bw1sn"></span><span
-                                    class="bw1nb"></span><span class="bw1o"></span><span class="bw1r"></span><span class="bw1w"></span><span class="bw1sn"></span><span class="bw1nb"></span><span class="bw1o"></span><span
-                                    class="bw1r"></span><span class="bw1w"></span><span class="bw1sn"></span><span class="bw1nb"></span><span class="bw1o"></span><span class="bw1r"></span><span class="bw1w"></span></div>
+                                class="b16s"></span><span class="extr1">Extras</span><span class="ex1"></span><span></span><span></span><span></span><span></span><span class="totl1">Total</span><span class="tl1"></span>
+                            <!--
+                            <span class="exb">Extras</span><span
+                                class="eb"></span><span></span><span></span><span></span><span></span>
+                            <span class="exb2">Total
+                            </span><span class="eb"></span>-->
                         </div>
                     </div>
+                    <div class="comms-grid-two" id="commsGrid">
+                        <div id="comms-list">
+                            <p class="cms"></p>
+                            <p class="cms"></p>
+                            <p class="cms"></p>
+                            <p class="cms"></p>
+                            <p class="cms"></p>
+                            <p class="cms"></p>
+                        </div>
+                    </div>
+                    <div class="comms-grid-two-data" id="commsGridTwo"></div>
                     <div id="team-two-Section">
-                        <div class="scorecard-grid" id="scorecardGrid"><span class="scorecard-grid-header">Batsman</span><span class="scorecard-grid-header">Method</span><span class="scorecard-grid-header">R</span><span
-                                class="scorecard-grid-header">B</span><span class="scorecard-grid-header">4s</span><span class="scorecard-grid-header">6s</span><span class="b1sn2"></span><span class="b1st2"></span><span
-                                class="b1r2"></span><span class="b1b2"></span><span class="b14s2"></span><span class="b16s2"></span><span class="b1sn2"></span><span class="b1st2"></span><span class="b1r2"></span><span
-                                class="b1b2"></span><span class="b14s2"></span><span class="b16s2"></span><span class="b1sn2"></span><span class="b1st2"></span><span class="b1r2"></span><span class="b1b2"></span><span
-                                class="b14s2"></span><span class="b16s2"></span><span class="b1sn2"></span><span class="b1st2"></span><span class="b1r2"></span><span class="b1b2"></span><span class="b14s2"></span><span
-                                class="b16s2"></span><span class="b1sn2"></span><span class="b1st2"></span><span class="b1r2"></span><span class="b1b2"></span><span class="b14s2"></span><span class="b16s2"></span><span
-                                class="b1sn2"></span><span class="b1st2"></span><span class="b1r2"></span><span class="b1b2"></span><span class="b14s2"></span><span class="b16s2"></span><span class="b1sn2"></span><span
-                                class="b1st2"></span><span class="b1r2"></span><span class="b1b2"></span><span class="b14s2"></span><span class="b16s2"></span><span class="b1sn2"></span><span class="b1st2"></span><span
-                                class="b1r2"></span><span class="b1b2"></span><span class="b14s2"></span><span class="b16s2"></span><span class="b1sn2"></span><span class="b1st2"></span><span class="b1r2"></span><span
-                                class="b1b2"></span><span class="b14s2"></span><span class="b16s2"></span><span class="b1sn2"></span><span class="b1st2"></span><span class="b1r2"></span><span class="b1b2"></span><span
-                                class="b14s2"></span><span class="b16s2"></span><span class="b1sn2"></span><span class="b1st2"></span><span class="b1r2"></span><span class="b1b2"></span><span class="b14s2"></span><span
-                                class="b16s2"></span>
-                            <hr class="sihr"><span></span><span></span><span></span><span></span><span></span><span class="extr1">Extras</span><span
-                                class="ex2"></span><span></span><span></span><span></span><span></span><span class="totl1">Total</span><span class="tl2"></span><span></span><span></span><span></span><span></span>
-                            <hr class="sihr">
-                        </div>
-                        <div id="team-two-Section-bowls">
-                            <div class="scorecard-grid-bowl" id="scorecardGridTwo"><span class="scorecard-grid-header">Bowler</span><span class="scorecard-grid-header">Nb</span><span
-                                    class="scorecard-grid-header">Ovrs</span><span class="scorecard-grid-header">Runs</span><span class="scorecard-grid-header">Wds</span><span class="bw1sn2"></span><span
-                                    class="bw1nb2"></span><span class="bw1o2"></span><span class="bw1r2"></span><span class="bw1w2"></span><span class="bw1sn2"></span><span class="bw1nb2"></span><span
-                                    class="bw1o2"></span><span class="bw1r2"></span><span class="bw1w2"></span><span class="bw1sn2"></span><span class="bw1nb2"></span><span class="bw1o2"></span><span
-                                    class="bw1r2"></span><span class="bw1w2"></span><span class="bw1sn2"></span><span class="bw1nb2"></span><span class="bw1o2"></span><span class="bw1r2"></span><span
-                                    class="bw1w2"></span><span class="bw1sn2"></span><span class="bw1nb2"></span><span class="bw1o2"></span><span class="bw1r2"></span><span class="bw1w2"></span><span
-                                    class="bw1sn2"></span><span class="bw1nb2"></span><span class="bw1o2"></span><span class="bw1r2"></span><span class="bw1w2"></span><span class="bw1sn2"></span><span
-                                    class="bw1nb2"></span><span class="bw1o2"></span><span class="bw1r2"></span><span class="bw1w2"></span><span class="bw1sn2"></span><span class="bw1nb2"></span><span
-                                    class="bw1o2"></span><span class="bw1r2"></span><span class="bw1w2"></span><span class="bw1sn2"></span><span class="bw1nb2"></span><span class="bw1o2"></span><span
-                                    class="bw1r2"></span><span class="bw1w2"></span><span class="bw1sn2"></span><span class="bw1nb2"></span><span class="bw1o2"></span><span class="bw1r2"></span><span
-                                    class="bw1w2"></span><span class="bw1sn2"></span><span class="bw1nb2"></span><span class="bw1o2"></span><span class="bw1r2"></span><span class="bw1w2"></span></div>
-                        </div>
+                        <div class="scorecard-grid-bowl" id="scorecardGridTwo"><span class="scorecard-grid-header">Bowler</span><span class="scorecard-grid-header">Nb</span><span
+                                class="scorecard-grid-header">Ovrs</span><span class="scorecard-grid-header">Runs</span><span class="scorecard-grid-header">Wds</span><span class="bw1sn"></span><span
+                                class="bw1nb"></span><span class="bw1o"></span><span class="bw1r"></span><span class="bw1w"></span><span class="bw1sn"></span><span class="bw1nb"></span><span class="bw1o"></span><span
+                                class="bw1r"></span><span class="bw1w"></span><span class="bw1sn"></span><span class="bw1nb"></span><span class="bw1o"></span><span class="bw1r"></span><span class="bw1w"></span><span
+                                class="bw1sn"></span><span class="bw1nb"></span><span class="bw1o"></span><span class="bw1r"></span><span class="bw1w"></span><span class="bw1sn"></span><span class="bw1nb"></span><span
+                                class="bw1o"></span><span class="bw1r"></span><span class="bw1w"></span><span class="bw1sn"></span><span class="bw1nb"></span><span class="bw1o"></span><span class="bw1r"></span><span
+                                class="bw1w"></span><span class="bw1sn"></span><span class="bw1nb"></span><span class="bw1o"></span><span class="bw1r"></span><span class="bw1w"></span><span class="bw1sn"></span><span
+                                class="bw1nb"></span><span class="bw1o"></span><span class="bw1r"></span><span class="bw1w"></span><span class="bw1sn"></span><span class="bw1nb"></span><span class="bw1o"></span><span
+                                class="bw1r"></span><span class="bw1w"></span><span class="bw1sn"></span><span class="bw1nb"></span><span class="bw1o"></span><span class="bw1r"></span><span class="bw1w"></span><span
+                                class="bw1sn"></span><span class="bw1nb"></span><span class="bw1o"></span><span class="bw1r"></span><span class="bw1w"></span></div>
                     </div>
-                    <div id="comms-list">
-                        <p class="cms"></p>
-                        <p class="cms"></p>
-                        <p class="cms"></p>
-                        <p class="cms"></p>
-                        <p class="cms"></p>
-                        <p class="cms"></p>
+                    <div id="allTeamsGrid">
+                        <div class="teams-grid-data" id="teamsGrid"><span>No.</span><span>Team
+                                Member</span><span>Bat Hand</span><span>Bowl Style</span><span>1</span><span class="b"></span><span class="hdb1"></span><span class="hdbw1"></span><span>2</span><span
+                                class="b"></span><span class="hdb1"></span><span class="hdbw1"></span><span>3</span><span class="b"></span><span class="hdb1"></span><span class="hdbw1"></span><span>4</span><span
+                                class="b"></span><span class="hdb1"></span><span class="hdbw1"></span><span>5</span><span class="b"></span><span class="hdb1"></span><span class="hdbw1"></span><span>6</span><span
+                                class="b"></span><span class="hdb1"></span><span class="hdbw1"></span><span>7</span><span class="b"></span><span class="hdb1"></span><span class="hdbw1"></span><span>8</span><span
+                                class="b"></span><span class="hdb1"></span><span class="hdbw1"></span><span>9</span><span class="b"></span><span class="hdb1"></span><span class="hdbw1"></span><span>10</span><span
+                                class="b"></span><span class="hdb1"></span><span class="hdbw1"></span><span>11</span><span class="b"></span><span class="hdb1"></span><span class="hdbw1"></span></div>
+                        <div class="teams-grid-data-team-two" id="teamsGridTwo"><span>No.</span><span>Team
+                                Member</span><span>Bat Hand</span><span>Bowl Style</span><span>1</span><span class="b2"></span><span class="hdb2"></span><span class="hdbw2"></span><span>2</span><span
+                                class="b2"></span><span class="hdb2"></span><span class="hdbw2"></span><span>3</span><span class="b2"></span><span class="hdb2"></span><span class="hdbw2"></span><span>4</span><span
+                                class="b2"></span><span class="hdb2"></span><span class="hdbw2"></span><span>5</span><span class="b2"></span><span class="hdb2"></span><span class="hdbw2"></span><span>6</span><span
+                                class="b2"></span><span class="hdb2"></span><span class="hdbw2"></span><span>7</span><span class="b2"></span><span class="hdb2"></span><span class="hdbw2"></span><span>8</span><span
+                                class="b2"></span><span class="hdb2"></span><span class="hdbw2"></span><span>9</span><span class="b2"></span><span class="hdb2"></span><span class="hdbw2"></span><span>10</span><span
+                                class="b2"></span><span class="hdb2"></span><span class="hdbw2"></span><span>11</span><span class="b2"></span><span class="hdb2"></span><span class="hdbw2"></span></div>
                     </div>
-                </div>
-                <div id="allTeamsGrid">
-                    <div class="teams-grid-data" id="teamsGrid"><span>No.</span><span>Team
-                            Member</span><span>Bat Hand</span><span>Bowl Style</span><span>1</span><span class="b"></span><span class="hdb1"></span><span class="hdbw1"></span><span>2</span><span class="b"></span><span
-                            class="hdb1"></span><span class="hdbw1"></span><span>3</span><span class="b"></span><span class="hdb1"></span><span class="hdbw1"></span><span>4</span><span class="b"></span><span
-                            class="hdb1"></span><span class="hdbw1"></span><span>5</span><span class="b"></span><span class="hdb1"></span><span class="hdbw1"></span><span>6</span><span class="b"></span><span
-                            class="hdb1"></span><span class="hdbw1"></span><span>7</span><span class="b"></span><span class="hdb1"></span><span class="hdbw1"></span><span>8</span><span class="b"></span><span
-                            class="hdb1"></span><span class="hdbw1"></span><span>9</span><span class="b"></span><span class="hdb1"></span><span class="hdbw1"></span><span>10</span><span class="b"></span><span
-                            class="hdb1"></span><span class="hdbw1"></span><span>11</span><span class="b"></span><span class="hdb1"></span><span class="hdbw1"></span></div>
-                    <div class="teams-grid-data-team-two" id="teamsGridTwo"><span>No.</span><span>Team
-                            Member</span><span>Bat Hand</span><span>Bowl Style</span><span>1</span><span class="b2"></span><span class="hdb2"></span><span class="hdbw2"></span><span>2</span><span class="b2"></span><span
-                            class="hdb2"></span><span class="hdbw2"></span><span>3</span><span class="b2"></span><span class="hdb2"></span><span class="hdbw2"></span><span>4</span><span class="b2"></span><span
-                            class="hdb2"></span><span class="hdbw2"></span><span>5</span><span class="b2"></span><span class="hdb2"></span><span class="hdbw2"></span><span>6</span><span class="b2"></span><span
-                            class="hdb2"></span><span class="hdbw2"></span><span>7</span><span class="b2"></span><span class="hdb2"></span><span class="hdbw2"></span><span>8</span><span class="b2"></span><span
-                            class="hdb2"></span><span class="hdbw2"></span><span>9</span><span class="b2"></span><span class="hdb2"></span><span class="hdbw2"></span><span>10</span><span class="b2"></span><span
-                            class="hdb2"></span><span class="hdbw2"></span><span>11</span><span class="b2"></span><span class="hdb2"></span><span class="hdbw2"></span></div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
 </body>
 
