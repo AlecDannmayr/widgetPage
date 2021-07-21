@@ -91,18 +91,21 @@ window.addEventListener('load', function () {
                notf++
             }
          }
-         if (notf != 0) {
-            filtered = r[i]
-            cmip++
-            nA = document.createElement('li')
-            nA.setAttribute('class', 'sidebar-item-fixtures')
-            fixlst.append(nA)
-            sif = document.querySelectorAll('.sidebar-item-fixtures')
-            const atr = document.createElement('a')
-            atr.setAttribute('class', 'sidebar-anchor-fixtures')
-            atr.setAttribute('data', r[i].id)
-            atr.setAttribute('href', '#')
-            atr.innerHTML = filtered.name.split('v').join('<br />').split(',')[0]
+         if (notf > 0) {
+            for (ii = 0; ii < notf; ii++) {
+               filtered = r[ii]
+               cmip++
+               nA = document.createElement('li')
+               nA.setAttribute('class', 'sidebar-item-fixtures')
+               fixlst.append(nA)
+               sif = document.querySelectorAll('.sidebar-item-fixtures')
+               const atr = document.createElement('a')
+               atr.setAttribute('class', 'sidebar-anchor-fixtures')
+               atr.setAttribute('data', r[ii].id)
+               atr.setAttribute('href', '#')
+               atr.innerHTML = filtered.name.split('v').join('<br />').split(',')[0]
+               sif[ii].appendChild(atr)
+            }
          }
 
          /*
