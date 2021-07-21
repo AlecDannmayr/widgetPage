@@ -831,8 +831,6 @@ function matchRun(idNo) {
                } else if (fltinlt[i].b7 != null || fltinlt[i].b10 == null) {
                   delete eachObj['b10']
                }
-
-               console.log(fltinlt.slice(0))
                if (fltinlt.length <= 2) {
                   rt[0].innerHTML = fltin[0].b1
                   rt[1].innerHTML = fltin[0].b2
