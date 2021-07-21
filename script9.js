@@ -87,22 +87,22 @@ window.addEventListener('load', function () {
          for (i = 0; i < r.length; i++) {
             if (r[i].start.substring(0, 10) == nuDt) {
                filtered = r[i]
-               for (ii = 0; ii < filtered.length; ii++) {
-                  cmip++
-                  nA = document.createElement('li')
-                  nA.setAttribute('class', 'sidebar-item-fixtures')
-                  fixlst.append(nA)
-                  const atr = document.createElement('a')
-                  sif = document.querySelectorAll('.sidebar-item-fixtures')
-                  atr.setAttribute('class', 'sidebar-anchor-fixtures')
-                  atr.setAttribute('data', r[i].id)
-                  atr.setAttribute('href', '#')
-                  atr.innerHTML = filtered.name.split('v').join('<br />').split(',')[0]
+               cmip++
+               nA = document.createElement('li')
+               nA.setAttribute('class', 'sidebar-item-fixtures')
+               fixlst.append(nA)
+               sif = document.querySelectorAll('.sidebar-item-fixtures')
+               const atr = document.createElement('a')
+               atr.setAttribute('class', 'sidebar-anchor-fixtures')
+               atr.setAttribute('data', r[i].id)
+               atr.setAttribute('href', '#')
+               atr.innerHTML = filtered.name.split('v').join('<br />').split(',')[0]
+               for (ii = 0; ii < sif.length; ii++) {
+                  console.log(sif[ii])
                }
+               // sif[].appendChild(atr)
             }
          }
-         //     sif[i].appendChild(atr)
-
          /*
                cmip++
                nA = document.createElement('li')
