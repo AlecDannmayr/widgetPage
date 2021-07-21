@@ -108,6 +108,7 @@ window.addEventListener('load', function () {
          }
 
          for (ii = 0; ii < sif.length; ii++) {
+            console.log(filtered[ii])
             const adiv = document.createElement('div')
             adiv.setAttribute('class', 'date-time')
             sif[ii].appendChild(adiv)
