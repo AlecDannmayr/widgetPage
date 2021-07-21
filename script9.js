@@ -83,28 +83,28 @@ window.addEventListener('load', function () {
 
          let moments = moment(),
             nuDt = moments.format().substring(0, 10),
-            filtered
+            filtered,
+            notf = 0
+
          for (i = 0; i < r.length; i++) {
             if (r[i].start.substring(0, 10) == nuDt) {
-               filtered = r[i]
-               cmip++
-               nA = document.createElement('li')
-               nA.setAttribute('class', 'sidebar-item-fixtures')
-               fixlst.append(nA)
-               sif = document.querySelectorAll('.sidebar-item-fixtures')
-               const atr = document.createElement('a')
-               atr.setAttribute('class', 'sidebar-anchor-fixtures')
-               atr.setAttribute('data', r[i].id)
-               atr.setAttribute('href', '#')
-               atr.innerHTML = filtered.name.split('v').join('<br />').split(',')[0]
-               for (ii = 0; ii < sif.length; ii++) {
-                  sif[ii].appendChild(atr)
-                  const adiv = document.createElement('div')
-                  adiv.setAttribute('class', 'date-time')
-                  sif[ii].appendChild(adiv)
-               }
+               notf++
             }
          }
+         if (notf != 0) {
+            filtered = r[i]
+            cmip++
+            nA = document.createElement('li')
+            nA.setAttribute('class', 'sidebar-item-fixtures')
+            fixlst.append(nA)
+            sif = document.querySelectorAll('.sidebar-item-fixtures')
+            const atr = document.createElement('a')
+            atr.setAttribute('class', 'sidebar-anchor-fixtures')
+            atr.setAttribute('data', r[i].id)
+            atr.setAttribute('href', '#')
+            atr.innerHTML = filtered.name.split('v').join('<br />').split(',')[0]
+         }
+
          /*
                cmip++
                nA = document.createElement('li')
