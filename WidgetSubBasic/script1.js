@@ -293,11 +293,6 @@ function matchRun(idNo) {
                ftbi.style.display = 'none'
                stbi.style.display = 'block'
             }
-            if (t1sl >= 2 && t1sl < 3 && t2s !== '') {
-               t2fis.innerHTML = t2s + ' / '
-            } else if (t1sl >= 3 && t1sl < 4 && t2s !== '') {
-               t2fis.innerHTML = t2s + ' / '
-            }
 
             // Current Wickets Team One
 
