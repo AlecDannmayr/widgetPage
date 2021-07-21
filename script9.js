@@ -60,12 +60,59 @@ window.addEventListener('load', function () {
          })
 
          // Checks for games Today and outputs as var 'filtered'
-
+         /*
          let moments = moment()
+         let nuDt = moments.format().substring(0, 10)
+         function filter_games(r) {
+            return r.start != nuDt
+         }
+         var filtered = r.filter(filter_games)
+
+         // Checks for games Tomorrow and outputs as var 'filteredTomorrow'
+
+         let tomorrow = moments.add(1, 'days').format().substring(0, 10)
+         function filter_games_tomorrow(r) {
+            return r.start == tomorrow
+         }
+         var filteredTomorrow = r.filter(filter_games_tomorrow)
+
+         */
+         // let nuDt = moments.format().substring(0, 10)
+         //  function filter_games(r) {
+         //     return r.start != nuDt
+         //  }
+         // var filtered = r.filter(filter_games)
+
+         // Creates and prepends a demo list item to indicate how many games in day (does not show if no games)
+
+         let moments = moment(),
+            lvNo = 0
          let nuDt = moments.format().substring(0, 10)
 
          for (i = 0; i < r.length; i++) {
             if (r[i].start.substring(0, 10) == nuDt) {
+               lvNo++
+               console.log(lvNo)
+               const prep = document.getElementsByClassName('sidebar-item-fixtures-today')
+               nxdg = document.createElement('li')
+               nxdg.setAttribute('class', 'sidebar-item-fixtures-demo')
+               fixlst.append(nxdg)
+               const sifxl = document.getElementsByClassName('sidebar-item-fixtures-demo')[1],
+                  nxdga = document.createElement('a')
+               nxdga.setAttribute('class', 'sidebar-anchor-fixtures')
+               nxdga.setAttribute('href', '#')
+               nxdga.innerHTML = 'Games:'
+               sifxl.appendChild(nxdga)
+               dntat = document.createElement('div')
+               dntat.setAttribute('class', 'date-time-demo')
+               sifxl.append(dntat)
+               const tgdtd = document.getElementsByClassName('date-time-demo')[1]
+               nxdgat = document.createElement('p')
+               nxdgat.setAttribute('id', 'gmn')
+               tgdtd.appendChild(nxdgat)
+
+               // Creates list items and appends to fixtures list for any games live today.
+
                for (e = 0; e < filtered.length; e++) {
                   if (filtered.length > 0) {
                      cmip++
@@ -94,63 +141,23 @@ window.addEventListener('load', function () {
                      sif[e].style.cssText = 'padding-right: 40px;'
                   }
                }
-
-               // Removed first IPL Outright Fixture from list
-
-               const rmv = document.getElementsByClassName('sidebar-item-fixtures')[0]
-               rmv.parentNode.removeChild(rmv)
-
-               // Display todays game count
-
-               const gmn = document.querySelector('#gmn'),
-                  nxgn = document.querySelector('#nxgn')
-               if (cmip != 0) {
-                  gmn.innerHTML = '<br>' + cmip
-               } else {
-                  gmn.innerHTML = '<br>No Live Games'
-               }
             }
          }
-         var filtered = r.filter(filter_games)
 
-         // Checks for games Tomorrow and outputs as var 'filteredTomorrow'
+         // Removed first IPL Outright Fixture from list
 
-         let tomorrow = moments.add(1, 'days').format().substring(0, 10)
-         function filter_games_tomorrow(r) {
-            return r.start == tomorrow
+         const rmv = document.getElementsByClassName('sidebar-item-fixtures')[0]
+         rmv.parentNode.removeChild(rmv)
+
+         // Display todays game count
+
+         const gmn = document.querySelector('#gmn'),
+            nxgn = document.querySelector('#nxgn')
+         if (cmip != 0) {
+            gmn.innerHTML = '<br>' + cmip
+         } else {
+            gmn.innerHTML = '<br>No Live Games'
          }
-         var filteredTomorrow = r.filter(filter_games_tomorrow)
-
-         /*
-                              let nuDt = moments.format().substring(0, 10)
-                              function filter_games(r) {
-                                 return r.start != nuDt;
-                              }
-                              var filtered = r.filter(filter_games);
-               */
-
-         // Creates and prepends a demo list item to indicate how many games in day (does not show if no games)
-
-         const prep = document.getElementsByClassName('sidebar-item-fixtures-today')
-         nxdg = document.createElement('li')
-         nxdg.setAttribute('class', 'sidebar-item-fixtures-demo')
-         fixlst.append(nxdg)
-         const sifxl = document.getElementsByClassName('sidebar-item-fixtures-demo')[1],
-            nxdga = document.createElement('a')
-         nxdga.setAttribute('class', 'sidebar-anchor-fixtures')
-         nxdga.setAttribute('href', '#')
-         nxdga.innerHTML = 'Games:'
-         sifxl.appendChild(nxdga)
-         dntat = document.createElement('div')
-         dntat.setAttribute('class', 'date-time-demo')
-         sifxl.append(dntat)
-         const tgdtd = document.getElementsByClassName('date-time-demo')[1]
-         nxdgat = document.createElement('p')
-         nxdgat.setAttribute('id', 'gmn')
-         tgdtd.appendChild(nxdgat)
-
-         // Creates list items and appends to fixtures list for any games live today.
-
          /*
                               if (nxndc != 0) {
                                  nxgn.innerHTML = "<br>" + nxndc
