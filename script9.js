@@ -81,19 +81,13 @@ window.addEventListener('load', function () {
 
          // Creates list items and appends to fixtures list for any games live today.
 
-         let moments = moment()
-         let nuDt = moments.format().substring(0, 10)
+         let moments = moment(),
+            nuDt = moments.format().substring(0, 10),
+            filtered
          for (i = 0; i < r.length; i++) {
             if (r[i].start.substring(0, 10) == nuDt) {
-               const filtered = r[i]
+               filtered = r[i]
                console.log(filtered)
-            }
-         }
-
-         /*
-
-         for (e = 0; e < filtered.length; e++) {
-            if (filtered.length > 0) {
                cmip++
                nA = document.createElement('li')
                nA.setAttribute('class', 'sidebar-item-fixtures')
@@ -118,13 +112,12 @@ window.addEventListener('load', function () {
                ad.innerHTML = filtered[e].start.split('T')[0].substring(0, 10).split('-').reverse().join('/')
                dt[e].appendChild(ad)
                sif[e].style.cssText = 'padding-right: 40px;'
+
+               const rmv = document.getElementsByClassName('sidebar-item-fixtures')[0]
+               rmv.parentNode.removeChild(rmv)
             }
          }
-
          // Removed first IPL Outright Fixture from list
-
-         const rmv = document.getElementsByClassName('sidebar-item-fixtures')[0]
-         rmv.parentNode.removeChild(rmv)
 
          // Display todays game count
 
