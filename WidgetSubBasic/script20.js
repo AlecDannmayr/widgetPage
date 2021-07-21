@@ -1,6 +1,6 @@
-let socket = new WebSocket('ws://demo-feed-widget-uat.decimalcricket.com/DEMO:Wi')
-//var socket = 0 /*remove commenting for socket = 0 and comment out socket.open below when intergrated into menu */
-
+//let socket = new WebSocket('ws://demo-feed-widget-uat.decimalcricket.com/DEMO:Wi')
+var socket = 0 /*remove commenting for socket = 0 and comment out socket.open below when intergrated into menu */
+/*
 socket.onopen = function () {
    socket.send(
       `{
@@ -60,7 +60,7 @@ gsts.innerHTML = ''
 wi1.style.display = 'none'
 wi2.style.display = 'none'
 
-/* switch on to use with menu 
+/* switch on to use with menu */
 
 function matchRun(idNo) {
    var obj = {
@@ -92,7 +92,7 @@ function matchRun(idNo) {
          socket.send(snd)
       }
    }
-*/
+
 // socket on message
 
 socket.onmessage = function (event) {
