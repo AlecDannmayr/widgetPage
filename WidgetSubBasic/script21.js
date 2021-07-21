@@ -828,6 +828,8 @@ function matchRun(idNo) {
                   delete eachObj['b10']
                }
 
+               console.log(fltinlt)
+
                if (fltinlt.length <= 2) {
                   rt[0].innerHTML = fltin[0].b1
                   rt[1].innerHTML = fltin[0].b2
