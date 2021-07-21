@@ -86,6 +86,8 @@ window.addEventListener('load', function () {
             filtered,
             notf = 0
 
+         console.log(moments.format().substring(11, 19), r[2].start)
+
          for (i = 0; i < r.length; i++) {
             if (r[i].start.substring(0, 10) == nuDt) {
                filtered = r[i]
@@ -135,15 +137,14 @@ window.addEventListener('load', function () {
          } else {
             gmn.innerHTML = '<br>No Live Games'
          }
-
-         // Display todays game count tomorrow
+         /*
 
          if (nxndc != 0) {
             nxgn.innerHTML = '<br>' + nxndc
          } else {
             nxgn.innerHTML = 'No Games Tomorrow'
          }
-
+*/
          // Listens for live games from fixtures and sends game did of game to content window and runs live game socket
 
          document.addEventListener(
