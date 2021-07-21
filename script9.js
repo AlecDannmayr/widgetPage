@@ -66,6 +66,8 @@ window.addEventListener('load', function () {
          function filter_games(r) {
             return r.start != nuDt
          }
+
+         console.log(r)
          var filtered = r.filter(filter_games)
 
          // Checks for games Tomorrow and outputs as var 'filteredTomorrow'
