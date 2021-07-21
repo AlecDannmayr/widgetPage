@@ -83,24 +83,27 @@ window.addEventListener('load', function () {
 
          let moments = moment(),
             nuDt = moments.format().substring(0, 10),
-            filtered
-         for (i = 0; i < r.length; i++) {
-            if (r[i].start.substring(0, 10) == nuDt) {
+            filtered,
+            ryc = r[i].start.substring(0, 10)
+         for (i = 0; i < ryc.length; i++) {
+            if (ryc == nuDt) {
                filtered = r[i]
                cmip++
                nA = document.createElement('li')
                nA.setAttribute('class', 'sidebar-item-fixtures')
                fixlst.append(nA)
-               sif = document.querySelectorAll('.sidebar-item-fixtures')
                const atr = document.createElement('a')
                atr.setAttribute('class', 'sidebar-anchor-fixtures')
                atr.setAttribute('data', r[i].id)
                atr.setAttribute('href', '#')
                atr.innerHTML = filtered.name.split('v').join('<br />').split(',')[0]
-               sif[i].appendChild(atr)
-               console.log(sif)
             }
+
+            sif = document.querySelectorAll('.sidebar-item-fixtures')
+            console.log(sif)
          }
+         //     sif[i].appendChild(atr)
+
          /*
                cmip++
                nA = document.createElement('li')
