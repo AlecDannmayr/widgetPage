@@ -104,7 +104,10 @@ window.addEventListener('load', function () {
                atr.setAttribute('data', r[ii].id)
                atr.setAttribute('href', '#')
                atr.innerHTML = filtered.name.split('v').join('<br />').split(',')[0]
-               sif[ii].appendChild(atr)
+
+               if (r[i].start.substring(0, 10) == nuDt) {
+                  sif[i].appendChild(atr)
+               }
             }
          }
 
