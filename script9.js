@@ -101,18 +101,21 @@ window.addEventListener('load', function () {
                   sif[ii].appendChild(atr)
                   const adiv = document.createElement('div')
                   adiv.setAttribute('class', 'date-time')
-                  sif[ii].appendChild(adiv)
+                  sif[1].appendChild(adiv)
+                  /*
                   const dt = document.querySelectorAll('.date-time')
                   at = document.createElement('p')
                   at.setAttribute('class', 'fixture-time')
                   at.innerHTML = filtered.start.split('T')[1].substring(0, 5) + '&nbsp&nbsp'
                   dt[ii].appendChild(at)
+                  /*
                   ad = document.createElement('p')
                   ad.setAttribute('class', 'fixture-data')
-                  /*
+                 
                   ad.innerHTML = filtered.start.split('T')[0].substring(0, 10).split('-').reverse().join('/')
                   dt[ii].appendChild(ad)
-                  sif[ii].style.cssText = 'padding-right: 40px;'/*
+                  sif[ii].style.cssText = 'padding-right: 40px;'
+                  */
                }
             }
          }
