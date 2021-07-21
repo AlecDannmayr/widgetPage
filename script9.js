@@ -99,15 +99,16 @@ window.addEventListener('load', function () {
                atr.setAttribute('data', r[i].id)
                atr.setAttribute('href', '#')
                atr.innerHTML = filtered.name.split('v').join('<br />').split(',')[0]
+               let ii
                for (ii = 0; ii < sif.length; ii++) {
                   sif[ii].appendChild(atr)
                }
-
                const adiv = document.createElement('div')
                adiv.setAttribute('class', 'date-time')
-               sif[0].appendChild(adiv)
+               sif[ii].appendChild(adiv)
             }
          }
+
          /*
                cmip++
                nA = document.createElement('li')
