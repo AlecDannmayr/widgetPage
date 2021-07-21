@@ -94,7 +94,6 @@ window.addEventListener('load', function () {
                nA.setAttribute('class', 'sidebar-item-fixtures')
                fixlst.append(nA)
                sif = document.querySelectorAll('.sidebar-item-fixtures')
-               sif[i].style.cssText = 'width: 100px'
                const atr = document.createElement('a')
                atr.setAttribute('class', 'sidebar-anchor-fixtures')
                atr.setAttribute('data', r[i].id)
@@ -136,13 +135,14 @@ window.addEventListener('load', function () {
          } else {
             gmn.innerHTML = '<br>No Live Games'
          }
-         /*
-                              if (nxndc != 0) {
-                                 nxgn.innerHTML = "<br>" + nxndc
-                              } else {
-                                 nxgn.innerHTML = "No Games Tomorrow"
-                              }
-               */
+
+         // Display todays game count tomorrow
+
+         if (nxndc != 0) {
+            nxgn.innerHTML = '<br>' + nxndc
+         } else {
+            nxgn.innerHTML = 'No Games Tomorrow'
+         }
 
          // Listens for live games from fixtures and sends game did of game to content window and runs live game socket
 
