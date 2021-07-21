@@ -85,42 +85,41 @@ window.addEventListener('load', function () {
             nuDt = moments.format().substring(0, 10),
             filtered,
             notf = 0
-
-         console.log(moments.format().substring(11, 19), r[2].start)
-
          for (i = 0; i < r.length; i++) {
-            if (r[i].start.substring(0, 10) == nuDt) {
-               filtered = r[i]
-               cmip++
-               nA = document.createElement('li')
-               nA.setAttribute('class', 'sidebar-item-fixtures')
-               fixlst.append(nA)
-               sif = document.querySelectorAll('.sidebar-item-fixtures')
-               const atr = document.createElement('a')
-               atr.setAttribute('class', 'sidebar-anchor-fixtures')
-               atr.setAttribute('data', r[i].id)
-               atr.setAttribute('href', '#')
-               atr.innerHTML = filtered.name.split(' v ').join('<br />').split(',')[0]
-               for (let ii = 0; ii < sif.length; ii++) {
-                  sif[ii].appendChild(atr)
+            if (moments.format().substring(11, 19) == r[i].start.substring(11, 19)) {
+               if (r[i].start.substring(0, 10) == nuDt) {
+                  filtered = r[i]
+                  cmip++
+                  nA = document.createElement('li')
+                  nA.setAttribute('class', 'sidebar-item-fixtures')
+                  fixlst.append(nA)
+                  sif = document.querySelectorAll('.sidebar-item-fixtures')
+                  const atr = document.createElement('a')
+                  atr.setAttribute('class', 'sidebar-anchor-fixtures')
+                  atr.setAttribute('data', r[i].id)
+                  atr.setAttribute('href', '#')
+                  atr.innerHTML = filtered.name.split(' v ').join('<br />').split(',')[0]
+                  for (let ii = 0; ii < sif.length; ii++) {
+                     sif[ii].appendChild(atr)
+                  }
+               }
+
+               for (ii = 0; ii < sif.length; ii++) {
+                  const adiv = document.createElement('div')
+                  adiv.setAttribute('class', 'date-time')
+                  sif[ii].appendChild(adiv)
+                  const dt = document.querySelectorAll('.date-time')
+                  at = document.createElement('p')
+                  at.setAttribute('class', 'fixture-time')
+                  at.innerHTML = filtered.start.split('T')[1].substring(0, 5) + '&nbsp&nbsp'
+                  dt[ii].appendChild(at)
+                  ad = document.createElement('p')
+                  ad.setAttribute('class', 'fixture-data')
+                  ad.innerHTML = filtered.start.split('T')[0].substring(0, 10).split('-').reverse().join('/')
+                  dt[ii].appendChild(ad)
+                  sif[ii].style.cssText = 'padding-right: 40px;'
                }
             }
-         }
-
-         for (ii = 0; ii < sif.length; ii++) {
-            const adiv = document.createElement('div')
-            adiv.setAttribute('class', 'date-time')
-            sif[ii].appendChild(adiv)
-            const dt = document.querySelectorAll('.date-time')
-            at = document.createElement('p')
-            at.setAttribute('class', 'fixture-time')
-            at.innerHTML = filtered.start.split('T')[1].substring(0, 5) + '&nbsp&nbsp'
-            dt[ii].appendChild(at)
-            ad = document.createElement('p')
-            ad.setAttribute('class', 'fixture-data')
-            ad.innerHTML = filtered.start.split('T')[0].substring(0, 10).split('-').reverse().join('/')
-            dt[ii].appendChild(ad)
-            sif[ii].style.cssText = 'padding-right: 40px;'
          }
 
          // Removed first IPL Outright Fixture from list
