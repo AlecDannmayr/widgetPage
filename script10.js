@@ -94,6 +94,7 @@ window.addEventListener('load', function () {
                nA.setAttribute('class', 'sidebar-item-fixtures')
                fixlst.append(nA)
                sif = document.querySelectorAll('.sidebar-item-fixtures')
+               sif[i].style.cssText = 'width: 100px'
                const atr = document.createElement('a')
                atr.setAttribute('class', 'sidebar-anchor-fixtures')
                atr.setAttribute('data', r[i].id)
