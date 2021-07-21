@@ -289,10 +289,10 @@ function matchRun(idNo) {
 
             t1fw.innerHTML = innings1wickets
 
-            if (currentinnings == 2 || currentinnings == 4) {
+            if (currentinnings == 1 || currentinnings == 3) {
                t2fis.innerHTML = ''
                t2fo.innerHTML = ''
-            } else if (currentinnings == 1 || currentinnings == 3) {
+            } else if (currentinnings == 2 || currentinnings == 4) {
                t2fis.innerHTML = t2s + ' / '
                t2fo.innerHTML = t2o + ' Ovs'
                ftbi.style.display = 'none'
