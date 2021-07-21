@@ -77,22 +77,19 @@ window.addEventListener('load', function () {
          var filteredTomorrow = r.filter(filter_games_tomorrow)
 
          */
-         // let nuDt = moments.format().substring(0, 10)
-         //  function filter_games(r) {
-         //     return r.start != nuDt
-         //  }
-         // var filtered = r.filter(filter_games)
 
          // Creates and prepends a demo list item to indicate how many games in day (does not show if no games)
 
-         let moments = moment(),
-            lvNo = 0
+         let moments = moment()
          let nuDt = moments.format().substring(0, 10)
+
+         function filter_games(r) {
+            return r.start == nuDt
+         }
+         var filtered = r.filter(filter_games)
 
          for (i = 0; i < r.length; i++) {
             if (r[i].start.substring(0, 10) == nuDt) {
-               lvNo++
-               console.log(lvNo)
                const prep = document.getElementsByClassName('sidebar-item-fixtures-today')
                nxdg = document.createElement('li')
                nxdg.setAttribute('class', 'sidebar-item-fixtures-demo')
