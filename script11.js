@@ -69,7 +69,7 @@ window.addEventListener('load', function () {
             nxdga = document.createElement('a')
          nxdga.setAttribute('class', 'sidebar-anchor-fixtures')
          nxdga.setAttribute('href', '#')
-         nxdga.innerHTML = 'Games:'
+         nxdga.innerHTML = 'Games Today:'
          sifxl.appendChild(nxdga)
          dntat = document.createElement('div')
          dntat.setAttribute('class', 'date-time-demo')
