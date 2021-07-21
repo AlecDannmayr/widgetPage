@@ -60,17 +60,19 @@ window.addEventListener('load', function () {
          })
 
          // Checks for games Today and outputs as var 'filtered'
-
+         let rcy
          for (i = 0; i < r.length; i++) {
-            const rcy = r[i]
+            rcy = r[i].start.substring(0, 10)
+            console.log(rcy)
          }
-         console.log(rcy)
 
          let moments = moment()
          let nuDt = moments.format().substring(0, 10)
          function filter_games(r) {
-            return r.start != nuDt
+            return rcy != nuDt
          }
+
+         console.log(nuDt)
 
          var filtered = r.filter(filter_games)
 
