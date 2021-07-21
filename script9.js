@@ -60,7 +60,7 @@ window.addEventListener('load', function () {
          })
 
          // Checks for games Today and outputs as var 'filtered'
-         /*
+
          let moments = moment()
          let nuDt = moments.format().substring(0, 10)
          function filter_games(r) {
@@ -76,68 +76,62 @@ window.addEventListener('load', function () {
          }
          var filteredTomorrow = r.filter(filter_games_tomorrow)
 
-         */
+         /*
+                              let nuDt = moments.format().substring(0, 10)
+                              function filter_games(r) {
+                                 return r.start != nuDt;
+                              }
+                              var filtered = r.filter(filter_games);
+               */
 
          // Creates and prepends a demo list item to indicate how many games in day (does not show if no games)
 
-         let moments = moment()
-         let nuDt = moments.format().substring(0, 10)
+         const prep = document.getElementsByClassName('sidebar-item-fixtures-today')
+         nxdg = document.createElement('li')
+         nxdg.setAttribute('class', 'sidebar-item-fixtures-demo')
+         fixlst.append(nxdg)
+         const sifxl = document.getElementsByClassName('sidebar-item-fixtures-demo')[1],
+            nxdga = document.createElement('a')
+         nxdga.setAttribute('class', 'sidebar-anchor-fixtures')
+         nxdga.setAttribute('href', '#')
+         nxdga.innerHTML = 'Games:'
+         sifxl.appendChild(nxdga)
+         dntat = document.createElement('div')
+         dntat.setAttribute('class', 'date-time-demo')
+         sifxl.append(dntat)
+         const tgdtd = document.getElementsByClassName('date-time-demo')[1]
+         nxdgat = document.createElement('p')
+         nxdgat.setAttribute('id', 'gmn')
+         tgdtd.appendChild(nxdgat)
 
-         function filter_games(r) {
-            return r.start == nuDt
-         }
-         var filtered = r.filter(filter_games)
+         // Creates list items and appends to fixtures list for any games live today.
 
-         for (i = 0; i < r.length; i++) {
-            if (r[i].start.substring(0, 10) == nuDt) {
-               const prep = document.getElementsByClassName('sidebar-item-fixtures-today')
-               nxdg = document.createElement('li')
-               nxdg.setAttribute('class', 'sidebar-item-fixtures-demo')
-               fixlst.append(nxdg)
-               const sifxl = document.getElementsByClassName('sidebar-item-fixtures-demo')[1],
-                  nxdga = document.createElement('a')
-               nxdga.setAttribute('class', 'sidebar-anchor-fixtures')
-               nxdga.setAttribute('href', '#')
-               nxdga.innerHTML = 'Games:'
-               sifxl.appendChild(nxdga)
-               dntat = document.createElement('div')
-               dntat.setAttribute('class', 'date-time-demo')
-               sifxl.append(dntat)
-               const tgdtd = document.getElementsByClassName('date-time-demo')[1]
-               nxdgat = document.createElement('p')
-               nxdgat.setAttribute('id', 'gmn')
-               tgdtd.appendChild(nxdgat)
-
-               // Creates list items and appends to fixtures list for any games live today.
-
-               for (e = 0; e < filtered.length; e++) {
-                  if (filtered.length > 0) {
-                     cmip++
-                     nA = document.createElement('li')
-                     nA.setAttribute('class', 'sidebar-item-fixtures')
-                     fixlst.append(nA)
-                     sif = document.querySelectorAll('.sidebar-item-fixtures')
-                     const atr = document.createElement('a')
-                     atr.setAttribute('class', 'sidebar-anchor-fixtures')
-                     atr.setAttribute('data', r[e].id)
-                     atr.setAttribute('href', '#')
-                     atr.innerHTML = filtered[e].name.split('v').join('<br />').split(',')[0]
-                     sif[e].appendChild(atr)
-                     const adiv = document.createElement('div')
-                     adiv.setAttribute('class', 'date-time')
-                     sif[e].appendChild(adiv)
-                     const dt = document.querySelectorAll('.date-time')
-                     at = document.createElement('p')
-                     at.setAttribute('class', 'fixture-time')
-                     at.innerHTML = filtered[e].start.split('T')[1].substring(0, 5) + '&nbsp&nbsp'
-                     dt[e].appendChild(at)
-                     ad = document.createElement('p')
-                     ad.setAttribute('class', 'fixture-data')
-                     ad.innerHTML = filtered[e].start.split('T')[0].substring(0, 10).split('-').reverse().join('/')
-                     dt[e].appendChild(ad)
-                     sif[e].style.cssText = 'padding-right: 40px;'
-                  }
-               }
+         for (e = 0; e < filtered.length; e++) {
+            if (filtered.length > 0) {
+               cmip++
+               nA = document.createElement('li')
+               nA.setAttribute('class', 'sidebar-item-fixtures')
+               fixlst.append(nA)
+               sif = document.querySelectorAll('.sidebar-item-fixtures')
+               const atr = document.createElement('a')
+               atr.setAttribute('class', 'sidebar-anchor-fixtures')
+               atr.setAttribute('data', r[e].id)
+               atr.setAttribute('href', '#')
+               atr.innerHTML = filtered[e].name.split('v').join('<br />').split(',')[0]
+               sif[e].appendChild(atr)
+               const adiv = document.createElement('div')
+               adiv.setAttribute('class', 'date-time')
+               sif[e].appendChild(adiv)
+               const dt = document.querySelectorAll('.date-time')
+               at = document.createElement('p')
+               at.setAttribute('class', 'fixture-time')
+               at.innerHTML = filtered[e].start.split('T')[1].substring(0, 5) + '&nbsp&nbsp'
+               dt[e].appendChild(at)
+               ad = document.createElement('p')
+               ad.setAttribute('class', 'fixture-data')
+               ad.innerHTML = filtered[e].start.split('T')[0].substring(0, 10).split('-').reverse().join('/')
+               dt[e].appendChild(ad)
+               sif[e].style.cssText = 'padding-right: 40px;'
             }
          }
 
