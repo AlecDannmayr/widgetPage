@@ -282,28 +282,25 @@ function matchRun(idNo) {
 
             const ftbi = document.getElementById('icon-team-one'),
                stbi = document.getElementById('icon-team-two'),
-               t1sl = TeamOneScore.toString().length
+               t1sl = TeamOneScore.toString().length,
+               t2fw = document.getElementById('team-two-wickets')
 
-            if (currentinnings == 1 || currentinnings == 3) {
+            // Current Wickets Team One
+
+            t1fw.innerHTML = innings1wickets
+
+            if (currentinnings == 2 || currentinnings == 4) {
                t2fis.innerHTML = ''
                t2fo.innerHTML = ''
-            } else if (currentinnings == 2 || currentinnings == 4) {
+            } else if (currentinnings == 1 || currentinnings == 3) {
                t2fis.innerHTML = t2s + ' / '
                t2fo.innerHTML = t2o + ' Ovs'
                ftbi.style.display = 'none'
                stbi.style.display = 'block'
-            }
-
-            // Current Wickets Team One
-
-            const t1w = innings1wickets
-            t1fw.innerHTML = t1w
-
-            // Current Wickets Team Two
-
-            const t2fw = document.getElementById('team-two-wickets'),
+               // Current Wickets Team Two
                teamTwoWickets = innings2wickets
-            ;(t2fw.innerHTML = teamTwoWickets), (addVs = document.getElementById('addVs'))
+               t2fw.innerHTML = teamTwoWickets
+            }
 
             // Team playing
 
@@ -311,8 +308,8 @@ function matchRun(idNo) {
             t2n = innings1bowlingteam
             mt1.innerHTML = t1n
             mt2.innerHTML = t2n
-            addVs.style.cssText = 'display: flex; justify-content: center; vertical-align: center;'
-            addVs.innerHTML = 'vs'
+            matchVs.style.cssText = 'display: flex; justify-content: center; vertical-align: center;'
+            matchVs.innerHTML = 'vs'
 
             // Show Match Info
 
