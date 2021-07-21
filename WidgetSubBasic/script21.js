@@ -442,8 +442,14 @@ function matchRun(idNo) {
 
             st1.innerHTML = shortNameOne
             st2.innerHTML = shortNameTwo
-            st1t.innerHTML = shortNameOne
-            st2t.innerHTML = shortNameTwo
+
+            if (igsn == 1 || igsn == 3) {
+               st1t.innerHTML = shortNameTwo
+               st2t.innerHTML = shortNameOne
+            } else if (igsn == 2 || igsn == 4) {
+               st1t.innerHTML = shortNameTwo
+               st2t.innerHTML = shortNameOne
+            }
 
             const inssNow = document.querySelector('#ins-now')
             inssNow.innerHTML = 'Inning: ' + inns_now
@@ -828,7 +834,7 @@ function matchRun(idNo) {
                   delete eachObj['b10']
                }
 
-               console.log(fltinlt.slice(0).childNodes.b1)
+               console.log(fltinlt.slice(0))
                if (fltinlt.length <= 2) {
                   rt[0].innerHTML = fltin[0].b1
                   rt[1].innerHTML = fltin[0].b2
