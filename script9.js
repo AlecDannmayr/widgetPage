@@ -61,34 +61,6 @@ window.addEventListener('load', function () {
 
          // Checks for games Today and outputs as var 'filtered'
 
-         let moments = moment()
-         let nuDt = moments.format().substring(0, 10)
-         for (i = 0; i < r.length; i++) {
-            if (r[i].start.substring(0, 10) == nuDt) {
-               const filtered = r[i]
-               console.log(filteed)
-            }
-         }
-         // Checks for games Tomorrow and outputs as var 'filteredTomorrow'
-
-         /*
-
-         let tomorrow = moments.add(1, 'days').format().substring(0, 10)
-         function filter_games_tomorrow(r) {
-            return r.start == tomorrow
-         }
-         var filteredTomorrow = r.filter(filter_games_tomorrow)
-*/
-         /*
-                              let nuDt = moments.format().substring(0, 10)
-                              function filter_games(r) {
-                                 return r.start != nuDt;
-                              }
-                              var filtered = r.filter(filter_games);
-               */
-
-         // Creates and prepends a demo list item to indicate how many games in day (does not show if no games)
-         /*
          const prep = document.getElementsByClassName('sidebar-item-fixtures-today')
          nxdg = document.createElement('li')
          nxdg.setAttribute('class', 'sidebar-item-fixtures-demo')
@@ -108,6 +80,17 @@ window.addEventListener('load', function () {
          tgdtd.appendChild(nxdgat)
 
          // Creates list items and appends to fixtures list for any games live today.
+
+         let moments = moment()
+         let nuDt = moments.format().substring(0, 10)
+         for (i = 0; i < r.length; i++) {
+            if (r[i].start.substring(0, 10) == nuDt) {
+               const filtered = r[i]
+               console.log(filtered)
+            }
+         }
+
+         /*
 
          for (e = 0; e < filtered.length; e++) {
             if (filtered.length > 0) {
@@ -206,3 +189,23 @@ function open() {
 function close() {
    z.style.cssText = 'width: 0px;'
 }
+
+// Checks for games Tomorrow and outputs as var 'filteredTomorrow'
+
+/*
+
+         let tomorrow = moments.add(1, 'days').format().substring(0, 10)
+         function filter_games_tomorrow(r) {
+            return r.start == tomorrow
+         }
+         var filteredTomorrow = r.filter(filter_games_tomorrow)
+*/
+/*
+                              let nuDt = moments.format().substring(0, 10)
+                              function filter_games(r) {
+                                 return r.start != nuDt;
+                              }
+                              var filtered = r.filter(filter_games);
+               */
+
+// Creates and prepends a demo list item to indicate how many games in day (does not show if no games)
