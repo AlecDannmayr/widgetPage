@@ -98,9 +98,9 @@ window.addEventListener('load', function () {
                atr.setAttribute('href', '#')
                atr.innerHTML = filtered.name.split('v').join('<br />').split(',')[0]
                for (ii = 0; ii < sif.length; ii++) {
-                  console.log(sif[ii])
+                  sif[ii].appendChild(atr)
                }
-               // sif[].appendChild(atr)
+               //
             }
          }
          /*
