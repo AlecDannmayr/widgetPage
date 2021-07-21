@@ -87,7 +87,18 @@ window.addEventListener('load', function () {
          for (i = 0; i < r.length; i++) {
             if (r[i].start.substring(0, 10) == nuDt) {
                filtered = r[i]
-               console.log(filtered)
+               cmip++
+               nA = document.createElement('li')
+               nA.setAttribute('class', 'sidebar-item-fixtures')
+               fixlst.append(nA)
+               sif = document.querySelectorAll('.sidebar-item-fixtures')
+               const atr = document.createElement('a')
+               atr.setAttribute('class', 'sidebar-anchor-fixtures')
+               atr.setAttribute('data', r[i].id)
+               atr.setAttribute('href', '#')
+               atr.innerHTML = filtered.name.split('v').join('<br />').split(',')[0]
+               sif[i].appendChild(atr)
+               console.log(sif)
             }
          }
          /*
@@ -100,21 +111,21 @@ window.addEventListener('load', function () {
                atr.setAttribute('class', 'sidebar-anchor-fixtures')
                atr.setAttribute('data', r[e].id)
                atr.setAttribute('href', '#')
-               atr.innerHTML = filtered.name.split('v').join('<br />').split(',')[0]
-               sif[eZZZ].appendChild(atr)
+               atr.innerHTML = filtered[e].name.split('v').join('<br />').split(',')[0]
+               sif[e].appendChild(atr)
                const adiv = document.createElement('div')
                adiv.setAttribute('class', 'date-time')
-               sif[i].appendChild(adiv)
+               sif[e].appendChild(adiv)
                const dt = document.querySelectorAll('.date-time')
                at = document.createElement('p')
                at.setAttribute('class', 'fixture-time')
-               at.innerHTML = filtered.start.split('T')[1].substring(0, 5) + '&nbsp&nbsp'
-               dt[i].appendChild(at)
+               at.innerHTML = filtered[e].start.split('T')[1].substring(0, 5) + '&nbsp&nbsp'
+               dt[e].appendChild(at)
                ad = document.createElement('p')
                ad.setAttribute('class', 'fixture-data')
-               ad.innerHTML = filtered.start.split('T')[0].substring(0, 10).split('-').reverse().join('/')
-               dt[i].appendChild(ad)
-               sif[i].style.cssText = 'padding-right: 40px;'
+               ad.innerHTML = filtered[e].start.split('T')[0].substring(0, 10).split('-').reverse().join('/')
+               dt[e].appendChild(ad)
+               sif[e].style.cssText = 'padding-right: 40px;'
 
                const rmv = document.getElementsByClassName('sidebar-item-fixtures')[0]
                rmv.parentNode.removeChild(rmv)
