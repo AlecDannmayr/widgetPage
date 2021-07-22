@@ -129,17 +129,15 @@ window.addEventListener('load', function () {
          for (itl = 0; itl < r.length; itl++) {
             if (r[itl].start.substring(0, 10) == nuDt) {
                fixt = r[itl].start.split('T')[1].substring(0, 5)
-
-               for (gt = 0; gt < ftxt.length; gt++) {
-                  tyte = ftxt[gt]
-                  console.log(tyte)
-
-                  const myArr = Array.from(fixt)
-               }
-               console.log(fixt)
-               //.innerHTML = r[itl].start.split('T')[1].substring(0, 5)
             }
+            for (gt = 0; gt < ftxt.length; gt++) {
+               tyte = ftxt[gt]
+               console.log(tyte)
+            }
+            console.log(fixt)
          }
+
+         //.innerHTML = r[itl].start.split('T')[1].substring(0, 5)
 
          // Removed first IPL Outright Fixture from list
 
