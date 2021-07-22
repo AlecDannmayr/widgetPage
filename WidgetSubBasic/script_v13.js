@@ -55,7 +55,8 @@ let g2h = document.getElementById('second-header'),
    t2n,
    igsn,
    event_description,
-   isHundreds
+   isHundreds,
+   countHundreds = 0
 
 gsts.innerHTML = ''
 wi1.style.display = 'none'
@@ -875,8 +876,14 @@ function matchRun(idNo) {
                      }
                   }
                } else if (isHundreds == false) {
-                  recent.removeChild(recent.firstChild)
-                  recent.removeChild(recent.lastChild)
+                  console.log(countHundreds)
+                  if (countHundreds == 0) {
+                     countHundreds++
+                     console.log(countHundreds)
+                     recent.removeChild(recent.firstChild)
+                     recent.removeChild(recent.lastChild)
+                  }
+                  console.log(countHundreds)
                   if (fltinlt.length <= 2) {
                      rt[0].innerHTML = fltin[0].b1
                      rt[1].innerHTML = fltin[0].b2
