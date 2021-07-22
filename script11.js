@@ -121,16 +121,16 @@ window.addEventListener('load', function () {
             sif[ii].style.cssText = 'padding-right: 40px;'
          }
          let fixt,
-            ftxt = document.getElementsByClassName('date-time')
-         for (i = 0; i < r.length; i++) {
-            if (r[i].start.substring(0, 10) == nuDt) {
-               fixt = r[i].start.split('T')[1].substring(0, 5) + '&nbsp&nbsp'
-               console.log(fixt, ftxt)
-            }
-         }
+            ftxt = document.getElementsByClassName('date-time'),
+            itl
+         for (itl = 0; itl < r.length; itl++) {
+            if (r[itl].start.substring(0, 10) == nuDt) {
+               fixt = r[itl].start.split('T')[1].substring(0, 5) + '&nbsp&nbsp'
 
-         for (i = 0; i < sif.length; i++) {
-            ftxt[i].innerHTML = fixt[i]
+               for (i = 0; i < sif.length; i++) {
+                  console.log(ftxt)
+               }
+            }
          }
 
          // Removed first IPL Outright Fixture from list
