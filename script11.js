@@ -122,6 +122,7 @@ window.addEventListener('load', function () {
          }
 
          for (i = 0; i < r.length; i++) {
+            console.log(r[i].start.substring(0, 10))
             if (r[i].start.substring(0, 10) == nuDt) {
                filtered = r[i]
                at.innerHTML = filtered.start.split('T')[1].substring(0, 5) + '&nbsp&nbsp'
