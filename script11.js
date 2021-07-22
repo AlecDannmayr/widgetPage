@@ -113,7 +113,6 @@ window.addEventListener('load', function () {
             const dt = document.querySelectorAll('.date-time')
             at = document.createElement('p')
             at.setAttribute('class', 'fixture-time')
-
             dt[ii].appendChild(at)
             ad = document.createElement('p')
             ad.setAttribute('class', 'fixture-data')
@@ -121,13 +120,14 @@ window.addEventListener('load', function () {
             dt[ii].appendChild(ad)
             sif[ii].style.cssText = 'padding-right: 40px;'
          }
-         const fixtime = document.getElementsByClassName('fixture-time')
-         for (i = 0; i < fixtime.length; i++) {
-            console.log(fixtime[i])
-            // filtered = r[i]
-            // fixtime[i].innerHTML = filtered.start.split('T')[1].substring(0, 5) + '&nbsp&nbsp'
+         console.log(sif.length)
+
+         for (i = 0; i < sif.length; i++) {
+            console.log(r[i].start.substring(0, 10), nuDt)
             if (r[i].start.substring(0, 10) == nuDt) {
-               console.log(r[i])
+               //     console.log('Equal')
+               //   filtered = r[i]
+               //    at.innerHTML = filtered.start.split('T')[1].substring(0, 5) + '&nbsp&nbsp'
             }
          }
 
