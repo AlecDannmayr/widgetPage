@@ -84,7 +84,8 @@ window.addEventListener('load', function () {
          let moments = moment(),
             nuDt = moments.format().substring(0, 10),
             filtered,
-            notf = 0
+            notf = 0,
+            fixt
 
          //  (moments.format().substring(11, 19), r[2].start.substring(11, 19))
 
@@ -104,11 +105,10 @@ window.addEventListener('load', function () {
                for (let ii = 0; ii < sif.length; ii++) {
                   sif[ii].appendChild(atr)
                }
-               const fixt = r[i].start.split('T')[1].substring(0, 5),
-                  ftxt = document.getElementsByClassName('date-time')
-               console.log(fixt, ftxt[i])
+               fixt = r[i].start.split('T')[1].substring(0, 5)
             }
          }
+
          for (ii = 0; ii < sif.length; ii++) {
             const adiv = document.createElement('div')
             adiv.setAttribute('class', 'date-time')
@@ -124,11 +124,10 @@ window.addEventListener('load', function () {
             sif[ii].style.cssText = 'padding-right: 40px;'
          }
 
-         for (gt = 0; gt < ftxt.length; gt++) {
-            tyte = ftxt[gt]
-            console.log(tyte)
+         let ftxt = document.getElementsByClassName('date-time')
 
-            const myArr = Array.from(fixt)
+         for (gt = 0; gt < ftxt.length; gt++) {
+            console.log(ftxt[gt])
          }
 
          //.innerHTML = r[itl].start.split('T')[1].substring(0, 5)
