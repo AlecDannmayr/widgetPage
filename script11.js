@@ -122,18 +122,21 @@ window.addEventListener('load', function () {
          }
          let fixt,
             itl,
+            tyte,
+            gt,
             ftxt = document.getElementsByClassName('date-time')
 
          for (itl = 0; itl < r.length; itl++) {
             if (r[itl].start.substring(0, 10) == nuDt) {
                fixt = r[itl].start.split('T')[1].substring(0, 5)
 
-               console.log(fixt)
                for (gt = 0; gt < ftxt.length; gt++) {
-                  const myArr = Array.from(fixt)
-                  console.log(myArr)
-                  ftxt[gt].innerHTML = r[itl].start.split('T')[1].substring(0, 5)
+                  tyte = ftxt[gt]
                }
+               const myArr = Array.from(fixt)
+               console.log(fixt)
+               console.log(tyte)
+               //.innerHTML = r[itl].start.split('T')[1].substring(0, 5)
             }
          }
 
