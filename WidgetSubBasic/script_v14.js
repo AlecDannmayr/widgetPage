@@ -363,9 +363,9 @@ function matchRun(idNo) {
                   shortNameTwo = teams[0].short_name
                }
                if (mt1 == teams[0].name) {
-                  t1p[i].innerHTML = teams[1].players[i].name
+                  t1p[i].innerHTML = teams[0].players[i].name
                   t1b[i].innerHTML = teams[0].players[i].name
-                  t2p[i].innerHTML = teams[0].players[i].name
+                  t2p[i].innerHTML = teams[1].players[i].name
                   t2bw[i].innerHTML = teams[1].players[i].name
                   bhcp = teams[1].players[i].bat_hand.split('-')[0]
                   bhcp2 = teams[0].players[i].bat_hand.split('-')[0]
