@@ -355,7 +355,7 @@ function matchRun(idNo) {
             //  i if (bowler == )
 
             for (i = 0; i < t1p.length; i++) {
-               if (t1n == teams[0].short_name) {
+               if (t1n == teams[1].short_name) {
                   shortNameOne = teams[0].short_name
                   shortNameTwo = teams[1].short_name
                } else {
@@ -374,9 +374,9 @@ function matchRun(idNo) {
                   hdbw1[i].innerHTML = teams[1].players[i].bowler_style
                   hdbw2[i].innerHTML = teams[0].players[i].bowler_style
                } else {
-                  t1p[i].innerHTML = teams[0].players[i].name
+                  t1p[i].innerHTML = teams[1].players[i].name
                   t1b[i].innerHTML = teams[1].players[i].name
-                  t2p[i].innerHTML = teams[1].players[i].name
+                  t2p[i].innerHTML = teams[0].players[i].name
                   t2bw[i].innerHTML = teams[0].players[i].name
                   bhcp = teams[0].players[i].bat_hand.split('-')[0]
                   bhcp2 = teams[1].players[i].bat_hand.split('-')[0]
