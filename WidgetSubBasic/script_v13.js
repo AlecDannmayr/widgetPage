@@ -828,6 +828,7 @@ function matchRun(idNo) {
                }
 
                if (isHundreds != false) {
+                  ovlg = 12
                   if (fltinlt.length <= 2) {
                      rt[0].innerHTML = fltin[0].b1
                      rt[1].innerHTML = fltin[0].b2
@@ -879,11 +880,11 @@ function matchRun(idNo) {
                   console.log(countHundreds)
                   if (countHundreds == 0) {
                      countHundreds++
-                     console.log(countHundreds)
                      recent.removeChild(recent.children[1])
                      recent.removeChild(recent.children[11])
-                     const ln = document.querySelectorAll('.ln')
-                     ln.cssText = 'margin: 100px;'
+                     const ln = document.getElementsByClassName('ln')
+                     ln[0].style.cssText = 'margin-right: 10px; margin-left: 10px;'
+                     ovlg = 10
                   }
                   console.log(countHundreds)
                   if (fltinlt.length <= 2) {
@@ -928,7 +929,7 @@ function matchRun(idNo) {
                      }
                   }
                }
-               for (it = 0; it < 12; it++) {
+               for (it = 0; it < ovlg; it++) {
                   switch (rt[it].textContent) {
                      case '-':
                         rt[it].style.cssText = 'background-color: #2F4F4F; color: #fff; padding: 6.4px 10px;'
