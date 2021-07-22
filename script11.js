@@ -113,8 +113,7 @@ window.addEventListener('load', function () {
             const dt = document.querySelectorAll('.date-time')
             at = document.createElement('p')
             at.setAttribute('class', 'fixture-time')
-            console.log(filtered)
-            at.innerHTML = filtered.start.split('T')[1].substring(0, 5) + '&nbsp&nbsp'
+
             dt[ii].appendChild(at)
             ad = document.createElement('p')
             ad.setAttribute('class', 'fixture-data')
@@ -125,7 +124,7 @@ window.addEventListener('load', function () {
          for (i = 0; i < r.length; i++) {
             if (r[i].start.substring(0, 10) == nuDt) {
                filtered = r[i]
-               console.log(filtered)
+               at.innerHTML = filtered.start.split('T')[1].substring(0, 5) + '&nbsp&nbsp'
             }
          }
 
