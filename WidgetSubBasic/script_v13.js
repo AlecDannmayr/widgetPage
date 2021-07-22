@@ -875,7 +875,8 @@ function matchRun(idNo) {
                      }
                   }
                } else if (isHundreds == false) {
-                  recent.removeChild(recent.childNodes[0], recent.childNodes[12])
+                  recent.removeChild(recent.firstChild)
+                  recent.removeChild(recent.lastChild)
                   if (fltinlt.length <= 2) {
                      rt[0].innerHTML = fltin[0].b1
                      rt[1].innerHTML = fltin[0].b2
