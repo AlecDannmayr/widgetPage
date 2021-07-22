@@ -88,7 +88,7 @@ window.addEventListener('load', function () {
             fixt
 
          //  (moments.format().substring(11, 19), r[2].start.substring(11, 19))
-
+         let ftxt = document.getElementsByClassName('date-time')
          for (i = 0; i < r.length; i++) {
             if (r[i].start.substring(0, 10) == nuDt) {
                filtered = r[i]
@@ -106,6 +106,9 @@ window.addEventListener('load', function () {
                   sif[ii].appendChild(atr)
                }
                fixt = r[i].start.split('T')[1].substring(0, 5)
+
+               const arrr = Array.from(ftxt)
+               console.log(arrr)
             }
          }
 
@@ -123,21 +126,6 @@ window.addEventListener('load', function () {
             dt[ii].appendChild(ad)
             sif[ii].style.cssText = 'padding-right: 40px;'
          }
-
-         let ftxt = document.getElementsByClassName('date-time')
-
-         for (gt = 0; gt < ftxt.length; gt++) {
-            console.log(ftxt[gt])
-         }
-
-         //.innerHTML = r[itl].start.split('T')[1].substring(0, 5)
-
-         // Removed first IPL Outright Fixture from list
-
-         // const rmv = document.getElementsByClassName('sidebar-item-fixtures')[0]
-         // rmv.parentNode.removeChild(rmv)
-
-         // Display todays game count
 
          const gmn = document.querySelector('#gmn'),
             nxgn = document.querySelector('#nxgn')
