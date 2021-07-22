@@ -60,7 +60,7 @@ window.addEventListener('load', function () {
          })
 
          // Checks for games Today and outputs as var 'filtered'
-
+         /*
          const prep = document.getElementsByClassName('sidebar-item-fixtures-today')
          nxdg = document.createElement('li')
          nxdg.setAttribute('class', 'sidebar-item-fixtures-demo')
@@ -78,7 +78,7 @@ window.addEventListener('load', function () {
          nxdgat = document.createElement('p')
          nxdgat.setAttribute('id', 'gmn')
          tgdtd.appendChild(nxdgat)
-
+*/
          // Creates list items and appends to fixtures list for any games live today.
 
          let moments = moment(),
