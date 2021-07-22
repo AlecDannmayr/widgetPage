@@ -98,6 +98,9 @@ function matchRun(idNo) {
    socket.onmessage = function (event) {
       var msg = JSON.parse(event.data)
 
+      isHundreds = parseInt(msg.event.scoreboard.find((line) => line.name == 'Max Overs')) == 100
+      console.log(msg.event.scoreboard)
+
       // switch statment listens for messages
 
       switch (msg.msg_type) {
