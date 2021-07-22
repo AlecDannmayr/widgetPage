@@ -884,8 +884,6 @@ function matchRun(idNo) {
                      recent.removeChild(recent.children[11])
                      ovlg = 10
                   }
-                  recent.children[4].style.cssText = 'backgroundColor: black;'
-                  console.log(countHundreds)
                   if (fltinlt.length <= 2) {
                      rt[0].innerHTML = fltin[0].b1
                      rt[1].innerHTML = fltin[0].b2
