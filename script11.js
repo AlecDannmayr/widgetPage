@@ -117,7 +117,7 @@ window.addEventListener('load', function () {
             dt[ii].appendChild(at)
             ad = document.createElement('p')
             ad.setAttribute('class', 'fixture-data')
-            ad.innerHTML = filtered.start.split('T')[0].substring(0, 10).split('-').reverse().join('/')
+            ad.innerHTML = 'Today'
             dt[ii].appendChild(ad)
             sif[ii].style.cssText = 'padding-right: 40px;'
          }
