@@ -339,72 +339,6 @@ function matchRun(idNo) {
             var { bowler } = msg.bowling_analysis
             break
 
-         case 'lineups':
-            const { teams } = msg.lineups
-            /* Team name for teams and batter and bowler */
-            var t1p = document.getElementsByClassName('b'),
-               t2p = document.getElementsByClassName('b2'),
-               t1b = document.getElementsByClassName('b1sn'),
-               t2bw = document.getElementsByClassName('bw1sn'),
-               hdb1 = document.getElementsByClassName('hdb1'),
-               hdb2 = document.getElementsByClassName('hdb2'),
-               hdbw1 = document.getElementsByClassName('hdbw1'),
-               hdbw2 = document.getElementsByClassName('hdbw2'),
-               shortnameOne
-
-            // Check all of this! // if innings1team === teams[p]
-
-            //  i if (bowler == )
-
-            for (i = 0; i < t1p.length; i++) {
-               if (t1n == teams[0].short_name) {
-                  shortNameOne = teams[0].short_name
-                  shortNameTwo = teams[1].short_name
-               } else {
-                  shortNameOne = teams[1].short_name
-                  shortNameTwo = teams[0].short_name
-               }
-               if (bat_now == teams[0].name) {
-                  t1b[i].innerHTML = teams[0].players[i].name // batter
-                  t2bw[i].innerHTML = teams[1].players[i].name // bowler
-                  t1p[i].innerHTML = teams[0].players[i].name
-                  t2p[i].innerHTML = teams[1].players[i].name
-                  console.log('true')
-                  bhcp = teams[1].players[i].bat_hand.split('-')[0]
-                  bhcp2 = teams[0].players[i].bat_hand.split('-')[0]
-                  hdb1[i].innerHTML = bhcp.charAt(0).toUpperCase() + bhcp.slice(1)
-                  hdb2[i].innerHTML = bhcp.charAt(0).toUpperCase() + bhcp.slice(1)
-                  hdbw1[i].innerHTML = teams[1].players[i].bowler_style
-                  hdbw2[i].innerHTML = teams[0].players[i].bowler_style
-               } else {
-                  console.log('not true')
-                  t1b[i].innerHTML = teams[1].players[i].name // batter
-                  t2bw[i].innerHTML = teams[0].players[i].name // bowler
-                  t1p[i].innerHTML = teams[1].players[i].name
-                  t2p[i].innerHTML = teams[0].players[i].name
-                  bhcp = teams[0].players[i].bat_hand.split('-')[0]
-                  bhcp2 = teams[1].players[i].bat_hand.split('-')[0]
-                  hdb1[i].innerHTML = bhcp.charAt(0).toUpperCase() + bhcp.slice(1)
-                  hdb2[i].innerHTML = bhcp.charAt(0).toUpperCase() + bhcp.slice(1)
-                  hdbw1[i].innerHTML = teams[0].players[i].bowler_style
-                  hdbw2[i].innerHTML = teams[1].players[i].bowler_style
-               }
-            }
-
-            const wpb = document.getElementById('win-probability-bar')
-
-            if (teams[0].name == mt1.textContent) {
-               pb.style.backgroundColor = '#' + teams[0].colour
-               wpb.style.backgroundColor = '#' + teams[1].colour
-            } else if (teams[1].name == mt2.textContent) {
-               pb.style.backgroundColor = '#' + teams[1].colour
-               wpb.style.backgroundColor = '#' + teams[0].colour
-            } else {
-               return
-            }
-
-            break
-
          case 'powerbar':
             var { team1winpercentage, team2winpercentage } = msg.powerbar
 
@@ -433,7 +367,7 @@ function matchRun(idNo) {
 
          case 'scorecard':
             var { batting, bowling, bat_now, bowl_now, inns_now, inns1, inns2, inns3, inns4 } = msg.scorecard
-
+            btnw = bat_now
             igsn = inns_now
             if (igsn == 1 || igsn == 3) {
                st1.innerHTML = shortNameOne
@@ -553,6 +487,73 @@ function matchRun(idNo) {
                tosl.style.display = 'none'
                tosl2.style.display = 'block'
             })
+
+            break
+
+         case 'lineups':
+            const { teams } = msg.lineups
+            /* Team name for teams and batter and bowler */
+            var t1p = document.getElementsByClassName('b'),
+               t2p = document.getElementsByClassName('b2'),
+               t1b = document.getElementsByClassName('b1sn'),
+               t2bw = document.getElementsByClassName('bw1sn'),
+               hdb1 = document.getElementsByClassName('hdb1'),
+               hdb2 = document.getElementsByClassName('hdb2'),
+               hdbw1 = document.getElementsByClassName('hdbw1'),
+               hdbw2 = document.getElementsByClassName('hdbw2'),
+               shortnameOne
+
+            // Check all of this! // if innings1team === teams[p]
+
+            //  i if (bowler == )
+
+            for (i = 0; i < t1p.length; i++) {
+               if (t1n == teams[0].short_name) {
+                  shortNameOne = teams[0].short_name
+                  shortNameTwo = teams[1].short_name
+               } else {
+                  shortNameOne = teams[1].short_name
+                  shortNameTwo = teams[0].short_name
+               }
+               console.log(bat_now, teams[0].name)
+               if (bat_now == teams[0].name) {
+                  t1b[i].innerHTML = teams[0].players[i].name // batter
+                  t2bw[i].innerHTML = teams[1].players[i].name // bowler
+                  t1p[i].innerHTML = teams[0].players[i].name
+                  t2p[i].innerHTML = teams[1].players[i].name
+                  console.log('true')
+                  bhcp = teams[1].players[i].bat_hand.split('-')[0]
+                  bhcp2 = teams[0].players[i].bat_hand.split('-')[0]
+                  hdb1[i].innerHTML = bhcp.charAt(0).toUpperCase() + bhcp.slice(1)
+                  hdb2[i].innerHTML = bhcp.charAt(0).toUpperCase() + bhcp.slice(1)
+                  hdbw1[i].innerHTML = teams[1].players[i].bowler_style
+                  hdbw2[i].innerHTML = teams[0].players[i].bowler_style
+               } else {
+                  console.log('not true')
+                  t1b[i].innerHTML = teams[1].players[i].name // batter
+                  t2bw[i].innerHTML = teams[0].players[i].name // bowler
+                  t1p[i].innerHTML = teams[1].players[i].name
+                  t2p[i].innerHTML = teams[0].players[i].name
+                  bhcp = teams[0].players[i].bat_hand.split('-')[0]
+                  bhcp2 = teams[1].players[i].bat_hand.split('-')[0]
+                  hdb1[i].innerHTML = bhcp.charAt(0).toUpperCase() + bhcp.slice(1)
+                  hdb2[i].innerHTML = bhcp.charAt(0).toUpperCase() + bhcp.slice(1)
+                  hdbw1[i].innerHTML = teams[0].players[i].bowler_style
+                  hdbw2[i].innerHTML = teams[1].players[i].bowler_style
+               }
+            }
+
+            const wpb = document.getElementById('win-probability-bar')
+
+            if (teams[0].name == mt1.textContent) {
+               pb.style.backgroundColor = '#' + teams[0].colour
+               wpb.style.backgroundColor = '#' + teams[1].colour
+            } else if (teams[1].name == mt2.textContent) {
+               pb.style.backgroundColor = '#' + teams[1].colour
+               wpb.style.backgroundColor = '#' + teams[0].colour
+            } else {
+               return
+            }
 
             break
 
