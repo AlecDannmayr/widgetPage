@@ -434,6 +434,7 @@ function matchRun(idNo) {
             var { batting, bowling, bat_now, bowl_now, inns_now, inns1, inns2, inns3, inns4 } = msg.scorecard
 
             igsn = inns_now
+            console.log(igsn)
             if (igsn == 1 || igsn == 3) {
                st1.innerHTML = shortNameOne
                st2.innerHTML = shortNameTwo
