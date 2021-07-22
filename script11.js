@@ -128,8 +128,7 @@ window.addEventListener('load', function () {
 
          for (itl = 0; itl < r.length; itl++) {
             if (r[itl].start.substring(0, 10) == nuDt) {
-               filteredd = r[itl]
-               fixt = filteredd.start.split('T')[1].substring(0, 5)
+               filteredd = r[itl].start.split('T')[1].substring(0, 5)
             }
          }
          for (gt = 0; gt < ftxt.length; gt++) {
