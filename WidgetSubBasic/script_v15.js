@@ -56,7 +56,8 @@ let g2h = document.getElementById('second-header'),
    igsn,
    event_description,
    isHundreds,
-   countHundreds = 0
+   countHundreds = 0,
+   bat_now
 
 gsts.innerHTML = ''
 wi1.style.display = 'none'
@@ -278,7 +279,8 @@ function matchRun(idNo) {
 
             let t2o = innings2overs,
                t2op1 = parseFloat(t2o) + 1,
-            TeamOneScore = innings1runs, t2s = innings2runs,
+               TeamOneScore = innings1runs,
+               t2s = innings2runs
             t1fis.innerHTML = TeamOneScore + ' / '
 
             // change batting or bowling Icon
@@ -362,11 +364,12 @@ function matchRun(idNo) {
                   shortNameOne = teams[1].short_name
                   shortNameTwo = teams[0].short_name
                }
-               if (mt1 == teams[0].name) {
+               if (bat_now == teams[0].name) {
+                  t1b[i].innerHTML = teams[0].players[i].name // batter
+                  t2bw[i].innerHTML = teams[1].players[i].name // bowler
                   t1p[i].innerHTML = teams[0].players[i].name
-                  t1b[i].innerHTML = teams[0].players[i].name
                   t2p[i].innerHTML = teams[1].players[i].name
-                  t2bw[i].innerHTML = teams[1].players[i].name
+
                   bhcp = teams[1].players[i].bat_hand.split('-')[0]
                   bhcp2 = teams[0].players[i].bat_hand.split('-')[0]
                   hdb1[i].innerHTML = bhcp.charAt(0).toUpperCase() + bhcp.slice(1)
@@ -374,10 +377,10 @@ function matchRun(idNo) {
                   hdbw1[i].innerHTML = teams[1].players[i].bowler_style
                   hdbw2[i].innerHTML = teams[0].players[i].bowler_style
                } else {
+                  t1b[i].innerHTML = teams[1].players[i].name // batter
+                  t2bw[i].innerHTML = teams[0].players[i].name // bowler
                   t1p[i].innerHTML = teams[1].players[i].name
-                  t1b[i].innerHTML = teams[1].players[i].name
                   t2p[i].innerHTML = teams[0].players[i].name
-                  t2bw[i].innerHTML = teams[0].players[i].name
                   bhcp = teams[0].players[i].bat_hand.split('-')[0]
                   bhcp2 = teams[1].players[i].bat_hand.split('-')[0]
                   hdb1[i].innerHTML = bhcp.charAt(0).toUpperCase() + bhcp.slice(1)
