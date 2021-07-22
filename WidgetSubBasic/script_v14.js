@@ -338,7 +338,7 @@ function matchRun(idNo) {
             break
 
          case 'lineups':
-            const { teams } = msg.lineups
+            const { teams, name } = msg.lineups
             /* Team name for teams and batter and bowler */
             var t1p = document.getElementsByClassName('b'),
                t2p = document.getElementsByClassName('b2'),
@@ -349,6 +349,8 @@ function matchRun(idNo) {
                hdbw1 = document.getElementsByClassName('hdbw1'),
                hdbw2 = document.getElementsByClassName('hdbw2'),
                shortnameOne
+
+            console.log(name)
 
             // Check all of this! // if innings1team === teams[p]
 
