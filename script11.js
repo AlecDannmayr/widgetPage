@@ -124,11 +124,13 @@ window.addEventListener('load', function () {
          for (i = 0; i < 5; i++) {
             if (r[i].start.substring(0, 10) == nuDt) {
                console.log(r[i].start.split('T')[1].substring(0, 5) + '&nbsp&nbsp')
-               const ftxt = document.getElementsByClassName('fixture-time')
-               console.log(ftxt.items[i])
             }
          }
 
+         for (i = 0; i < sif.length; i++) {
+            const ftxt = document.getElementsByClassName('date-time')
+            console.log(ftxt[i])
+         }
          // Removed first IPL Outright Fixture from list
 
          // const rmv = document.getElementsByClassName('sidebar-item-fixtures')[0]
