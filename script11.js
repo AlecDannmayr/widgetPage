@@ -134,7 +134,7 @@ window.addEventListener('load', function () {
                tyte = ftxt[gt]
                console.log(tyte)
             }
-            console.log(fixt)
+            //     const myArr = Array.from(fixt)
          }
 
          //.innerHTML = r[itl].start.split('T')[1].substring(0, 5)
