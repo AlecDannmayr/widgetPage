@@ -120,24 +120,26 @@ window.addEventListener('load', function () {
             dt[ii].appendChild(ad)
             sif[ii].style.cssText = 'padding-right: 40px;'
          }
-         let fixt,
+         var fixt,
             itl,
             tyte,
             gt,
-            ftxt = document.getElementsByClassName('fixture-time')
+            ftxt = document.getElementsByClassName('date-time')
 
          for (itl = 0; itl < r.length; itl++) {
             if (r[itl].start.substring(0, 10) == nuDt) {
                fixt = r[itl].start.split('T')[1].substring(0, 5)
-               ftxt[3].innerHTML = r[itl].start.split('T')[1].substring(0, 5)
+               const myArr = Array.from(r[itl].start)
+               console.log(myArr)
+               ftxt[0].innerHTML = fixt[1]
             }
          }
          for (gt = 0; gt < ftxt.length; gt++) {
-            //   ftxt[gt].innerHTML = fixt
-            console.log(ftxt)
-         }
+            tyte = ftxt[gt]
+            console.log(tyte)
 
-         //     const myArr = Array.from(fixt)
+            const myArr = Array.from(fixt)
+         }
 
          //.innerHTML = r[itl].start.split('T')[1].substring(0, 5)
 
