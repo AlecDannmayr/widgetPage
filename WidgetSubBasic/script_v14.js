@@ -827,7 +827,7 @@ function matchRun(idNo) {
                   delete eachObj['b10']
                }
 
-               if (isHundreds != false) {
+               if (isHundreds == false) {
                   ovlg = 12
                   if (fltinlt.length <= 2) {
                      rt[0].innerHTML = fltin[0].b1
@@ -876,7 +876,7 @@ function matchRun(idNo) {
                         rt[11].innerHTML = slitwo[0].b6
                      }
                   }
-               } else if (isHundreds == false) {
+               } else if (isHundreds == true) {
                   console.log(countHundreds)
                   if (countHundreds == 0) {
                      countHundreds++
