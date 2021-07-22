@@ -277,8 +277,8 @@ function matchRun(idNo) {
             // Team Two Overs
 
             let t2o = innings2overs,
-               t2op1 = parseFloat(t2o) + 1
-            ;(TeamOneScore = innings1runs), (t2s = innings2runs)
+               t2op1 = parseFloat(t2o) + 1,
+            TeamOneScore = innings1runs, t2s = innings2runs,
             t1fis.innerHTML = TeamOneScore + ' / '
 
             // change batting or bowling Icon
