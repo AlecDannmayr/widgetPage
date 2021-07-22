@@ -365,9 +365,9 @@ function matchRun(idNo) {
                   }
 
                   t1p[i].innerHTML = teams[1].players[i].name
-                  t2bw[i].innerHTML = teams[1].players[i].name
-                  t1b[i].innerHTML = teams[0].players[i].name
+                  t1b[i].innerHTML = teams[1].players[i].name
                   t2p[i].innerHTML = teams[0].players[i].name
+                  t2bw[i].innerHTML = teams[0].players[i].name
                   bhcp = teams[1].players[i].bat_hand.split('-')[0]
                   bhcp2 = teams[0].players[i].bat_hand.split('-')[0]
                   hdb1[i].innerHTML = bhcp.charAt(0).toUpperCase() + bhcp.slice(1)
@@ -378,9 +378,9 @@ function matchRun(idNo) {
             } else {
                for (i = 0; i < t1p.length; i++) {
                   t1p[i].innerHTML = teams[0].players[i].name
-                  t2bw[i].innerHTML = teams[0].players[i].name
-                  t1b[i].innerHTML = teams[1].players[i].name
+                  t1b[i].innerHTML = teams[0].players[i].name
                   t2p[i].innerHTML = teams[1].players[i].name
+                  t2bw[i].innerHTML = teams[1].players[i].name
                   bhcp = teams[0].players[i].bat_hand.split('-')[0]
                   bhcp2 = teams[1].players[i].bat_hand.split('-')[0]
                   hdb1[i].innerHTML = bhcp.charAt(0).toUpperCase() + bhcp.slice(1)
@@ -434,7 +434,6 @@ function matchRun(idNo) {
             var { batting, bowling, bat_now, bowl_now, inns_now, inns1, inns2, inns3, inns4 } = msg.scorecard
 
             igsn = inns_now
-            console.log(igsn)
             if (igsn == 1 || igsn == 3) {
                st1.innerHTML = shortNameOne
                st2.innerHTML = shortNameTwo
