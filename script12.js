@@ -59,26 +59,6 @@ window.addEventListener('load', function () {
             return da - db
          })
 
-         // Checks for games Today and outputs as var 'filtered'
-         /*
-         const prep = document.getElementsByClassName('sidebar-item-fixtures-today')
-         nxdg = document.createElement('li')
-         nxdg.setAttribute('class', 'sidebar-item-fixtures-demo')
-         fixlst.append(nxdg)
-         const sifxl = document.getElementsByClassName('sidebar-item-fixtures-demo')[1],
-            nxdga = document.createElement('a')
-         nxdga.setAttribute('class', 'sidebar-anchor-fixtures')
-         nxdga.setAttribute('href', '#')
-         nxdga.innerHTML = 'Games Today:'
-         sifxl.appendChild(nxdga)
-         dntat = document.createElement('div')
-         dntat.setAttribute('class', 'date-time-demo')
-         sifxl.append(dntat)
-         const tgdtd = document.getElementsByClassName('date-time-demo')[1]
-         nxdgat = document.createElement('p')
-         nxdgat.setAttribute('id', 'gmn')
-         tgdtd.appendChild(nxdgat)
-*/
          // Creates list items and appends to fixtures list for any games live today.
 
          let moments = moment(),
@@ -124,11 +104,27 @@ window.addEventListener('load', function () {
             sif[ii].style.cssText = 'padding-right: 40px;'
          }
 
-         const gmn = document.querySelector('#gmn'),
-            nxgn = document.querySelector('#nxgn')
-         if (cmip != 0) {
-            gmn.innerHTML = '<br>' + cmip
-         } else {
+         if (cmip == 0) {
+            // Checks for games Today and outputs as var 'filtered'
+            const prep = document.getElementsByClassName('sidebar-item-fixtures-today')
+            nxdg = document.createElement('li')
+            nxdg.setAttribute('class', 'sidebar-item-fixtures-demo')
+            fixlst.append(nxdg)
+            const sifxl = document.getElementsByClassName('sidebar-item-fixtures-demo')[1],
+               nxdga = document.createElement('a')
+            nxdga.setAttribute('class', 'sidebar-anchor-fixtures')
+            nxdga.setAttribute('href', '#')
+            nxdga.innerHTML = 'Games Today:'
+            sifxl.appendChild(nxdga)
+            dntat = document.createElement('div')
+            dntat.setAttribute('class', 'date-time-demo')
+            sifxl.append(dntat)
+            const tgdtd = document.getElementsByClassName('date-time-demo')[1]
+            nxdgat = document.createElement('p')
+            nxdgat.setAttribute('id', 'gmn')
+            tgdtd.appendChild(nxdgat)
+            const gmn = document.querySelector('#gmn'),
+               nxgn = document.querySelector('#nxgn')
             gmn.innerHTML = '<br>No Live Games'
          }
          /*
