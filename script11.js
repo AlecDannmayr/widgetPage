@@ -122,8 +122,12 @@ window.addEventListener('load', function () {
             dt[ii].appendChild(ad)
             sif[ii].style.cssText = 'padding-right: 40px;'
          }
-
-         console.log(sif)
+         for (i = 0; i < r.length; i++) {
+            if (r[i].start.substring(0, 10) == nuDt) {
+               filtered = r[i]
+               console.log(filtered)
+            }
+         }
 
          // Removed first IPL Outright Fixture from list
 
