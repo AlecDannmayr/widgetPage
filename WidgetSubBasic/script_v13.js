@@ -880,8 +880,8 @@ function matchRun(idNo) {
                   if (countHundreds == 0) {
                      countHundreds++
                      console.log(countHundreds)
-                     recent.removeChild(recent.firstChild)
-                     recent.removeChild(recent.lastChild)
+                     recent.removeChild(recent.children[1])
+                     recent.removeChild(recent.children[11])
                   }
                   console.log(countHundreds)
                   if (fltinlt.length <= 2) {
