@@ -365,7 +365,7 @@ function matchRun(idNo) {
                   }
 
                   t1p[i].innerHTML = teams[1].players[i].name
-                  t1b[i].innerHTML = teams[1].players[i].name
+                  t1b[i].innerHTML = teams[0].players[i].name
                   t2p[i].innerHTML = teams[0].players[i].name
                   t2bw[i].innerHTML = teams[0].players[i].name
                   bhcp = teams[1].players[i].bat_hand.split('-')[0]
