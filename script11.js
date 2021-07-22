@@ -128,10 +128,8 @@ window.addEventListener('load', function () {
 
          for (itl = 0; itl < r.length; itl++) {
             if (r[itl].start.substring(0, 10) == nuDt) {
-               fixt = r[itl].start.split('T')[1].substring(0, 5)
-               const myArr = Array.from(r[itl].start)
-               console.log(myArr)
-               ftxt[0].innerHTML = fixt[1]
+               filteredd = r[itl]
+               fixt = filteredd.start.split('T')[1].substring(0, 5)
             }
          }
          for (gt = 0; gt < ftxt.length; gt++) {
