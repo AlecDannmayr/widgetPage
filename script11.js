@@ -132,10 +132,11 @@ window.addEventListener('load', function () {
 
                for (gt = 0; gt < ftxt.length; gt++) {
                   tyte = ftxt[gt]
+                  console.log(tyte)
+
+                  const myArr = Array.from(fixt)
                }
-               const myArr = Array.from(fixt)
                console.log(fixt)
-               console.log(tyte)
                //.innerHTML = r[itl].start.split('T')[1].substring(0, 5)
             }
          }
