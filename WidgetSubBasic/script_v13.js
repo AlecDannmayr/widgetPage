@@ -882,10 +882,9 @@ function matchRun(idNo) {
                      countHundreds++
                      recent.removeChild(recent.children[1])
                      recent.removeChild(recent.children[11])
-                     const ln = document.getElementsByClassName('ln')
-                     ln[0].style.cssText = 'margin-right: 10px; margin-left: 10px;'
                      ovlg = 10
                   }
+                  recent.children[4].style.cssText = 'backgroundColor: black;'
                   console.log(countHundreds)
                   if (fltinlt.length <= 2) {
                      rt[0].innerHTML = fltin[0].b1
