@@ -882,6 +882,8 @@ function matchRun(idNo) {
                      console.log(countHundreds)
                      recent.removeChild(recent.children[1])
                      recent.removeChild(recent.children[11])
+                     const ln = document.querySelectorAll('.ln')
+                     ln.cssText = 'margin: 100px;'
                   }
                   console.log(countHundreds)
                   if (fltinlt.length <= 2) {
@@ -891,11 +893,11 @@ function matchRun(idNo) {
                      rt[3].innerHTML = fltin[0].b4
                      rt[4].innerHTML = fltin[0].b5
                      if (fltinlt[1] != undefined) {
-                        rt[6].innerHTML = fltin[1].b1
-                        rt[7].innerHTML = fltin[1].b2
-                        rt[8].innerHTML = fltin[1].b3
-                        rt[9].innerHTML = fltin[1].b4
-                        rt[10].innerHTML = fltin[1].b5
+                        rt[5].innerHTML = fltin[1].b1
+                        rt[6].innerHTML = fltin[1].b2
+                        rt[7].innerHTML = fltin[1].b3
+                        rt[8].innerHTML = fltin[1].b4
+                        rt[9].innerHTML = fltin[1].b5
                      }
                   } else if (fltinlt.length == 3) {
                      for (i = 0; i < fltinlt.length; i++) {
@@ -918,11 +920,11 @@ function matchRun(idNo) {
                         rt[3].innerHTML = fltin[i].b4
                         rt[4].innerHTML = fltin[i].b5
                         const slitwo = fltin.slice(-2)
-                        rt[6].innerHTML = slitwo[0].b1
-                        rt[7].innerHTML = slitwo[0].b2
-                        rt[8].innerHTML = slitwo[0].b3
-                        rt[9].innerHTML = slitwo[0].b4
-                        rt[10].innerHTML = slitwo[0].b5
+                        rt[5].innerHTML = slitwo[0].b1
+                        rt[6].innerHTML = slitwo[0].b2
+                        rt[7].innerHTML = slitwo[0].b3
+                        rt[8].innerHTML = slitwo[0].b4
+                        rt[9].innerHTML = slitwo[0].b5
                      }
                   }
                }
