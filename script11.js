@@ -123,11 +123,11 @@ window.addEventListener('load', function () {
          }
          const fixtime = document.getElementsByClassName('fixture-time')
          for (i = 0; i < fixtime.length; i++) {
-            console.log(fixtime.length)
+            console.log(fixtime[i])
+            // filtered = r[i]
+            // fixtime[i].innerHTML = filtered.start.split('T')[1].substring(0, 5) + '&nbsp&nbsp'
             if (r[i].start.substring(0, 10) == nuDt) {
-               filtered = r[i]
-               // fixtime.innerHTML = filtered.start.split('T')[1].substring(0, 5) + '&nbsp&nbsp'
-               console.log('tst')
+               console.log(r[i])
             }
          }
 
