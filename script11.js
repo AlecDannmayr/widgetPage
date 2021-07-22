@@ -120,7 +120,7 @@ window.addEventListener('load', function () {
             dt[ii].appendChild(ad)
             sif[ii].style.cssText = 'padding-right: 40px;'
          }
-         var fixt,
+         let fixt,
             itl,
             tyte,
             gt,
@@ -128,8 +128,9 @@ window.addEventListener('load', function () {
 
          for (itl = 0; itl < r.length; itl++) {
             if (r[itl].start.substring(0, 10) == nuDt) {
-               filteredd = r[itl].start.split('T')[1].substring(0, 5)
+               fixt = r[itl].start.split('T')[1].substring(0, 5)
             }
+            console.log(fixt)
          }
          for (gt = 0; gt < ftxt.length; gt++) {
             tyte = ftxt[gt]
@@ -137,6 +138,9 @@ window.addEventListener('load', function () {
 
             const myArr = Array.from(fixt)
          }
+
+         const numbers = r.map()
+         console.log(r)
 
          //.innerHTML = r[itl].start.split('T')[1].substring(0, 5)
 
