@@ -126,11 +126,13 @@ window.addEventListener('load', function () {
 
          for (itl = 0; itl < r.length; itl++) {
             if (r[itl].start.substring(0, 10) == nuDt) {
-               fixt = r[itl].start.split('T')[1].substring(0, 5) + '&nbsp&nbsp'
+               fixt = r[itl].start.split('T')[1].substring(0, 5)
 
                console.log(fixt)
                for (gt = 0; gt < ftxt.length; gt++) {
-                  ftxt[gt].innerHTML = r[itl].start.split('T')[1].substring(0, 5) + '&nbsp&nbsp'
+                  const myArr = Array.from(fixt)
+                  console.log(myArr)
+                  ftxt[gt].innerHTML = r[itl].start.split('T')[1].substring(0, 5)
                }
             }
          }
