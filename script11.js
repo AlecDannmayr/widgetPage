@@ -113,11 +113,12 @@ window.addEventListener('load', function () {
             const dt = document.querySelectorAll('.date-time')
             at = document.createElement('p')
             at.setAttribute('class', 'fixture-time')
+            console.log(filtered)
             at.innerHTML = filtered.start.split('T')[1].substring(0, 5) + '&nbsp&nbsp'
             dt[ii].appendChild(at)
             ad = document.createElement('p')
             ad.setAttribute('class', 'fixture-data')
-            ad.innerHTML = 'Today'
+            ad.innerHTML = filtered.start.split('T')[0].substring(0, 10).split('-').reverse().join('/')
             dt[ii].appendChild(ad)
             sif[ii].style.cssText = 'padding-right: 40px;'
          }
