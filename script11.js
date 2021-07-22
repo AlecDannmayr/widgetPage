@@ -121,12 +121,13 @@ window.addEventListener('load', function () {
             dt[ii].appendChild(ad)
             sif[ii].style.cssText = 'padding-right: 40px;'
          }
-         for (i = 0; i < r.length; i++) {
+         const fixtime = document.getElementsByClassName('fixture-time')
+         for (i = 0; i < fixtime.length; i++) {
+            console.log(fixtime.length)
             if (r[i].start.substring(0, 10) == nuDt) {
                filtered = r[i]
-               const fixtime = document.getElementsByClassName('fixture-time')[i]
                // fixtime.innerHTML = filtered.start.split('T')[1].substring(0, 5) + '&nbsp&nbsp'
-               console.log(fixtime)
+               console.log('tst')
             }
          }
 
