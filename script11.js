@@ -128,13 +128,13 @@ window.addEventListener('load', function () {
 
          for (itl = 0; itl < r.length; itl++) {
             if (r[itl].start.substring(0, 10) == nuDt) {
-               fixt = r[itl].start.split('T')[1].substring(0, 5)
-               console.log(fixt)
+               const myArr = Array.from(r[itl]
+               console.log(myArr)
             }
          }
          for (gt = 0; gt < ftxt.length; gt++) {
-            ftxt[4].innerHTML = r[itl].start.split('T')[1].substring(0, 5)
-            console.log(ftxt)
+            ftxt[gt].innerHTML = r[gt].start.split('T')[1].substring(0, 5)
+            console.log(ftxt.textContent)
          }
 
          //     const myArr = Array.from(fixt)
