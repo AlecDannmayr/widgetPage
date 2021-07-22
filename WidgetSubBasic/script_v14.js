@@ -1061,7 +1061,7 @@ function matchRun(idNo) {
             break
       }
    }
-}
+//}
 
 // Adds "unknown" to teams fields with no data
 
