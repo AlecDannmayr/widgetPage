@@ -123,6 +123,8 @@ window.addEventListener('load', function () {
             sif[ii].style.cssText = 'padding-right: 40px;'
          }
 
+         console.log(sif)
+
          // Removed first IPL Outright Fixture from list
 
          // const rmv = document.getElementsByClassName('sidebar-item-fixtures')[0]
