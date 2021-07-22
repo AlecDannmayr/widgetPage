@@ -120,17 +120,19 @@ window.addEventListener('load', function () {
             dt[ii].appendChild(ad)
             sif[ii].style.cssText = 'padding-right: 40px;'
          }
-
-         for (i = 0; i < 5; i++) {
+         let fixt
+         for (i = 0; i < r.length; i++) {
             if (r[i].start.substring(0, 10) == nuDt) {
-               console.log(r[i].start.split('T')[1].substring(0, 5) + '&nbsp&nbsp')
+               fixt = r[i].start.split('T')[1].substring(0, 5) + '&nbsp&nbsp'
             }
          }
 
          for (i = 0; i < sif.length; i++) {
             const ftxt = document.getElementsByClassName('date-time')
-            console.log(ftxt[i])
+            console.log(fixt[i])
+            ftxt[i].innerHTML = fixt[i]
          }
+
          // Removed first IPL Outright Fixture from list
 
          // const rmv = document.getElementsByClassName('sidebar-item-fixtures')[0]
