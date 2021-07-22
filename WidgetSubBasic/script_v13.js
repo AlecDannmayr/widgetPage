@@ -874,7 +874,7 @@ function matchRun(idNo) {
                         rt[11].innerHTML = slitwo[0].b6
                      }
                   }
-               } else if (isHundreds == true) {
+               } else if (isHundreds == false) {
                   if (fltinlt.length <= 2) {
                      rt[0].innerHTML = fltin[0].b1
                      rt[1].innerHTML = fltin[0].b2
