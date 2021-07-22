@@ -122,9 +122,6 @@ window.addEventListener('load', function () {
             ad.innerHTML = filtered.start.split('T')[0].substring(0, 10).split('-').reverse().join('/')
             dt[ii].appendChild(ad)
             sif[ii].style.cssText = 'padding-right: 40px;'
-
-            console.log(ftxt[ii])
-            console.log(fixt)
          }
 
          const gmn = document.querySelector('#gmn'),
