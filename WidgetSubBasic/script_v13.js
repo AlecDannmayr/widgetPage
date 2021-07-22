@@ -54,7 +54,8 @@ let g2h = document.getElementById('second-header'),
    t1n,
    t2n,
    igsn,
-   event_description
+   event_description,
+   isHundreds
 
 gsts.innerHTML = ''
 wi1.style.display = 'none'
@@ -97,9 +98,6 @@ function matchRun(idNo) {
 
    socket.onmessage = function (event) {
       var msg = JSON.parse(event.data)
-
-      isHundreds = parseInt(msg.event.scoreboard.find((line) => line.name == 'Max Overs')) == 100
-      console.log(msg.event.scoreboard)
 
       // switch statment listens for messages
 
@@ -213,6 +211,7 @@ function matchRun(idNo) {
          case 'event':
             var { scoreline, event_description, scoreboard, event_status } = msg.event
             var bip = document.getElementById('third-header-game-info')
+            isHundreds = parseInt(msg.event.scoreboard.find((line) => line.name == 'Max Overs')) == 100
 
             // Indicates break-in-play status
 
@@ -826,51 +825,96 @@ function matchRun(idNo) {
                } else if (fltinlt[i].b7 != null || fltinlt[i].b10 == null) {
                   delete eachObj['b10']
                }
-               if (fltinlt.length <= 2) {
-                  rt[0].innerHTML = fltin[0].b1
-                  rt[1].innerHTML = fltin[0].b2
-                  rt[2].innerHTML = fltin[0].b3
-                  rt[3].innerHTML = fltin[0].b4
-                  rt[4].innerHTML = fltin[0].b5
-                  rt[5].innerHTML = fltin[0].b6
-                  if (fltinlt[1] != undefined) {
-                     rt[6].innerHTML = fltin[1].b1
-                     rt[7].innerHTML = fltin[1].b2
-                     rt[8].innerHTML = fltin[1].b3
-                     rt[9].innerHTML = fltin[1].b4
-                     rt[10].innerHTML = fltin[1].b5
-                     rt[11].innerHTML = fltin[1].b6
+
+               if (isHundreds != false) {
+                  if (fltinlt.length <= 2) {
+                     rt[0].innerHTML = fltin[0].b1
+                     rt[1].innerHTML = fltin[0].b2
+                     rt[2].innerHTML = fltin[0].b3
+                     rt[3].innerHTML = fltin[0].b4
+                     rt[4].innerHTML = fltin[0].b5
+                     rt[5].innerHTML = fltin[0].b6
+                     if (fltinlt[1] != undefined) {
+                        rt[6].innerHTML = fltin[1].b1
+                        rt[7].innerHTML = fltin[1].b2
+                        rt[8].innerHTML = fltin[1].b3
+                        rt[9].innerHTML = fltin[1].b4
+                        rt[10].innerHTML = fltin[1].b5
+                        rt[11].innerHTML = fltin[1].b6
+                     }
+                  } else if (fltinlt.length == 3) {
+                     for (i = 0; i < fltinlt.length; i++) {
+                        rt[0].innerHTML = fltin[i].b1
+                        rt[1].innerHTML = fltin[i].b2
+                        rt[2].innerHTML = fltin[i].b3
+                        rt[3].innerHTML = fltin[i].b4
+                        rt[4].innerHTML = fltin[i].b5
+                        rt[5].innerHTML = fltin[i].b6
+                        rt[6].innerHTML = fltin[0].b1
+                        rt[7].innerHTML = fltin[0].b2
+                        rt[8].innerHTML = fltin[0].b3
+                        rt[9].innerHTML = fltin[0].b4
+                        rt[10].innerHTML = fltin[0].b5
+                        rt[11].innerHTML = fltin[0].b6
+                     }
+                  } else if (fltinlt.length > 3) {
+                     for (i = 0; i < fltinlt.length; i++) {
+                        rt[0].innerHTML = fltin[i].b1
+                        rt[1].innerHTML = fltin[i].b2
+                        rt[2].innerHTML = fltin[i].b3
+                        rt[3].innerHTML = fltin[i].b4
+                        rt[4].innerHTML = fltin[i].b5
+                        rt[5].innerHTML = fltin[i].b6
+                        const slitwo = fltin.slice(-2)
+                        rt[6].innerHTML = slitwo[0].b1
+                        rt[7].innerHTML = slitwo[0].b2
+                        rt[8].innerHTML = slitwo[0].b3
+                        rt[9].innerHTML = slitwo[0].b4
+                        rt[10].innerHTML = slitwo[0].b5
+                        rt[11].innerHTML = slitwo[0].b6
+                     }
                   }
-               } else if (fltinlt.length == 3) {
-                  for (i = 0; i < fltinlt.length; i++) {
-                     rt[0].innerHTML = fltin[i].b1
-                     rt[1].innerHTML = fltin[i].b2
-                     rt[2].innerHTML = fltin[i].b3
-                     rt[3].innerHTML = fltin[i].b4
-                     rt[4].innerHTML = fltin[i].b5
-                     rt[5].innerHTML = fltin[i].b6
-                     rt[6].innerHTML = fltin[0].b1
-                     rt[7].innerHTML = fltin[0].b2
-                     rt[8].innerHTML = fltin[0].b3
-                     rt[9].innerHTML = fltin[0].b4
-                     rt[10].innerHTML = fltin[0].b5
-                     rt[11].innerHTML = fltin[0].b6
-                  }
-               } else if (fltinlt.length > 3) {
-                  for (i = 0; i < fltinlt.length; i++) {
-                     rt[0].innerHTML = fltin[i].b1
-                     rt[1].innerHTML = fltin[i].b2
-                     rt[2].innerHTML = fltin[i].b3
-                     rt[3].innerHTML = fltin[i].b4
-                     rt[4].innerHTML = fltin[i].b5
-                     rt[5].innerHTML = fltin[i].b6
-                     const slitwo = fltin.slice(-2)
-                     rt[6].innerHTML = slitwo[0].b1
-                     rt[7].innerHTML = slitwo[0].b2
-                     rt[8].innerHTML = slitwo[0].b3
-                     rt[9].innerHTML = slitwo[0].b4
-                     rt[10].innerHTML = slitwo[0].b5
-                     rt[11].innerHTML = slitwo[0].b6
+               } else if (isHundreds == true) {
+                  if (fltinlt.length <= 2) {
+                     rt[0].innerHTML = fltin[0].b1
+                     rt[1].innerHTML = fltin[0].b2
+                     rt[2].innerHTML = fltin[0].b3
+                     rt[3].innerHTML = fltin[0].b4
+                     rt[4].innerHTML = fltin[0].b5
+                     if (fltinlt[1] != undefined) {
+                        rt[6].innerHTML = fltin[1].b1
+                        rt[7].innerHTML = fltin[1].b2
+                        rt[8].innerHTML = fltin[1].b3
+                        rt[9].innerHTML = fltin[1].b4
+                        rt[10].innerHTML = fltin[1].b5
+                     }
+                  } else if (fltinlt.length == 3) {
+                     for (i = 0; i < fltinlt.length; i++) {
+                        rt[0].innerHTML = fltin[i].b1
+                        rt[1].innerHTML = fltin[i].b2
+                        rt[2].innerHTML = fltin[i].b3
+                        rt[3].innerHTML = fltin[i].b4
+                        rt[4].innerHTML = fltin[i].b5
+                        rt[6].innerHTML = fltin[0].b1
+                        rt[7].innerHTML = fltin[0].b2
+                        rt[8].innerHTML = fltin[0].b3
+                        rt[9].innerHTML = fltin[0].b4
+                        rt[10].innerHTML = fltin[0].b5
+                     }
+                  } else if (fltinlt.length > 3) {
+                     for (i = 0; i < fltinlt.length; i++) {
+                        rt[0].innerHTML = fltin[i].b1
+                        rt[1].innerHTML = fltin[i].b2
+                        rt[2].innerHTML = fltin[i].b3
+                        rt[3].innerHTML = fltin[i].b4
+                        rt[4].innerHTML = fltin[i].b5
+                        const slitwo = fltin.slice(-2)
+                        rt[6].innerHTML = slitwo[0].b1
+                        rt[7].innerHTML = slitwo[0].b2
+                        rt[8].innerHTML = slitwo[0].b3
+                        rt[9].innerHTML = slitwo[0].b4
+                        rt[10].innerHTML = slitwo[0].b5
+                     }
                   }
                }
                for (it = 0; it < 12; it++) {
