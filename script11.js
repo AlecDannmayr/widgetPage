@@ -126,7 +126,7 @@ window.addEventListener('load', function () {
                filtered = r[i]
                const fixtime = document.querySelectorAll('.fixture-time')
                fixtime.innerHTML = filtered.start.split('T')[1].substring(0, 5) + '&nbsp&nbsp'
-               console.log(fixtime, filtered.start.split('T')[1].substring(0, 5))
+               console.log(fixtime)
             }
          }
 
