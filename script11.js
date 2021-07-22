@@ -124,8 +124,8 @@ window.addEventListener('load', function () {
          for (i = 0; i < r.length; i++) {
             if (r[i].start.substring(0, 10) == nuDt) {
                filtered = r[i]
-               const fixtime = document.querySelectorAll('.fixture-time')
-               fixtime.innerHTML = filtered.start.split('T')[1].substring(0, 5) + '&nbsp&nbsp'
+               const fixtime = document.getElementsByClassName('fixture-time')[i]
+               // fixtime.innerHTML = filtered.start.split('T')[1].substring(0, 5) + '&nbsp&nbsp'
                console.log(fixtime)
             }
          }
