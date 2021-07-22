@@ -88,7 +88,7 @@ window.addEventListener('load', function () {
             fixt
 
          //  (moments.format().substring(11, 19), r[2].start.substring(11, 19))
-         let ftxt = document.getElementsByClassName('date-time')
+         let ftxt = document.getElementsByClassName('fixture-time')
          for (i = 0; i < r.length; i++) {
             if (r[i].start.substring(0, 10) == nuDt) {
                filtered = r[i]
@@ -106,9 +106,7 @@ window.addEventListener('load', function () {
                   sif[ii].appendChild(atr)
                }
                fixt = r[i].start.split('T')[1].substring(0, 5)
-
-               const arrr = Array.from(ftxt)
-               console.log(arrr)
+               console.log(ftxt[0])
             }
          }
 
