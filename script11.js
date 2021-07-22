@@ -124,24 +124,18 @@ window.addEventListener('load', function () {
             itl,
             tyte,
             gt,
-            ftxt = document.getElementsByClassName('date-time')
-         /*
+            ftxt = document.getElementsByClassName('fixture-time')
+
          for (itl = 0; itl < r.length; itl++) {
             if (r[itl].start.substring(0, 10) == nuDt) {
                fixt = r[itl].start.split('T')[1].substring(0, 5)
-               const myArr = Array.from(fixt)
+               console.log(fixt)
             }
          }
          for (gt = 0; gt < ftxt.length; gt++) {
-            tyte = ftxt[gt]
-            console.log(tyte)
+            ftxt[4].innerHTML = r[itl].start.split('T')[1].substring(0, 5)
+            console.log(ftxt)
          }
-*/ for (itl = 0; itl < r.length; itl++) {
-            function checkAdult(r) {
-               return r[itl].start.substring(0, 10) == nuDt
-            }
-         }
-         console.log(checkAdult())
 
          //     const myArr = Array.from(fixt)
 
