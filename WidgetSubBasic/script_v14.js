@@ -350,22 +350,19 @@ function matchRun(idNo) {
                hdbw2 = document.getElementsByClassName('hdbw2'),
                shortnameOne
 
-            console.log(teams[0].name)
-
             // Check all of this! // if innings1team === teams[p]
 
             //  i if (bowler == )
 
-            if (igsn == '1' || igsn == null || igsn == '3') {
-               for (i = 0; i < t1p.length; i++) {
-                  if (t1n == teams[0].short_name) {
-                     shortNameOne = teams[0].short_name
-                     shortNameTwo = teams[1].short_name
-                  } else {
-                     shortNameOne = teams[1].short_name
-                     shortNameTwo = teams[0].short_name
-                  }
-
+            for (i = 0; i < t1p.length; i++) {
+               if (t1n == teams[0].short_name) {
+                  shortNameOne = teams[0].short_name
+                  shortNameTwo = teams[1].short_name
+               } else {
+                  shortNameOne = teams[1].short_name
+                  shortNameTwo = teams[0].short_name
+               }
+               if (mt1 == teams[0].name) {
                   t1p[i].innerHTML = teams[1].players[i].name
                   t1b[i].innerHTML = teams[1].players[i].name
                   t2p[i].innerHTML = teams[0].players[i].name
@@ -376,9 +373,7 @@ function matchRun(idNo) {
                   hdb2[i].innerHTML = bhcp.charAt(0).toUpperCase() + bhcp.slice(1)
                   hdbw1[i].innerHTML = teams[1].players[i].bowler_style
                   hdbw2[i].innerHTML = teams[0].players[i].bowler_style
-               }
-            } else {
-               for (i = 0; i < t1p.length; i++) {
+               } else {
                   t1p[i].innerHTML = teams[0].players[i].name
                   t1b[i].innerHTML = teams[0].players[i].name
                   t2p[i].innerHTML = teams[1].players[i].name
