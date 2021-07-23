@@ -367,10 +367,10 @@ function matchRun(idNo) {
          // Scorecard case
 
          case 'scorecard':
-            var { batting, bowling, bat_now, bowl_now, inns_now, inns1, inns2, inns3, inns4 } = msg.scorecard,
-               btnw = bat_now,
-               igsn = inns_now,
-               isBatFirst = mt1.textContent
+            var { batting, bowling, bat_now, bowl_now, inns_now, inns1, inns2, inns3, inns4 } = msg.scorecard
+            const isBatFirst = mt1.textContent
+            btnw = bat_now
+            igsn = inns_now
             if (btnw == isBatFirst) {
                st1.innerHTML = shortNameOne
                st2.innerHTML = shortNameTwo
