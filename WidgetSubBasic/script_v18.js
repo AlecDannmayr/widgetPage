@@ -515,7 +515,7 @@ function matchRun(idNo) {
                   shortNameOne = teams[1].short_name
                   shortNameTwo = teams[0].short_name
                }
-
+               console.log(bat_now)
                if (bat_now == teams[0].name) {
                   t1b[i].innerHTML = teams[0].players[i].name // batter
                   t2bw[i].innerHTML = teams[1].players[i].name // bowler
