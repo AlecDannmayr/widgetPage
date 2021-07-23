@@ -499,25 +499,26 @@ function matchRun(idNo) {
 
             // Check all of this! // if innings1team === teams[p]
 
+            if (btnw == isBatFirst) {
+               st1.innerHTML = shortNameOne
+               st2.innerHTML = shortNameTwo
+            } else if (btnw != isBatFirst) {
+               st1.innerHTML = shortNameTwo
+               st2.innerHTML = shortNameOne
+            }
+
             st1t.innerHTML = shortNameOne
             st2t.innerHTML = shortNameTwo
 
-            let st1i = document.querySelector('.selection-team-one'),
-               st2i = document.querySelector('.selection-team-one')
-
             for (i = 0; i < t1p.length; i++) {
                if (t1n == teams[0].short_name) {
-                  st1i = teams[0].short_name
-                  st2i = teams[1].short_name
-                  st1i.innerHTML = teams[0].short_name
-                  st2i.innerHTML = teams[1].short_name
+                  shortNameOne = teams[0].short_name
+                  shortNameTwo = teams[1].short_name
                } else {
-                  st1i = teams[0].short_name
-                  st2i = teams[1].short_name
-                  st1i.innerHTML = teams[1].short_name
-                  st2i.innerHTML = teams[0].short_name
+                  shortNameOne = teams[1].short_name
+                  shortNameTwo = teams[0].short_name
                }
-               console.log(btnw)
+
                if (btnw == teams[0].name) {
                   t1b[i].innerHTML = teams[0].players[i].name // batter
                   t2bw[i].innerHTML = teams[1].players[i].name // bowler
