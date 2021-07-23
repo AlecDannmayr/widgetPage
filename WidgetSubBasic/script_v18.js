@@ -499,16 +499,6 @@ function matchRun(idNo) {
 
             // Check all of this! // if innings1team === teams[p]
 
-            if (btnw == isBatFirst) {
-               st1.innerHTML = shortNameOne
-               st2.innerHTML = shortNameTwo
-               console.log('True')
-            } else if (btnw != isBatFirst) {
-               st1.innerHTML = shortNameTwo
-               st2.innerHTML = shortNameOne
-               console.log('False')
-            }
-
             st1t.innerHTML = shortNameOne
             st2t.innerHTML = shortNameTwo
 
@@ -520,6 +510,9 @@ function matchRun(idNo) {
                   shortNameOne = teams[1].short_name
                   shortNameTwo = teams[0].short_name
                }
+
+               st1.innerHTML = shortNameOne
+               st2.innerHTML = shortNameTwo
 
                if (btnw == teams[0].name) {
                   t1b[i].innerHTML = teams[0].players[i].name // batter
