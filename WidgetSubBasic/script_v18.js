@@ -504,13 +504,14 @@ function matchRun(idNo) {
 
             for (i = 0; i < t1p.length; i++) {
                if (t1n == teams[0].short_name) {
-                  shortNameOne = teams[0].short_name
-                  shortNameTwo = teams[1].short_name
+                  st1 = teams[0].short_name
+                  st2 = teams[1].short_name
                   st1.innerHTML = teams[0].short_name
                   st2.innerHTML = teams[1].short_name
                } else {
-                  shortNameOne = teams[1].short_name
-                  shortNameTwo = teams[0].short_name
+                  st1 = teams[0].short_name
+
+                  st2 = teams[1].short_name
                   st1.innerHTML = teams[1].short_name
                   st2.innerHTML = teams[0].short_name
                }
