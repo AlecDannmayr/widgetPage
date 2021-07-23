@@ -58,8 +58,7 @@ let g2h = document.getElementById('second-header'),
    isHundreds,
    countHundreds = 0,
    bat_now,
-   btnw,
-   isBatFirst
+   btnw
 
 gsts.innerHTML = ''
 wi1.style.display = 'none'
@@ -369,9 +368,17 @@ function matchRun(idNo) {
 
          case 'scorecard':
             var { batting, bowling, bat_now, bowl_now, inns_now, inns1, inns2, inns3, inns4 } = msg.scorecard
-            isBatFirst = mt1.textContent
             btnw = bat_now
             igsn = inns_now
+            if (igsn == 1 || igsn == 3) {
+               st1.innerHTML = shortNameOne
+               st2.innerHTML = shortNameTwo
+            } else if (igsn == 2 || igsn == 4) {
+               st1.innerHTML = shortNameTwo
+               st2.innerHTML = shortNameOne
+            }
+            st1t.innerHTML = shortNameOne
+            st2t.innerHTML = shortNameTwo
 
             const inssNow = document.querySelector('#ins-now')
             inssNow.innerHTML = 'Inning: ' + inns_now
@@ -499,21 +506,15 @@ function matchRun(idNo) {
 
             // Check all of this! // if innings1team === teams[p]
 
-            st1t.innerHTML = shortNameOne
-            st2t.innerHTML = shortNameTwo
-
             for (i = 0; i < t1p.length; i++) {
-               if (t1n != teams[0].short_name) {
+               if (t1n == teams[0].short_name) {
                   shortNameOne = teams[0].short_name
                   shortNameTwo = teams[1].short_name
                } else {
                   shortNameOne = teams[1].short_name
                   shortNameTwo = teams[0].short_name
                }
-
-               st1.innerHTML = shortNameOne
-               st2.innerHTML = shortNameTwo
-
+               console.log(btnw)
                if (btnw == teams[0].name) {
                   t1b[i].innerHTML = teams[0].players[i].name // batter
                   t2bw[i].innerHTML = teams[1].players[i].name // bowler
