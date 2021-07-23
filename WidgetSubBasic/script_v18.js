@@ -515,9 +515,11 @@ function matchRun(idNo) {
             if (btnw == teams[0].name) {
                st1.innerHTML = teams[0].short_name
                st2.innerHTML = teams[1].short_name
+               console.log('First team neam is equal to bat now')
             } else if (btnw == teams[1].name) {
                st1.innerHTML = teams[1].short_name
                st2.innerHTML = teams[0].short_name
+               console.log('Second team neam is equal to bat now')
             }
 
             for (i = 0; i < t1p.length; i++) {
@@ -528,7 +530,7 @@ function matchRun(idNo) {
                   shortNameOne = teams[1].short_name
                   shortNameTwo = teams[0].short_name
                }
-               console.log(btnw)
+
                if (btnw == teams[0].name) {
                   t1b[i].innerHTML = teams[0].players[i].name // batter
                   t2bw[i].innerHTML = teams[1].players[i].name // bowler
@@ -890,7 +892,6 @@ function matchRun(idNo) {
                      }
                   }
                } else if (isHundreds == true) {
-                  console.log(countHundreds)
                   if (countHundreds == 0) {
                      countHundreds++
                      recent.removeChild(recent.children[1])
