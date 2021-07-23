@@ -371,7 +371,7 @@ function matchRun(idNo) {
             btnw = bat_now
             igsn = inns_now
             st1.innerHTML = btnw
-            st2.innerHTML = igsn
+            st2.innerHTML = bowl_now
 
             /*
             if (btnw == mt1.textContent) {
