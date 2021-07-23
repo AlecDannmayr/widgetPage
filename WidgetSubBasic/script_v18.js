@@ -57,8 +57,7 @@ let g2h = document.getElementById('second-header'),
    event_description,
    isHundreds,
    countHundreds = 0,
-   bat_now,
-   btnw
+   bat_now
 
 gsts.innerHTML = ''
 wi1.style.display = 'none'
@@ -368,7 +367,7 @@ function matchRun(idNo) {
 
          case 'scorecard':
             var { batting, bowling, bat_now, bowl_now, inns_now, inns1, inns2, inns3, inns4 } = msg.scorecard
-            btnw = bat_now
+            bat_now
             igsn = inns_now
             if (igsn == 1 || igsn == 3) {
                st1.innerHTML = shortNameOne
@@ -517,7 +516,7 @@ function matchRun(idNo) {
                   shortNameTwo = teams[0].short_name
                }
 
-               if (btnw == teams[0].name) {
+               if (bat_now == teams[0].name) {
                   t1b[i].innerHTML = teams[0].players[i].name // batter
                   t2bw[i].innerHTML = teams[1].players[i].name // bowler
                   t1p[i].innerHTML = teams[1].players[i].name
