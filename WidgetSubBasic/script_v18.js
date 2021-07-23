@@ -58,7 +58,8 @@ let g2h = document.getElementById('second-header'),
    isHundreds,
    countHundreds = 0,
    bat_now,
-   btnw
+   btnw,
+   bowl_now
 
 gsts.innerHTML = ''
 wi1.style.display = 'none'
@@ -370,8 +371,6 @@ function matchRun(idNo) {
             var { batting, bowling, bat_now, bowl_now, inns_now, inns1, inns2, inns3, inns4 } = msg.scorecard
             btnw = bat_now
             igsn = inns_now
-            st1.innerHTML = btnw
-            st2.innerHTML = bowl_now
 
             /*
             if (btnw == mt1.textContent) {
@@ -512,6 +511,14 @@ function matchRun(idNo) {
                shortnameOne
 
             // Check all of this! // if innings1team === teams[p]
+
+            if (btnw == teams[0].name) {
+               st1.innerHTML = teams[0].short_name
+               st2.innerHTML = teams[1].short_name
+            } else if (btnw == teams[1].name) {
+               st1.innerHTML = teams[1].short_name
+               st2.innerHTML = teams[0].short_name
+            }
 
             for (i = 0; i < t1p.length; i++) {
                if (t1n == teams[0].short_name) {
