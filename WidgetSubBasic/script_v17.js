@@ -526,8 +526,8 @@ function matchRun(idNo) {
                   bhcp2 = teams[0].players[i].bat_hand.split('-')[0]
                   hdb1[i].innerHTML = bhcp.charAt(0).toUpperCase() + bhcp.slice(1)
                   hdb2[i].innerHTML = bhcp.charAt(0).toUpperCase() + bhcp.slice(1)
-                  hdbw1[i].innerHTML = teams[1].players[i].bowler_style
-                  hdbw2[i].innerHTML = teams[0].players[i].bowler_style
+                  hdbw1[i].innerHTML = teams[0].players[i].bowler_style
+                  hdbw2[i].innerHTML = teams[1].players[i].bowler_style
                } else {
                   t1b[i].innerHTML = teams[1].players[i].name // batter
                   t2bw[i].innerHTML = teams[0].players[i].name // bowler
@@ -537,8 +537,8 @@ function matchRun(idNo) {
                   bhcp2 = teams[1].players[i].bat_hand.split('-')[0]
                   hdb1[i].innerHTML = bhcp.charAt(0).toUpperCase() + bhcp.slice(1)
                   hdb2[i].innerHTML = bhcp.charAt(0).toUpperCase() + bhcp.slice(1)
-                  hdbw1[i].innerHTML = teams[0].players[i].bowler_style
-                  hdbw2[i].innerHTML = teams[1].players[i].bowler_style
+                  hdbw1[i].innerHTML = teams[1].players[i].bowler_style
+                  hdbw2[i].innerHTML = teams[0].players[i].bowler_style
                   console.log(bhcp)
                   console.log(bhcp2)
                }
