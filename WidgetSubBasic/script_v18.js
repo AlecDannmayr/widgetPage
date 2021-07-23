@@ -374,8 +374,8 @@ function matchRun(idNo) {
             st1.innerHTML = bat_now
             st2.innerHTML = bowl_now
 
-            st1t.innerHTML = shortNameOne
-            st2t.innerHTML = shortNameTwo
+            st1t.innerHTML = bat_now
+            st2t.innerHTML = bowl_now
 
             const inssNow = document.querySelector('#ins-now')
             inssNow.innerHTML = 'Inning: ' + inns_now
