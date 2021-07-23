@@ -370,13 +370,10 @@ function matchRun(idNo) {
             var { batting, bowling, bat_now, bowl_now, inns_now, inns1, inns2, inns3, inns4 } = msg.scorecard
             btnw = bat_now
             igsn = inns_now
-            if (igsn == 1 || igsn == 3) {
-               st1.innerHTML = shortNameOne
-               st2.innerHTML = shortNameTwo
-            } else if (igsn == 2 || igsn == 4) {
-               st1.innerHTML = shortNameTwo
-               st2.innerHTML = shortNameOne
-            }
+
+            st1.innerHTML = bat_now
+            st2.innerHTML = bowl_now
+
             st1t.innerHTML = shortNameOne
             st2t.innerHTML = shortNameTwo
 
