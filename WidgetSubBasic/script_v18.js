@@ -502,9 +502,11 @@ function matchRun(idNo) {
             if (btnw == isBatFirst) {
                st1.innerHTML = shortNameOne
                st2.innerHTML = shortNameTwo
+               console.log('True')
             } else if (btnw != isBatFirst) {
                st1.innerHTML = shortNameTwo
                st2.innerHTML = shortNameOne
+               console.log('False')
             }
 
             st1t.innerHTML = shortNameOne
