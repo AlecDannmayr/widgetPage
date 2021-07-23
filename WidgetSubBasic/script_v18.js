@@ -371,7 +371,7 @@ function matchRun(idNo) {
             btnw = bat_now
             igsn = inns_now
 
-            if (btnw == 'away') {
+            if (btnw == mt1.textContent) {
                st1.innerHTML = shortNameTwo
                st2.innerHTML = shortNameOne
                console.log('Bat Now')
