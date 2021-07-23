@@ -954,7 +954,7 @@ function matchRun(idNo) {
                         rt[it].style.cssText = 'background-color: #162738; color: #fff;padding: 6.4px 10px;'
                         break
                      case '6':
-                        rt[it].style.cssText = 'background-color: #F96D33; color: #fff; padding: 6.4px 10px;'
+                        rt[it].style.cssText = 'background-color: #F96D33; color: #fff; padding: 7.4px 10px border: 0px solid #ddd;'
                         break
                      case '4ar':
                         rt[it].style.cssText = 'background-color: #162738; color: #000000;padding: 6.4px 8px'
