@@ -502,17 +502,20 @@ function matchRun(idNo) {
             st1t.innerHTML = shortNameOne
             st2t.innerHTML = shortNameTwo
 
+            let st1i = document.querySelector('.selection-team-one'),
+               st2i = document.querySelector('.selection-team-one')
+
             for (i = 0; i < t1p.length; i++) {
                if (t1n == teams[0].short_name) {
-                  st1 = teams[0].short_name
-                  st2 = teams[1].short_name
-                  st1.innerHTML = teams[0].short_name
-                  st2.innerHTML = teams[1].short_name
+                  st1i = teams[0].short_name
+                  st2i = teams[1].short_name
+                  st1i.innerHTML = teams[0].short_name
+                  st2i.innerHTML = teams[1].short_name
                } else {
-                  st1 = teams[0].short_name
-                  st2 = teams[1].short_name
-                  st1.innerHTML = teams[1].short_name
-                  st2.innerHTML = teams[0].short_name
+                  st1i = teams[0].short_name
+                  st2i = teams[1].short_name
+                  st1i.innerHTML = teams[1].short_name
+                  st2i.innerHTML = teams[0].short_name
                }
                console.log(btnw)
                if (btnw == teams[0].name) {
