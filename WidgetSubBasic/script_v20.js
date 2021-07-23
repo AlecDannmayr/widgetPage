@@ -383,8 +383,6 @@ function matchRun(idNo) {
                console.log('Not bat now')
             }
             */
-            st1t.innerHTML = shortNameOne
-            st2t.innerHTML = shortNameTwo
 
             const inssNow = document.querySelector('#ins-now')
             inssNow.innerHTML = 'Inning: ' + inns_now
@@ -526,9 +524,15 @@ function matchRun(idNo) {
                if (t1n == teams[0].short_name) {
                   shortNameOne = teams[0].short_name
                   shortNameTwo = teams[1].short_name
+                  st1t.innerHTML = shortNameOne
+                  st2t.innerHTML = shortNameTwo
+                  console.log('tu')
                } else {
                   shortNameOne = teams[1].short_name
                   shortNameTwo = teams[0].short_name
+                  st1t.innerHTML = shortNameTwo
+                  st2t.innerHTML = shortNameOne
+                  console.log('nu')
                }
 
                if (btnw == teams[0].name) {
