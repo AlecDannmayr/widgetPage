@@ -370,7 +370,10 @@ function matchRun(idNo) {
             var { batting, bowling, bat_now, bowl_now, inns_now, inns1, inns2, inns3, inns4 } = msg.scorecard
             btnw = bat_now
             igsn = inns_now
+            st1.innerHTML = btnw
+            st2.innerHTML = igsn
 
+            /*
             if (btnw == mt1.textContent) {
                st1.innerHTML = shortNameTwo
                st2.innerHTML = shortNameOne
@@ -380,6 +383,7 @@ function matchRun(idNo) {
                st2.innerHTML = shortNameTwo
                console.log('Not bat now')
             }
+            */
             st1t.innerHTML = shortNameOne
             st2t.innerHTML = shortNameTwo
 
