@@ -930,7 +930,7 @@ function matchRun(idNo) {
                for (it = 0; it < ovlg; it++) {
                   switch (rt[it].textContent) {
                      case '-':
-                        rt[it].style.cssText = 'background-color: #b1c4c4; color: #fff; padding: 6.4px 12px;'
+                        rt[it].style.cssText = 'background-color: #b1c4c4; color: #fff; padding: 6.4px 10px;'
                         break
                      case '':
                         rt[it].style.cssText = 'background-color: #b1c4c4; color: #fff; padding: 6.4px 13px;'
