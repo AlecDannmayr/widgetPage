@@ -510,7 +510,6 @@ function matchRun(idNo) {
                   st2.innerHTML = teams[1].short_name
                } else {
                   st1 = teams[0].short_name
-
                   st2 = teams[1].short_name
                   st1.innerHTML = teams[1].short_name
                   st2.innerHTML = teams[0].short_name
