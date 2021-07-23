@@ -230,7 +230,7 @@ function matchRun(idNo) {
             // Changes match Stable to Waiting for Bowl
             gsts.innerHTML = sist
 
-            if (scoreboard[0].name === 'away') {
+            if (scoreboard[0].name == 'away') {
                hoa = 'away'
             }
 
@@ -371,11 +371,15 @@ function matchRun(idNo) {
             btnw = bat_now
             igsn = inns_now
 
-            st1.innerHTML = bat_now
-            st2.innerHTML = bowl_now
-
-            st1t.innerHTML = bat_now
-            st2t.innerHTML = bowl_now
+            if (hoa == 'away') {
+               st1.innerHTML = shortNameTwo
+               st2.innerHTML = shortNameOne
+            } else {
+               st1.innerHTML = shortNameOne
+               st2.innerHTML = shortNameTwo
+            }
+            st1t.innerHTML = shortNameOne
+            st2t.innerHTML = shortNameTwo
 
             const inssNow = document.querySelector('#ins-now')
             inssNow.innerHTML = 'Inning: ' + inns_now
