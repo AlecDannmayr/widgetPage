@@ -503,7 +503,7 @@ function matchRun(idNo) {
             st2t.innerHTML = shortNameTwo
 
             for (i = 0; i < t1p.length; i++) {
-               if (t1n == teams[0].short_name) {
+               if (t1n != teams[0].short_name) {
                   shortNameOne = teams[0].short_name
                   shortNameTwo = teams[1].short_name
                } else {
