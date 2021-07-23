@@ -372,18 +372,6 @@ function matchRun(idNo) {
             btnw = bat_now
             igsn = inns_now
 
-            /*
-            if (btnw == mt1.textContent) {
-               st1.innerHTML = shortNameTwo
-               st2.innerHTML = shortNameOne
-               console.log('Bat Now')
-            } else {
-               st1.innerHTML = shortNameOne
-               st2.innerHTML = shortNameTwo
-               console.log('Not bat now')
-            }
-            */
-
             const inssNow = document.querySelector('#ins-now')
             inssNow.innerHTML = 'Inning: ' + inns_now
 
@@ -513,11 +501,9 @@ function matchRun(idNo) {
             if (btnw == teams[0].name) {
                st1.innerHTML = teams[0].short_name
                st2.innerHTML = teams[1].short_name
-               console.log('First team neam is equal to bat now')
             } else if (btnw == teams[1].name) {
                st1.innerHTML = teams[1].short_name
                st2.innerHTML = teams[0].short_name
-               console.log('Second team neam is equal to bat now')
             }
 
             for (i = 0; i < t1p.length; i++) {
@@ -526,13 +512,11 @@ function matchRun(idNo) {
                   shortNameTwo = teams[1].short_name
                   st1t.innerHTML = shortNameOne
                   st2t.innerHTML = shortNameTwo
-                  console.log('tu')
                } else {
                   shortNameOne = teams[1].short_name
                   shortNameTwo = teams[0].short_name
                   st1t.innerHTML = shortNameTwo
                   st2t.innerHTML = shortNameOne
-                  console.log('nu')
                }
 
                if (btnw == teams[0].name) {
