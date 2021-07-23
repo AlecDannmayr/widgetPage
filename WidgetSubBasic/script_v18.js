@@ -367,13 +367,14 @@ function matchRun(idNo) {
          // Scorecard case
 
          case 'scorecard':
-            var { batting, bowling, bat_now, bowl_now, inns_now, inns1, inns2, inns3, inns4 } = msg.scorecard
-            btnw = bat_now
-            igsn = inns_now
-            if (igsn == 1 || igsn == 3) {
+            var { batting, bowling, bat_now, bowl_now, inns_now, inns1, inns2, inns3, inns4 } = msg.scorecard,
+               btnw = bat_now,
+               igsn = inns_now,
+               isBatFirst = mt1.textContent
+            if (btnw == isBatFirst) {
                st1.innerHTML = shortNameOne
                st2.innerHTML = shortNameTwo
-            } else if (igsn == 2 || igsn == 4) {
+            } else if (btnw != isBatFirst) {
                st1.innerHTML = shortNameTwo
                st2.innerHTML = shortNameOne
             }
