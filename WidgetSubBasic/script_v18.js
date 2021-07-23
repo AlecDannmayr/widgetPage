@@ -518,8 +518,8 @@ function matchRun(idNo) {
                if (btnw == teams[0].name) {
                   t1b[i].innerHTML = teams[0].players[i].name // batter
                   t2bw[i].innerHTML = teams[1].players[i].name // bowler
-                  t1p[i].innerHTML = teams[1].players[i].name
-                  t2p[i].innerHTML = teams[0].players[i].name
+                  t1p[i].innerHTML = teams[0].players[i].name
+                  t2p[i].innerHTML = teams[1].players[i].name
                   hdbw1[i].innerHTML = teams[0].players[i].bowler_style
                   hdbw2[i].innerHTML = teams[1].players[i].bowler_style
                   bhcp = teams[0].players[i].bat_hand.split('-')[0]
