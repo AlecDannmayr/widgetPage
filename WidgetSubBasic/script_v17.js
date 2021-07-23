@@ -539,9 +539,6 @@ function matchRun(idNo) {
                   bhcp2 = teams[0].players[i].bat_hand.split('-')[0]
                   hdb1[i].innerHTML = bhcp.charAt(0).toUpperCase() + bhcp.slice(1)
                   hdb2[i].innerHTML = bhcp2.charAt(0).toUpperCase() + bhcp2.slice(1)
-
-                  console.log(bhcp)
-                  console.log(bhcp2)
                }
             }
 
@@ -933,10 +930,10 @@ function matchRun(idNo) {
                for (it = 0; it < ovlg; it++) {
                   switch (rt[it].textContent) {
                      case '-':
-                        rt[it].style.cssText = 'background-color: #2F4F4F; color: #fff; padding: 6.4px 10px;'
+                        rt[it].style.cssText = 'background-color: #b1c4c4; color: #fff; padding: 6.4px 10px;'
                         break
                      case '':
-                        rt[it].style.cssText = 'background-color: #2F4F4F; color: #fff; padding: 6.4px 13px;'
+                        rt[it].style.cssText = 'background-color: #b1c4c4; color: #fff; padding: 6.4px 13px;'
                         break
                      case '0':
                         rt[it].style.cssText = 'background-color: #fff; color: #000000; padding: 6.4px 10px;'
