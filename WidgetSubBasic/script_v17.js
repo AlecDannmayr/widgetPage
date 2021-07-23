@@ -930,7 +930,7 @@ function matchRun(idNo) {
                for (it = 0; it < ovlg; it++) {
                   switch (rt[it].textContent) {
                      case '-':
-                        rt[it].style.cssText = 'background-color: #b1c4c4; color: #fff; padding: 6.4px 10px;'
+                        rt[it].style.cssText = 'background-color: #b1c4c4; color: #fff; padding: 6.4px 12px;'
                         break
                      case '':
                         rt[it].style.cssText = 'background-color: #b1c4c4; color: #fff; padding: 6.4px 13px;'
@@ -942,7 +942,7 @@ function matchRun(idNo) {
                         rt[it].style.cssText = 'background-color: #fff; color: #000000;padding: 6.4px 10px;'
                         break
                      case '2':
-                        rt[it].style.cssText = 'background-color: #2188CD; color: #000000;padding: 6.4px 10px;'
+                        rt[it].style.cssText = 'background-color: #2188CD; color: #000000;padding: 7.4px 10px; border: 0px solid #ddd;'
                         break
                      case '3':
                         rt[it].style.cssText = 'background-color: #2188CD; color: #000000;padding: 6.4px 10px;'
@@ -954,7 +954,7 @@ function matchRun(idNo) {
                         rt[it].style.cssText = 'background-color: #162738; color: #fff;padding: 6.4px 10px;'
                         break
                      case '6':
-                        rt[it].style.cssText = 'background-color: #F96D33; color: #fff; padding: 7.4px 10px border: 0px solid #ddd;'
+                        rt[it].style.cssText = 'background-color: #F96D33; color: #fff; padding: 7.4px 10px; border: 0px solid #ddd;'
                         break
                      case '4ar':
                         rt[it].style.cssText = 'background-color: #162738; color: #000000;padding: 6.4px 8px'
