@@ -371,12 +371,14 @@ function matchRun(idNo) {
             btnw = bat_now
             igsn = inns_now
 
-            if (hoa == 'away') {
+            if (btnw == 'away') {
                st1.innerHTML = shortNameTwo
                st2.innerHTML = shortNameOne
+               console.log('Bat Now')
             } else {
                st1.innerHTML = shortNameOne
                st2.innerHTML = shortNameTwo
+               console.log('Not bat now')
             }
             st1t.innerHTML = shortNameOne
             st2t.innerHTML = shortNameTwo
