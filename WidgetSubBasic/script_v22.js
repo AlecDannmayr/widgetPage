@@ -216,11 +216,9 @@ function matchRun(idNo) {
          case 'event':
             var { scoreline, event_description, scoreboard, event_status } = msg.event
             var bip = document.getElementById('third-header-game-info')
-           
-            
-        for (i = 0; i < scoreboard.length; i++) {
-               if (scoreboard[i].value == 100 && scoreboard[i].name == 'Max Overs')
-                isHundreds = true
+
+            for (i = 0; i < scoreboard.length; i++) {
+               if (scoreboard[i].value == 100 && scoreboard[i].name == 'Max Overs') isHundreds = true
             }
             // Indicates break-in-play status
 
