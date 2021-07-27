@@ -498,13 +498,21 @@ function matchRun(idNo) {
 
             // Check all of this! // if innings1team === teams[p]
 
+            let tc1, tc2
+
             if (btnw == teams[0].name) {
                st1.innerHTML = teams[0].short_name
                st2.innerHTML = teams[1].short_name
+               tc1 = teams[0].colour
+               tc2 = teams[1].colour
             } else if (btnw == teams[1].name) {
                st1.innerHTML = teams[1].short_name
                st2.innerHTML = teams[0].short_name
+               tc1 = teams[1].colour
+               tc2 = teams[0].colour
             }
+
+            console.log(tc1, tc2)
 
             for (i = 0; i < t1p.length; i++) {
                if (t1n == teams[0].short_name) {
