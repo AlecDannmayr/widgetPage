@@ -59,7 +59,8 @@ let g2h = document.getElementById('second-header'),
    countHundreds = 0,
    bat_now,
    btnw,
-   bowl_now
+   bowl_now,
+   ovlg
 
 gsts.innerHTML = ''
 wi1.style.display = 'none'
@@ -215,12 +216,12 @@ function matchRun(idNo) {
          case 'event':
             var { scoreline, event_description, scoreboard, event_status } = msg.event
             var bip = document.getElementById('third-header-game-info')
-            //   isHundreds = parseInt(msg.event.scoreboard.find((line) => line.name == 'Max Overs')) == 100
-
-            for (i = 0; i < scoreboard.length; i++) {
-               if (scoreboard[i].value == 100 && scoreboard[i].name == 'Max Overs') console.log(true)
+           
+            
+        for (i = 0; i < scoreboard.length; i++) {
+               if (scoreboard[i].value == 100 && scoreboard[i].name == 'Max Overs')
+                isHundreds = true
             }
-
             // Indicates break-in-play status
 
             if (event_description === 'Break in Play - Lunch') {
