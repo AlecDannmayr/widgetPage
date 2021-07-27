@@ -72,7 +72,6 @@ window.addEventListener('load', function () {
          for (i = 0; i < r.length; i++) {
             if (r[i].start.substring(0, 10) == nuDt) {
                filtered = r[i]
-               console.log(filtered)
                cmip++
                nA = document.createElement('li')
                nA.setAttribute('class', 'sidebar-item-fixtures')
@@ -104,6 +103,9 @@ window.addEventListener('load', function () {
             dt[ii].appendChild(ad)
             sif[ii].style.cssText = 'padding-right: 40px;'
          }
+
+         const rmv = document.getElementsByClassName('sidebar-item-fixtures')[0]
+         rmv.parentNode.removeChild(rmv)
 
          if (cmip == 0) {
             // Checks for games Today and outputs as var 'filtered'
