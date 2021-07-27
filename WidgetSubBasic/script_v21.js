@@ -215,8 +215,12 @@ function matchRun(idNo) {
          case 'event':
             var { scoreline, event_description, scoreboard, event_status } = msg.event
             var bip = document.getElementById('third-header-game-info')
-            isHundreds = parseInt(msg.event.scoreboard.find((line) => line.name == 'Max Overs')) == '100'
-            console.log(isHundreds)
+            //   isHundreds = parseInt(msg.event.scoreboard.find((line) => line.name == 'Max Overs')) == 100
+
+            for (i = 0; i < scoreboard.length; i++) {
+               if (scoreboard[i].value == 100 && scoreboard[i].name == 'Max Overs') console.log(true)
+            }
+
             // Indicates break-in-play status
 
             if (event_description === 'Break in Play - Lunch') {
