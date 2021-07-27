@@ -10,7 +10,7 @@ window.addEventListener('load', function () {
 
    fixturesApi
       .then((response) => response.json())
-      .then((json) => {
+      .then(;(json) => {
          var r = json.matches,
             cmip = 0,
             nxndc = 0,
@@ -66,6 +66,17 @@ window.addEventListener('load', function () {
             filtered,
             notf = 0,
             fixt
+
+         var a = moment.tz('2013-11-18 11:55', 'Asia/Taipei')
+         var b = moment.tz('2013-11-18 11:55', 'America/Toronto')
+
+         a.format() // 2013-11-18T11:55:00+08:00
+         b.format() // 2013-11-18T11:55:00-05:00
+
+         a.utc().format() // 2013-11-18T03:55Z
+         b.utc().format() // 2013-11-18T16:55Z
+
+         console.log(a, b)
 
          //  (moments.format().substring(11, 19), r[2].start.substring(11, 19))
          let ftxt = document.getElementsByClassName('fixture-time')
