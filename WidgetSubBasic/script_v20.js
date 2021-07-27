@@ -937,10 +937,10 @@ function matchRun(idNo) {
                         rt[it].style.cssText = 'background-color: #CCCCCC; color: #fff; padding: 6.4px 13px;'
                         break
                      case '0':
-                        rt[it].style.cssText = 'background-color: #fff; color: #000000; padding: 6.4px 10px;'
+                        rt[it].style.cssText = 'background-color: #CCCCCC; color: #000000; padding: 6.4px 10px;'
                         break
                      case '1':
-                        rt[it].style.cssText = 'background-color: #fff; color: #000000;padding: 6.4px 10px;'
+                        rt[it].style.cssText = 'background-color: #CCCCCC; color: #000000;padding: 6.4px 10px;'
                         break
                      case '2':
                         rt[it].style.cssText = 'background-color: #2188CD; color: #000000;padding: 6.4px 10px;'
