@@ -72,6 +72,7 @@ window.addEventListener('load', function () {
          for (i = 0; i < r.length; i++) {
             if (r[i].start.substring(0, 10) == nuDt) {
                filtered = r[i]
+               console.log(filtered)
                cmip++
                nA = document.createElement('li')
                nA.setAttribute('class', 'sidebar-item-fixtures')
@@ -127,14 +128,7 @@ window.addEventListener('load', function () {
                nxgn = document.querySelector('#nxgn')
             gmn.innerHTML = '<br>No Live Games'
          }
-         /*
 
-         if (nxndc != 0) {
-            nxgn.innerHTML = '<br>' + nxndc
-         } else {
-            nxgn.innerHTML = 'No Games Tomorrow'
-         }
-*/
          // Listens for live games from fixtures and sends game did of game to content window and runs live game socket
 
          document.addEventListener(
