@@ -563,11 +563,11 @@ function matchRun(idNo) {
             const wpb = document.getElementById('win-probability-bar')
 
             if (teams[0].name == mt1.textContent) {
-               pb.style.backgroundColor = '#' + teams[0].colour
-               wpb.style.backgroundColor = '#' + teams[1].colour
+               pb.style.backgroundColor = '#' + teams[0].team_colour
+               wpb.style.backgroundColor = '#' + teams[1].team_colour
             } else if (teams[1].name == mt2.textContent) {
-               pb.style.backgroundColor = '#' + teams[1].colour
-               wpb.style.backgroundColor = '#' + teams[0].colour
+               pb.style.backgroundColor = '#' + teams[1].team_colour
+               wpb.style.backgroundColor = '#' + teams[0].team_colour
             } else {
                return
             }
