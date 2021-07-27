@@ -215,7 +215,7 @@ function matchRun(idNo) {
          case 'event':
             var { scoreline, event_description, scoreboard, event_status } = msg.event
             var bip = document.getElementById('third-header-game-info')
-            isHundreds = parseInt(msg.event.scoreboard.find((line) => line.name == 'Max Overs')) == 100
+            isHundreds = parseInt(msg.event.scoreboard.find((line) => line.name == 'Max Overs')) == '100'
             console.log(isHundreds)
             // Indicates break-in-play status
 
