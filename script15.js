@@ -76,7 +76,7 @@ window.addEventListener('load', function () {
          a.utc().format() // 2013-11-18T03:55Z
          b.utc().format() // 2013-11-18T16:55Z
 
-         console.log(a, b)
+         console.log(a, b);
 
          //  (moments.format().substring(11, 19), r[2].start.substring(11, 19))
          let ftxt = document.getElementsByClassName('fixture-time')
