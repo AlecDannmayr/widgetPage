@@ -433,7 +433,7 @@ socket.onmessage = function (event) {
 
          // Takes extras object transforms into array and used reduce to add values together
 
-         const extrar = Object.values(insNo.extras),
+         const extrar = Object.values(inns1.extras),
             addext = extrar.reduce(function (acc, val) {
                return acc + val
             }, 0)
