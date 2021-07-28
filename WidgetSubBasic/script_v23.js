@@ -444,9 +444,9 @@ socket.onmessage = function (event) {
             t16s[j].innerHTML = inns1.batting[j].sixes
             t2bnb[j].innerHTML = inns1.bowling[j].nb
             t2bo[j].innerHTML = inns1.bowling[j].overs
-            t2br[j].innerHTML = inns1bowling[j].runs
+            t2br[j].innerHTML = inns1.bowling[j].runs
             t2bw2[j].innerHTML = inns1.bowling[j].wd
-            stts[j].innerHTML = [0].batting[j].status.replace(/,[^,]+$/, '')
+            stts[j].innerHTML = inns1.batting[j].status.replace(/,[^,]+$/, '')
          }
                          
                      
