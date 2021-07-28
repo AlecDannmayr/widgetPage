@@ -438,8 +438,6 @@ function matchRun(idNo) {
             console.log(insNo.batting[i].name)
             t1b[i].innerHtml = insNo.batting[i].name
          }
-
-
          */
 
             tbs.addEventListener('click', function () {
