@@ -411,7 +411,7 @@ socket.onmessage = function (event) {
             t2bo2 = document.querySelectorAll('.bw1o2'),
             t2br2 = document.querySelectorAll('.bw1r2'),
             t2bw22 = document.querySelectorAll('.bw1w2'),
-            t2bw222 = document.getElementsByClassName('bw1sn2')
+            t2bw222 = document.getElementsByClassName('bw1nb2')
          
 
          // switch statement looks for inning no
