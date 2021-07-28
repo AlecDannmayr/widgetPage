@@ -413,10 +413,6 @@ socket.onmessage = function (event) {
             t2bw22 = document.querySelectorAll('.bw1w2'),
             t2bw222 = document.getElementsByClassName('bw1nb2')
 
-
-
-         
-
          // switch statement looks for inning no
 
          switch (inns_now) {
@@ -436,7 +432,6 @@ socket.onmessage = function (event) {
 
          // Takes extras object transforms into array and used reduce to add values together
 
-
          for (j = 0; j < t1r.length; j++) {
             t1r[j].innerHTML = inns1.batting[j].runs
             t1b2[j].innerHTML = inns1.batting[j].balls
@@ -448,111 +443,105 @@ socket.onmessage = function (event) {
             t2bw2[j].innerHTML = inns1.bowling[j].wd
             stts[j].innerHTML = inns1.batting[j].status.replace(/,[^,]+$/, '')
          }
-                         
-                     
 
-           
          /* Batting order */
 
-          const extrar = Object.values(inns1.extras),
-             addext = extrar.reduce(function (acc, val) {
-                return acc + val
-             }, 0)
+         const extrar = Object.values(inns1.extras),
+            addext = extrar.reduce(function (acc, val) {
+               return acc + val
+            }, 0)
 
-          ex1[0].innerText = addext
-          tl1[0].innerText = t1fis.textContent + t1fw.textContent
-        
-            for (i = 0; i < t1b.length; i++) {
-               t1b[i].innerHTML = inns1.batting[i].name
-               if (t1b[i].textContent == '') {
-                  t1b[i].style.display = 'none'
-                  stts[i].style.display = 'none'
-                  t1b2[i].style.display = 'none'
-                  t1r[i].style.display = 'none'
-                  t14s[i].style.display = 'none'
-                  t16s[i].style.display = 'none'
+         ex1[0].innerText = addext
+         tl1[0].innerText = t1fis.textContent + t1fw.textContent
+
+         for (i = 0; i < t1b.length; i++) {
+            t1b[i].innerHTML = inns1.batting[i].name
+            if (t1b[i].textContent == '') {
+               t1b[i].style.display = 'none'
+               stts[i].style.display = 'none'
+               t1b2[i].style.display = 'none'
+               t1r[i].style.display = 'none'
+               t14s[i].style.display = 'none'
+               t16s[i].style.display = 'none'
+            } else {
+               t1b[i].style.display = 'block'
+               stts[i].style.display = 'block'
+               t1b2[i].style.display = 'block'
+               t1r[i].style.display = 'block'
+               t14s[i].style.display = 'block'
+               t16s[i].style.display = 'block'
+            }
+         }
+
+         for (i = 0; i < t2bw.length; i++) {
+            t2bw[i].innerHTML = inns1.bowling[i].name
+            if (inns1.bowling[i].name == '') {
+               t2bnb[i].style.display = 'none'
+               t2bo[i].style.display = 'none'
+               t2br[i].style.display = 'none'
+               t2bw2[i].style.display = 'none'
+            } else {
+               t2bnb[i].style.display = 'block'
+               t2bo[i].style.display = 'block'
+               t2br[i].style.display = 'block'
+               t2bw2[i].style.display = 'block'
+            }
+         }
+
+         if (inns2 != null) {
+            for (j = 0; j < t1r.length; j++) {
+               b1r2[j].innerHTML = [0].batting[j].runs
+               b1b2[j].innerHTML = [0].batting[j].balls
+               b14s2[j].innerHTML = [0].batting[j].fours
+               b16s2[j].innerHTML = [0].batting[j].sixes
+               t2bnb2[j].innerHTML = [0].bowling[j].nb
+               t2bo2[j].innerHTML = [0].bowling[j].overs
+               t2br2[j].innerHTML = [0].bowling[j].runs
+               t2bw22[j].innerHTML = [0].bowling[j].wd
+               b1st2[j].innerHTML = [0].batting[j].status.replace(/,[^,]+$/, '')
+            }
+            const extrar = Object.values(inns2.extras),
+               addext = extrar.reduce(function (acc, val) {
+                  return acc + val
+               }, 0)
+            console.log('Ins 2')
+            ex2[0].innerText = addext
+            tl2[0].innerText = t1fis.textContent + t1fw.textConten
+
+            for (i = 0; i < b1sn2.length; i++) {
+               b1sn2[i].innerHTML = inns1.batting[i].name
+               if (b1sn2[i].textContent == '') {
+                  b1sn2[i].style.display = 'none'
+                  b1st2[i].style.display = 'none'
+                  b1b2[i].style.display = 'none'
+                  b1r2[i].style.display = 'none'
+                  b14s2[i].style.display = 'none'
+                  b16s2[i].style.display = 'none'
                } else {
-                  t1b[i].style.display = 'block'
-                  stts[i].style.display = 'block'
-                  t1b2[i].style.display = 'block'
-                  t1r[i].style.display = 'block'
-                  t14s[i].style.display = 'block'
-                  t16s[i].style.display = 'block'
+                  b1sn2[i].style.display = 'block'
+                  b1st2[i].style.display = 'block'
+                  b1b2[i].style.display = 'block'
+                  b1r2[i].style.display = 'block'
+                  b14s2[i].style.display = 'block'
+                  b16s2[i].style.display = 'block'
                }
             }
-
-            for (i = 0; i < t2bw.length; i++) {
-               t2bw[i].innerHTML = inns1.bowling[i].name
-               if (inns1.bowling[i].name == '') {
-                  t2bnb[i].style.display = 'none'
-                  t2bo[i].style.display = 'none'
-                  t2br[i].style.display = 'none'
-                  t2bw2[i].style.display = 'none'
-               } else {
-                  t2bnb[i].style.display = 'block'
-                  t2bo[i].style.display = 'block'
-                  t2br[i].style.display = 'block'
-                  t2bw2[i].style.display = 'block'
-               }
-            }
-
-
-
-       if (inns2 != null) {
-
-         for (j = 0; j < t1r.length; j++) {
-            b1r2[j].innerHTML = [0].batting[j].runs
-            b1b2[j].innerHTML = [0].batting[j].balls
-            b14s2[j].innerHTML = [0].batting[j].fours
-            b16s2[j].innerHTML = [0].batting[j].sixes
-            t2bnb2[j].innerHTML = [0].bowling[j].nb
-            t2bo2[j].innerHTML = [0].bowling[j].overs
-            t2br2[j].innerHTML = [0].bowling[j].runs
-            t2bw22[j].innerHTML = [0].bowling[j].wd
-            b1st2[j].innerHTML = [0].batting[j].status.replace(/,[^,]+$/, '')
-         } 
-          const extrar = Object.values(inns2.extras),
-             addext = extrar.reduce(function (acc, val) {
-                return acc + val
-             }, 0)
-console.log("Ins 2")
-          ex2[0].innerText = addext
-          tl2[0].innerText = t1fis.textContent + t1fw.textConten
-
-                for (i = 0; i < b1sn2.length; i++) {
-                   b1sn2[i].innerHTML = inns1.batting[i].name
-                   if (b1sn2[i].textContent == '') {
-                      b1sn2[i].style.display = 'none'
-                      b1st2[i].style.display = 'none'
-                      b1b2[i].style.display = 'none'
-                      b1r2[i].style.display = 'none'
-                      b14s2[i].style.display = 'none'
-                      b16s2[i].style.display = 'none'
-                   } else {
-                      b1sn2[i].style.display = 'block'
-                      b1st2[i].style.display = 'block'
-                      b1b2[i].style.display = 'block'
-                      b1r2[i].style.display = 'block'
-                      b14s2[i].style.display = 'block'
-                      b16s2[i].style.display = 'block'
-                   }
-                }
 
             for (i = 0; i < t2bnb2.length; i++) {
                t2bnb2[i].innerHTML = inns1.bowling[i].name
-                 if (t2bnb2[i].textContent == '') {
-                    t2bnb2[i].style.display = 'none'
-                    t2bo2[i].style.display = 'none'
-                    t2br2[i].style.display = 'none'
-                    t2bw22[i].style.display = 'none'
-                    t2bw222[i].style.display = 'none'
-                 } else {
-                    t2bnb2[i].style.display = 'block'
-                    t2bo2[i].style.display = 'block'
-                    t2br2[i].style.display = 'block'
-                    t2bw22[i].style.display = 'block'
-                    t2bw222[i].style.display = 'block'
-                 }
+               if (t2bnb2[i].textContent == '') {
+                  t2bnb2[i].style.display = 'none'
+                  t2bo2[i].style.display = 'none'
+                  t2br2[i].style.display = 'none'
+                  t2bw22[i].style.display = 'none'
+                  t2bw222[i].style.display = 'none'
+               } else {
+                  t2bnb2[i].style.display = 'block'
+                  t2bo2[i].style.display = 'block'
+                  t2br2[i].style.display = 'block'
+                  t2bw22[i].style.display = 'block'
+                  t2bw222[i].style.display = 'block'
+               }
             }
          }
 
@@ -569,8 +558,6 @@ console.log("Ins 2")
                scrglb[i].style.cssText = 'grid-template-rows: 30px;'
             }
          }
-
- 
 
          tbs.addEventListener('click', function () {
             sgt.style.display = 'block'
@@ -642,14 +629,13 @@ console.log("Ins 2")
 
          // Check all of this! // if innings1team === teams[p]
 
-     if (btnw == teams[0].name) {
-               st1.innerHTML = teams[0].short_name
-               st2.innerHTML = teams[1].short_name
-            } else if (btnw == teams[1].name) {
-               st1.innerHTML = teams[1].short_name
-               st2.innerHTML = teams[0].short_name
-            }
-
+         if (btnw == teams[0].name) {
+            st1.innerHTML = teams[0].short_name
+            st2.innerHTML = teams[1].short_name
+         } else if (btnw == teams[1].name) {
+            st1.innerHTML = teams[1].short_name
+            st2.innerHTML = teams[0].short_name
+         }
 
          for (i = 0; i < t1p.length; i++) {
             if (t1n == teams[0].short_name) {
