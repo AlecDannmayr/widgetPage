@@ -644,18 +644,14 @@ console.log("Ins 2")
             if (t1n == teams[0].short_name) {
                shortNameOne = teams[0].short_name
                shortNameTwo = teams[1].short_name
-               st1t.innerHTML = shortNameOne
-               st2t.innerHTML = shortNameTwo
+             
             } else {
                shortNameOne = teams[1].short_name
                shortNameTwo = teams[0].short_name
-               st1t.innerHTML = shortNameTwo
-               st2t.innerHTML = shortNameOne
+              
             }
 
                if (btnw == teams[0].name) {
-                  //  t1b[i].innerHTML = teams[0].players[i].name // batter
-                  //  t2bw[i].innerHTML = teams[1].players[i].name // bowler
                   t1p[i].innerHTML = teams[0].players[i].name
                   t2p[i].innerHTML = teams[1].players[i].name
                   hdbw1[i].innerHTML = teams[01].players[i].bowler_style
@@ -664,9 +660,9 @@ console.log("Ins 2")
                   bhcp2 = teams[1].players[i].bat_hand.split('-')[0]
                   hdb1[i].innerHTML = bhcp.charAt(0).toUpperCase() + bhcp.slice(1)
                   hdb2[i].innerHTML = bhcp2.charAt(0).toUpperCase() + bhcp2.slice(1)
+                    st1t.innerHTML = shortNameOne
+                    st2t.innerHTML = shortNameTwo
                } else {
-                  // t1b[i].innerHTML = teams[1].players[i].name // batter
-                  // t2bw[i].innerHTML = teams[0].players[i].name // bowler
                   t1p[i].innerHTML = teams[1].players[i].name
                   t2p[i].innerHTML = teams[0].players[i].name
                   hdbw1[i].innerHTML = teams[1].players[i].bowler_style
@@ -675,6 +671,8 @@ console.log("Ins 2")
                   bhcp2 = teams[0].players[i].bat_hand.split('-')[0]
                   hdb1[i].innerHTML = bhcp.charAt(0).toUpperCase() + bhcp.slice(1)
                   hdb2[i].innerHTML = bhcp2.charAt(0).toUpperCase() + bhcp2.slice(1)
+                   st1t.innerHTML = shortNameTwo
+                   st2t.innerHTML = shortNameOne
                }
          }
 
