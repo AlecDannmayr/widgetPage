@@ -47,6 +47,7 @@ let g2h = document.getElementById('second-header'),
    gsts = document.getElementById('third-header-game-status'),
    wi1 = document.getElementById('winner-image-team-one'),
    wi2 = document.getElementById('winner-image-team-two'),
+   t1b = document.getElementsByClassName('b1sn'),
    innings1battingteam,
    shortNameOne,
    shortNameTwo,
@@ -432,12 +433,10 @@ socket.onmessage = function (event) {
 
          /* Batting order */
 
-         let t1b = document.getElementsByClassName('b1sn')
-
          for (i = 0; i < t1b.length; i++) {
             t1b[i].innerHTML = insNo.batting[i].name
             if (t1b[i].textContent == '') {
-               t1b[i].display = 'none'
+               t1b[i].style.display = 'none'
             }
          }
 
