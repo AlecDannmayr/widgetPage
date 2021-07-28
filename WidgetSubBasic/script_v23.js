@@ -434,7 +434,7 @@ socket.onmessage = function (event) {
          }
 
          /* Batting order */
-         if (inns_now == 1 || inns_now == 3) {
+         if (inns_now == 2 || inns_now == 4) {
             for (i = 0; i < t1b.length; i++) {
                t1b[i].innerHTML = insNo.batting[i].name
                if (t1b[i].textContent == '') {
@@ -483,9 +483,8 @@ socket.onmessage = function (event) {
                   scrglb[i].style.cssText = 'grid-template-rows: 30px 20px;'
                }
             }
+         } else if (inns_now == 2 || inns_now == 4) {
          }
-
-         //   grid-template-rows: 30px 20px;
 
          tbs.addEventListener('click', function () {
             sgt.style.display = 'block'
