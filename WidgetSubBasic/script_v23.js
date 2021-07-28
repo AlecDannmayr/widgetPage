@@ -435,9 +435,9 @@ socket.onmessage = function (event) {
          let t1b = document.getElementsByClassName('b1sn')
 
          for (i = 0; i < t1b.length; i++) {
-            console.log(t1b[i])
-            t1b[i].innerHtml = insNo.batting[i].name
             console.log(insNo.batting[i].name)
+            t1b[i].innerHTML = insNo.batting[i].name
+            console.log(t1b[i])
          }
 
          tbs.addEventListener('click', function () {
