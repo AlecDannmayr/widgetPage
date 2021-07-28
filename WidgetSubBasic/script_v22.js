@@ -546,7 +546,7 @@ socket.onmessage = function (event) {
             }
 
             if (btnw == teams[0].name) {
-               t1b[i].innerHTML = teams[0].players[i].name // batter
+               //  t1b[i].innerHTML = teams[0].players[i].name // batter
                t2bw[i].innerHTML = teams[1].players[i].name // bowler
                t1p[i].innerHTML = teams[0].players[i].name
                t2p[i].innerHTML = teams[1].players[i].name
@@ -557,7 +557,7 @@ socket.onmessage = function (event) {
                hdb1[i].innerHTML = bhcp.charAt(0).toUpperCase() + bhcp.slice(1)
                hdb2[i].innerHTML = bhcp2.charAt(0).toUpperCase() + bhcp2.slice(1)
             } else {
-               t1b[i].innerHTML = teams[1].players[i].name // batter
+               //  t1b[i].innerHTML = teams[1].players[i].name // batter
                t2bw[i].innerHTML = teams[0].players[i].name // bowler
                t1p[i].innerHTML = teams[1].players[i].name
                t2p[i].innerHTML = teams[0].players[i].name
@@ -932,11 +932,11 @@ socket.onmessage = function (event) {
                      rt[2].innerHTML = fltin[i].b3
                      rt[3].innerHTML = fltin[i].b4
                      rt[4].innerHTML = fltin[i].b5
-                     rt[6].innerHTML = fltin[0].b1
-                     rt[7].innerHTML = fltin[0].b2
-                     rt[8].innerHTML = fltin[0].b3
-                     rt[9].innerHTML = fltin[0].b4
-                     rt[10].innerHTML = fltin[0].b5
+                     rt[5].innerHTML = fltin[0].b1
+                     rt[6].innerHTML = fltin[0].b2
+                     rt[7].innerHTML = fltin[0].b3
+                     rt[8].innerHTML = fltin[0].b4
+                     rt[9].innerHTML = fltin[0].b5
                   }
                } else if (fltinlt.length > 3) {
                   for (i = 0; i < fltinlt.length; i++) {
