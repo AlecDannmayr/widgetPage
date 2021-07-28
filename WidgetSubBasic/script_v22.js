@@ -432,8 +432,8 @@ function matchRun(idNo) {
 
             /* Batting order */
 
-            for (i = 0; i < batting.length; i++) {
-               console.log(batting[i].name)
+            for (i = 0; i < insNo.batting.length; i++) {
+               console.log(insNo.batting[i].name)
             }
 
             tbs.addEventListener('click', function () {
