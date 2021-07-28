@@ -397,7 +397,7 @@ socket.onmessage = function (event) {
             b1r2 = document.querySelectorAll('.b1r2'),
             b14s2 = document.querySelectorAll('.b14s2'),
             b16s2 = document.querySelectorAll('.b16s2'),
-             // Second Team extras and total
+            // Second Team extras and total
             ex2 = document.querySelectorAll('.ex2'),
             tl2 = document.querySelectorAll('.tl2'),
             // First team bowling
@@ -407,11 +407,11 @@ socket.onmessage = function (event) {
             t2bw2 = document.querySelectorAll('.bw1w'),
             t2bw = document.getElementsByClassName('bw1sn'),
             // Second team bowling
-            t2bnb2 = document.querySelectorAll('.bw1nb2'),
+            t2bnb2 = document.querySelectorAll('.bw1sn2'),
             t2bo2 = document.querySelectorAll('.bw1o2'),
             t2br2 = document.querySelectorAll('.bw1r2'),
             t2bw22 = document.querySelectorAll('.bw1w2'),
-            t2bw222 = document.getElementsByClassName('bw1sn2');
+            t2bw222 = document.getElementsByClassName('bw1sn2')
          
 
          // switch statement looks for inning no
@@ -511,16 +511,10 @@ socket.onmessage = function (event) {
                    }
                 }
 
-                           t2bnb2 = document.querySelectorAll('.bw1nb2'),
-            t2bo2 = document.querySelectorAll('.bw1o2'),
-            t2br2 = document.querySelectorAll('.bw1r2'),
-            t2bw22 = document.querySelectorAll('.bw1w2'),
-            t2bw222 = document.getElementsByClassName('bw1sn2');
-
             for (i = 0; i < t2bnb2.length; i++) {
                t2bnb2[i].innerHTML = inns1.bowling[i].name
                  if (t2bnb2[i].textContent == '') {
-                       t2bnb2[i].style.display = 'none'
+                    t2bnb2[i].style.display = 'none'
                     t2bo2[i].style.display = 'none'
                     t2br2[i].style.display = 'none'
                     t2bw22[i].style.display = 'none'
