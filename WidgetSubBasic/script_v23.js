@@ -461,7 +461,7 @@ socket.onmessage = function (event) {
             if (insNo.batting[i].name != '') {
                nA = document.createElement('span')
                nA.setAttribute('class', 'b1sn')
-               trl[6].append(nA)
+               trl[i].append(nA)
             }
          }
 
