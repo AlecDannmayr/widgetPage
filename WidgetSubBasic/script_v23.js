@@ -415,27 +415,25 @@ socket.onmessage = function (event) {
 
          // switch statement looks for inning no
 
-         inns_now = 4
-
          switch (inns_now) {
             case 1:
                insNo = inns1
-               ino3 = 1;
+               ino3 = inns1;
                intf = null
                break
             case 2:
                insNo = inns2
-               intf = 2
+               intf = inns2
                  ino3 = null;
                break
             case 3:
                insNo = inns3
-               ino3 = 3
+               ino3 = inns3
                intf = null
                break
             case 4:
                insNo = inns4
-                  intf = 4
+                  intf = inns4
                 ino3 = null
                break
          }
@@ -446,22 +444,22 @@ socket.onmessage = function (event) {
          // Takes extras object transforms into array and used reduce to add values together
 
          for (j = 0; j < t1r.length; j++) {
-            t1r[j].innerHTML = inns1.batting[j].runs
-            t1b2[j].innerHTML = inns1.batting[j].balls
-            t14s[j].innerHTML = inns1.batting[j].fours
-            t16s[j].innerHTML = inns1.batting[j].sixes
-            t2bnb[j].innerHTML = inns1.bowling[j].nb
-            t2bo[j].innerHTML = inns1.bowling[j].overs
-            t2br[j].innerHTML = inns1.bowling[j].runs
-            t2bw2[j].innerHTML = inns1.bowling[j].wd
-            stts[j].innerHTML = inns1.batting[j].status.replace(/,[^,]+$/, '')
+            t1r[j].innerHTML = ino3.batting[j].runs
+            t1b2[j].innerHTML = ino3.batting[j].balls
+            t14s[j].innerHTML = ino3.batting[j].fours
+            t16s[j].innerHTML = ino3.batting[j].sixes
+            t2bnb[j].innerHTML = ino3.bowling[j].nb
+            t2bo[j].innerHTML = ino3.bowling[j].overs
+            t2br[j].innerHTML = ino3.bowling[j].runs
+            t2bw2[j].innerHTML = ino3.bowling[j].wd
+            stts[j].innerHTML = ino3.batting[j].status.replace(/,[^,]+$/, '')
          }
                         
          /* Batting order */
 
 
 
-          const extrar = Object.values(inns1.extras),
+          const extrar = Object.values(ino3.extras),
              addext = extrar.reduce(function (acc, val) {
                 return acc + val
              }, 0)
@@ -470,7 +468,7 @@ socket.onmessage = function (event) {
           tl1[0].innerText = t1fis.textContent + t1fw.textContent
         
             for (i = 0; i < t1b.length; i++) {
-               t1b[i].innerHTML = inns1.batting[i].name
+               t1b[i].innerHTML = ino3.batting[i].name
                if (t1b[i].textContent == '') {
                   t1b[i].style.display = 'none'
                   stts[i].style.display = 'none'
@@ -489,8 +487,8 @@ socket.onmessage = function (event) {
             }
 
             for (i = 0; i < t2bw.length; i++) {
-               t2bw[i].innerHTML = inns1.bowling[i].name
-               if (inns1.bowling[i].name == '') {
+               t2bw[i].innerHTML = ino3.bowling[i].name
+               if (ino3.bowling[i].name == '') {
                   t2bnb[i].style.display = 'none'
                   t2bo[i].style.display = 'none'
                   t2br[i].style.display = 'none'
@@ -505,17 +503,17 @@ socket.onmessage = function (event) {
        if (inns2 != null) {
 
          for (j = 0; j < t1r.length; j++) {
-            b1r2[j].innerHTML = [0].batting[j].runs
-            b1b2[j].innerHTML = [0].batting[j].balls
-            b14s2[j].innerHTML = [0].batting[j].fours
-            b16s2[j].innerHTML = [0].batting[j].sixes
-            t2bnb2[j].innerHTML = [0].bowling[j].nb
-            t2bo2[j].innerHTML = [0].bowling[j].overs
-            t2br2[j].innerHTML = [0].bowling[j].runs
-            t2bw22[j].innerHTML = [0].bowling[j].wd
-            b1st2[j].innerHTML = [0].batting[j].status.replace(/,[^,]+$/, '')
+            b1r2[j].innerHTML = intf.batting[j].runs
+            b1b2[j].innerHTML = intf.batting[j].balls
+            b14s2[j].innerHTML = intf.batting[j].fours
+            b16s2[j].innerHTML = intf.batting[j].sixes
+            t2bnb2[j].innerHTML = intf.bowling[j].nb
+            t2bo2[j].innerHTML = intf.bowling[j].overs
+            t2br2[j].innerHTML = intf.bowling[j].runs
+            t2bw22[j].innerHTML = intf.bowling[j].wd
+            b1st2[j].innerHTML = intf.batting[j].status.replace(/,[^,]+$/, '')
          } 
-          const extrar = Object.values(inns2.extras),
+          const extrar = Object.values(intf.extras),
              addext = extrar.reduce(function (acc, val) {
                 return acc + val
              }, 0)
@@ -524,7 +522,7 @@ console.log("Ins 2")
           tl2[0].innerText = t1fis.textContent + t1fw.textConten
 
                 for (i = 0; i < b1sn2.length; i++) {
-                   b1sn2[i].innerHTML = inns1.batting[i].name
+                   b1sn2[i].innerHTML = intf.batting[i].name
                    if (b1sn2[i].textContent == '') {
                       b1sn2[i].style.display = 'none'
                       b1st2[i].style.display = 'none'
@@ -543,7 +541,7 @@ console.log("Ins 2")
                 }
 
             for (i = 0; i < t2bnb2.length; i++) {
-               t2bnb2[i].innerHTML = inns1.bowling[i].name
+               t2bnb2[i].innerHTML = intf.bowling[i].name
                  if (t2bnb2[i].textContent == '') {
                     t2bnb2[i].style.display = 'none'
                     t2bo2[i].style.display = 'none'
