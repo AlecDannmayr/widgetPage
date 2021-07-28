@@ -434,9 +434,9 @@ socket.onmessage = function (event) {
          }
 
          /* Batting order */
-         if (inns_now == 1 || inns_now == 3) {
+        
             for (i = 0; i < t1b.length; i++) {
-               t1b[i].innerHTML = insNo.batting[i].name
+               t1b[i].innerHTML = inns1.batting[i].name
                if (t1b[i].textContent == '') {
                   t1b[i].style.display = 'none'
                   stts[i].style.display = 'none'
@@ -456,8 +456,8 @@ socket.onmessage = function (event) {
             }
 
             for (i = 0; i < t2bw.length; i++) {
-               t2bw[i].innerHTML = insNo.bowling[i].name
-               if (insNo.bowling[i].name == '') {
+               t2bw[i].innerHTML = inns1.bowling[i].name
+               if (inns1.bowling[i].name == '') {
                   t2bnb[i].style.display = 'none'
                   t2bo[i].style.display = 'none'
                   t2br[i].style.display = 'none'
@@ -469,42 +469,9 @@ socket.onmessage = function (event) {
                   t2bw2[i].style.display = 'block'
                }
             }
-         } else if (inns_now == 2 || inns_now == 4) {
-            for (i = 0; i < t1b.length; i++) {
-               t1b[i].innerHTML = insNo.batting[i].name
-               if (t1b[i].textContent == '') {
-                  t1b[i].style.display = 'none'
-                  stts[i].style.display = 'none'
-                  t1b2[i].style.display = 'none'
-                  t1r[i].style.display = 'none'
-                  t14s[i].style.display = 'none'
-                  t16s[i].style.display = 'none'
-                  btl++
-               } else {
-                  t1b[i].style.display = 'block'
-                  stts[i].style.display = 'block'
-                  t1b2[i].style.display = 'block'
-                  t1r[i].style.display = 'block'
-                  t14s[i].style.display = 'block'
-                  t16s[i].style.display = 'block'
-               }
-            }
-
-            for (i = 0; i < t2bw.length; i++) {
-               t2bw[i].innerHTML = insNo.bowling[i].name
-               if (insNo.bowling[i].name == '') {
-                  t2bnb[i].style.display = 'none'
-                  t2bo[i].style.display = 'none'
-                  t2br[i].style.display = 'none'
-                  t2bw2[i].style.display = 'none'
-               } else {
-                  t2bnb[i].style.display = 'block'
-                  t2bo[i].style.display = 'block'
-                  t2br[i].style.display = 'block'
-                  t2bw2[i].style.display = 'block'
-               }
-            }
-         }
+         
+         
+         
 
          let scrgl = document.querySelectorAll('.scorecard-grid')
          for (i = 0; i < scrgl.length; i++) {
