@@ -454,7 +454,12 @@ socket.onmessage = function (event) {
                t16s[i].style.display = 'block'
             }
          }
-         console.log(btl)
+
+         const trl = document.querySelectorAll('.b1sn')
+
+         if (insNo.batting[i].name != '') {
+            console.log(insNo.batting[i].name)
+         }
 
          for (i = 0; i < t2bw.length; i++) {
             t2bw[i].innerHTML = insNo.bowling[i].name
