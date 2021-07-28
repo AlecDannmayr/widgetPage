@@ -60,7 +60,8 @@ let g2h = document.getElementById('second-header'),
    bat_now,
    btnw,
    bowl_now,
-   ovlg
+   ovlg,
+   btl = 0
 
 gsts.innerHTML = ''
 wi1.style.display = 'none'
@@ -443,6 +444,7 @@ socket.onmessage = function (event) {
                t1r[i].style.display = 'none'
                t14s[i].style.display = 'none'
                t16s[i].style.display = 'none'
+               btl++
             } else {
                t1b[i].style.display = 'block'
                stts[i].style.display = 'block'
@@ -452,6 +454,7 @@ socket.onmessage = function (event) {
                t16s[i].style.display = 'block'
             }
          }
+         console.log(btl)
 
          for (i = 0; i < t2bw.length; i++) {
             t2bw[i].innerHTML = insNo.bowling[i].name
