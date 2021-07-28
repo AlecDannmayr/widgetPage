@@ -434,55 +434,54 @@ socket.onmessage = function (event) {
          }
 
          /* Batting order */
-
-         for (i = 0; i < t1b.length; i++) {
-            t1b[i].innerHTML = insNo.batting[i].name
-            if (t1b[i].textContent == '') {
-               t1b[i].style.display = 'none'
-               stts[i].style.display = 'none'
-               t1b2[i].style.display = 'none'
-               t1r[i].style.display = 'none'
-               t14s[i].style.display = 'none'
-               t16s[i].style.display = 'none'
-               btl++
-            } else {
-               t1b[i].style.display = 'block'
-               stts[i].style.display = 'block'
-               t1b2[i].style.display = 'block'
-               t1r[i].style.display = 'block'
-               t14s[i].style.display = 'block'
-               t16s[i].style.display = 'block'
+         if (inns_now == 1 || inns_now == 3) {
+            for (i = 0; i < t1b.length; i++) {
+               t1b[i].innerHTML = insNo.batting[i].name
+               if (t1b[i].textContent == '') {
+                  t1b[i].style.display = 'none'
+                  stts[i].style.display = 'none'
+                  t1b2[i].style.display = 'none'
+                  t1r[i].style.display = 'none'
+                  t14s[i].style.display = 'none'
+                  t16s[i].style.display = 'none'
+                  btl++
+               } else {
+                  t1b[i].style.display = 'block'
+                  stts[i].style.display = 'block'
+                  t1b2[i].style.display = 'block'
+                  t1r[i].style.display = 'block'
+                  t14s[i].style.display = 'block'
+                  t16s[i].style.display = 'block'
+               }
             }
-         }
 
-         for (i = 0; i < t2bw.length; i++) {
-            t2bw[i].innerHTML = insNo.bowling[i].name
-            if (insNo.bowling[i].name == '') {
-               t2bnb[i].style.display = 'none'
-               t2bo[i].style.display = 'none'
-               t2br[i].style.display = 'none'
-               t2bw2[i].style.display = 'none'
-            } else {
-               t2bnb[i].style.display = 'block'
-               t2bo[i].style.display = 'block'
-               t2br[i].style.display = 'block'
-               t2bw2[i].style.display = 'block'
+            for (i = 0; i < t2bw.length; i++) {
+               t2bw[i].innerHTML = insNo.bowling[i].name
+               if (insNo.bowling[i].name == '') {
+                  t2bnb[i].style.display = 'none'
+                  t2bo[i].style.display = 'none'
+                  t2br[i].style.display = 'none'
+                  t2bw2[i].style.display = 'none'
+               } else {
+                  t2bnb[i].style.display = 'block'
+                  t2bo[i].style.display = 'block'
+                  t2br[i].style.display = 'block'
+                  t2bw2[i].style.display = 'block'
+               }
             }
-         }
 
-         let scrgl = document.querySelectorAll('.scorecard-grid')
-         for (i = 0; i < scrgl.length; i++) {
-            if (t1b[i].textContent != '') {
-               scrgl[i].style.cssText = 'grid-template-rows: 30px 20px;'
-               console.log(scrgl[i])
+            let scrgl = document.querySelectorAll('.scorecard-grid')
+            for (i = 0; i < scrgl.length; i++) {
+               if (t1b[i].textContent != '') {
+                  scrgl[i].style.cssText = 'grid-template-rows: 30px 20px;'
+               }
             }
-         }
 
-         let scrglb = document.querySelectorAll('.scorecard-grid-bowl')
-         for (i = 0; i < scrglb.length; i++) {
-            if (t2bw[i].textContent != '') {
-               scrglb[i].style.cssText = 'grid-template-rows: 30px 20px;'
-               console.log(scrglb[i])
+            let scrglb = document.querySelectorAll('.scorecard-grid-bowl')
+            for (i = 0; i < scrglb.length; i++) {
+               if (t2bw[i].textContent != '') {
+                  scrglb[i].style.cssText = 'grid-template-rows: 30px 20px;'
+               }
             }
          }
 
@@ -579,8 +578,6 @@ socket.onmessage = function (event) {
                tc2 = teams[0].colour
             }
          }
-
-         console.log(tc1, tc2)
 
          for (i = 0; i < t1p.length; i++) {
             if (t1n == teams[0].short_name) {
