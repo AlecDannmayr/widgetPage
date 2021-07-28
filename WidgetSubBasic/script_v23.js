@@ -431,13 +431,12 @@ socket.onmessage = function (event) {
             stts[j].innerHTML = insNo.batting[j].status.replace(/,[^,]+$/, '')
          }
 
-         /* Batting order 
+         /* Batting order */
 
          for (i = 0; i < insNo.batting.length; i++) {
             console.log(insNo.batting[i].name)
             t1b[i].innerHtml = insNo.batting[i].name
          }
-         */
 
          tbs.addEventListener('click', function () {
             sgt.style.display = 'block'
@@ -548,7 +547,7 @@ socket.onmessage = function (event) {
             }
 
             if (btnw == teams[0].name) {
-               t1b[i].innerHTML = teams[0].players[i].name // batter
+               //  t1b[i].innerHTML = teams[0].players[i].name // batter
                t2bw[i].innerHTML = teams[1].players[i].name // bowler
                t1p[i].innerHTML = teams[0].players[i].name
                t2p[i].innerHTML = teams[1].players[i].name
@@ -559,7 +558,7 @@ socket.onmessage = function (event) {
                hdb1[i].innerHTML = bhcp.charAt(0).toUpperCase() + bhcp.slice(1)
                hdb2[i].innerHTML = bhcp2.charAt(0).toUpperCase() + bhcp2.slice(1)
             } else {
-               t1b[i].innerHTML = teams[1].players[i].name // batter
+               // t1b[i].innerHTML = teams[1].players[i].name // batter
                t2bw[i].innerHTML = teams[0].players[i].name // bowler
                t1p[i].innerHTML = teams[1].players[i].name
                t2p[i].innerHTML = teams[0].players[i].name
