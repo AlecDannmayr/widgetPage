@@ -445,7 +445,6 @@ socket.onmessage = function (event) {
                t16s[i].style.display = 'none'
             }
          }
-Ah I se
          for (i = 0; i < t2bw.length; i++) {
             t2bw[i].innerHTML = insNo.bowling[i].name
             if (t2bw[i].textContent == '') {
