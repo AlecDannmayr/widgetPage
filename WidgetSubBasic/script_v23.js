@@ -445,15 +445,18 @@ socket.onmessage = function (event) {
                t16s[i].style.display = 'none'
             }
          }
-         for (i = 0; i < t2bw.length; i++) {
-            t2bw[i].innerHTML = insNo.bowling[i].name
-            if (t2bw[i].textContent == '') {
-               t2bnb[i].style.display = 'none'
-               t2bo[i].style.display = 'none'
-               t2br[i].style.display = 'none'
-               t2bw2[i].style.display = 'none'
-            }
-         }
+
+         /*
+                              for (i = 0; i < t2bw.length; i++) {
+                                 t2bw[i].innerHTML = insNo.batting[i].name
+                                 if (t1b[i].textContent == '') {
+                                    t2bnb[i].style.display = 'none'
+                                    t2bo[i].style.display = 'none'
+                                    t2br[i].style.display = 'none'
+                                    t2bw2[i].style.display = 'none'
+                                 }
+                              }
+*/
 
          tbs.addEventListener('click', function () {
             sgt.style.display = 'block'
