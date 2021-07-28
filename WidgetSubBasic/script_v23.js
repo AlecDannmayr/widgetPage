@@ -435,9 +435,9 @@ socket.onmessage = function (event) {
 
          for (i = 0; i < t1b.length; i++) {
             console.log(insNo.batting[i].name)
-            t1b[i].innerHtml = insNo.batting[i].name
-            console.log(t1b[i])
          }
+
+         t1b[1].innerHtml = 'Hello'
 
          tbs.addEventListener('click', function () {
             sgt.style.display = 'block'
