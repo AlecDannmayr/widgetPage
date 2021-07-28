@@ -480,7 +480,7 @@ socket.onmessage = function (event) {
          
                console.log(b1sn2, b1st2, b1b2, b1r2, b14s2, b16s2)
 
-
+if (inns2 != null) {
                 for (i = 0; i < b1sn2.length; i++) {
                    b1sn2[i].innerHTML = inns2.batting[i].name
                    if (t1b[i].textContent == '') {
@@ -515,7 +515,7 @@ socket.onmessage = function (event) {
                }
             }
 
-         
+}
 
          let scrgl = document.querySelectorAll('.scorecard-grid')
          for (i = 0; i < scrgl.length; i++) {
