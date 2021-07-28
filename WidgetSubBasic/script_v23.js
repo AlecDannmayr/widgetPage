@@ -472,9 +472,8 @@ socket.onmessage = function (event) {
 
          let scrgl = document.querySelectorAll('.scorecard-grid')
 
-         for (i = 0; i < t1b.length; i++) {
+         for (i = 0; i < scrgl.length; i++) {
             if (t1b[i].textContent != '') {
-               scrgl[i].style.cssText = 'grid-template-rows: 30px;'
                console.log(scrgl[i])
             }
          }
