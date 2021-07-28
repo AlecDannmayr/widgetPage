@@ -434,7 +434,7 @@ socket.onmessage = function (event) {
          }
 
          /* Batting order */
-         /*
+
          for (i = 0; i < t1b.length; i++) {
             t1b[i].innerHTML = insNo.batting[i].name
             if (t1b[i].textContent == '') {
@@ -452,19 +452,6 @@ socket.onmessage = function (event) {
                t1r[i].style.display = 'block'
                t14s[i].style.display = 'block'
                t16s[i].style.display = 'block'
-            }
-         }*/
-
-         let trl = document.querySelectorAll('#scorecardGrid')
-         console.log(trl)
-         for (i = 0; i < t1b.length; i++) {
-            console.log(tl[i])
-            if (insNo.batting[i].name != '') {
-               nA = document.createElement('span')
-               nA.setAttribute('class', 'b1sn')
-               trl[i].appendChild(nA)
-               console.log(nA)
-               console.log(trl[i])
             }
          }
 
