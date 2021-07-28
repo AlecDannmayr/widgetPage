@@ -541,18 +541,18 @@ socket.onmessage = function (event) {
          let scrgl = document.querySelectorAll('.scorecard-grid')
          for (i = 0; i < scrgl.length; i++) {
             if (t1b[i].textContent != '') {
-               scrgl[i].style.cssText = 'grid-template-rows: 30px 20px;'
+               scrgl[i].style.cssText = 'grid-template-rows: 30px;'
             }
          }
 
          let scrglb = document.querySelectorAll('.scorecard-grid-bowl')
          for (i = 0; i < scrglb.length; i++) {
             if (t2bw[i].textContent != '') {
-               scrglb[i].style.cssText = 'grid-template-rows: 30px 20px;'
+               scrglb[i].style.cssText = 'grid-template-rows: 30px;'
             }
          }
 
-         //   grid-template-rows: 30px 20px;
+ 
 
          tbs.addEventListener('click', function () {
             sgt.style.display = 'block'
