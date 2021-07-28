@@ -433,9 +433,10 @@ socket.onmessage = function (event) {
 
          /* Batting order */
 
-         for (i = 0; i < insNo.batting.length; i++) {
+         for (i = 0; i < t1b.length; i++) {
             console.log(insNo.batting[i].name)
             t1b[i].innerHtml = insNo.batting[i].name
+            console.log(t1b[i])
          }
 
          tbs.addEventListener('click', function () {
