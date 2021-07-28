@@ -429,6 +429,13 @@ function matchRun(idNo) {
                t2bw2[j].innerHTML = insNo.bowling[j].wd
                stts[j].innerHTML = insNo.batting[j].status.replace(/,[^,]+$/, '')
             }
+
+            /* Batting order */
+
+            for (i = 0; i < batting.length; i++) {
+               console.log(batting[i].name)
+            }
+
             tbs.addEventListener('click', function () {
                sgt.style.display = 'block'
                tosl.style.display = 'none'
