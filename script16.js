@@ -14,7 +14,7 @@ window.addEventListener('load', function () {
          var r = json.matches,
             cmip = 0,
             nxndc = 0,
-            sif,
+            sif = null;
             gst = r,
             td = new Date(),
             fixlst = document.querySelector('.sidebar-list-fixtures'),

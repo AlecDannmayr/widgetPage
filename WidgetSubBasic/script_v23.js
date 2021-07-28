@@ -968,8 +968,7 @@ console.log("Ins 2")
             } else if (fltinlt[i].b7 != null || fltinlt[i].b10 == null) {
                delete eachObj['b10']
             }
-console.log(isHundreds)
-            if (isHundreds == false) {
+            if (isHundreds == false || isHundreds == undefined) {
                ovlg = 12
                if (fltinlt.length <= 2) {
                   rt[0].innerHTML = fltin[0].b1
