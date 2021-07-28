@@ -437,10 +437,6 @@ socket.onmessage = function (event) {
          for (i = 0; i < t1b.length; i++) {
             t1b[i].innerHTML = insNo.batting[i].name
             if (t1b[i].textContent == '') {
-               const element = document.querySelector('div.foo')
-               element.classList.add('bar')
-               console.log(element.className)
-
                t1b[i].style.display = 'none'
                stts[i].style.display = 'none'
                t1b2[i].style.display = 'none'
