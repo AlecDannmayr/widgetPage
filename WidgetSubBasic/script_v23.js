@@ -379,7 +379,7 @@ socket.onmessage = function (event) {
          const inssNow = document.querySelector('#ins-now')
          inssNow.innerHTML = 'Inning: ' + inns_now
 
-         let insNo,
+         let insNo, ino3, intf,
             // First team batting
             t1b = document.getElementsByClassName('b1sn'),
             stts = document.querySelectorAll('.b1st'),
@@ -415,21 +415,34 @@ socket.onmessage = function (event) {
 
          // switch statement looks for inning no
 
+         inns_now = 4
+
          switch (inns_now) {
             case 1:
                insNo = inns1
+               ino3 = 1;
+               intf = null
                break
             case 2:
                insNo = inns2
+               intf = 2
+                 ino3 = null;
                break
             case 3:
                insNo = inns3
+               ino3 = 3
+               intf = null
                break
             case 4:
                insNo = inns4
+                  intf = 4
+                ino3 = null
                break
          }
 
+
+         console.log(ino3)
+            console.log(intf)
          // Takes extras object transforms into array and used reduce to add values together
 
          for (j = 0; j < t1r.length; j++) {
@@ -445,6 +458,8 @@ socket.onmessage = function (event) {
          }
                         
          /* Batting order */
+
+
 
           const extrar = Object.values(inns1.extras),
              addext = extrar.reduce(function (acc, val) {
@@ -487,7 +502,6 @@ socket.onmessage = function (event) {
                   t2bw2[i].style.display = 'block'
                }
             }
-console.log(inns2)
        if (inns2 != null) {
 
          for (j = 0; j < t1r.length; j++) {
@@ -644,11 +658,13 @@ console.log("Ins 2")
             if (t1n == teams[0].short_name) {
                shortNameOne = teams[0].short_name
                shortNameTwo = teams[1].short_name
-             
+               st1t.innerHTML = shortNameOne
+               st2t.innerHTML = shortNameTwo
             } else {
                shortNameOne = teams[1].short_name
                shortNameTwo = teams[0].short_name
-              
+               st1t.innerHTML = shortNameTwo
+               st2t.innerHTML = shortNameOne
             }
 
                if (btnw == teams[0].name) {
@@ -660,8 +676,6 @@ console.log("Ins 2")
                   bhcp2 = teams[1].players[i].bat_hand.split('-')[0]
                   hdb1[i].innerHTML = bhcp.charAt(0).toUpperCase() + bhcp.slice(1)
                   hdb2[i].innerHTML = bhcp2.charAt(0).toUpperCase() + bhcp2.slice(1)
-                    st1t.innerHTML = shortNameOne
-                    st2t.innerHTML = shortNameTwo
                } else {
                   t1p[i].innerHTML = teams[1].players[i].name
                   t2p[i].innerHTML = teams[0].players[i].name
@@ -671,8 +685,6 @@ console.log("Ins 2")
                   bhcp2 = teams[0].players[i].bat_hand.split('-')[0]
                   hdb1[i].innerHTML = bhcp.charAt(0).toUpperCase() + bhcp.slice(1)
                   hdb2[i].innerHTML = bhcp2.charAt(0).toUpperCase() + bhcp2.slice(1)
-                   st1t.innerHTML = shortNameTwo
-                   st2t.innerHTML = shortNameOne
                }
          }
 
