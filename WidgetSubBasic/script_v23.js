@@ -384,15 +384,26 @@ socket.onmessage = function (event) {
             t2br = document.querySelectorAll('.bw1r'),
             t2bw2 = document.querySelectorAll('.bw1w'),
             insNo,
+            t2bw = document.getElementsByClassName('bw1sn'),
             ex1 = document.querySelectorAll('.ex1'),
             tl1 = document.querySelectorAll('.tl1'),
+            t1b = document.getElementsByClassName('b1sn'),
             stts = document.querySelectorAll('.b1st'),
-            t1r = document.querySelectorAll('.b1r'),
             t1b2 = document.querySelectorAll('.b1b'),
+            t1r = document.querySelectorAll('.b1r'),
             t14s = document.querySelectorAll('.b14s'),
             t16s = document.querySelectorAll('.b16s'),
-            t1b = document.getElementsByClassName('b1sn'),
-            t2bw = document.getElementsByClassName('bw1sn')
+             b1sn2 = document.getElementsByClassName('b1sn2'),
+            b1st2 = document.querySelectorAll('.b1st2'),
+            b1b2 = document.querySelectorAll('.b1b2'),
+            b1r2 = document.querySelectorAll('.b1r2'),
+            b14s2 = document.querySelectorAll('.b14s2'),
+            b16s2 = document.querySelectorAll('.b16s2');
+            
+           
+           
+           console.log(b1sn2, b1st2, b1b2, b1r2, b14s2, b16s2)
+    
 
          // switch statement looks for inning no
 
@@ -444,7 +455,6 @@ socket.onmessage = function (event) {
                   t1r[i].style.display = 'none'
                   t14s[i].style.display = 'none'
                   t16s[i].style.display = 'none'
-                  btl++
                } else {
                   t1b[i].style.display = 'block'
                   stts[i].style.display = 'block'
