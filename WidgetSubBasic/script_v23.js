@@ -497,7 +497,7 @@ socket.onmessage = function (event) {
              addext = extrar.reduce(function (acc, val) {
                 return acc + val
              }, 0)
-
+console.log("Ins 2")
           ex2[0].innerText = addext
           tl2[0].innerText = t1fis.textContent + t1fw.textConten
 
