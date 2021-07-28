@@ -435,9 +435,10 @@ socket.onmessage = function (event) {
          let t1b = document.getElementsByClassName('b1sn')
 
          for (i = 0; i < t1b.length; i++) {
-            console.log(insNo.batting[i].name)
             t1b[i].innerHTML = insNo.batting[i].name
-            console.log(t1b[i])
+            if (t1b[i].textContent == '') {
+               t1b[i].display = 'none'
+            }
          }
 
          tbs.addEventListener('click', function () {
