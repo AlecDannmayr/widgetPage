@@ -472,6 +472,12 @@ socket.onmessage = function (event) {
             }
          }
 
+         for (i = 0; i < insNo.batting[i]; i++)
+            if (insNo.batting[i].name != '') {
+               btl++
+            }
+         console.log(btl)
+
          tbs.addEventListener('click', function () {
             sgt.style.display = 'block'
             tosl.style.display = 'none'
