@@ -433,13 +433,6 @@ socket.onmessage = function (event) {
 
          // Takes extras object transforms into array and used reduce to add values together
 
-         const extrar = Object.values(inns1.extras),
-            addext = extrar.reduce(function (acc, val) {
-               return acc + val
-            }, 0)
-
-         ex1[0].innerText = addext
-         tl1[0].innerText = t1fis.textContent + t1fw.textContent
 
          for (j = 0; j < t1r.length; j++) {
             t1r[j].innerHTML = insNo.batting[j].runs
@@ -454,6 +447,14 @@ socket.onmessage = function (event) {
          }
 
          /* Batting order */
+
+          const extrar = Object.values(inns1.extras),
+             addext = extrar.reduce(function (acc, val) {
+                return acc + val
+             }, 0)
+
+          ex1[0].innerText = addext
+          tl1[0].innerText = t1fis.textContent + t1fw.textContent
         /*
             for (i = 0; i < t1b.length; i++) {
                t1b[i].innerHTML = inns1.batting[i].name
@@ -492,6 +493,7 @@ socket.onmessage = function (event) {
                console.log(b1sn2, b1st2, b1b2, b1r2, b14s2, b16s2)
 
            // if (inns2 != null) {
+              
                 for (i = 0; i < b1sn2.length; i++) {
                    b1sn2[i].innerHTML = inns1.batting[i].name
                    if (b1sn2[i].textContent == '') {
