@@ -455,8 +455,6 @@ socket.onmessage = function (event) {
             }
          }
 
-      
-
          for (i = 0; i < t2bw.length; i++) {
             t2bw[i].innerHTML = insNo.bowling[i].name
             if (insNo.bowling[i].name == '') {
@@ -472,13 +470,15 @@ socket.onmessage = function (event) {
             }
          }
 
-         const scrgl = document.querySelectorAll('.scorecard-grid')
+         let scrgl = document.querySelectorAll('.scorecard-grid')
 
          for (i = 0; i < t1b.length; i++) {
             if (t1b[i].textContent != '') {
-              scrgl.cssText = "backgroundColor = blue";
+               scrgl[i].style.cssText = 'grid-template-rows: 30px;'
+               console.log(scrgl[i])
             }
-         
+         }
+
          tbs.addEventListener('click', function () {
             sgt.style.display = 'block'
             tosl.style.display = 'none'
