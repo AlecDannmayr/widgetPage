@@ -434,7 +434,7 @@ socket.onmessage = function (event) {
          }
 
          /* Batting order */
-
+         /*
          for (i = 0; i < t1b.length; i++) {
             t1b[i].innerHTML = insNo.batting[i].name
             if (t1b[i].textContent == '') {
@@ -453,12 +453,15 @@ socket.onmessage = function (event) {
                t14s[i].style.display = 'block'
                t16s[i].style.display = 'block'
             }
-         }
+         }*/
 
-         const trl = document.querySelectorAll('.b1sn')
-
-         if (insNo.batting[i].name != '') {
-            console.log(insNo.batting[i].name)
+         let trl = document.querySelectorAll('.b1sn')
+         for (i = 0; i < t1b.length; i++) {
+            if (insNo.batting[i].name != '') {
+               nA = document.createElement('span')
+               nA.setAttribute('class', 'b1sn')
+               trl[i].append(nA)
+            }
          }
 
          for (i = 0; i < t2bw.length; i++) {
