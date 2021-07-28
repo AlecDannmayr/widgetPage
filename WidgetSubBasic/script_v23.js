@@ -455,12 +455,16 @@ socket.onmessage = function (event) {
             }
          }*/
 
-         let trl = document.querySelectorAll('.b1sn')
+         let trl = document.querySelectorAll('#scorecardGrid')
+         console.log(trl)
          for (i = 0; i < t1b.length; i++) {
+            console.log(tl[i])
             if (insNo.batting[i].name != '') {
                nA = document.createElement('span')
                nA.setAttribute('class', 'b1sn')
-               trl[i].append(nA)
+               trl[i].appendChild(nA)
+               console.log(nA)
+               console.log(trl[i])
             }
          }
 
