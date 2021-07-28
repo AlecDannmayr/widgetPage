@@ -423,8 +423,8 @@ socket.onmessage = function (event) {
                break
             case 2:
                insNo = inns2
+               ino3 = inns1
                intf = inns2
-                 ino3 = null;
                break
             case 3:
                insNo = inns3
@@ -433,8 +433,8 @@ socket.onmessage = function (event) {
                break
             case 4:
                insNo = inns4
+                  ino3 = inns3
                   intf = inns4
-                ino3 = null
                break
          }
 
