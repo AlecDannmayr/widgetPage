@@ -379,26 +379,40 @@ socket.onmessage = function (event) {
          const inssNow = document.querySelector('#ins-now')
          inssNow.innerHTML = 'Inning: ' + inns_now
 
-         let t2bnb = document.querySelectorAll('.bw1nb'),
-            t2bo = document.querySelectorAll('.bw1o'),
-            t2br = document.querySelectorAll('.bw1r'),
-            t2bw2 = document.querySelectorAll('.bw1w'),
-            insNo,
-            t2bw = document.getElementsByClassName('bw1sn'),
-            ex1 = document.querySelectorAll('.ex1'),
-            tl1 = document.querySelectorAll('.tl1'),
+         let insNo,
+            // First team batting
             t1b = document.getElementsByClassName('b1sn'),
             stts = document.querySelectorAll('.b1st'),
             t1b2 = document.querySelectorAll('.b1b'),
             t1r = document.querySelectorAll('.b1r'),
             t14s = document.querySelectorAll('.b14s'),
             t16s = document.querySelectorAll('.b16s'),
-             b1sn2 = document.getElementsByClassName('b1sn2'),
+            // First Team extras and total
+            ex1 = document.querySelectorAll('.ex1'),
+            tl1 = document.querySelectorAll('.tl1'),
+            // Second Team batting
+            b1sn2 = document.getElementsByClassName('b1sn2'),
             b1st2 = document.querySelectorAll('.b1st2'),
             b1b2 = document.querySelectorAll('.b1b2'),
             b1r2 = document.querySelectorAll('.b1r2'),
             b14s2 = document.querySelectorAll('.b14s2'),
-            b16s2 = document.querySelectorAll('.b16s2');
+            b16s2 = document.querySelectorAll('.b16s2'),
+             // Second Team extras and total
+            ex2 = document.querySelectorAll('.ex2'),
+            tl2 = document.querySelectorAll('.tl2'),
+            // First team bowling
+            t2bnb = document.querySelectorAll('.bw1nb'),
+            t2bo = document.querySelectorAll('.bw1o'),
+            t2br = document.querySelectorAll('.bw1r'),
+            t2bw2 = document.querySelectorAll('.bw1w'),
+            t2bw = document.getElementsByClassName('bw1sn'),
+            // Second team bowling
+            t2bnb2 = document.querySelectorAll('.bw1nb2'),
+            t2bo2 = document.querySelectorAll('.bw1o2'),
+            t2br2 = document.querySelectorAll('.bw1r2'),
+            t2bw22 = document.querySelectorAll('.bw1w2'),
+            t2bw222 = document.getElementsByClassName('bw1sn2'),
+          
             
          
     
@@ -443,7 +457,7 @@ socket.onmessage = function (event) {
          }
 
          /* Batting order */
-        
+        /*
             for (i = 0; i < t1b.length; i++) {
                t1b[i].innerHTML = inns1.batting[i].name
                if (t1b[i].textContent == '') {
@@ -477,12 +491,12 @@ socket.onmessage = function (event) {
                   t2bw2[i].style.display = 'block'
                }
             }
-         
+         */
                console.log(b1sn2, b1st2, b1b2, b1r2, b14s2, b16s2)
 
-if (inns2 != null) {
+           // if (inns2 != null) {
                 for (i = 0; i < b1sn2.length; i++) {
-                   b1sn2[i].innerHTML = inns2.batting[i].name
+                   b1sn2[i].innerHTML = inns1.batting[i].name
                    if (t1b[i].textContent == '') {
                       b1sn2[i].style.display = 'none'
                       b1st2[i].style.display = 'none'
@@ -501,8 +515,8 @@ if (inns2 != null) {
                 }
 
             for (i = 0; i < b1sn2.length; i++) {
-               b1sn2[i].innerHTML = inns2.bowling[i].name
-               if (inns2.bowling[i].name == '') {
+               b1sn2[i].innerHTML = inns1.bowling[i].name
+               if (inns1.bowling[i].name == '') {
                   t2bnb[i].style.display = 'none'
                   t2bo[i].style.display = 'none'
                   t2br[i].style.display = 'none'
