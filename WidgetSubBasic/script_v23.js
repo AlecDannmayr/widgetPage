@@ -47,7 +47,6 @@ let g2h = document.getElementById('second-header'),
    gsts = document.getElementById('third-header-game-status'),
    wi1 = document.getElementById('winner-image-team-one'),
    wi2 = document.getElementById('winner-image-team-two'),
-   t1b = document.getElementsByClassName('b1sn'),
    innings1battingteam,
    shortNameOne,
    shortNameTwo,
@@ -379,18 +378,19 @@ socket.onmessage = function (event) {
          const inssNow = document.querySelector('#ins-now')
          inssNow.innerHTML = 'Inning: ' + inns_now
 
-         let t1r = document.querySelectorAll('.b1r'),
-            t1b2 = document.querySelectorAll('.b1b'),
-            t14s = document.querySelectorAll('.b14s'),
-            t16s = document.querySelectorAll('.b16s'),
-            t2bnb = document.querySelectorAll('.bw1nb'),
+         let t2bnb = document.querySelectorAll('.bw1nb'),
             t2bo = document.querySelectorAll('.bw1o'),
             t2br = document.querySelectorAll('.bw1r'),
             t2bw2 = document.querySelectorAll('.bw1w'),
-            stts = document.querySelectorAll('.b1st'),
             insNo,
             ex1 = document.querySelectorAll('.ex1'),
-            tl1 = document.querySelectorAll('.tl1')
+            tl1 = document.querySelectorAll('.tl1'),
+            stts = document.querySelectorAll('.b1st'),
+            t1r = document.querySelectorAll('.b1r'),
+            t1b2 = document.querySelectorAll('.b1b'),
+            t14s = document.querySelectorAll('.b14s'),
+            t16s = document.querySelectorAll('.b16s'),
+            t1b = document.getElementsByClassName('b1sn')
 
          // switch statement looks for inning no
 
@@ -437,6 +437,11 @@ socket.onmessage = function (event) {
             t1b[i].innerHTML = insNo.batting[i].name
             if (t1b[i].textContent == '') {
                t1b[i].style.display = 'none'
+               stts[i].style.daisplay = 'none'
+               t1b[i].style.display = 'none'
+               t1r[i].style.display = 'none'
+               b14s[i].style.display = 'none'
+               b16s[i].style.display = 'none'
             }
          }
 
