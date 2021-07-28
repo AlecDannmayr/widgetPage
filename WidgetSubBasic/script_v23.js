@@ -635,21 +635,9 @@ console.log("Ins 2")
            if (btnw == teams[0].name) {
               st1.innerHTML = teams[0].short_name
               st2.innerHTML = teams[1].short_name
-              if (tc1 != '' || tc1 != ' ' || tc1 != '0' || tc1 != '#') {
-                 tc1 = teams[0].colour
-              }
-              if (tc2 != '' || tc2 != ' ' || tc2 != '0' || tc2 != '#') {
-                 tc2 = teams[1].colour
-              }
            } else if (btnw == teams[1].name) {
               st1.innerHTML = teams[1].short_name
               st2.innerHTML = teams[0].short_name
-              if (tc1 != '' || tc1 != ' ' || tc1 != '0' || tc1 != '#') {
-                 tc1 = teams[1].colour
-              }
-              if (tc2 != '' || tc2 != ' ' || tc2 != '0' || tc2 != '#') {
-                 tc2 = teams[0].colour
-              }
            }
 
          for (i = 0; i < t1p.length; i++) {
