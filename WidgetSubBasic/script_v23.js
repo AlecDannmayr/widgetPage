@@ -653,13 +653,12 @@ console.log("Ins 2")
                st2t.innerHTML = shortNameOne
             }
 
-          //  if (teams[0].name == )
                if (btnw == teams[0].name) {
                   //  t1b[i].innerHTML = teams[0].players[i].name // batter
                   //  t2bw[i].innerHTML = teams[1].players[i].name // bowler
                   t1p[i].innerHTML = teams[0].players[i].name
                   t2p[i].innerHTML = teams[1].players[i].name
-                  hdbw1[i].innerHTML = teams[0].players[i].bowler_style
+                  hdbw1[i].innerHTML = teams[01].players[i].bowler_style
                   hdbw2[i].innerHTML = teams[1].players[i].bowler_style
                   bhcp = teams[0].players[i].bat_hand.split('-')[0]
                   bhcp2 = teams[1].players[i].bat_hand.split('-')[0]
@@ -668,7 +667,14 @@ console.log("Ins 2")
                } else {
                   // t1b[i].innerHTML = teams[1].players[i].name // batter
                   // t2bw[i].innerHTML = teams[0].players[i].name // bowler
-                  
+                  t1p[i].innerHTML = teams[1].players[i].name
+                  t2p[i].innerHTML = teams[0].players[i].name
+                  hdbw1[i].innerHTML = teams[1].players[i].bowler_style
+                  hdbw2[i].innerHTML = teams[0].players[i].bowler_style
+                  bhcp = teams[1].players[i].bat_hand.split('-')[0]
+                  bhcp2 = teams[0].players[i].bat_hand.split('-')[0]
+                  hdb1[i].innerHTML = bhcp.charAt(0).toUpperCase() + bhcp.slice(1)
+                  hdb2[i].innerHTML = bhcp2.charAt(0).toUpperCase() + bhcp2.slice(1)
                }
          }
 
