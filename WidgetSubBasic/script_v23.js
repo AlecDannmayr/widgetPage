@@ -455,7 +455,7 @@ socket.onmessage = function (event) {
             }
          }
 
-         const trl = document.querySelectorAll('.b1sn')
+      
 
          for (i = 0; i < t2bw.length; i++) {
             t2bw[i].innerHTML = insNo.bowling[i].name
@@ -472,10 +472,13 @@ socket.onmessage = function (event) {
             }
          }
 
-         if (b1sn.textContent != '') {
-            console.log('true')
-         }
+         const scrgl = document.querySelectorAll('.scorecard-grid')
 
+         for (i = 0; i < t1b.length; i++) {
+            if (t1b[i].textContent != '') {
+              scrgl.cssText = "backgroundColor = blue";
+            }
+         
          tbs.addEventListener('click', function () {
             sgt.style.display = 'block'
             tosl.style.display = 'none'
