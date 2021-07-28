@@ -444,11 +444,14 @@ socket.onmessage = function (event) {
             t16s[j].innerHTML = inns1.batting[j].sixes
             t2bnb[j].innerHTML = inns1.bowling[j].nb
             t2bo[j].innerHTML = inns1.bowling[j].overs
-            t2br[j].innerHTML = inns1.bowling[j].runs
+            t2br[j].innerHTML = inns1bowling[j].runs
             t2bw2[j].innerHTML = inns1.bowling[j].wd
             stts[j].innerHTML = inns1.batting[j].status.replace(/,[^,]+$/, '')
          }
                          
+                     
+
+           
          /* Batting order */
 
           const extrar = Object.values(inns1.extras),
@@ -639,13 +642,14 @@ console.log("Ins 2")
 
          // Check all of this! // if innings1team === teams[p]
 
-  if (btnw == teams[0].name) {
-     st1.innerHTML = teams[0].short_name
-     st2.innerHTML = teams[1].short_name
-  } else if (btnw == teams[1].name) {
-     st1.innerHTML = teams[1].short_name
-     st2.innerHTML = teams[0].short_name
-  }
+     if (btnw == teams[0].name) {
+               st1.innerHTML = teams[0].short_name
+               st2.innerHTML = teams[1].short_name
+            } else if (btnw == teams[1].name) {
+               st1.innerHTML = teams[1].short_name
+               st2.innerHTML = teams[0].short_name
+            }
+
 
          for (i = 0; i < t1p.length; i++) {
             if (t1n == teams[0].short_name) {
