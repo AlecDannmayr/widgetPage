@@ -438,28 +438,18 @@ socket.onmessage = function (event) {
 
 
          for (j = 0; j < t1r.length; j++) {
-            t1r[j].innerHTML = [0].batting[j].runs
-            t1b2[j].innerHTML = [0].batting[j].balls
-            t14s[j].innerHTML = [0].batting[j].fours
-            t16s[j].innerHTML = [0].batting[j].sixes
-            t2bnb[j].innerHTML = [0].bowling[j].nb
-            t2bo[j].innerHTML = [0].bowling[j].overs
-            t2br[j].innerHTML = [0].bowling[j].runs
-            t2bw2[j].innerHTML = [0].bowling[j].wd
-            stts[j].innerHTML = [0].batting[j].status.replace(/,[^,]+$/, '')
+            t1r[j].innerHTML = inns1.batting[j].runs
+            t1b2[j].innerHTML = inns1.batting[j].balls
+            t14s[j].innerHTML = inns1.batting[j].fours
+            t16s[j].innerHTML = inns1.batting[j].sixes
+            t2bnb[j].innerHTML = inns1.bowling[j].nb
+            t2bo[j].innerHTML = inns1.bowling[j].overs
+            t2br[j].innerHTML = inns1.bowling[j].runs
+            t2bw2[j].innerHTML = inns1.bowling[j].wd
+            stts[j].innerHTML = inns1.batting[j].status.replace(/,[^,]+$/, '')
          }
-
-                      for (j = 0; j < t1r.length; j++) {
-                         b1r2[j].innerHTML = [0].batting[j].runs
-                         b1b2[j].innerHTML = [0].batting[j].balls
-                         b14s2[j].innerHTML = [0].batting[j].fours
-                         b16s2[j].innerHTML = [0].batting[j].sixes
-                         t2bnb2[j].innerHTML = [0].bowling[j].nb
-                         t2bo2[j].innerHTML = [0].bowling[j].overs
-                         t2br2[j].innerHTML = [0].bowling[j].runs
-                         t2bw22[j].innerHTML = [0].bowling[j].wd
-                         b1st2[j].innerHTML = [0].batting[j].status.replace(/,[^,]+$/, '')
-                      }
+                         
+                     
 
            
          /* Batting order */
@@ -509,6 +499,18 @@ socket.onmessage = function (event) {
 
 
        if (inns2 != null) {
+
+         for (j = 0; j < t1r.length; j++) {
+            b1r2[j].innerHTML = [0].batting[j].runs
+            b1b2[j].innerHTML = [0].batting[j].balls
+            b14s2[j].innerHTML = [0].batting[j].fours
+            b16s2[j].innerHTML = [0].batting[j].sixes
+            t2bnb2[j].innerHTML = [0].bowling[j].nb
+            t2bo2[j].innerHTML = [0].bowling[j].overs
+            t2br2[j].innerHTML = [0].bowling[j].runs
+            t2bw22[j].innerHTML = [0].bowling[j].wd
+            b1st2[j].innerHTML = [0].batting[j].status.replace(/,[^,]+$/, '')
+         } 
           const extrar = Object.values(inns2.extras),
              addext = extrar.reduce(function (acc, val) {
                 return acc + val
