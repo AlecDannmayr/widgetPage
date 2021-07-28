@@ -21,7 +21,6 @@
             background-color: #ffffff;
             min-width: 414px;
             height: 826px;
-            overflow: hidden;
             position: relative;
             z-index: 90;
         }
@@ -365,7 +364,7 @@
             font-size: 14px;
             padding-left: 0px;
             padding-right: 0px;
-            grid-template-columns: 35% 20%;
+            grid-template-columns: 80% 20%;
         }
 
         .scorecard-grid-bowl {
@@ -376,11 +375,11 @@
             margin-right: 0;
             margin-left: 10px;
             font-size: 14px;
-            padding-top: 1px;
             padding-left: 0px;
             padding-right: 0px;
             grid-template-columns: auto auto auto auto auto;
             font-weight: 400;
+            margin-top: -2px;
         }
 
         .bw1sn, .bw1sn2 {
@@ -1133,7 +1132,6 @@
                                 class="totl1">Total</span><span class="tl2"></span><span></span><span></span><span></span><span></span>
                             <hr class="sihr">
                         </div>
-                    
                         <div class="scorecard-grid-bowl" id="scorecardGridTwo"><span class="scorecard-grid-header">Bowler</span><span class="scorecard-grid-header">Nb</span><span class="scorecard-grid-header">Ovrs</span><span
                                 class="scorecard-grid-header">Runs</span><span class="scorecard-grid-header">Wds</span><span class="bw1sn2"></span><span class="bw1nb2"></span><span class="bw1o2"></span><span class="bw1r2"></span><span
                                 class="bw1w2"></span><span class="bw1sn2"></span><span class="bw1nb2"></span><span class="bw1o2"></span><span class="bw1r2"></span><span class="bw1w2"></span><span class="bw1sn2"></span><span
@@ -1145,12 +1143,63 @@
                                 class="bw1nb2"></span><span class="bw1o2"></span><span class="bw1r2"></span><span class="bw1w2"></span><span class="bw1sn2"></span><span class="bw1nb2"></span><span class="bw1o2"></span><span
                                 class="bw1r2"></span><span class="bw1w2"></span></div>
                     </div>
+                    <div class="scorecard-grid" id="scorecardGrid"><span class="scorecard-grid-header">Batsman</span><span class="scorecard-grid-header">Method</span><span class="scorecard-grid-header">R</span><span
+                            class="scorecard-grid-header">B</span><span class="scorecard-grid-header">4s</span><span class="scorecard-grid-header">6s</span>
+                        <span class="b1sn2"></span><span class="b1st2"></span><span class="b1r2"></span><span class="b1b2"></span><span class="b14s2"></span><span class="b16s2"></span><span class="b1sn2"></span><span
+                            class="b1st2"></span><span class="b1r2"></span><span class="b1b2"></span><span class="b14s2"></span><span class="b16s2"></span><span class="b1sn2"></span><span class="b1st2"></span><span class="b1r2"></span><span
+                            class="b1b2"></span><span class="b14s2"></span><span class="b16s2"></span><span class="b1sn2"></span><span class="b1st2"></span><span class="b1r2"></span><span class="b1b2"></span><span class="b14s2"></span><span
+                            class="b16s2"></span><span class="b1sn2"></span><span class="b1st2"></span><span class="b1r2"></span><span class="b1b2"></span><span class="b14s2"></span><span class="b16s2"></span><span
+                            class="b1sn2"></span><span class="b1st2"></span><span class="b1r2"></span><span class="b1b2"></span><span class="b14s2"></span><span class="b16s2"></span><span class="b1sn2"></span><span
+                            class="b1st2"></span><span class="b1r2"></span><span class="b1b2"></span><span class="b14s2"></span><span class="b16s2"></span><span class="b1sn2"></span><span class="b1st2"></span><span class="b1r2"></span><span
+                            class="b1b2"></span><span class="b14s2"></span><span class="b16s2"></span><span class="b1sn2"></span><span class="b1st2"></span><span class="b1r2"></span><span class="b1b2"></span><span class="b14s2"></span><span
+                            class="b16s2"></span><span class="b1sn2"></span><span class="b1st2"></span><span class="b1r2"></span><span class="b1b2"></span><span class="b14s2"></span><span class="b16s2"></span><span
+                            class="b1sn2"></span><span class="b1st2"></span><span class="b1r2"></span><span class="b1b2"></span><span class="b14s2"></span><span class="b16s2"></span>
                     </div>
-
-
-
-
-                
+                    <div class="extras">
+                        <hr class="sihr"><span></span><span></span><span></span><span></span><span></span><span class="extr1">Extras</span><span class="ex2"></span><span></span><span></span><span></span><span></span><span
+                            class="totl1">Total</span><span class="tl2"></span><span></span><span></span><span></span><span></span>
+                        <hr class="sihr">
+                    </div>
+                    <div class="scorecard-grid-bowl" id="scorecardGridTwo"><span class="scorecard-grid-header">Bowler</span><span class="scorecard-grid-header">Nb</span><span class="scorecard-grid-header">Ovrs</span><span
+                            class="scorecard-grid-header">Runs</span><span class="scorecard-grid-header">Wds</span><span class="bw1sn2"></span><span class="bw1nb2"></span><span class="bw1o2"></span><span class="bw1r2"></span><span
+                            class="bw1w2"></span><span class="bw1sn2"></span><span class="bw1nb2"></span><span class="bw1o2"></span><span class="bw1r2"></span><span class="bw1w2"></span><span class="bw1sn2"></span><span
+                            class="bw1nb2"></span><span class="bw1o2"></span><span class="bw1r2"></span><span class="bw1w2"></span><span class="bw1sn2"></span><span class="bw1nb2"></span><span class="bw1o2"></span><span
+                            class="bw1r2"></span><span class="bw1w2"></span><span class="bw1sn2"></span><span class="bw1nb2"></span><span class="bw1o2"></span><span class="bw1r2"></span><span class="bw1w2"></span><span
+                            class="bw1sn2"></span><span class="bw1nb2"></span><span class="bw1o2"></span><span class="bw1r2"></span><span class="bw1w2"></span><span class="bw1sn2"></span><span class="bw1nb2"></span><span
+                            class="bw1o2"></span><span class="bw1r2"></span><span class="bw1w2"></span><span class="bw1sn2"></span><span class="bw1nb2"></span><span class="bw1o2"></span><span class="bw1r2"></span><span
+                            class="bw1w2"></span><span class="bw1sn2"></span><span class="bw1nb2"></span><span class="bw1o2"></span><span class="bw1r2"></span><span class="bw1w2"></span><span class="bw1sn2"></span><span
+                            class="bw1nb2"></span><span class="bw1o2"></span><span class="bw1r2"></span><span class="bw1w2"></span><span class="bw1sn2"></span><span class="bw1nb2"></span><span class="bw1o2"></span><span
+                            class="bw1r2"></span><span class="bw1w2"></span></div>
+                    </div>
+                    <div class="scorecard-grid" id="scorecardGrid"><span class="scorecard-grid-header">Batsman</span><span class="scorecard-grid-header">Method</span><span class="scorecard-grid-header">R</span><span
+                            class="scorecard-grid-header">B</span><span class="scorecard-grid-header">4s</span><span class="scorecard-grid-header">6s</span>
+                        <span class="b1sn2"></span><span class="b1st2"></span><span class="b1r2"></span><span class="b1b2"></span><span class="b14s2"></span><span class="b16s2"></span><span class="b1sn2"></span><span
+                            class="b1st2"></span><span class="b1r2"></span><span class="b1b2"></span><span class="b14s2"></span><span class="b16s2"></span><span class="b1sn2"></span><span class="b1st2"></span><span class="b1r2"></span><span
+                            class="b1b2"></span><span class="b14s2"></span><span class="b16s2"></span><span class="b1sn2"></span><span class="b1st2"></span><span class="b1r2"></span><span class="b1b2"></span><span class="b14s2"></span><span
+                            class="b16s2"></span><span class="b1sn2"></span><span class="b1st2"></span><span class="b1r2"></span><span class="b1b2"></span><span class="b14s2"></span><span class="b16s2"></span><span
+                            class="b1sn2"></span><span class="b1st2"></span><span class="b1r2"></span><span class="b1b2"></span><span class="b14s2"></span><span class="b16s2"></span><span class="b1sn2"></span><span
+                            class="b1st2"></span><span class="b1r2"></span><span class="b1b2"></span><span class="b14s2"></span><span class="b16s2"></span><span class="b1sn2"></span><span class="b1st2"></span><span class="b1r2"></span><span
+                            class="b1b2"></span><span class="b14s2"></span><span class="b16s2"></span><span class="b1sn2"></span><span class="b1st2"></span><span class="b1r2"></span><span class="b1b2"></span><span class="b14s2"></span><span
+                            class="b16s2"></span><span class="b1sn2"></span><span class="b1st2"></span><span class="b1r2"></span><span class="b1b2"></span><span class="b14s2"></span><span class="b16s2"></span><span
+                            class="b1sn2"></span><span class="b1st2"></span><span class="b1r2"></span><span class="b1b2"></span><span class="b14s2"></span><span class="b16s2"></span>
+                    </div>
+                    <div class="extras">
+                        <hr class="sihr"><span></span><span></span><span></span><span></span><span></span><span class="extr1">Extras</span><span class="ex2"></span><span></span><span></span><span></span><span></span><span
+                            class="totl1">Total</span><span class="tl2"></span><span></span><span></span><span></span><span></span>
+                        <hr class="sihr">
+                    </div>
+                    <div class="scorecard-grid-bowl" id="scorecardGridTwo"><span class="scorecard-grid-header">Bowler</span><span class="scorecard-grid-header">Nb</span><span class="scorecard-grid-header">Ovrs</span><span
+                            class="scorecard-grid-header">Runs</span><span class="scorecard-grid-header">Wds</span><span class="bw1sn2"></span><span class="bw1nb2"></span><span class="bw1o2"></span><span class="bw1r2"></span><span
+                            class="bw1w2"></span><span class="bw1sn2"></span><span class="bw1nb2"></span><span class="bw1o2"></span><span class="bw1r2"></span><span class="bw1w2"></span><span class="bw1sn2"></span><span
+                            class="bw1nb2"></span><span class="bw1o2"></span><span class="bw1r2"></span><span class="bw1w2"></span><span class="bw1sn2"></span><span class="bw1nb2"></span><span class="bw1o2"></span><span
+                            class="bw1r2"></span><span class="bw1w2"></span><span class="bw1sn2"></span><span class="bw1nb2"></span><span class="bw1o2"></span><span class="bw1r2"></span><span class="bw1w2"></span><span
+                            class="bw1sn2"></span><span class="bw1nb2"></span><span class="bw1o2"></span><span class="bw1r2"></span><span class="bw1w2"></span><span class="bw1sn2"></span><span class="bw1nb2"></span><span
+                            class="bw1o2"></span><span class="bw1r2"></span><span class="bw1w2"></span><span class="bw1sn2"></span><span class="bw1nb2"></span><span class="bw1o2"></span><span class="bw1r2"></span><span
+                            class="bw1w2"></span><span class="bw1sn2"></span><span class="bw1nb2"></span><span class="bw1o2"></span><span class="bw1r2"></span><span class="bw1w2"></span><span class="bw1sn2"></span><span
+                            class="bw1nb2"></span><span class="bw1o2"></span><span class="bw1r2"></span><span class="bw1w2"></span><span class="bw1sn2"></span><span class="bw1nb2"></span><span class="bw1o2"></span><span
+                            class="bw1r2"></span><span class="bw1w2"></span></div>
+                    </div>
+                    </div>
                 <div class="comms-grid-two" id="commsGrid">
                     <div id="comms-list">
                         <p class="cms"></p>
