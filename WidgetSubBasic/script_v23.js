@@ -470,15 +470,6 @@ socket.onmessage = function (event) {
             }
          }
 
-         let scrgl = document.querySelectorAll('.scorecard-grid')
-
-         for (i = 0; i < scrgl.length; i++) {
-            if (t1b[i].textContent != '') {
-               scrgl[i].style.cssText = 'grid-template-rows: 30px 20px;'
-               console.log(scrgl[i])
-            }
-         }
-
          tbs.addEventListener('click', function () {
             sgt.style.display = 'block'
             tosl.style.display = 'none'
