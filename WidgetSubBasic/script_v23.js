@@ -400,9 +400,7 @@ socket.onmessage = function (event) {
             b14s2 = document.querySelectorAll('.b14s2'),
             b16s2 = document.querySelectorAll('.b16s2');
             
-           
-           
-           console.log(b1sn2, b1st2, b1b2, b1r2, b14s2, b16s2)
+         
     
 
          // switch statement looks for inning no
@@ -480,7 +478,43 @@ socket.onmessage = function (event) {
                }
             }
          
-         
+               console.log(b1sn2, b1st2, b1b2, b1r2, b14s2, b16s2)
+
+
+                for (i = 0; i < b1sn2.length; i++) {
+                   b1sn2[i].innerHTML = inns2.batting[i].name
+                   if (t1b[i].textContent == '') {
+                      b1sn2[i].style.display = 'none'
+                      b1st2[i].style.display = 'none'
+                      b1b2[i].style.display = 'none'
+                      b1r2[i].style.display = 'none'
+                      b14s2[i].style.display = 'none'
+                      b16s2[i].style.display = 'none'
+                   } else {
+                       b1sn2[i].style.display = 'block'
+                       b1st2[i].style.display = 'block'
+                       b1b2[i].style.display = 'block'
+                       b1r2[i].style.display = 'block'
+                       b14s2[i].style.display = 'block'
+                       b16s2[i].style.display = 'block'
+                   }
+                }
+
+            for (i = 0; i < b1sn2.length; i++) {
+               b1sn2[i].innerHTML = inns2.bowling[i].name
+               if (inns2.bowling[i].name == '') {
+                  t2bnb[i].style.display = 'none'
+                  t2bo[i].style.display = 'none'
+                  t2br[i].style.display = 'none'
+                  t2bw2[i].style.display = 'none'
+               } else {
+                  t2bnb[i].style.display = 'block'
+                  t2bo[i].style.display = 'block'
+                  t2br[i].style.display = 'block'
+                  t2bw2[i].style.display = 'block'
+               }
+            }
+
          
 
          let scrgl = document.querySelectorAll('.scorecard-grid')
