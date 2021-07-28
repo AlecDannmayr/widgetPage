@@ -510,26 +510,30 @@ socket.onmessage = function (event) {
                       b16s2[i].style.display = 'block'
                    }
                 }
-/*
-            for (i = 0; i < b1sn2.length; i++) {
-               b1sn2[i].innerHTML = inns1.bowling[i].name
-                 if (b1sn2[i].textContent == '') {
-                    b1sn2[i].style.display = 'none'
-                    b1st2[i].style.display = 'none'
-                    b1b2[i].style.display = 'none'
-                    b1r2[i].style.display = 'none'
-                    b14s2[i].style.display = 'none'
-                    b16s2[i].style.display = 'none'
+
+                           t2bnb2 = document.querySelectorAll('.bw1nb2'),
+            t2bo2 = document.querySelectorAll('.bw1o2'),
+            t2br2 = document.querySelectorAll('.bw1r2'),
+            t2bw22 = document.querySelectorAll('.bw1w2'),
+            t2bw222 = document.getElementsByClassName('bw1sn2');
+
+            for (i = 0; i < t2bnb2.length; i++) {
+               t2bnb2[i].innerHTML = inns1.bowling[i].name
+                 if (t2bnb2[i].textContent == '') {
+                       t2bnb2[i].style.display = 'none'
+                    t2bo2[i].style.display = 'none'
+                    t2br2[i].style.display = 'none'
+                    t2bw22[i].style.display = 'none'
+                    t2bw222[i].style.display = 'none'
                  } else {
-                    b1sn2[i].style.display = 'block'
-                    b1st2[i].style.display = 'block'
-                    b1b2[i].style.display = 'block'
-                    b1r2[i].style.display = 'block'
-                    b14s2[i].style.display = 'block'
-                    b16s2[i].style.display = 'block'
+                    t2bnb2[i].style.display = 'block'
+                    t2bo2[i].style.display = 'block'
+                    t2br2[i].style.display = 'block'
+                    t2bw22[i].style.display = 'block'
+                    t2bw222[i].style.display = 'block'
                  }
             }
-*/
+
 
 
          let scrgl = document.querySelectorAll('.scorecard-grid')
