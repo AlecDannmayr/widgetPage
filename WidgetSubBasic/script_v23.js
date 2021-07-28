@@ -510,24 +510,26 @@ socket.onmessage = function (event) {
                       b16s2[i].style.display = 'block'
                    }
                 }
-
+/*
             for (i = 0; i < b1sn2.length; i++) {
                b1sn2[i].innerHTML = inns1.bowling[i].name
-               if (inns1.bowling[i].name == '') {
-                  t2bnb2[i].style.display = 'none'
-                  t2bo2[i].style.display = 'none'
-                  t2br2[i].style.display = 'none'
-                  t2bw22[i].style.display = 'none'
-                  t2bw222[i].style.display = 'none'
-               } else {
-                  t2bnb[i].style.display = 'block'
-                  t2bo[i].style.display = 'block'
-                  t2br[i].style.display = 'block'
-                  t2bw2[i].style.display = 'block'
-                  t2bw222[i].style.display = 'block'
-               }
+                 if (b1sn2[i].textContent == '') {
+                    b1sn2[i].style.display = 'none'
+                    b1st2[i].style.display = 'none'
+                    b1b2[i].style.display = 'none'
+                    b1r2[i].style.display = 'none'
+                    b14s2[i].style.display = 'none'
+                    b16s2[i].style.display = 'none'
+                 } else {
+                    b1sn2[i].style.display = 'block'
+                    b1st2[i].style.display = 'block'
+                    b1b2[i].style.display = 'block'
+                    b1r2[i].style.display = 'block'
+                    b14s2[i].style.display = 'block'
+                    b16s2[i].style.display = 'block'
+                 }
             }
-
+*/
 
 
          let scrgl = document.querySelectorAll('.scorecard-grid')
