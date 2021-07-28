@@ -413,10 +413,6 @@ socket.onmessage = function (event) {
             t2bw22 = document.querySelectorAll('.bw1w2'),
             t2bw222 = document.getElementsByClassName('bw1nb2')
 
-
-
-         
-
          // switch statement looks for inning no
 
          switch (inns_now) {
@@ -436,7 +432,6 @@ socket.onmessage = function (event) {
 
          // Takes extras object transforms into array and used reduce to add values together
 
-
          for (j = 0; j < t1r.length; j++) {
             t1r[j].innerHTML = inns1.batting[j].runs
             t1b2[j].innerHTML = inns1.batting[j].balls
@@ -448,8 +443,7 @@ socket.onmessage = function (event) {
             t2bw2[j].innerHTML = inns1.bowling[j].wd
             stts[j].innerHTML = inns1.batting[j].status.replace(/,[^,]+$/, '')
          }
-                         
-           
+                        
          /* Batting order */
 
           const extrar = Object.values(inns1.extras),
@@ -493,8 +487,7 @@ socket.onmessage = function (event) {
                   t2bw2[i].style.display = 'block'
                }
             }
-
-
+console.log(inns2)
        if (inns2 != null) {
 
          for (j = 0; j < t1r.length; j++) {
