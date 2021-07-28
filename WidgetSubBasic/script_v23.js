@@ -455,7 +455,7 @@ socket.onmessage = function (event) {
 
           ex1[0].innerText = addext
           tl1[0].innerText = t1fis.textContent + t1fw.textContent
-        /*
+        
             for (i = 0; i < t1b.length; i++) {
                t1b[i].innerHTML = inns1.batting[i].name
                if (t1b[i].textContent == '') {
@@ -489,11 +489,18 @@ socket.onmessage = function (event) {
                   t2bw2[i].style.display = 'block'
                }
             }
-         */
-               console.log(b1sn2, b1st2, b1b2, b1r2, b14s2, b16s2)
 
-           // if (inns2 != null) {
-              
+
+
+       if (inns2 != null) {
+          const extrar = Object.values(inns2.extras),
+             addext = extrar.reduce(function (acc, val) {
+                return acc + val
+             }, 0)
+
+          ex2[0].innerText = addext
+          tl2[0].innerText = t1fis.textContent + t1fw.textConten
+
                 for (i = 0; i < b1sn2.length; i++) {
                    b1sn2[i].innerHTML = inns1.batting[i].name
                    if (b1sn2[i].textContent == '') {
@@ -529,8 +536,7 @@ socket.onmessage = function (event) {
                     t2bw222[i].style.display = 'block'
                  }
             }
-
-
+         }
 
          let scrgl = document.querySelectorAll('.scorecard-grid')
          for (i = 0; i < scrgl.length; i++) {
