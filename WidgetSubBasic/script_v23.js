@@ -641,22 +641,26 @@ console.log("Ins 2")
             shortnameOne
 
          // Check all of this! // if innings1team === teams[p]
-
-            st1.innerHTML = teams[0].short_name
-            st2.innerHTML = teams[1].short_name
-
-         for (i = 0; i < t1p.length; i++) {
-            if (t1n == teams[0].short_name) {
-               shortNameOne = teams[0].short_name
-               shortNameTwo = teams[1].short_name
-               st1t.innerHTML = shortNameOne
-               st2t.innerHTML = shortNameTwo
-            } else {
-               shortNameOne = teams[1].short_name
-               shortNameTwo = teams[0].short_name
-               st1t.innerHTML = shortNameTwo
-               st2t.innerHTML = shortNameOne
+  if (btnw == teams[0].name) {
+               st1.innerHTML = teams[0].short_name
+               st2.innerHTML = teams[1].short_name
+            } else if (btnw == teams[1].name) {
+               st1.innerHTML = teams[1].short_name
+               st2.innerHTML = teams[0].short_name
             }
+
+            for (i = 0; i < t1p.length; i++) {
+               if (t1n == teams[0].short_name) {
+                  shortNameOne = teams[0].short_name
+                  shortNameTwo = teams[1].short_name
+                  st1t.innerHTML = shortNameOne
+                  st2t.innerHTML = shortNameTwo
+               } else {
+                  shortNameOne = teams[1].short_name
+                  shortNameTwo = teams[0].short_name
+                  st1t.innerHTML = shortNameTwo
+                  st2t.innerHTML = shortNameOne
+               }
 
             if (btnw == teams[0].name) {
                //  t1b[i].innerHTML = teams[0].players[i].name // batter
