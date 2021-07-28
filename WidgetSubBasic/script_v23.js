@@ -437,17 +437,12 @@ socket.onmessage = function (event) {
          for (i = 0; i < t1b.length; i++) {
             t1b[i].innerHTML = insNo.batting[i].name
             if (t1b[i].textContent == '') {
-               const atr = document.createElement('SPAN')
-               atr.setAttribute('class', 'blsn')
-               t1b[i].appendChild(atr)
-               /*
                t1b[i].style.display = 'none'
                stts[i].style.display = 'none'
                t1b2[i].style.display = 'none'
                t1r[i].style.display = 'none'
                t14s[i].style.display = 'none'
                t16s[i].style.display = 'none'
-               */
             } else {
                t1b[i].style.display = 'block'
                stts[i].style.display = 'block'
