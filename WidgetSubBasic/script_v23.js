@@ -455,6 +455,16 @@ socket.onmessage = function (event) {
             }
          }
 
+         let trl = document.querySelectorAll('.scorecard-grid-header')
+         for (i = 0; i < insNo.batting.length; i++) {
+            console.log(trl[i])
+            if (insNo.batting[i].name != '') {
+               nA = document.createElement('span')
+               nA.setAttribute('class', 'b1sn')
+               trl[6].append(nA)
+            }
+         }
+
          for (i = 0; i < t2bw.length; i++) {
             t2bw[i].innerHTML = insNo.bowling[i].name
             if (insNo.bowling[i].name == '') {
