@@ -443,13 +443,20 @@ socket.onmessage = function (event) {
                t1r[i].style.display = 'none'
                t14s[i].style.display = 'none'
                t16s[i].style.display = 'none'
+            } else {
+               t1b[i].style.display = 'block'
+               stts[i].style.display = 'block'
+               t1b2[i].style.display = 'block'
+               t1r[i].style.display = 'block'
+               t14s[i].style.display = 'block'
+               t16s[i].style.display = 'block'
             }
          }
 
          /*
                               for (i = 0; i < t2bw.length; i++) {
                                  t2bw[i].innerHTML = insNo.batting[i].name
-                                 if (t1b[i].textContent == '') {
+                                 if (insNo.batting[i].name) {
                                     t2bnb[i].style.display = 'none'
                                     t2bo[i].style.display = 'none'
                                     t2br[i].style.display = 'none'
