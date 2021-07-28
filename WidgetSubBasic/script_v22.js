@@ -47,6 +47,7 @@ let g2h = document.getElementById('second-header'),
    gsts = document.getElementById('third-header-game-status'),
    wi1 = document.getElementById('winner-image-team-one'),
    wi2 = document.getElementById('winner-image-team-two'),
+   t1b = document.getElementsByClassName('b1sn'),
    innings1battingteam,
    shortNameOne,
    shortNameTwo,
@@ -434,6 +435,7 @@ function matchRun(idNo) {
 
             for (i = 0; i < insNo.batting.length; i++) {
                console.log(insNo.batting[i].name)
+               t1b[i].innerHtml = insNo.batting[i].name
             }
 
             tbs.addEventListener('click', function () {
@@ -498,7 +500,6 @@ function matchRun(idNo) {
             /* Team name for teams and batter and bowler */
             var t1p = document.getElementsByClassName('b'),
                t2p = document.getElementsByClassName('b2'),
-               t1b = document.getElementsByClassName('b1sn'),
                t2bw = document.getElementsByClassName('bw1sn'),
                hdb1 = document.getElementsByClassName('hdb1'),
                hdb2 = document.getElementsByClassName('hdb2'),
