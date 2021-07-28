@@ -437,11 +437,11 @@ socket.onmessage = function (event) {
             t1b[i].innerHTML = insNo.batting[i].name
             if (t1b[i].textContent == '') {
                t1b[i].style.display = 'none'
-               stts[i].style.daisplay = 'none'
-               t1b[i].style.display = 'none'
+               stts[i].style.display = 'none'
+               t1b2[i].style.display = 'none'
                t1r[i].style.display = 'none'
-               b14s[i].style.display = 'none'
-               b16s[i].style.display = 'none'
+               t14s[i].style.display = 'none'
+               t16s[i].style.display = 'none'
             }
          }
 
@@ -555,7 +555,7 @@ socket.onmessage = function (event) {
 
             if (btnw == teams[0].name) {
                //  t1b[i].innerHTML = teams[0].players[i].name // batter
-               t2bw[i].innerHTML = teams[1].players[i].name // bowler
+               //  t2bw[i].innerHTML = teams[1].players[i].name // bowler
                t1p[i].innerHTML = teams[0].players[i].name
                t2p[i].innerHTML = teams[1].players[i].name
                hdbw1[i].innerHTML = teams[0].players[i].bowler_style
@@ -566,7 +566,7 @@ socket.onmessage = function (event) {
                hdb2[i].innerHTML = bhcp2.charAt(0).toUpperCase() + bhcp2.slice(1)
             } else {
                // t1b[i].innerHTML = teams[1].players[i].name // batter
-               t2bw[i].innerHTML = teams[0].players[i].name // bowler
+               // t2bw[i].innerHTML = teams[0].players[i].name // bowler
                t1p[i].innerHTML = teams[1].players[i].name
                t2p[i].innerHTML = teams[0].players[i].name
                hdbw1[i].innerHTML = teams[1].players[i].bowler_style
