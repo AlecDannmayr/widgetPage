@@ -449,8 +449,6 @@ socket.onmessage = function (event) {
             stts[j].innerHTML = inns1.batting[j].status.replace(/,[^,]+$/, '')
          }
                          
-                     
-
            
          /* Batting order */
 
@@ -495,7 +493,6 @@ socket.onmessage = function (event) {
                   t2bw2[i].style.display = 'block'
                }
             }
-
 
 
        if (inns2 != null) {
