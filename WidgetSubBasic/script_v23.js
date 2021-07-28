@@ -412,6 +412,9 @@ socket.onmessage = function (event) {
             t2br2 = document.querySelectorAll('.bw1r2'),
             t2bw22 = document.querySelectorAll('.bw1w2'),
             t2bw222 = document.getElementsByClassName('bw1nb2')
+
+
+
          
 
          // switch statement looks for inning no
@@ -435,17 +438,30 @@ socket.onmessage = function (event) {
 
 
          for (j = 0; j < t1r.length; j++) {
-            t1r[j].innerHTML = insNo.batting[j].runs
-            t1b2[j].innerHTML = insNo.batting[j].balls
-            t14s[j].innerHTML = insNo.batting[j].fours
-            t16s[j].innerHTML = insNo.batting[j].sixes
-            t2bnb[j].innerHTML = insNo.bowling[j].nb
-            t2bo[j].innerHTML = insNo.bowling[j].overs
-            t2br[j].innerHTML = insNo.bowling[j].runs
-            t2bw2[j].innerHTML = insNo.bowling[j].wd
-            stts[j].innerHTML = insNo.batting[j].status.replace(/,[^,]+$/, '')
+            t1r[j].innerHTML = [0].batting[j].runs
+            t1b2[j].innerHTML = [0].batting[j].balls
+            t14s[j].innerHTML = [0].batting[j].fours
+            t16s[j].innerHTML = [0].batting[j].sixes
+            t2bnb[j].innerHTML = [0].bowling[j].nb
+            t2bo[j].innerHTML = [0].bowling[j].overs
+            t2br[j].innerHTML = [0].bowling[j].runs
+            t2bw2[j].innerHTML = [0].bowling[j].wd
+            stts[j].innerHTML = [0].batting[j].status.replace(/,[^,]+$/, '')
          }
 
+                      for (j = 0; j < t1r.length; j++) {
+                         b1r2[j].innerHTML = [0].batting[j].runs
+                         b1b2[j].innerHTML = [0].batting[j].balls
+                         b14s2[j].innerHTML = [0].batting[j].fours
+                         b16s2[j].innerHTML = [0].batting[j].sixes
+                         t2bnb2[j].innerHTML = [0].bowling[j].nb
+                         t2bo2[j].innerHTML = [0].bowling[j].overs
+                         t2br2[j].innerHTML = [0].bowling[j].runs
+                         t2bw22[j].innerHTML = [0].bowling[j].wd
+                         b1st2[j].innerHTML = [0].batting[j].status.replace(/,[^,]+$/, '')
+                      }
+
+           
          /* Batting order */
 
           const extrar = Object.values(inns1.extras),
