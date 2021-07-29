@@ -452,9 +452,7 @@ socket.onmessage = function (event) {
             stts[j].innerHTML = ino3.batting[j].status.replace(/,[^,]+$/, '')
          }
                         
-         /* Batting order */
-
-
+         /* Batting order 
 
           const extrar = Object.values(ino3.extras),
              addext = extrar.reduce(function (acc, val) {
@@ -482,6 +480,7 @@ socket.onmessage = function (event) {
                   t16s[i].style.display = 'block'
                }
             }
+            */
 
             for (i = 0; i < t2bw.length; i++) {
                t2bw[i].innerHTML = ino3.bowling[i].name
@@ -497,20 +496,20 @@ socket.onmessage = function (event) {
                   t2bw2[i].style.display = 'block'
                }
             }
-       if (inns2 != null) {
+     //  if (inns2 != null) {
 
          for (j = 0; j < t1r.length; j++) {
-            b1r2[j].innerHTML = intf.batting[j].runs
-            b1b2[j].innerHTML = intf.batting[j].balls
-            b14s2[j].innerHTML = intf.batting[j].fours
-            b16s2[j].innerHTML = intf.batting[j].sixes
-            t2bnb2[j].innerHTML = intf.bowling[j].nb
-            t2bo2[j].innerHTML = intf.bowling[j].overs
-            t2br2[j].innerHTML = intf.bowling[j].runs
-            t2bw22[j].innerHTML = intf.bowling[j].wd
-            b1st2[j].innerHTML = intf.batting[j].status.replace(/,[^,]+$/, '')
+            b1r2[j].innerHTML = ino3.batting[j].runs
+            b1b2[j].innerHTML = ino3.batting[j].balls
+            b14s2[j].innerHTML = ino3.batting[j].fours
+            b16s2[j].innerHTML = ino3.batting[j].sixes
+            t2bnb2[j].innerHTML = ino3.bowling[j].nb
+            t2bo2[j].innerHTML = ino3.bowling[j].overs
+            t2br2[j].innerHTML = ino3.bowling[j].runs
+            t2bw22[j].innerHTML = ino3.bowling[j].wd
+            b1st2[j].innerHTML = ino3.batting[j].status.replace(/,[^,]+$/, '')
          } 
-          const extrar = Object.values(intf.extras),
+          const extrar = Object.values(ino3.extras),
              addext = extrar.reduce(function (acc, val) {
                 return acc + val
              }, 0)
@@ -537,7 +536,7 @@ socket.onmessage = function (event) {
                 }
 
             for (i = 0; i < t2bnb2.length; i++) {
-               t2bnb2[i].innerHTML = intf.bowling[i].name
+               t2bnb2[i].innerHTML = ino3.bowling[i].name
                  if (t2bnb2[i].textContent == '') {
                     t2bnb2[i].style.display = 'none'
                     t2bo2[i].style.display = 'none'
@@ -552,7 +551,7 @@ socket.onmessage = function (event) {
                     t2bw222[i].style.display = 'block'
                  }
             }
-         }
+        // }
 
          let scrgl = document.querySelectorAll('.scorecard-grid')
          for (i = 0; i < scrgl.length; i++) {
