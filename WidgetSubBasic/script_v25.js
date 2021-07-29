@@ -76,23 +76,23 @@ function matchRun(idNo) {
       feed_filter: ['event', 'powerbar', 'scorecard', 'scoreboard', 'lineups', 'commentary', 'match_update', 'scoregrid'],
    }
    var snd = JSON.stringify(obj)
-   if (idNo == '1000004510LIVE1001' && socket == 0) {
+   if (idNo == '1000006380LIVE1001' && socket == 0) {
       socket = new WebSocket('ws://demo-feed-widget-uat.decimalcricket.com/DEMO:Wi')
       socket.onopen = function () {
          socket.send(snd)
       }
-   } else if (idNo == '1000004510LIVE1001' && socket.readyState == 1) {
+   } else if (idNo == '1000006380LIVE1001' && socket.readyState == 1) {
       socket.close()
       socket = new WebSocket('ws://demo-feed-widget-uat.decimalcricket.com/DEMO:Wi')
       socket.onopen = function () {
          socket.send(snd)
       }
-   } else if (idNo != '1000004510LIVE1001' && socket == 0) {
+   } else if (idNo != '1000006380LIVE1001' && socket == 0) {
       socket = new WebSocket('ws://feed.decimalcricket.com')
       socket.onopen = function () {
          socket.send(snd)
       }
-   } else if (idNo != '1000004510LIVE1001' && socket.readyState == 1) {
+   } else if (idNo != '1000006380LIVE1001' && socket.readyState == 1) {
       socket.close()
       socket = new WebSocket('ws://feed.decimalcricket.com')
       socket.onopen = function () {
