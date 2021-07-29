@@ -1,5 +1,10 @@
+// Uncomment to use demo widget without menu
+
 //let socket = new WebSocket('ws://demo-feed-widget-uat.decimalcricket.com/DEMO:Wi')
+
+
 var socket = 0 /*remove commenting for socket = 0 and comment out socket.open below when intergrated into menu */
+
 /*
 socket.onopen = function () {
    socket.send(
@@ -10,7 +15,7 @@ socket.onopen = function () {
                                       }`
    )
 }
-*/
+
 //* Global scoped variables (not ideal but is a must for the way the data is structured) */
 
 let g2h = document.getElementById('second-header'),
@@ -167,50 +172,7 @@ socket.onmessage = function (event) {
             snc1.innerHTML = ' '
             snc2.innerHTML = ' '
             ngi.style.cssText = 'display: block;'
-         }
-
-         /* Countdown Clock not yet enabled 
-            var GetStartTime = start_datetime
-            setInterval(function () {
-               function getTimeRemaining(endtime) {
-                  const total = Date.parse(endtime) - Date.parse(new Date()),
-                     seconds = Math.floor((total / 1000) % 60),
-                     minutes = Math.floor((total / 1000 / 60) % 60),
-                     hours = Math.floor((total / (1000 * 60 * 60)) % 24),
-                     days = Math.floor(total / (1000 * 60 * 60 * 24))
-                  return {
-                     total,
-                     days,
-                     hours,
-                     minutes,
-                     seconds,
-                  }
-               }
-               function initializeClock(id, endtime) {
-                  const clock = document.getElementById(id),
-                     daysSpan = clock.querySelector('.days'),
-                     hoursSpan = clock.querySelector('.hours'),
-                     minutesSpan = clock.querySelector('.minutes'),
-                     secondsSpan = clock.querySelector('.seconds')
-                  function updateClock() {
-                     const t = getTimeRemaining(endtime)
-                     daysSpan.innerHTML = t.days
-                     hoursSpan.innerHTML = ('0' + t.hours).slice(-2)
-                     minutesSpan.innerHTML = ('0' + t.minutes).slice(-2)
-                     secondsSpan.innerHTML = ('0' + t.seconds).slice(-2)
-                     if (t.total <= 0) {
-                        clearInterval(timeinterval)
-                        var clockDiv = document.getElementById('clockdiv')
-                        clockDiv.style.color = 'orange'
-                     }
-                  }
-                  updateClock()
-                  var timeinterval = setInterval(updateClock, 1000)
-               }
-               initializeClock('clockdiv', GetStartTime)
-            }, 1000)
-         }
-*/
+         } 
 
          break
 
@@ -233,8 +195,8 @@ socket.onmessage = function (event) {
          const sist = event_status.split('_').join(' ')
 
          // Changes match Stable to Waiting for Bowl
-         gsts.innerHTML = sist
 
+         gsts.innerHTML = sist
          if (scoreboard[0].name == 'away') {
             hoa = 'away'
          }
@@ -372,7 +334,7 @@ socket.onmessage = function (event) {
       // Scorecard case
 
       case 'scorecard':
-         var { batting, bowling, bat_now, bowl_now, inns_now, inns1, inns2, inns3, inns4 } = msg.scorecard
+         var {bat_now, inns_now, inns1, inns2, inns3, inns4 } = msg.scorecard
          btnw = bat_now
          igsn = inns_now
 
