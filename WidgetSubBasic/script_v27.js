@@ -497,7 +497,7 @@ socket.onmessage = function (event) {
             }
 
             
-      // if (inns2 != null) {
+       if (inns2 != null) {
 
          for (j = 0; j < t1r.length; j++) {
             b1r2[j].innerHTML = intf.batting[j].runs
@@ -552,7 +552,7 @@ socket.onmessage = function (event) {
                     t2bw222[i].style.display = 'block'
                  }
             }
-      //   }
+        }
 
          let scrgl = document.querySelectorAll('.scorecard-grid')
          for (i = 0; i < scrgl.length; i++) {
