@@ -241,7 +241,7 @@ socket.onmessage = function (event) {
             t2fo = document.getElementById('team-two-overs'),
             t1o = innings1overs,
             t1op1 = parseFloat(t1o) + 1
-         tofo.innerHTML = t1o + ' Ovs'
+         tofo.innerHTML =  "(" + t1o + ' Ovs' + ")"
 
          // Team Two Overs
 
@@ -267,7 +267,7 @@ socket.onmessage = function (event) {
             t2fo.innerHTML = ''
          } else if (currentinnings == 2 || currentinnings == 4) {
             t2fis.innerHTML = t2s + ' / '
-            t2fo.innerHTML = t2o + ' Ovs'
+            t2fo.innerHTML = '(' + t2o + ' Ovs' + ')'
             ftbi.style.display = 'none'
             stbi.style.display = 'block'
             // Current Wickets Team Two
