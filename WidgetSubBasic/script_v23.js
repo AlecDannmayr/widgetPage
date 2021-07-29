@@ -657,9 +657,13 @@ console.log("Ins 2")
             if (t1n == teams[0].short_name) {
                shortNameOne = teams[0].short_name
                shortNameTwo = teams[1].short_name
+               st1t.innerHTML = teams[0].short_name
+               st2t.innerHTML = teams[1].short_name
             } else {
                shortNameOne = teams[1].short_name
                shortNameTwo = teams[0].short_name
+               st1t.innerHTML = teams[1].short_name
+               st2t.innerHTML = teams[0].short_name
             }
 
                if (btnw == teams[0].name) {
