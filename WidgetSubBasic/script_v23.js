@@ -641,7 +641,7 @@ console.log("Ins 2")
 
          // Check all of this! // if innings1team === teams[p]
 
-               console.log(btnw, teams[0].name)
+
 
            if (btnw == teams[0].name) {
               st1.innerHTML = teams[0].short_name
@@ -657,13 +657,9 @@ console.log("Ins 2")
             if (t1n == teams[0].short_name) {
                shortNameOne = teams[0].short_name
                shortNameTwo = teams[1].short_name
-               st1t.innerHTML = shortNameOne
-               st2t.innerHTML = shortNameTwo
             } else {
                shortNameOne = teams[1].short_name
                shortNameTwo = teams[0].short_name
-               st1t.innerHTML = shortNameTwo
-               st2t.innerHTML = shortNameOne
             }
 
                if (btnw == teams[0].name) {
