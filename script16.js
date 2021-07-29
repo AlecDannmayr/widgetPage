@@ -24,33 +24,6 @@ window.addEventListener('load', function () {
             return obj.competition !== 'Quantum Cricket League'
          })
 
-         /*
-                  let dotw = td.getDay(), dyw;
-                  switch (dotw) {
-                     case 1:
-                        dyw = "Monday"
-                        break;
-                     case 2:
-                        dyw = "Tuesday"
-                        break;
-                     case 3:
-                        dyw = "Wednesday"
-                        break;
-                     case 4:
-                        dyw = "Thursday"
-                        break;
-                     case 5:
-                        dyw = "Friday"
-                        break;
-                     case 6:
-                        dyw = "Saturday"
-                        break;
-                     case 7:
-                        dyw = "Sunday"
-                        break;
-                  }           
-*/
-
          // Sorts api of fixtures to game starting soonest
 
          r.sort((a, b) => {
