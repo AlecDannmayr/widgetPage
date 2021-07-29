@@ -437,10 +437,7 @@ socket.onmessage = function (event) {
                   intf = inns4
                break
          }
-
-
-         console.log(ino3)
-            console.log(intf)
+         
          // Takes extras object transforms into array and used reduce to add values together
 
          for (j = 0; j < t1r.length; j++) {
