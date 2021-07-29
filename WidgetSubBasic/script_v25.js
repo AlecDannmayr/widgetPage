@@ -515,7 +515,7 @@ socket.onmessage = function (event) {
                 return acc + val
              }, 0)
           ex2[0].innerText = addext
-          tl2[0].innerText = t1fis.textContent + t1fw.textConten
+          tl2[0].innerText = t1fis.textContent + t1fw.textContent
 
                 for (i = 0; i < b1sn2.length; i++) {
                    b1sn2[i].innerHTML = intf.batting[i].name
