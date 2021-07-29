@@ -562,7 +562,6 @@ console.log("Ins 2")
          for (i = 0; i < scrgl.length; i++) {
             if (t1b[i].textContent != '') {
                scrgl[i].style.cssText = 'grid-template-rows: 30px;'
-               b1sn2[i].style.cssText = 'margin-bottom: 10px;'
             }
          }
 
@@ -648,7 +647,7 @@ console.log("Ins 2")
            if (btnw == teams[0].name) {
               st1.innerHTML = teams[0].short_name
               st2.innerHTML = teams[1].short_name
-           } else if (btnw == teams[1].name) {
+           } else if (btnw == teams[0].name) {
               st1.innerHTML = teams[1].short_name
               st2.innerHTML = teams[0].short_name
            }
