@@ -376,6 +376,8 @@ socket.onmessage = function (event) {
          btnw = bat_now
          igsn = inns_now
 
+         console.log(btnw)
+
          const inssNow = document.querySelector('#ins-now')
          inssNow.innerHTML = 'Inning: ' + inns_now
 
@@ -437,7 +439,7 @@ socket.onmessage = function (event) {
                   intf = inns4
                break
          }
-         
+
          // Takes extras object transforms into array and used reduce to add values together
 
          for (j = 0; j < t1r.length; j++) {
@@ -644,9 +646,11 @@ console.log("Ins 2")
            if (btnw == teams[0].name) {
               st1.innerHTML = teams[0].short_name
               st2.innerHTML = teams[1].short_name
+              console.log("true")
            } else if (btnw == teams[0].name) {
               st1.innerHTML = teams[1].short_name
               st2.innerHTML = teams[0].short_name
+                 console.log("true")
            }
 
          for (i = 0; i < t1p.length; i++) {
