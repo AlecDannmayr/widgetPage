@@ -40,7 +40,6 @@ window.addEventListener('load', function () {
             notf = 0,
             fixt
 
-         //  (moments.format().substring(11, 19), r[2].start.substring(11, 19))
          let ftxt = document.getElementsByClassName('fixture-time')
          for (i = 0; i < r.length; i++) {
             if (r[i].start.substring(0, 10) == nuDt) {
