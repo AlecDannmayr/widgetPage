@@ -376,8 +376,6 @@ socket.onmessage = function (event) {
          btnw = bat_now
          igsn = inns_now
 
-         console.log(btnw)
-
          const inssNow = document.querySelector('#ins-now')
          inssNow.innerHTML = 'Inning: ' + inns_now
 
@@ -643,11 +641,13 @@ console.log("Ins 2")
 
          // Check all of this! // if innings1team === teams[p]
 
+               console.log(btnw, teams[0].name)
+
            if (btnw == teams[0].name) {
               st1.innerHTML = teams[0].short_name
               st2.innerHTML = teams[1].short_name
               console.log("true")
-           } else if (btnw == teams[0].name) {
+           } else if (btnw == teams[1].name) {
               st1.innerHTML = teams[1].short_name
               st2.innerHTML = teams[0].short_name
                  console.log("true")
