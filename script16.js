@@ -177,23 +177,3 @@ function open() {
 function close() {
    z.style.cssText = 'width: 0px;'
 }
-
-// Checks for games Tomorrow and outputs as var 'filteredTomorrow'
-
-/*
-
-         let tomorrow = moments.add(1, 'days').format().substring(0, 10)
-         function filter_games_tomorrow(r) {
-            return r.start == tomorrow
-         }
-         var filteredTomorrow = r.filter(filter_games_tomorrow)
-*/
-/*
-                              let nuDt = moments.format().substring(0, 10)
-                              function filter_games(r) {
-                                 return r.start != nuDt;
-                              }
-                              var filtered = r.filter(filter_games);
-               */
-
-// Creates and prepends a demo list item to indicate how many games in day (does not show if no games)
