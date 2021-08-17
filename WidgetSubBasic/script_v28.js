@@ -369,6 +369,7 @@ socket.onmessage = function (event) {
             t2br = document.querySelectorAll('.bw1r'),
             t2bw2 = document.querySelectorAll('.bw1w'),
             t2bw = document.getElementsByClassName('bw1sn'),
+            bw1wkt = document.getElementsByClassName('bw1wkt'),
             // Second team bowling
             t2bnb2 = document.querySelectorAll('.bw1sn2'),
             t2bo2 = document.querySelectorAll('.bw1o2'),
@@ -412,6 +413,7 @@ socket.onmessage = function (event) {
             t2bo[j].innerHTML = ino3.bowling[j].overs
             t2br[j].innerHTML = ino3.bowling[j].runs
             t2bw2[j].innerHTML = ino3.bowling[j].wd
+            bw1wkt[j].innerHTML = ino3.bowling[j].wickets
             stts[j].innerHTML = ino3.batting[j].status.replace(/,[^,]+$/, '')
          }
 
