@@ -423,7 +423,7 @@ socket.onmessage = function (event) {
             }, 0)
 
          ex1[0].innerText = addext
-         tl1[0].innerText = t1fis.textContent.replace(' / ', '') + ' (' + t1fw.textContent + ' Wkts' + ')'
+         tl1[0].innerText = t1fis.textContent.replace(' / ', '') + '  ' + ' ( ' + t1fw.textContent + ' wkts' + ' ) '
 
          for (i = 0; i < t1b.length; i++) {
             t1b[i].innerHTML = ino3.batting[i].name
