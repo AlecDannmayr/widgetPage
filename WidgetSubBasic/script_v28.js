@@ -369,12 +369,9 @@ socket.onmessage = function (event) {
             t2br = document.querySelectorAll('.bw1r'),
             t2bw2 = document.querySelectorAll('.bw1w'),
             t2bw = document.getElementsByClassName('bw1sn'),
-            // Second team bowling
-            t2bnb2 = document.querySelectorAll('.bw1sn2'),
-            t2bo2 = document.querySelectorAll('.bw1o2'),
-            t2br2 = document.querySelectorAll('.bw1r2'),
-            t2bw22 = document.querySelectorAll('.bw1w2'),
-            t2bw222 = document.getElementsByClassName('bw1nb2')
+            bw1wk = document.querySelectorAll('.bw1wk'),
+         // Second team bowling
+         (t2bnb2 = document.querySelectorAll('.bw1sn2')), (t2bo2 = document.querySelectorAll('.bw1o2')), (t2br2 = document.querySelectorAll('.bw1r2')), (t2bw22 = document.querySelectorAll('.bw1w2')), (t2bw222 = document.getElementsByClassName('bw1nb2'))
 
          // switch statement looks for inning no
 
@@ -412,6 +409,7 @@ socket.onmessage = function (event) {
             t2bo[j].innerHTML = ino3.bowling[j].overs
             t2br[j].innerHTML = ino3.bowling[j].runs
             t2bw2[j].innerHTML = ino3.bowling[j].wd
+            bw1wk[j].innerHTML = ino3.bowling[j].wickets
             stts[j].innerHTML = ino3.batting[j].status.replace(/,[^,]+$/, '')
          }
 
