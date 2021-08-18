@@ -599,15 +599,14 @@ socket.onmessage = function (event) {
             shortnameOne
 
          // Check all of this! // if innings1team === teams[p]
-         /*
-         if (btnw == teams[0].name) {
+
+         if (mt1.textContent == teams[0].name) {
             st1.innerHTML = teams[0].short_name
             st2.innerHTML = teams[1].short_name
-         } else if (btnw == teams[1].name) {
+         } else if (mt1.textContent == teams[1].name) {
             st1.innerHTML = teams[1].short_name
             st2.innerHTML = teams[0].short_name
          }
-*/
          for (i = 0; i < t1p.length; i++) {
             if (t1n == teams[0].short_name) {
                shortNameOne = teams[0].short_name
