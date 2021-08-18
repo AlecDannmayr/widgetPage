@@ -595,6 +595,12 @@ socket.onmessage = function (event) {
             tosl2.style.display = 'block'
          })
 
+         function getTeamOneOffset() {
+            var TeamOneOffset = document.querySelector('.b1r')
+            console.log(TeamOneOffset)
+            console.log(TeamOneOffset.offsetLeft)
+         }
+
          break
 
       case 'lineups':
