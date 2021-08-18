@@ -47,6 +47,7 @@ let g2h = document.getElementById('second-header'),
    t1fis = document.getElementById('team-one-score'),
    t2fis = document.getElementById('team-two-score'),
    t1fw = document.getElementById('team-one-wickets'),
+   t2fw = document.getElementById('team-two-wickets'),
    gsts = document.getElementById('third-header-game-status'),
    wi1 = document.getElementById('winner-image-team-one'),
    wi2 = document.getElementById('winner-image-team-two'),
@@ -64,7 +65,8 @@ let g2h = document.getElementById('second-header'),
    btnw,
    bowl_now,
    ovlg,
-   btl = 0
+   btl = 0,
+   currentOvr
 
 gsts.innerHTML = ''
 wi1.style.display = 'none'
@@ -207,6 +209,12 @@ socket.onmessage = function (event) {
 
          break
 
+      case 'alerts':
+         const { over } = msg.alerts
+         currentOvr = over
+
+         break
+
       case 'scoreboard':
          var { matchtitle, innings1battingteam, innings1bowlingteam, innings2runs, innings1runs, innings1wickets, innings2wickets, innings1overs, innings2overs, status, currentinnings } = msg.scoreboard
 
@@ -248,13 +256,13 @@ socket.onmessage = function (event) {
             TeamOneScore = innings1runs,
             t2s = innings2runs
          t1fis.innerHTML = TeamOneScore + ' / '
+         t2fis.innerHTML = t2s + ' / '
 
          // change batting or bowling Icon
 
          const ftbi = document.getElementById('icon-team-one'),
             stbi = document.getElementById('icon-team-two'),
-            t1sl = TeamOneScore.toString().length,
-            t2fw = document.getElementById('team-two-wickets')
+            t1sl = TeamOneScore.toString().length
 
          // Current Wickets Team One
 
@@ -475,11 +483,11 @@ socket.onmessage = function (event) {
                b1st2[j].innerHTML = intf.batting[j].status.replace(/,[^,]+$/, '')
             }
             const extrar = Object.values(intf.extras),
-               addext = extrar.reduce(function (acc, val) {
+               addext2 = extrar.reduce(function (acc, val) {
                   return acc + val
                }, 0)
-            ex2[0].innerText = addext
-            tl2[0].innerText = t1fis.textContent.replace(' / ', '') + '  ' + ' ( ' + t1fw.textContent + ' wkts' + ' ) '
+            ex2[0].innerText = addext2
+            tl2[0].innerText = t2fis.textContent.replace(' / ', '') + '  ' + ' ( ' + t2fw.textContent + ' wkts' + ' ) '
 
             for (i = 0; i < b1sn2.length; i++) {
                b1sn2[i].innerHTML = intf.batting[i].name
@@ -889,6 +897,8 @@ socket.onmessage = function (event) {
       case 'scoregrid':
          const { overs } = msg.scoregrid
 
+         console.log(currentOvr)
+
          let nxt = igsn - 1,
             asArray = Object.entries(overs),
             fltAr = asArray[nxt].filter(([key, value]) => value != ''),
@@ -899,7 +909,8 @@ socket.onmessage = function (event) {
             property
          fltinlt = Array.from(fltin)
          for (i = 0; i < recent.length; i++) {
-            rt[i].innerHTML = ''
+            rt[i].innerH
+            TML = ''
          }
          /* Mutates Object to remove properties not needed for play-by-play, */
 
