@@ -359,6 +359,7 @@ socket.onmessage = function (event) {
             b1r2 = document.querySelectorAll('.b1r2'),
             b14s2 = document.querySelectorAll('.b14s2'),
             b16s2 = document.querySelectorAll('.b16s2'),
+            bw1w2wkt = document.querySelectorAll('.bw1w2wkt'),
             // Second Team extras and total
             ex2 = document.querySelectorAll('.ex2'),
             tl2 = document.querySelectorAll('.tl2'),
@@ -470,6 +471,7 @@ socket.onmessage = function (event) {
                t2bo2[j].innerHTML = intf.bowling[j].overs
                t2br2[j].innerHTML = intf.bowling[j].runs
                t2bw22[j].innerHTML = intf.bowling[j].wd
+               bw1w2wkt[j].innerHTML = intf.bowling[j].wickets
                b1st2[j].innerHTML = intf.batting[j].status.replace(/,[^,]+$/, '')
             }
             const extrar = Object.values(intf.extras),
