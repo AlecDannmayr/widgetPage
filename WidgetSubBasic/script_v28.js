@@ -597,8 +597,7 @@ socket.onmessage = function (event) {
 
          function getTeamOneOffset() {
             var TeamOneOffset = document.querySelector('.b1r')
-            console.log(TeamOneOffset)
-            console.log(TeamOneOffset.offsetLeft)
+            console.log(TeamOneOffset[10])
          }
 
          break
