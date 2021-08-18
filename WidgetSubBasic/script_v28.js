@@ -595,10 +595,6 @@ socket.onmessage = function (event) {
             tosl2.style.display = 'block'
          })
 
-         function getTeamOneOffset() {
-            var TeamOneOffset = document.querySelector('.b1r')
-            console.log(TeamOneOffset[10])
-         }
 
          break
 
