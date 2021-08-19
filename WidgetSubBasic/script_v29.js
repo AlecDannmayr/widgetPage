@@ -115,8 +115,7 @@ socket.onmessage = function (event) {
          var { event_status, competition, description, start_datetime } = msg.match_update
          const gub = document.getElementById('main-body'),
             glb = document.getElementById('all-data-section'),
-            pbp = document.getElementById('gameAndBallsInfo'),
-            acdc = document.getElementById('countDownClock')
+            pbp = document.getElementById('gameAndBallsInfo')
          masb = gsb
 
          // Opens widget dependant on event_status
@@ -128,9 +127,6 @@ socket.onmessage = function (event) {
                startTime = start_datetime.slice(11, 16)
             matchVs.innerHTML = competition + ' <br> ' + ' Start Date: ' + startDate + ' | ' + ' Start Time: ' + startTime
             mtin.innerHTML = description.replace(',', '<br/>')
-            setInterval(function () {
-               acdc.style.cssText = 'display: none; justify-content: center;'
-            }, 1000)
             matchVs.style.cssText = 'margin: 0px 70px;'
             masb.style.cssText = 'visibility: hidden:'
             gub.style.cssText = 'background-image: url(Icons/cricketGround.png); background-repeat: no-repeat;'
@@ -148,7 +144,6 @@ socket.onmessage = function (event) {
             rtse.style.display = 'block'
             glb.style.cssText = 'visibility: visible; display: block;'
             pbp.style.display = 'block'
-            acdc.style.display = 'none'
             mtin.innerHTML = description
             matchVs.style.cssText = 'margin-top: 7px;'
             matchVs.innerHTML = ''
@@ -340,9 +335,6 @@ socket.onmessage = function (event) {
          var { bat_now, inns_now, inns1, inns2, inns3, inns4 } = msg.scorecard
          btnw = bat_now
          igsn = inns_now
-
-         const inssNow = document.querySelector('#ins-now')
-         inssNow.innerHTML = 'Inning: ' + inns_now
 
          let insNo,
             ino3,
