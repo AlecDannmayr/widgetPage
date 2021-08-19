@@ -897,23 +897,21 @@ socket.onmessage = function (event) {
       case 'scoregrid':
          const { overs } = msg.scoregrid
 
-         console.log(currentOvr)
+         let incremented = false
 
-      var incCount = 0; 
-let incremented = false;
+         function aFunction() {
+            /// does some stuff
+            incremented = true
+         }
 
-function a {
-  /// does some stuff
-  count ++; 
-  incremented = true;
-}
+         function bFunction(currentOvrv) {
+            if (incremented && toggle.checked) {
+               /// then do xyz...
+               incremented = false
+            }
+         }
 
-function b(count) {
-  if ( incremented && toggle.checked ) {
-    /// then do xyz...
-    incremented = false;
-  }
-}
+         console.log(incremented)
 
          let nxt = igsn - 1,
             asArray = Object.entries(overs),
