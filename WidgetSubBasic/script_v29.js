@@ -897,12 +897,13 @@ socket.onmessage = function (event) {
       case 'scoregrid':
          const { overs } = msg.scoregrid
 
+         console.log(currentOvr)
          x = {
             aInternal: 10,
-            aListener: function (overs) {},
-            set a(overs) {
-               this.aInternal = overs
-               this.aListener(overs)
+            aListener: function (currentOvr) {},
+            set a(currentOvr) {
+               this.aInternal = currentOvr
+               this.aListener(currentOvr)
             },
             get a() {
                return this.aInternal
@@ -912,8 +913,8 @@ socket.onmessage = function (event) {
             },
          }
 
-         x.registerListener(function (overs) {
-            console.log('Someone changed the value of x.a to ' + overs)
+         x.registerListener(function (currentOvr) {
+            console.log('Someone changed the value of x.a to ' + currentOvr)
          })
 
          x.a = 42
