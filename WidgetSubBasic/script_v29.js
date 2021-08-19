@@ -48,7 +48,6 @@ let g2h = document.getElementById('second-header'),
    t2fis = document.getElementById('team-two-score'),
    t1fw = document.getElementById('team-one-wickets'),
    t2fw = document.getElementById('team-two-wickets'),
-   gsts = document.getElementById('third-header-game-status'),
    wi1 = document.getElementById('winner-image-team-one'),
    wi2 = document.getElementById('winner-image-team-two'),
    innings1battingteam,
@@ -68,7 +67,6 @@ let g2h = document.getElementById('second-header'),
    btl = 0,
    currentOvr
 
-gsts.innerHTML = ''
 wi1.style.display = 'none'
 wi2.style.display = 'none'
 
@@ -196,7 +194,6 @@ socket.onmessage = function (event) {
 
          // Changes match Stable to Waiting for Bowl
 
-         gsts.innerHTML = sist
          if (scoreboard[0].name == 'away') {
             hoa = 'away'
          }
@@ -896,22 +893,6 @@ socket.onmessage = function (event) {
 
       case 'scoregrid':
          const { overs } = msg.scoregrid
-
-         var obj = {
-            value: '',
-            letMeKnow() {
-               console.log(`The variable has changed to ${this.testVar}`)
-            },
-            get testVar() {
-               return this.value
-            },
-            set testVar(value) {
-               this.value = value
-               this.letMeKnow()
-            },
-         }
-
-         obj.testVar = currentOvr
 
          let nxt = igsn - 1,
             asArray = Object.entries(overs),
