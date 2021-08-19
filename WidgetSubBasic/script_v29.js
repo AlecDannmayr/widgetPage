@@ -1,9 +1,9 @@
 // Uncomment to use demo widget without menu.
 // Switch Iframe to online version to use online and local version to use localy
 
-//let socket = new WebSocket('ws://demo-feed-widget-uat.decimalcricket.com/DEMO:Wi')
-var socket = 0 /*remove commenting for socket = 0 and comment out socket.open below when intergrated into menu */
-/*
+let socket = new WebSocket('ws://demo-feed-widget-uat.decimalcricket.com/DEMO:Wi')
+//var socket = 0 /*remove commenting for socket = 0 and comment out socket.open below when intergrated into menu */
+
 socket.onopen = function () {
    socket.send(
       `{
@@ -13,7 +13,7 @@ socket.onopen = function () {
                                       }`
    )
 }
-*/
+
 //* Global scoped variables (not ideal but is a must for the way the data is structured) */
 
 let g2h = document.getElementById('second-header'),
@@ -1171,7 +1171,7 @@ function matchRun(idNo) {
             break
       }
    }
-}
+//}
 
 // Adds "unknown" to teams fields with no data
 
