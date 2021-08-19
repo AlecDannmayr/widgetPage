@@ -899,6 +899,20 @@ socket.onmessage = function (event) {
 
          console.log(currentOvr)
 
+      let incCount = 0, incremented = false;
+
+function Inc {
+  count ++; 
+  incremented = true;
+}
+
+function IncB(count) {
+  if ( incremented && toggle.checked ) {
+   
+    incremented = false;
+  }
+}
+
          let nxt = igsn - 1,
             asArray = Object.entries(overs),
             fltAr = asArray[nxt].filter(([key, value]) => value != ''),
