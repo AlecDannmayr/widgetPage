@@ -897,11 +897,12 @@ socket.onmessage = function (event) {
       case 'scoregrid':
          const { overs } = msg.scoregrid
 
-         console.log(currentOvr)
-
-         currentOvr.onchange = function () {
-            console.log(true)
+         function set_test(newval) {
+            test = newval
+            console.log(test)
          }
+
+         set_test(currentOvr)
 
          let nxt = igsn - 1,
             asArray = Object.entries(overs),
