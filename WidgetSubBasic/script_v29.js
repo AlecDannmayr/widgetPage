@@ -897,21 +897,26 @@ socket.onmessage = function (event) {
       case 'scoregrid':
          const { overs } = msg.scoregrid
 
-         let incremented = false
-
-         function aFunction() {
-            /// does some stuff
-            incremented = true
+         x = {
+            aInternal: 10,
+            aListener: function (overs) {},
+            set a(overs) {
+               this.aInternal = overs
+               this.aListener(overs)
+            },
+            get a() {
+               return this.aInternal
+            },
+            registerListener: function (listener) {
+               this.aListener = listener
+            },
          }
 
-         function bFunction(currentOvrv) {
-            if (incremented && toggle.checked) {
-               /// then do xyz...
-               incremented = false
-            }
-         }
+         x.registerListener(function (overs) {
+            console.log('Someone changed the value of x.a to ' + overs)
+         })
 
-         console.log(incremented)
+         x.a = 42
 
          let nxt = igsn - 1,
             asArray = Object.entries(overs),
