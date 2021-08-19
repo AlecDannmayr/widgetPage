@@ -899,49 +899,6 @@ socket.onmessage = function (event) {
 
          console.log(currentOvr)
 
-         // object.watch
-         if (!currentOvr.prototype.watch) {
-            currentOvr.defineProperty(currentOvr.prototype, 'watch', {
-               enumerable: false,
-               configurable: true,
-               writable: false,
-               value: function (prop, handler) {
-                  var oldval = this[prop],
-                     newval = oldval,
-                     getter = function () {
-                        return newval
-                     },
-                     setter = function (val) {
-                        oldval = newval
-                        return (newval = handler.call(this, prop, oldval, val))
-                     }
-                  if (delete this[prop]) {
-                     // can't watch constants
-                     currentOvr.defineProperty(this, prop, {
-                        get: getter,
-                        set: setter,
-                        enumerable: true,
-                        configurable: true,
-                     })
-                  }
-               },
-            })
-         }
-
-         // object.unwatch
-         if (!currentOvr.prototype.unwatch) {
-            currentOvr.defineProperty(currentOvr.prototype, 'unwatch', {
-               enumerable: false,
-               configurable: true,
-               writable: false,
-               value: function (prop) {
-                  var val = this[prop]
-                  delete this[prop] // remove accessors
-                  this[prop] = val
-               },
-            })
-         }
-
          let nxt = igsn - 1,
             asArray = Object.entries(overs),
             fltAr = asArray[nxt].filter(([key, value]) => value != ''),
