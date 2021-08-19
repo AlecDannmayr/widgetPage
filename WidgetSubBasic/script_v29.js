@@ -899,16 +899,18 @@ socket.onmessage = function (event) {
 
          console.log(currentOvr)
 
-      let incCount = 0, incremented = false;
+      var incCount = 0; 
+let incremented = false;
 
-function Inc {
+function a {
+  /// does some stuff
   count ++; 
   incremented = true;
 }
 
-function IncB(count) {
+function b(count) {
   if ( incremented && toggle.checked ) {
-   
+    /// then do xyz...
     incremented = false;
   }
 }
