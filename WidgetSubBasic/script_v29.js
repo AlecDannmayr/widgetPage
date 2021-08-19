@@ -899,10 +899,8 @@ socket.onmessage = function (event) {
 
          console.log(currentOvr)
 
-         currentOvr.addEventListener('change', incFun)
-
-         function incFun() {
-            console.log(incFun)
+         currentOvr.onchange = function () {
+            console.log(true)
          }
 
          let nxt = igsn - 1,
