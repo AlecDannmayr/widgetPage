@@ -897,7 +897,21 @@ socket.onmessage = function (event) {
       case 'scoregrid':
          const { overs } = msg.scoregrid
 
-         console.log(currentOvr)
+         var obj = {
+            value: '',
+            letMeKnow() {
+               console.log(`The variable has changed to ${this.testVar}`)
+            },
+            get testVar() {
+               return this.value
+            },
+            set testVar(value) {
+               this.value = value
+               this.letMeKnow()
+            },
+         }
+
+         obj.testVar = currentOvr
 
          let nxt = igsn - 1,
             asArray = Object.entries(overs),
