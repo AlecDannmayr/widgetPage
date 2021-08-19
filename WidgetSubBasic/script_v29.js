@@ -897,6 +897,14 @@ socket.onmessage = function (event) {
       case 'scoregrid':
          const { overs } = msg.scoregrid
 
+         console.log(currentOvr)
+
+         currentOvr.addEventListener('change', incFun)
+
+         function incFun() {
+            console.log(incFun)
+         }
+
          let nxt = igsn - 1,
             asArray = Object.entries(overs),
             fltAr = asArray[nxt].filter(([key, value]) => value != ''),
