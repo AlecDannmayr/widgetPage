@@ -897,28 +897,6 @@ socket.onmessage = function (event) {
       case 'scoregrid':
          const { overs } = msg.scoregrid
 
-         console.log(currentOvr)
-         x = {
-            aInternal: 10,
-            aListener: function (currentOvr) {},
-            set a(currentOvr) {
-               this.aInternal = currentOvr
-               this.aListener(currentOvr)
-            },
-            get a() {
-               return this.aInternal
-            },
-            registerListener: function (listener) {
-               this.aListener = listener
-            },
-         }
-
-         x.registerListener(function (currentOvr) {
-            console.log('Someone changed the value of x.a to ' + currentOvr)
-         })
-
-         x.a = 42
-
          let nxt = igsn - 1,
             asArray = Object.entries(overs),
             fltAr = asArray[nxt].filter(([key, value]) => value != ''),
