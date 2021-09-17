@@ -1178,7 +1178,7 @@ function opno() {
    tosl2.style.display = 'none'
    sgl.style.display = 'none'
    sgt.style.display = 'none'
-   cmli.style.display = 'block'
+   cmli.style.display = 'none'
 }
 function opot() {
    if (!opni) opno()
