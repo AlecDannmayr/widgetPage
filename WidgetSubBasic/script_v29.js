@@ -663,7 +663,7 @@ socket.onmessage = function (event) {
             covb = parseInt(current_over_balls, 10)
          for (k = 0; k < coms.length; k++) {
             const crtbl = parseInt([k], 10) + 1
-            console.log(commentaries.inns1[k].ball + '  ' + '| ' + commentaries.inns1[k].commentary)
+            console.log(commentaries.inns1.length)
             for (k = 0; k < 10; k++) {
                coms[k].innerHTML = commentaries.inns1[k].ball + '  ' + '| ' + commentaries.inns1[k].commentary
             }
