@@ -868,9 +868,11 @@ socket.onmessage = function (event) {
                         covb5 = 1
                         break
                   }
-                  for (ki = 0; ki < coms, length; ki++) {
-                     console.log(commentaries.inns1[k].ball + '  ' + '| ' + commentaries.inns1[k].commentary)
-                     coms[ki].innerHTML = commentaries.inns1[k].ball + '  ' + '| ' + commentaries.inns1[k].commentary
+                  for (k = 0; k < commentaries.inns1.length; k++) {
+                     for (ki = 0; ki < coms, length; ki++) {
+                        console.log(commentaries.inns1[k].ball + '  ' + '| ' + commentaries.inns1[k].commentary)
+                        coms[ki].innerHTML = commentaries.inns1[k].ball + '  ' + '| ' + commentaries.inns1[k].commentary
+                     }
                   }
                }
             }
@@ -1176,7 +1178,7 @@ function opno() {
    tosl2.style.display = 'none'
    sgl.style.display = 'none'
    sgt.style.display = 'none'
-   cmli.style.display = 'none'
+   cmli.style.display = 'block'
 }
 function opot() {
    if (!opni) opno()
