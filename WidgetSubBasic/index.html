@@ -14,18 +14,19 @@
                     @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap");
 
                     body {
-                              margin: 0;
+                              margin: 0px;
+                              margin-left: 0px;
                               padding: 0;
                               font-family: "Lato", sans-serif;
                               color: #221f1f;
-                              background-color: #ffffff;
                               min-width: 414px;
                               height: 826px;
                               position: relative;
                               z-index: 90;
                               overflow: scroll;
                               overflow-x: hidden;
-                    }
+                             background-color: transparent;
+                    } 
 
                     ::-webkit-scrollbar {
                               width: 0;
@@ -33,32 +34,41 @@
                     }
 
                     .cover {
-                              min-width: 414px;
-                              height: 826px;
+                              width: 414px;
+                              height: 832px;
                               position: absolute;
-                              z-index: 100;
+                              z-index: 99;
                               background-color: #221f1f;
                               opacity: 0.99;
-                              display: none
+                              display: none;
+                              margin: 19px;
                     }
-
+/*
+                    #phone {
+                              position: absolute;
+                              z-index: 100;
+                              width: 448px;
+                              pointer-events: none;
+                    }
+*/
                     .wrapper {
                               max-width: 414px;
-                              width: 414px;
+                              width: 410px;
                               height: 826px;
+                              padding: 20px 23px;
                     }
 
                     h1 {
-                              font-size: 1.8em
+                              font-size: 1.8em;
                     }
 
                     button {
                               font-family: Lato, bold;
-                              font-size: 1em
+                              font-size: 1em;
                     }
 
                     .header-logo {
-                              margin-left: 2.4em
+                              margin-left: 2.4em;
                     }
 
                     .selector-grid-one td,
@@ -66,12 +76,12 @@
                     .selector-grid-two td,
                     .selector-grid-teams td {
                               border: 2px solid #ddd;
-                              padding: 16px
+                              padding: 16px;
                     }
 
                     td,
                     .burger-menu {
-                              cursor: pointer
+                              cursor: pointer;
                     }
 
                     #addVs {
@@ -86,16 +96,22 @@
                     .second-header {
                               background-color: #2483c5;
                               color: #ffffff;
+                              display: -webkit-box;
+                              display: -ms-flexbox;
                               display: flex;
+                              -webkit-box-pack: center;
+                              -ms-flex-pack: center;
                               justify-content: center;
                               margin-left: 0;
                               height: 50px;
+                              -webkit-box-align: center;
+                              -ms-flex-align: center;
                               align-items: center;
                     }
 
                     .second-header h1:nth-child(2) {
                               position: absolute;
-                              left: 60px;
+                              left: 100px;
                     }
 
                     .second-header h1:nth-child(3) {
@@ -108,9 +124,18 @@
                     }
 
                     .third-header {
+                              display: -webkit-box;
+                              display: -ms-flexbox;
                               display: flex;
+                              -webkit-box-orient: vertical;
+                              -webkit-box-direction: normal;
+                              -ms-flex-direction: column;
                               flex-direction: column;
+                              -webkit-box-pack: center;
+                              -ms-flex-pack: center;
                               justify-content: center;
+                              -webkit-box-align: center;
+                              -ms-flex-align: center;
                               align-items: center;
                               vertical-align: middle;
                               height: 51px;
@@ -130,6 +155,7 @@
                     #winner-image-team-two {
                               width: 20px;
                               height: auto;
+                              -webkit-transform: rotate(-20deg);
                               transform: rotate(-20deg);
                               display: none;
                     }
@@ -145,9 +171,9 @@
                     }
 
                     #main-body {
-                              background-image: url("Icons/cricketGround.png");
+                              background-image: url("cricketGround.png");
                               background-repeat: no-repeat;
-                              background-position-y: 95px;
+                              background-position-y: 98px;
                               height: 357px;
                               z-index: 20;
                     }
@@ -155,16 +181,19 @@
                     #score-body {
                               padding: 0px;
                               margin-top: -46px;
-                              visibility: hidden
+                              visibility: hidden;
+                              background-color: #fff;
                     }
 
                     .overs-block {
                               font-size: 12px;
                               margin-top: 8.5px;
-                              text-align: right
+                              text-align: right;
                     }
 
                     .overs-and-score {
+                              display: -webkit-box;
+                              display: -ms-flexbox;
                               display: flex;
                               position: absolute;
                               right: 1.5rem;
@@ -174,7 +203,7 @@
                     }
 
                     #team-two-overs {
-                              margin-top: 26px
+                              margin-top: 26px;
                     }
 
                     .teams-block {
@@ -182,33 +211,40 @@
                               font-weight: bold;
                               margin-left: 10px;
                               word-wrap: none;
-                              white-space: nowrap
+                              white-space: nowrap;
                     }
 
                     .team-two-name {
-                              margin-top: 22px
+                              margin-top: 22px;
                     }
 
                     .team-scores-grid {
+                              display: -webkit-box;
+                              display: -ms-flexbox;
                               display: flex;
                               margin-top: 50px;
                               font-size: 18px;
-                              margin-left: 20px
+                              margin-left: 20px;
                     }
 
                     .icon-block {
+                              display: -webkit-box;
+                              display: -ms-flexbox;
                               display: flex;
+                              -webkit-box-orient: vertical;
+                              -webkit-box-direction: normal;
+                              -ms-flex-direction: column;
                               flex-direction: column;
-                              margin-top: 14px
+                              margin-top: 14px;
                     }
 
                     .icon-block :nth-child(2) {
-                              margin-top: 22px
+                              margin-top: 22px;
                     }
 
                     #icon-team-two {
                               display: none;
-                              margin-top: 17px
+                              margin-top: 17px;
                     }
 
                     .bowling-circle-icon {
@@ -216,13 +252,13 @@
                               width: 15px;
                               background-color: #1c8389;
                               border-radius: 50%;
-                              margin-bottom: -2px
+                              margin-bottom: -2px;
                     }
 
                     .bowling-circle-icon-two img {
                               height: auto;
                               width: 20px;
-                              border-radius: 50%
+                              border-radius: 50%;
                     }
 
                     .scores-block>p {
@@ -232,11 +268,15 @@
                     }
 
                     .game-status-info {
-                              display: none
+                              display: none;
                     }
 
                     .win-probability-bar-section {
+                              display: -webkit-box;
+                              display: -ms-flexbox;
                               display: flex;
+                              -webkit-box-pack: center;
+                              -ms-flex-pack: center;
                               justify-content: center;
                               margin-top: 20px;
                               position: relative;
@@ -249,63 +289,82 @@
                               width: 0%;
                               position: absolute;
                               left: 0;
+                              -webkit-transition: 0.8s ease 0.3s;
                               transition: 0.8s ease 0.3s;
-                              border-radius: 100px
+                              border-radius: 100px;
                     }
 
                     #win-probability-bar {
+                              display: -webkit-box;
+                              display: -ms-flexbox;
                               display: flex;
+                              -webkit-box-pack: center;
+                              -ms-flex-pack: center;
                               justify-content: center;
                               width: 90%;
                               height: 18px;
                               background-color: #1c8389;
                               position: relative;
-                              border-radius: 100px
+                              border-radius: 100px;
                     }
 
                     .win-probability-team {
+                              display: -webkit-box;
+                              display: -ms-flexbox;
                               display: flex;
+                              -webkit-box-pack: space-evenly;
+                              -ms-flex-pack: space-evenly;
                               justify-content: space-evenly;
-                              font-weight: 700
+                              font-weight: 700;
                     }
 
                     .win-probability-team {
+                              display: -ms-grid;
                               display: grid;
+                              -ms-grid-columns: auto auto auto;
                               grid-template-columns: auto auto auto;
+                              display: -webkit-box;
+                              display: -ms-flexbox;
                               display: flex;
+                              -webkit-box-pack: justify;
+                              -ms-flex-pack: justify;
                               justify-content: space-between;
                               margin-left: 10px;
-                              margin-right: 10px
+                              margin-right: 10px;
                     }
 
                     .win-probability-team>div {
+                              display: -webkit-box;
+                              display: -ms-flexbox;
                               display: flex;
-                              justify-content: space-between
+                              -webkit-box-pack: justify;
+                              -ms-flex-pack: justify;
+                              justify-content: space-between;
                     }
 
                     .win-probability-team :nth-child(1) {
-                              margin-left: 3px
+                              margin-left: 3px;
                     }
 
                     .win-probability-team :nth-child(3) {
-                              margin-right: -3px
+                              margin-right: -3px;
                     }
 
                     .win-probability-inner-team-1>p,
                     .win-probability-inner-team-2>p {
-                              margin-right: 10px
+                              margin-right: 10px;
                     }
 
                     .selector-grid-one img {
-                              width: 30%
+                              width: 30%;
                     }
 
                     #selection-comms img {
-                              width: 19%
+                              width: 19%;
                     }
 
                     #selection-live img {
-                              width: 44%
+                              width: 44%;
                     }
 
                     .selector-grid-one,
@@ -314,7 +373,7 @@
                               background-color: #221f1f;
                               text-align: center;
                               border-collapse: collapse;
-                              font-weight: 800
+                              font-weight: 800;
                     }
 
                     .selector-grid-one tr td,
@@ -323,11 +382,11 @@
                               width: 1400px;
                               color: #ffffff;
                               background-color: #221f1f;
-                              border: 0 #221f1f solid
+                              border: 0 #221f1f solid;
                     }
 
                     .selectoradd-grid-two {
-                              margin-top: -1px
+                              margin-top: -1px;
                     }
 
                     #teamsGrid,
@@ -340,7 +399,9 @@
                     }
 
                     .scorecard-grid {
+                              display: -ms-grid;
                               display: grid;
+                              -ms-grid-columns: (1fr)[6];
                               grid-template-columns: repeat(6, 1fr);
                               word-wrap: none;
                               white-space: nowrap;
@@ -349,24 +410,31 @@
                               font-size: 14px;
                               padding-left: 0px;
                               padding-right: 0px;
+                              -ms-grid-rows: 30px;
                               grid-template-rows: 30px;
+                              -ms-grid-columns: auto auto auto auto auto auto;
                               grid-template-columns: auto auto auto auto auto auto;
                               font-weight: 400;
                     }
 
                     .extras {
+                              display: -ms-grid;
                               display: grid;
+                              -ms-grid-columns: (1fr)[2];
                               grid-template-columns: repeat(2, 1fr);
                               margin-right: 0;
                               margin-left: 10px;
                               font-size: 14px;
                               padding-left: 0px;
                               padding-right: 0px;
+                              -ms-grid-columns: 50% 50%;
                               grid-template-columns: 50% 50%;
                     }
 
                     .scorecard-grid-bowl {
+                              display: -ms-grid;
                               display: grid;
+                              -ms-grid-columns: (1fr)[6];
                               grid-template-columns: repeat(6, 1fr);
                               word-wrap: none;
                               white-space: nowrap;
@@ -377,6 +445,7 @@
                               padding-top: 1px;
                               padding-left: 0px;
                               padding-right: 0px;
+                              -ms-grid-columns: 32.5% 13.5% 13.5% 13.5% 13.5% 13.5%;
                               grid-template-columns: 32.5% 13.5% 13.5% 13.5% 13.5% 13.5%;
                               font-weight: 400;
                     }
@@ -391,11 +460,11 @@
                     }
 
                     .scorecard-grid-header {
-                              font-weight: 800
+                              font-weight: 800;
                     }
 
                     .scorecard-grid:nth-child(5) {
-                              font-size: 20px
+                              font-size: 20px;
                     }
 
                     .extr1,
@@ -404,7 +473,6 @@
                     .tl2 {
                               margin-top: 0px;
                               font-weight: 800;
-
                     }
 
                     .totl1,
@@ -414,7 +482,6 @@
                               font-weight: 800;
                     }
 
-
                     .tl1,
                     .ex1,
                     .tl2,
@@ -423,7 +490,7 @@
                     }
 
                     .sihr {
-                              width: 194%
+                              width: 194%;
                     }
 
                     #team-two-Section-bowls .scorecard-grid span:nth-child(-n + 6):not(.scorecard-grid-bowl),
@@ -449,7 +516,6 @@
                               text-align: center;
                     }
 
-
                     #comms-list {
                               display: none;
                               font-size: 14px;
@@ -465,12 +531,14 @@
                     }
 
                     .comms-grid-two div {
-                              margin-bottom: 14.9px
+                              margin-bottom: 14.9px;
                     }
 
                     .teams-grid-data,
                     .teams-grid-data-team-two {
+                              display: -ms-grid;
                               display: grid;
+                              -ms-grid-columns: (1fr)[4];
                               grid-template-columns: repeat(4, 1fr);
                               grid-column-gap: 0px;
                               word-wrap: none;
@@ -481,6 +549,7 @@
                               padding-right: 0px;
                               font-weight: 400;
                               text-align: left;
+                              -ms-grid-rows: 38px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px;
                               grid-template-rows: 38px 25px 25px 25px 25px 25px 25px 25px 25px 25px 25px;
                               margin-top: 130px;
                     }
@@ -488,7 +557,7 @@
                     .teams-grid-data>span,
                     .teams-grid-data-team-two>span {
                               font-weight: 400;
-                              padding-bottom: 4px
+                              padding-bottom: 4px;
                     }
 
                     #team-two-Section-bowls {
@@ -502,12 +571,12 @@
 
                     .teams-grid-data span:nth-child(4n + 0),
                     .teams-grid-data-team-two span:nth-child(4n + 0) {
-                              margin-left: 0px
+                              margin-left: 0px;
                     }
 
                     .teams-grid-data span:nth-child(4),
                     .teams-grid-data-team-two span:nth-child(4) {
-                              margin-left: 0px
+                              margin-left: 0px;
                     }
 
                     .teams-grid-data span:nth-child(1n),
@@ -525,10 +594,11 @@
                               left: -20px;
                               background-color: #221f1f;
                               overflow-x: hidden;
+                              -webkit-transition: 0.5s;
                               transition: 0.5s;
                               padding-top: 90px;
                               opacity: 100%;
-                              display: block
+                              display: block;
                     }
 
                     .slide-nav a,
@@ -536,7 +606,8 @@
                               padding: 8px 8px 8px 32px;
                               text-decoration: none;
                               color: #818181;
-                              transition: 0.3s
+                              -webkit-transition: 0.3s;
+                              transition: 0.3s;
                     }
 
                     .slide-nav .closebtn,
@@ -544,12 +615,27 @@
                               position: absolute;
                               top: 0;
                               right: 25px;
-                              font-size: 40px
+                              font-size: 40px;
+                    }
+
+                    ::-webkit-input-placeholder {
+                              color: #221f1f;
+                              opacity: 0.4;
+                    }
+
+                    :-ms-input-placeholder {
+                              color: #221f1f;
+                              opacity: 0.4;
+                    }
+
+                    ::-ms-input-placeholder {
+                              color: #221f1f;
+                              opacity: 0.4;
                     }
 
                     ::placeholder {
                               color: #221f1f;
-                              opacity: 0.4
+                              opacity: 0.4;
                     }
 
                     .font-size-box table {
@@ -557,8 +643,12 @@
                               margin-top: 20px;
                               margin-bottom: 300px;
                               margin-left: 20px;
+                              display: -webkit-box;
+                              display: -ms-flexbox;
                               display: flex;
-                              justify-content: center
+                              -webkit-box-pack: center;
+                              -ms-flex-pack: center;
+                              justify-content: center;
                     }
 
                     .font-size-box button {
@@ -567,22 +657,22 @@
                               background-color: transparent;
                               color: #ffffff;
                               padding: 2px;
-                              margin-top: -100px
+                              margin-top: -100px;
                     }
 
                     .font-size-box th,
                     .font-size-box td {
-                              border: 0
+                              border: 0;
                     }
 
                     .title-size-grid :nth-child(1) {
                               padding-top: 20px;
-                              margin-left: 10px
+                              margin-left: 10px;
                     }
 
                     .title-size-grid {
                               vertical-align: center;
-                              font-size: 22px
+                              font-size: 22px;
                     }
 
                     .style-option-header,
@@ -593,16 +683,16 @@
                               font-weight: 800;
                               margin-bottom: 40px;
                               margin-top: -40px;
-                              font-size: 24px
+                              font-size: 24px;
                     }
 
                     .style-option-header :nth-child(1) {
-                              margin-bottom: 100px
+                              margin-bottom: 100px;
                     }
 
                     .slide-primary-color {
                               margin-top: 10px;
-                              margin-left: 100px
+                              margin-left: 100px;
                     }
 
                     #choose-section {
@@ -615,20 +705,24 @@
                               padding-left: 11px;
                               padding-top: 4px;
                               padding-bottom: 4px;
-                              border-radius: 4px
+                              border-radius: 4px;
                     }
 
                     .flip-container {
                               position: relative;
                               margin-top: 150px;
-                              margin-left: 20px
+                              margin-left: 20px;
                     }
 
                     .resetButton {
+                              display: -webkit-box;
+                              display: -ms-flexbox;
                               display: flex;
+                              -webkit-box-pack: center;
+                              -ms-flex-pack: center;
                               justify-content: center;
                               margin-top: 300px;
-                              margin-left: 20px
+                              margin-left: 20px;
                     }
 
                     .resetButton button {
@@ -637,66 +731,67 @@
                               padding: 6px 70px 10px 70px;
                               background-color: #262932;
                               color: #ffffff;
-                              border-radius: 4px
+                              border-radius: 4px;
                     }
 
                     .fixtures-table {
-                              width: 100%
+                              width: 100%;
                     }
 
                     .fixtures-table tr td,
                     .fixtures-table tr th {
                               height: 1em;
-                              border: 0
+                              border: 0;
                     }
 
                     .fixtures-slide-nav {
                               left: -41px;
                               color: #ffffff;
-                              font-size: 30px
+                              font-size: 30px;
                     }
 
                     .closebtn:hover {
-                              color: #2483c5
+                              color: #2483c5;
                     }
 
                     .title-size-grid td button:hover {
-                              color: #2483c5
+                              color: #2483c5;
                     }
 
                     .title-size-grid td button:focus {
-                              color: #2483c5
+                              color: #2483c5;
                     }
 
                     .selector-grid-one td:hover,
                     .selector-grid-two td:hover,
                     .selector-grid-teams td:hover {
                               color: #ffffff;
-                              background-color: #2483c5
+                              background-color: #2483c5;
                     }
 
                     .selector-grid-one td:focus,
                     .selector-grid-two td:focus {
                               color: #ffffff;
-                              background-color: #2483c5
+                              background-color: #2483c5;
                     }
 
                     #selection-comms {
-                              background-color: #2483c5
+                              background-color: #2483c5;
                     }
 
                     #all-data-section {
                               display: none;
                               visibility: hidden;
                               background-color: #fff;
-                              margin-top: 4px
+                              margin-top: 4px;
                     }
 
                     .ngi {
-                              height: 546px;
+                              margin-top: -4px;
+                              height: 515px;
                               max-width: 414px;
                               background-repeat: no-repeat;
-                              background-image: url(Content/lowerCricketGround1.png);
+                              background-image: url(lowerCricketGround1.png);
                               background-repeat: no-repeat;
                     }
 
@@ -713,32 +808,40 @@
                     }
 
                     #gameAndBallsInfo {
-                              display: none
+                              display: none;
                     }
 
                     #recent p,
                     .gami,
                     #ins-now {
+                              display: -webkit-box;
+                              display: -ms-flexbox;
                               display: flex;
+                              -webkit-box-pack: left;
+                              -ms-flex-pack: left;
                               justify-content: left;
                               margin-left: 22px;
                               font-weight: bold;
                               margin-bottom: 10px;
                               font-size: 12px;
-                              margin-top: 36px
+                              margin-top: 36px;
                     }
 
                     #ins-now {
-                              margin-bottom: -26px
+                              margin-bottom: -26px;
                     }
 
                     .gami {
                               margin-top: 10px;
-                              margin-bottom: -30px
+                              margin-bottom: -30px;
                     }
 
                     #recent table {
+                              display: -webkit-box;
+                              display: -ms-flexbox;
                               display: flex;
+                              -webkit-box-pack: center;
+                              -ms-flex-pack: center;
                               justify-content: center;
                               border-spacing: 4.8px;
                               margin: 0 20px 0 20px;
@@ -764,11 +867,11 @@
 
                     @media only screen and (min-width: 414px) {
                               body {
-                                        max-width: 414px
+                                        max-width: 414px;
                               }
 
                               .wrapper {
-                                        max-width: 414px
+                                        max-width: 414px;
                               }
                     }
 
@@ -777,20 +880,20 @@
                               z-index: 3;
                               margin-top: 70px;
                               display: none;
-                              margin-left: 80px
+                              margin-left: 80px;
                     }
 
                     #clockdiv {
                               color: white;
                               text-align: center;
-                              font-size: 20px
+                              font-size: 20px;
                     }
 
                     #clockdiv>div {
                               padding: 10px;
                               border-radius: 3px;
                               background: #2483c5;
-                              display: inline-block
+                              display: inline-block;
                     }
 
                     #clockdiv div>span {
@@ -802,28 +905,33 @@
 
                     .smalltext {
                               padding-top: 5px;
-                              font-size: 16px
+                              font-size: 16px;
                     }
 
                     #loader-1 {
                               display: none;
+                              -webkit-box-pack: center;
+                              -ms-flex-pack: center;
                               justify-content: center;
-                              position: absolute;
-                              right: 50%;
-                              left: 50%;
-                              top: 42.5%;
+                              position: relative;
+                              margin-top: 50%;
+                              margin-right: 0 auto;
+                              margin-left: 0 auto;
                               z-index: 120;
                     }
 
                     #load-tx {
                               color: #fff;
                               display: none;
+                              -webkit-box-orient: vertical;
+                              -webkit-box-direction: normal;
+                              -ms-flex-direction: column;
                               flex-direction: column;
                               position: absolute;
-                              left: 26.5%;
+                              left: 21%;
                               z-index: 121;
                               text-align: center;
-                              top: 28%
+                              top: 28%;
                     }
 
                     #loader-1 #loader {
@@ -837,9 +945,7 @@
                               border-radius: 50%;
                               z-index: 0;
                               -webkit-animation: spin 2s linear infinite;
-                              -moz-animation: spin 2s linear infinite;
-                              -o-animation: spin 2s linear infinite;
-                              animation: spin 2s linear infinite
+                              animation: spin 2s linear infinite;
                     }
 
                     #loader-1 #loader:before {
@@ -854,9 +960,7 @@
                               border-top-color: #F65B06;
                               border-radius: 50%;
                               -webkit-animation: spin 3s linear infinite;
-                              -moz-animation: spin 3s linear infinite;
-                              -o-animation: spin 3s linear infinite;
-                              animation: spin 3s linear infinite
+                              animation: spin 3s linear infinite;
                     }
 
                     #loader-1 #loader:after {
@@ -871,95 +975,57 @@
                               z-index: 0;
                               border-radius: 50%;
                               -webkit-animation: spin 1.5s linear infinite;
-                              -moz-animation: spin 1.5s linear infinite;
-                              -o-animation: spin 1.5s linear infinite;
-                              animation: spin 1.5s linear infinite
+                              animation: spin 1.5s linear infinite;
                     }
 
                     @-webkit-keyframes spin {
                               0% {
                                         -webkit-transform: rotate(0deg);
-                                        -ms-transform: rotate(0deg);
-                                        transform: rotate(0deg)
+                                        transform: rotate(0deg);
                               }
 
                               50% {
                                         -webkit-transform: rotate(360deg);
-                                        -ms-transform: rotate(360deg);
-                                        transform: rotate(180deg)
+                                        transform: rotate(180deg);
                               }
 
                               100% {
                                         -webkit-transform: rotate(360deg);
-                                        -ms-transform: rotate(360deg);
-                                        transform: rotate(360deg)
-                              }
-                    }
-
-                    @-moz-keyframes spin {
-                              0% {
-                                        -webkit-transform: rotate(0deg);
-                                        -ms-transform: rotate(0deg);
-                                        transform: rotate(0deg)
-                              }
-
-                              50% {
-                                        -webkit-transform: rotate(360deg);
-                                        -ms-transform: rotate(360deg);
-                                        transform: rotate(180deg)
-                              }
-
-                              100% {
-                                        -webkit-transform: rotate(360deg);
-                                        -ms-transform: rotate(360deg);
-                                        transform: rotate(360deg)
-                              }
-                    }
-
-                    @-o-keyframes spin {
-                              0% {
-                                        -webkit-transform: rotate(0deg);
-                                        -ms-transform: rotate(0deg);
-                                        transform: rotate(0deg)
-                              }
-
-                              50% {
-                                        -webkit-transform: rotate(360deg);
-                                        -ms-transform: rotate(360deg);
-                                        transform: rotate(180deg)
-                              }
-
-                              100% {
-                                        -webkit-transform: rotate(360deg);
-                                        -ms-transform: rotate(360deg);
-                                        transform: rotate(360deg)
+                                        transform: rotate(360deg);
                               }
                     }
 
                     @keyframes spin {
                               0% {
                                         -webkit-transform: rotate(0deg);
-                                        -ms-transform: rotate(0deg);
-                                        transform: rotate(0deg)
+                                        transform: rotate(0deg);
                               }
 
                               50% {
                                         -webkit-transform: rotate(360deg);
-                                        -ms-transform: rotate(360deg);
-                                        transform: rotate(180deg)
+                                        transform: rotate(180deg);
                               }
 
                               100% {
                                         -webkit-transform: rotate(360deg);
-                                        -ms-transform: rotate(360deg);
-                                        transform: rotate(360deg)
+                                        transform: rotate(360deg);
                               }
                     }
           </style>
 </head>
 
 <body>
-          <div class="cover"></div>
+        <!--  <img src="phone.svg" id="phone" alt="Phone">-->
+          <div class="cover">
+                    <div id="load-tx">
+                              <h2>Loading Game</h2>
+                              <h3>Waiting for the match to start</h3>
+                              <div class="loader-wrapper" id="loader-1">
+                                        <div id="loader"></div>
+                              </div>
+                    </div>
+
+          </div>
           <div class="wrapper" id="wrapper">
                     <div class="main-container" id="main-container">
                               <nav class="fixtures-slide-nav" id="fixtures-slide-container"><a href="javascript:void(0)" class="closebtn" onclick="closeFixtures()">&times;</a><input method="get" target="_blank"
@@ -967,28 +1033,21 @@
                               </nav>
                               </nav>
                               <div id="main-body">
-                                        <div class="second-header" id="second-header"><img id="winner-image-team-one" src="Content/trophy.svg" type="svg">
+                                        <div class="second-header" id="second-header"><img id="winner-image-team-one" src="trophy.svg" type="svg">
                                                   <h1 class="team-one-name-short" id="team-one-title-name"></h1>
                                                   <h1 id="addVs">&nbsp</h1>
-                                                  <h1 class="team-two-name-short" id="team-two-title-name"></h1><img id="winner-image-team-two" src="Content/trophy.svg" type="svg">
+                                                  <h1 class="team-two-name-short" id="team-two-title-name"></h1><img id="winner-image-team-two" src="trophy.svg" type="svg">
                                         </div>
                                         <div class="third-header" id="third-header">
                                                   <p id="third-header-game-info">Select a game #ID</p>
                                         </div>
-                                        <div id="load-tx">
-                                                  <h2>Loading Game</h2>
-                                                  <h3>Waiting for the next ball</h3>
-                                        </div>
-                                        <div class="loader-wrapper" id="loader-1">
-                                                  <div id="loader"></div>
-                                        </div>
                                         <div id="score-body">
                                                   <div class="team-scores-grid" id="team-scores-grid">
-                                                            <div class="icon-block" id="icon-team-one"><img id="icon" src="Icons/Crickplayer.png" alt="Batting Team">
+                                                            <div class="icon-block" id="icon-team-one"><img id="icon" src="Crickplayer.png" alt="Batting Team">
                                                                       <div class="bowling-circle-icon"></div>
                                                             </div>
                                                             <div class="icon-block" id="icon-team-two">
-                                                                      <div class="bowling-circle-icon"></div><img id="icon" src="Icons/Crickplayer.png" alt="Batting Team">
+                                                                      <div class="bowling-circle-icon"></div><img id="icon" src="Crickplayer.png" alt="Batting Team">
                                                             </div>
                                                             <div class="teams-block">
                                                                       <p class="team-one-name" id="team-one-name"></p>
