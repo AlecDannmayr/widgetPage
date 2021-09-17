@@ -664,12 +664,12 @@ socket.onmessage = function (event) {
          for (k = 0; k < coms.length; k++) {
             const crtbl = parseInt([k], 10) + 1
             console.log(commentaries.inns1[k].ball + '  ' + '| ' + commentaries.inns1[k].commentary)
-               for (k = 0; k < commentaries.inns1.length; k++) {
-                  for (ki = 0; ki < coms, length; ki++) {
-                     coms[ki].innerHTML = commentaries.inns1[k].ball + '  ' + '| ' + commentaries.inns1[k].commentary
-                  }
+            for (k = 0; k < commentaries.inns1.length; k++) {
+               for (ki = 0; ki < coms.length; ki++) {
+                  coms[ki].innerHTML = commentaries.inns1[k].ball + '  ' + '| ' + commentaries.inns1[k].commentary
                }
             }
+         }
 
          break
 
