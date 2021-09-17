@@ -654,7 +654,7 @@ socket.onmessage = function (event) {
          break
 
       case 'commentary':
-         var { commentaries, current_over, current_over_balls } = msg.commentary
+         var { commentaries, ball, current_over, current_over_balls } = msg.commentary
          var coms = document.getElementsByClassName('cms'),
             ndcm = document.getElementById('comms-list').childNodes
          for (k = 0; k < commentaries.inns1.length; k++) {
