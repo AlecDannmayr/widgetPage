@@ -658,11 +658,10 @@ socket.onmessage = function (event) {
          var coms = document.getElementsByClassName('cms'),
             ndcm = document.getElementById('comms-list').childNodes
          for (k = 0; k < commentaries.inns1.length; k++) {
-if (commentaries.inns1 < 5) {
-   coms[k].innerHTML = commentaries.inns1[k].ball + '  ' + '| ' + commentaries.inns1[k].commentary
-} else {
-}
-         }
+            if (commentaries.inns1.length < 5) {
+                      coms[k].innerHTML = commentaries.inns1[k].ball + '  ' + '| ' + commentaries.inns1[k].commentary
+            }
+          }
 
          break
 
