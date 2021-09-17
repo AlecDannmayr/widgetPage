@@ -870,6 +870,7 @@ socket.onmessage = function (event) {
                   }
                   for (k = 0; k < commentaries.inns1.length; k++) {
                      for (ki = 0; ki < coms, length; ki++) {
+                        console.log(commentaries.inns1[k].ball + '  ' + '| ' + commentaries.inns1[k].commentary)
                         coms[ki].innerHTML = commentaries.inns1[k].ball + '  ' + '| ' + commentaries.inns1[k].commentary
                      }
                   }
