@@ -664,7 +664,13 @@ socket.onmessage = function (event) {
          for (k = 0; k < commentaries.inns1.length; k++) {
             const crtbl = parseInt([k], 10) + 1
             console.log(commentaries.inns1.length)
-            coms[k].innerHTML = commentaries.inns1[k].ball + '  ' + '| ' + commentaries.inns1[k].commentary
+            coms[1].innerHTML = commentaries.inns1[k].ball + '  ' + '| ' + commentaries.inns1[k].commentary
+              coms[2].innerHTML = commentaries.inns1[k].ball + '  ' + '| ' + commentaries.inns1[k].commentary
+                coms[1].innerHTML = commentaries.inns1[k].ball + '  ' + '| ' + commentaries.inns1[k].commentary
+                  coms[1].innerHTML = commentaries.inns1[k].ball + '  ' + '| ' + commentaries.inns1[k].commentary
+                    coms[1].innerHTML = commentaries.inns1[k].ball + '  ' + '| ' + commentaries.inns1[k].commentary
+                      coms[1].innerHTML = commentaries.inns1[k].ball + '  ' + '| ' + commentaries.inns1[k].commentary
+
          }
 
          break
