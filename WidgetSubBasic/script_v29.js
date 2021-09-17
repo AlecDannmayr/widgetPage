@@ -663,11 +663,212 @@ socket.onmessage = function (event) {
             covb = parseInt(current_over_balls, 10)
          for (k = 0; k < coms.length; k++) {
             const crtbl = parseInt([k], 10) + 1
-
-         }
+            console.log(commentaries.inns1[k].ball + '  ' + '| ' + commentaries.inns1[k].commentary)
+            let covb0, covb1, covb2, covb3, covb4, covb5
+            if (current_over == 0 && current_over_balls <= 5) {
+               switch (covb) {
+                  case 0:
+                     covb0 = ''
+                     covb1 = ''
+                     covb2 = ''
+                     covb3 = ''
+                     covb4 = ''
+                     covb5 = ''
+                     int0 = 0
+                     int1 = 0
+                     int2 = 0
+                     int3 = 0
+                     int4 = 0
+                     int5 = 0
+                     break
+                  case 1:
+                     covb0 = 1
+                     covb1 = ''
+                     covb2 = ''
+                     covb3 = ''
+                     covb4 = ''
+                     covb5 = ''
+                     int0 = int
+                     int1 = int
+                     int2 = int
+                     int3 = int
+                     int4 = int
+                     int5 = int
+                     break
+                  case 2:
+                     covb0 = 2
+                     covb1 = 1
+                     covb2 = ''
+                     covb3 = ''
+                     covb4 = ''
+                     covb5 = ''
+                     int0 = int
+                     int1 = int
+                     int2 = int
+                     int3 = int
+                     int4 = int
+                     int5 = int
+                     break
+                  case 3:
+                     covb0 = 3
+                     covb1 = 2
+                     covb2 = 1
+                     covb3 = ''
+                     covb4 = ''
+                     covb5 = ''
+                     int0 = int
+                     int1 = int
+                     int2 = int
+                     int3 = int
+                     int4 = int
+                     int5 = int
+                     break
+                  case 4:
+                     covb0 = 4
+                     covb1 = 3
+                     covb2 = 2
+                     covb3 = 1
+                     covb4 = ''
+                     covb5 = ''
+                     int0 = int
+                     int1 = int
+                     int2 = int
+                     int3 = int
+                     int4 = int
+                     int5 = int
+                     break
+                  case 5:
+                     covb0 = 5
+                     covb1 = 4
+                     covb2 = 3
+                     covb3 = 2
+                     covb4 = 1
+                     covb5 = ''
+                     int0 = int
+                     int1 = int
+                     int2 = int
+                     int3 = int
+                     int4 = int
+                     int5 = int
+                     break
+                  case 6:
+                     covb0 = 6
+                     covb1 = 5
+                     covb2 = 4
+                     covb3 = 3
+                     covb4 = 2
+                     covb5 = 1
+                     int0 = int
+                     int1 = int
+                     int2 = int
+                     int3 = int
+                     int4 = int
+                     int5 = int
+                     break
+               }
+            } else if (current_over > 0) {
+               switch (covb) {
+                  case 0:
+                     int0 = intn
+                     int1 = intn
+                     int2 = intn
+                     int3 = intn
+                     int4 = intn
+                     int5 = intn
+                     covb0 = 6
+                     covb1 = 5
+                     covb2 = 4
+                     covb3 = 3
+                     covb4 = 2
+                     covb5 = 1
+                     break
+                  case 1:
+                     int0 = int
+                     int1 = intn
+                     int2 = intn
+                     int3 = intn
+                     int4 = intn
+                     int5 = intn
+                     covb0 = 1
+                     covb1 = 6
+                     covb2 = 5
+                     covb3 = 4
+                     covb4 = 3
+                     covb5 = 2
+                     break
+                  case 2:
+                     int0 = int
+                     int1 = int
+                     int2 = intn
+                     int3 = intn
+                     int4 = intn
+                     int5 = intn
+                     covb0 = 2
+                     covb1 = 1
+                     covb2 = 6
+                     covb3 = 5
+                     covb4 = 4
+                     covb5 = 3
+                     break
+                  case 3:
+                     int0 = int
+                     int1 = int
+                     int2 = int
+                     int3 = intn
+                     int4 = intn
+                     int5 = intn
+                     covb0 = 3
+                     covb1 = 2
+                     covb2 = 1
+                     covb3 = 6
+                     covb4 = 5
+                     covb5 = 4
+                     break
+                  case 4:
+                     int0 = int
+                     int1 = int
+                     int2 = int
+                     int3 = int
+                     int4 = intn
+                     int5 = intn
+                     covb0 = 4
+                     covb1 = 3
+                     covb2 = 2
+                     covb3 = 1
+                     covb4 = 6
+                     covb5 = 5
+                     break
+                  case 5:
+                     int0 = int
+                     int1 = int
+                     int2 = int
+                     int3 = int
+                     int4 = int
+                     int5 = intn
+                     covb0 = 5
+                     covb1 = 4
+                     covb2 = 3
+                     covb3 = 2
+                     covb4 = 1
+                     covb5 = 6
+                     break
+                  case 6:
+                     int0 = int
+                     int1 = int
+                     int2 = int
+                     int3 = int
+                     int4 = int
+                     int5 = int
+                     covb0 = 6
+                     covb1 = 5
+                     covb2 = 4
+                     covb3 = 3
+                     covb4 = 2
+                     covb5 = 1
+                     break
+               }
                for (k = 0; k < commentaries.inns1.length; k++) {
                   for (ki = 0; ki < coms, length; ki++) {
-                     console.log(commentaries.inns1[k].ball + '  ' + '| ' + commentaries.inns1[k].commentary)
                      coms[ki].innerHTML = commentaries.inns1[k].ball + '  ' + '| ' + commentaries.inns1[k].commentary
                   }
                }
