@@ -661,12 +661,10 @@ socket.onmessage = function (event) {
             intn = parseInt(current_over) - 1,
             cint = int.toString(),
             covb = parseInt(current_over_balls, 10)
-         for (k = 0; k < coms.length; k++) {
+         for (k = 0; k < commentaries.inns1.length; k++) {
             const crtbl = parseInt([k], 10) + 1
             console.log(commentaries.inns1.length)
-            for (k = 0; k < commentaries.inns1.length; k++) {
-               coms[k].innerHTML = commentaries.inns1[k].ball + '  ' + '| ' + commentaries.inns1[k].commentary
-            }
+            coms[k].innerHTML = commentaries.inns1[k].ball + '  ' + '| ' + commentaries.inns1[k].commentary
          }
 
          break
